@@ -21,11 +21,11 @@ hide:
 
 </div>
 
-<div id="publicationsList" class="cards row-auto">
+<div id="publicationsList" class="cards row-3">
 
 </div>
 
-<div class="cards row-auto" markdown>
+<div class="cards row-3" markdown>
 
 - :material-square: **Feature One**
 

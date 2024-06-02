@@ -24,6 +24,10 @@
   grid-template-columns: repeat(2, minmax(8rem, 1fr));
 }
 
+.row-3 {
+  grid-template-columns: repeat(3, minmax(8rem, 1fr));
+}
+
 .row-auto {
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 }
