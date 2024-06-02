@@ -1,23 +1,22 @@
 {
-    "publications": [
+  "publications": [
       {
-        "title": "Reinforcement learning basics",
-        "image_link": "https://example.com/reinforcement_learning_basics.jpg",
-        "date": "2024-01-15"
+          "title": "Reinforcement learning basics",
+          "image_link": "https://carlosgrande.me/wp-content/uploads/2023/01/really-crappy-robots_Square.png",
+          "date": "2024-01-15",
+          "category": "Articles"
       },
       {
-        "title": "My Python Template",
-        "image_link": "https://example.com/my_python_template.jpg",
-        "date": "2023-08-22"
+          "title": "My Python Template",
+          "image_link": "https://carlosgrande.me/wp-content/uploads/2022/12/CookiecutterPyTemplate.png",
+          "date": "2023-08-22",
+          "category": "Case studies"
       },
       {
-        "title": "My Data Product Thesis",
-        "image_link": "https://example.com/my_data_product_thesis.jpg",
-        "date": "2024-05-10"
+          "title": "My Data Product Thesis",
+          "image_link": "https://example.com/my_data_product_thesis.jpg",
+          "date": "2024-05-10",
+          "category": "Projects"
       }
-    ]
-  }
-  
-  
-  
-  
+  ]
+}

@@ -21,7 +21,7 @@ hide:
 
 </div>
 
-<div class="publications row-auto">
+<div id="publicationsList" class="cards row-auto">
 
 </div>
 

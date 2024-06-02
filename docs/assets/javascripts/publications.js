@@ -1,6 +1,6 @@
-let page = 1; // Initial page number
-const limit = 5; // Number of items to load per page
-let isLoading = false; // Flag to prevent multiple simultaneous requests
+let page = 1;
+const limit = 5;
+let isLoading = false;
 
 window.addEventListener('load', function () {
     loadPublications();
@@ -11,13 +11,10 @@ function loadPublications() {
     if (isLoading) return;
     isLoading = true;
 
-    fetch('assets/javascripts/publications.js')
+    fetch('https://raw.githubusercontent.com/charlstown/carlos-grande-me/main/dbs/publications.json')
         .then(response => response.json())
         .then(jsonData => {
-            const startIndex = (page - 1) * limit;
-            const endIndex = startIndex + limit;
-            const publications = jsonData.publications.slice(startIndex, endIndex);
-            renderPublications(publications);
+            renderPublications(jsonData.publications);
             page++;
             isLoading = false;
         })
@@ -28,12 +25,18 @@ function loadPublications() {
 }
 
 function renderPublications(publications) {
-    const publicationsList = document.getElementById('publicationsList');
+    const publicationsContainer = document.getElementById('publicationsList');
+    let ul = publicationsContainer.querySelector('ul');
+
+    if (!ul) {
+        ul = document.createElement('ul');
+        publicationsContainer.appendChild(ul);
+    }
 
     publications.forEach(publication => {
         const listItem = document.createElement('li');
         const image = document.createElement('img');
-        const title = document.createElement('p');
+        const title = document.createElement('h4');
         const date = document.createElement('p');
 
         image.src = publication.image_link;
@@ -41,11 +44,14 @@ function renderPublications(publications) {
         date.textContent = publication.date;
         date.classList.add('date');
 
+        // Set the category as a data attribute
+        listItem.setAttribute('data-category', publication.category);
+
         listItem.appendChild(image);
         listItem.appendChild(title);
         listItem.appendChild(date);
 
-        publicationsList.appendChild(listItem);
+        ul.appendChild(listItem);
     });
 }
 
