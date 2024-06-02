@@ -1,0 +1,50 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+{% extends "main.html" %}
+
+
+<!-- Custom styles for the home site -->
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ base_url }}/{{ '/assets/stylesheets/home.css' | url }}" />
+    <link rel="stylesheet" href="{{ base_url }}/{{ '/assets/stylesheets/particles.css' | url }}" />
+    <script src="{{ base_url }}/{{ '/assets/javascripts/cards_menu.js' | url }}"></script>
+{% endblock %}
+
+
+<!-- Custom javascript for the home site -->
+{% block libs %}
+    {{ super() }}
+    <script src="{{ base_url }}/{{ '/assets/javascripts/particles.js' | url }}"></script>
+    <script>
+        particlesJS.load('particles-js', 'assets/javascripts/particles.json', function() {
+            console.log('particles.js loaded - callback');
+        });
+    </script>
+    <script src="assets/javascripts/extra.js"></scriptsrc>></script>
+{% endblock %}
+
+
+<!-- Hero Section -->
+{% block tabs %}
+    {{ super() }}
+    <section class="hero-section">
+        <div class="md-grid md-typeset">
+            <div class="tx-hero">
+                <div class="tx-hero__content">
+                <h1>Welcome to <span class="hightlight">{{ config.site_name }}</span></h1>
+                <p>{{ config.site_description }}</p>
+                <!-- <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
+                    Get started
+                </a>
+                <a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}" class="md-button">
+                    Join the community!
+                </a> -->
+                </div>
+            </div>
+        </div>
+        <div id="particles-js"></div>
+    </section>
+{% endblock %}
+
+<!-- Content from index.md -->
+{% block container %}{{ super() }}{% endblock %}

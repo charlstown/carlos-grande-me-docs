@@ -1,0 +1,9 @@
+<svg id="C01" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.39 30.39">
+  <defs>
+    <style>
+      .cls-1{fill:#556e7a;}.cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;}
+    </style>
+  </defs>
+  <rect class="cls-1" width="30.39" height="30.39" rx="8.04"/>
+  <path class="cls-2" d="M23.1,22.13l.68.68-.32.31-.33.29A9.65,9.65,0,0,1,7.32,16.22v-.44l0-.44A9.64,9.64,0,0,1,23.13,8.59l.33.29.32.31L22.42,10.6l-.29-.27-.3-.25-.3-.25A7.71,7.71,0,0,0,13,9.43l-.34.21-.32.23a7.69,7.69,0,0,0-2.78,8.39l.12.37.14.37.16.36a7.72,7.72,0,0,0,14.64-2.53l0-.38v-.4L17,16l4.8,4.8" transform="translate(-0.8 -0.8)"/>
+</svg>

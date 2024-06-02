@@ -1,0 +1,88 @@
+site_name: carlosgrande.me
+site_description: Here you'll find my personal life cheat sheet about coding, data architecture, data science, visualization, and business.
+repo_url: https://github.com/charlstown/carlos-grande-me
+site_author: Charlstown
+
+# Configuration
+# Theme
+theme:
+  name: material
+  custom_dir: overrides
+  static_templates:
+    - 404.html
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.svg
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight 
+  language: en
+
+  # Color palette
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: teal
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+
+# Sorting menu pages
+nav:
+    - Home: 'index.md'
+    - Content:
+      - Test 1: 'about/changelog.md'
+    - About me: 'getting-started.md' # getting started
+
+
+# Extensions
+markdown_extensions:
+  - admonition            # Block elements
+  - pymdownx.details      # Collapsible call-outs
+  - pymdownx.superfences  # Nested elements
+  - pymdownx.mark         # Hihlighting text
+  - attr_list             # To add buttons
+  - md_in_html            # To add html in markdown (centred images)
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# Plugins
+plugins:
+  - search
+  - markdownextradata
+
+# css
+extra_css:
+  - assets/stylesheets/extra.css
+
+# javascript
+extra_javascript:
+  - assets/javascripts/extra.js
+
+# Copyright message
+copyright: Copyright &copy; carlosgrande.me - 2024
+
+# Global variables
+extra:
+  links:
+    self-host: 'url'
+    learning-host: 'url'
