@@ -244,6 +244,12 @@ md-container a:hover {
     color: var(--md-accent-fg-color);
 }
 
+#publicationsList img {
+    width: 100%;
+    height: 250px; /* Fixed height */
+    object-fit: cover; /* Crop the image to fit the container */
+}
+
 /* --- Hero attributes --- */
 .hero-section {
     height: auto;   
