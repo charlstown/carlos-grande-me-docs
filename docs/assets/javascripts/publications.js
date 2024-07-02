@@ -36,20 +36,26 @@ function renderPublications(publications) {
     publications.forEach(publication => {
         const listItem = document.createElement('li');
         const image = document.createElement('img');
+        const divText = document.createElement('div');
         const title = document.createElement('h4');
         const date = document.createElement('p');
 
         image.src = publication.image_link;
         title.textContent = publication.title;
         date.textContent = publication.date;
-        date.classList.add('date');
+        date.classList.add('date-subtitle');
 
         // Set the category as a data attribute
         listItem.setAttribute('data-category', publication.category);
+        // listItem.setAttribute('onclick', "handleClick()");
+        listItem.setAttribute('class', 'card-content');
+        divText.setAttribute('class', 'card-header');
+
+        divText.appendChild(title);
+        divText.appendChild(date);
 
         listItem.appendChild(image);
-        listItem.appendChild(title);
-        listItem.appendChild(date);
+        listItem.appendChild(divText);
 
         ul.appendChild(listItem);
     });

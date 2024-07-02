@@ -238,16 +238,36 @@ md-container a:hover {
     cursor: pointer;
 }
 
+.card-header p, h4 {
+    margin: 0!important;
+}
+
+.card-header {
+    padding-left: .8rem;
+    padding-right: .8rem;
+}
+
 .cards-menu li:hover {
     text-decoration: underline; /* Underline text on hover */
     cursor: pointer; /* Change cursor to pointer on hover */
     color: var(--md-accent-fg-color);
 }
 
+.card-content:hover {
+    cursor: pointer;
+}
+
 #publicationsList img {
     width: 100%;
     height: 250px; /* Fixed height */
     object-fit: cover; /* Crop the image to fit the container */
+    margin-bottom: .6rem;
+}
+
+.date-subtitle {
+    font-style: italic;
+    font-size: small;
+    color: var(--md-primary-fg-color--light);
 }
 
 /* --- Hero attributes --- */
@@ -271,7 +291,7 @@ md-container a:hover {
 .tx-hero h1 {
     margin-bottom: 1rem;
     color: currentColor;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 

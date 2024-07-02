@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Get all the <li> elements
     var menuItems = document.querySelectorAll('.cards-menu li');
-    var menuItemsHover = document.querySelectorAll('.cards-menu li:hover');
     
 
     // Apply accent color to the first <li> element
