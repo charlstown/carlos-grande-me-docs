@@ -19,10 +19,11 @@ theme:
     - navigation.path # Path rendered on the upper side
     - navigation.tracking # URL in the address bar is automatically updated with the active anchor in the table of contents.
     - navigation.tabs # Top-level sections are rendered in a menu layer below the header for viewports above
-    #- navigation.sections # top-level sections are rendered as groups in the sidebar for viewports above
+    # - navigation.sections # top-level sections are rendered as groups in the sidebar for viewports above
     - navigation.tabs # Documents can be directly attached to sections
     - navigation.footer
     - navigation.top # A back-to-top button can be shown when the user, after scrolling down, starts to scroll up again
+    # - navigation.expand # Expand by default
     #- toc.integrate # Table of contents is always rendered as part of the navigation sidebar on the left.
     - search.suggest
     - search.highlight
@@ -35,7 +36,7 @@ theme:
   palette: 
     # Palette toggle for light mode
     - scheme: default
-      primary: blue grey
+      primary: black
       accent: teal
       toggle:
         icon: material/toggle-switch
@@ -43,20 +44,11 @@ theme:
 
     # Palette toggle for dark mode
     - scheme: slate
-      primary: blue grey
+      primary: black
       accent: teal
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
-
-
-# Sorting menu pages
-nav:
-    - Home: 'index.md'
-    - Notebooks:
-      - 'notebooks/index.md'
-      - Google Challenge Pt.1: 'notebooks/google-challenge-part-1.md'
-    - About me: 'getting-started.md' # getting started
 
 
 # Extensions
@@ -69,13 +61,14 @@ markdown_extensions:
   - attr_list             # To add buttons
   - md_in_html            # To add html in markdown (centred images)
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # Plugins
 plugins:
   - search
   - markdownextradata
+  - awesome-pages
 
 # css
 extra_css:

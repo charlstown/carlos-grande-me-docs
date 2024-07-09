@@ -1,0 +1,6 @@
+nav:
+    - Notebooks: index.md
+    - Business: business
+    - Coding: coding
+    - Data science: data-science
+    - Data Architecture: data-architecture

@@ -6,10 +6,6 @@ hide:
     - nav
 ---
 
-
-
-
-
 <div class="cards-menu" markdown>
 
 - All

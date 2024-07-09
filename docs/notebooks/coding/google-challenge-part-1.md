@@ -1,6 +1,6 @@
 # Google challenge part 1 { .main-title }
 
-<div class='image-caption' markdown>
+<div class='image-caption image-centered image-width-24' markdown>
 
 - ![Google Data Center 2079 By Beeple Crap](https://carlosgrande.me/wp-content/uploads/2022/03/BeepleCrap_GOOGLE-DATA-CENTER-2079.jpg)
 - Google Data Center 2079 By Beeple Crap

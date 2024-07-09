@@ -1,4 +1,22 @@
+/* Color schemes */
+
+[data-md-color-scheme="default"] {
+  --md-main-title:#4b4b4b;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-main-title:#cfcfcf;
+}
+
 /* Global CSS */
+
+article h1 {
+  font-weight: 600!important;
+  font-size: 3rem!important;
+  margin: 0 0 1rem!important;
+  letter-spacing: 0em!important;
+  color: var(--md-main-title)!important;
+}
 
 hr {
   border: 0;
@@ -40,13 +58,16 @@ p:has(.bottom) {
   border: 0.1rem solid var(--md-default-fg-color--lightest);
 }
 
-.main-title {
-  padding-top: 1rem;
-  text-align: left;
-  font-weight: 600!important;
-  font-size: 3rem!important;
-  line-height: 0rem!important;
-  letter-spacing: 0em!important;
+.text-center {
+  text-align: center;
+}
+
+.image-centered {
+  margin: auto;
+}
+
+.image-width-24 {
+  max-width: 24rem;
 }
 
 
