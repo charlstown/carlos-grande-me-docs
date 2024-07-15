@@ -2,6 +2,6 @@ nav:
     - Home: index.md
     - References: references
     - Projects: projects
-    - Notebooks: notebooks
     - Resources: resources
+    - Notebooks: notebooks
     - About me: about-me.md

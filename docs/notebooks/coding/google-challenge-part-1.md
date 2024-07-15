@@ -1,4 +1,4 @@
-# Google challenge part 1 { .main-title }
+# Google challenge part 1
 
 <div class='image-caption image-centered image-width-24' markdown>
 
