@@ -217,6 +217,12 @@ margin: 0.5rem 0;
 grid-template-columns: repeat(2, minmax(8rem, 1fr));
 }
 
+.row-3 {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+gap: .8rem .8rem!important; /* Optional: space between grid items rox-col */
+}
+
 .row-auto {
 grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
 }
@@ -226,15 +232,16 @@ display: contents!important;
 }
 
 .cards ul li {
-list-style: none;
-text-align: left;
-padding: 0.8rem;
-border: 0.05rem solid var(--md-default-fg-color--lightest);
-border-radius: 0.1rem;
-display: block;
-transition: border .25s,box-shadow .25s;
-height: 100%;
-position: relative;
+  margin-left: 0!important;
+  list-style: none;
+  text-align: left;
+  padding: 0.8rem;
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.1rem;
+  display: block;
+  transition: border .25s,box-shadow .25s;
+  height: 100%;
+  position: relative;
 }
 
 .cards p:nth-last-child(2) {

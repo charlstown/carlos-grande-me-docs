@@ -50,19 +50,6 @@ hide:
 
 </div>
 
----
-
-## Popular links
-
-<div class="grid row-2" markdown>
-
-- [:octicons-arrow-right-24: Getting started in Gluon](#)
-- [:octicons-arrow-right-24: Create a new team](#)
-- [:octicons-arrow-right-24: Add new components to your project](#)
-- [:octicons-arrow-right-24: I can't access Gluon with my user](#)
-
-</div>
-
 
 <!-- Custom styles for the home site -->
 <script src="/assets/javascripts/publications.js"></script>
