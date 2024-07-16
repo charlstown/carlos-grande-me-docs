@@ -14,10 +14,11 @@ I wanted to share a post with some notes from the **Jungwoo Ryoo** Python Design
 
 ## 1. Creational Design Patterns
 Creational patterns provides essential information regarding the Class instantiation or the object instantiation. Class Creational Pattern and the Object Creational pattern is the major categorization of the Creational Design Patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.
-<br>
+
 
 ### Factory class Method
-[caption id="attachment_2058" align="aligncenter" width="310"]<a href="https://carlosgrande.me/wp-content/uploads/2021/12/FactoryPattern.jpg"><img src="https://carlosgrande.me/wp-content/uploads/2021/12/FactoryPattern.jpg" alt="Factory Pattern" width="310" height="334" class="size-full wp-image-2058" /></a> Factory Pattern[/caption]
+
+![Factory pattern](https://carlosgrande.me/wp-content/uploads/2021/12/FactoryPattern.jpg)
 
 > To create an object with a instanciated factory on the run with out knowing how, why or what parameters are you going to pass
 
@@ -137,7 +138,7 @@ Allows to keep information in a single object there is no need to extract the in
 
 Singleton Design Pattern can be understood by a very simple example of Database connectivity. When each object creates a unique Database Connection to the Database, it will highly affect the cost and expenses of the project. So, it is always better to make a single connection rather than making extra irrelevant connections which can be easily done by Singleton Design Pattern.
 
-```
+````python
 class Borg:
     """Borg class attributes global"""
     _shared_state = {} # Attribute dictionary
@@ -167,11 +168,12 @@ singleton = Singleton(SNMP = "Simple Network Management Protocol")
 # Print the updated object
 print(f"Second print: {singleton}")
 ```
-```python
+
+```bash title="Output"
 First print: {'HTTP': 'Hyper Text Transfer Protocol'}
 Second print: {'HTTP': 'Hyper Text Transfer Protocol', 'SNMP': 'Simple Network Management Protocol'}
-</p>
-</br>
+```
+
 
 ### Builder Method
 [caption id="attachment_2067" align="aligncenter" width="571"]<a href="https://carlosgrande.me/wp-content/uploads/2021/12/BuilderPattern.jpg"><img src="https://carlosgrande.me/wp-content/uploads/2021/12/BuilderPattern.jpg" alt="Builder Pattern" width="571" height="174" class="size-full wp-image-2067" /></a> Builder Pattern[/caption]
@@ -184,7 +186,7 @@ To avoid telescoping constructor anti-pattern.
 - Concrete Builder: implements the interfaces
 - Product: object being build
 
-```
+```python
 class Director:
     """Director class"""
     def __init__(self, builder):
@@ -235,19 +237,21 @@ director.construct_obj()
 obj = director.get_obj()
 
 print(obj)
-```
-```python
+````
+
+```bash title="Output"
 skwh | HTTP | Skyler White
-</p>
-</br>
+```
+
 
 ### Prototype Method
 [caption id="attachment_2069" align="aligncenter" width="429"]<a href="https://carlosgrande.me/wp-content/uploads/2021/12/PrototypePattern.jpg"><img src="https://carlosgrande.me/wp-content/uploads/2021/12/PrototypePattern.jpg" alt="Prototype Pattern" width="429" height="302" class="size-full wp-image-2069" /></a> Prototype Pattern[/caption]
 
 Prototype Method is a Creational Design Pattern which aims to reduce the number of classes used for an application. It allows you to copy existing objects independent of the concrete implementation of their classes. Generally, here the object is created by copying a prototypical instance during run-time.
-<br>
+
 It is highly recommended to use Prototype Method when the object creation is an expensive task in terms of time and usage of resources and already there exists a similar object. This method provides a way to copy the original object and then modify it according to our needs.
-```
+
+```python
 import copy
 
 class Prototype:
@@ -285,21 +289,20 @@ prototype.register_object("api_name", api)
 api_cloned = prototype.clone("api_name", ip = "232.0.0.1")
 print(api_cloned)
 ```
-```python
+
+```bash title="Output"
 api -> api_name | 232.0.0.1 | True
-</p>
-</br>
+```
 
-
-</br>
 ## 2. Structural Design Patterns
 Structural design patterns are about organizing different classes and objects to form larger structures and provide new functionality while keeping these structures flexible and efficient. Mostly they use Inheritance to compose all the interfaces. It also identifies the relationships which led to the simplification of the structure.
-<br>
+
 ### Decorator Method
 Decorator Method is a Structural Design Pattern which allows you to dynamically attach new behaviors to objects without changing their implementation by placing these objects inside the wrapper objects that contains the behaviors.
-<br>
+
 It is much easier to implement Decorator Method in Python because of its built-in feature. It is not equivalent to the Inheritance because the new feature is added only to that particular object, not to the entire subclass.
-```
+
+```python
 from functools import wraps
 
 def make_blink(function):
@@ -331,18 +334,19 @@ print(hello_world.__name__)
 # Check if the docstring is still the same as that of the function being decorated.
 print(hello_world.__doc__)
 ```
-<p class=output>
+
+```bash title="Output"
 &lt;blink&gt; Hello, World! &lt;/blink&gt;
 hello_world
 Original function!
-</p>
-</br>
+```
 
 ### Proxy Method
 The Proxy method is Structural design pattern that allows you to provide the replacement for an another object. Here, we use different classes to represent the functionalities of another class. The most important part is that here we create an object having original object functionality to provide to the outer world.
-<br>
+
 The meaning of word Proxy is “in place of” or “on behalf of” that directly explains the Proxy Method. Proxies are also called surrogates, handles, and wrappers. They are closely related in structure, but not purpose, to Adapters and Decorators.
-```
+
+```python
 import time
 
 class Producer:
@@ -388,18 +392,19 @@ proxy.occupied = True
 # Make the Producer produce
 proxy.produce()
 ```
-<p class=output>
+
+```bash title="Output"
 Artist checking if Producer is available...
 Producer has time to meet you now!
 Artist checking if Producer is available...
 Producer is busy!
-</p>
-</br>
+```
 
 ### Adapter Method
 Adapter method is a Structural Design Pattern which helps us in making the incompatible objects adaptable to each other. The Adapter method is one of the easiest methods to understand because we have a lot of real-life examples that show the analogy with it. The main purpose of this method is to create a bridge between two incompatible interfaces. This method provides a different interface for a class. We can more easily understand the concept by thinking about the Cable Adapter that allows us to charge a phone somewhere that has outlets in different shapes.
-Using this idea, we can integrate the classes that couldn’t be integrated due to interface incompatibility.
-```
+Using this idea, we can integrate the classes that couldn’t be integrated due to interface incompatibility.`
+
+```python
 class Spanish:
     """Korean speaker"""
     def __init__(self):
@@ -448,18 +453,19 @@ objects.append(Adapter(british, speak=british.speak_english))
 for obj in objects:
     print(f"{obj.name} says {obj.speak()}\n")
 ```
-<p class=output>
+
+```bash title="Output"
 Spanish says Hola!
-<br>
+
 British says Hello!
-</p>
-</br>
+```
 
 ### Composite Method
 Composite Method is a Structural Design Pattern which describes a group of objects that is treated the same way as a single instance of the same type of the objects. The purpose of the Composite Method is to Compose objects into Tree type structures to represent the whole-partial hierarchies.
-<br>
+
 Composite Method is a Structural Design Pattern which describes a group of objects that is treated the same way as a single instance of the same type of the objects. The purpose of the Composite Method is to Compose objects into Tree type structures to represent the whole-partial hierarchies.
-```
+
+```python
 class Component(object):
     """Abstract class"""
     
@@ -544,20 +550,20 @@ top.append_child(sub2)
 # Let's test if our composite pattern works!
 top.component_function()
 ```
-<p class=output>
+
+```bash title="Output"
 top_menu
 &emsp;submenu1
 &emsp;&emsp;sub_menu 11
 &emsp;&emsp;sub_menu 12
 &emsp;submenu2
 &emsp;&emsp;sub_menu 11
-</p>
-</br>
+```
 
 ### Bridge Method
 Bridge method is a Structural Design Pattern which allows us to separate the Implementation Specific Abstractions and Implementation Independent Abstractions from each other and can be developed considering as the single entities.
 Bridge Method is always considered as one of the best methods to organize the class hierarchy.
-<br>
+
 Elements of Bridge Design Pattern:
 - **Abstraction:** It is the core of the Bridge Design Pattern and it provides the reference to the implementer.
 - **Refined Abstraction:** It extends the abstraction to the new level where it takes the finer details one level above and hides the finer element from the implementors.
@@ -604,24 +610,26 @@ circle2 = Circle(2, 3, 4, DrawingAPITwo())
 
 circle2.draw()
 ```
-<p class=output>
+
+```bash title="Output"
 API 1 drawing a circle at (1, 2 with radius 3!)
 API 2 drawing a circle at (2, 3 with radius 4!)
-</p>
-</br>
+```
+
 
 ## 3. Behavioral Design Patterns
 Behavioral patterns are all about identifying the common communication patterns between objects and realize these patterns. These patterns are concerned with algorithms and the assignment of responsibilities between objects.
 
 ### Observer Method
 The observer method is a Behavioral design Pattern which allows you to define or create a subscription mechanism to send the notification to the multiple objects about any new event that happens to the object that they are observing. The subject is basically observed by multiple objects. The subject needs to be monitored and whenever there is a change in the subject, the observers are being notified about the change. This pattern defines one to Many dependencies between objects so that one object changes state, all of its dependents are notified and updated automatically.
-<br>
+
 One-two many relationships between a subject and multiple observers.
 Example: Core temperatures monitored by observers.
+
 - Subject: abstract class (Attach Detach Notify)
 - Concrete subjects
   
-```
+```python
 class Subject(object):  # Represents what is being 'observed'
     """This is where references to all the observers
     are being kept. Note that this is a one-to-
@@ -688,17 +696,18 @@ c1.attach(v2)
 c1.temp = 80
 c1.temp = 90
 ```
-<p class=output>
+
+```bash title="Output"
 Temperature Viewer: Core 1 has temperature 80
 Temperature Viewer: Core 1 has temperature 80
 Temperature Viewer: Core 1 has temperature 90
 Temperature Viewer: Core 1 has temperature 90
-</p>
-</br>
+```
 
 ### Visitor Method
 Visitor Method is a Behavioral Design Pattern which allows us to separate the algorithm from an object structure on which it operates. It helps us to add new features to an existing class hierarchy dynamically without changing it. All the behavioral patterns proved as the best methods to handle the communication between the objects. Similarly, it is used when we have to perform an operation on a group of similar kinds of objects.
-```
+
+```python
 class House(object):
     """The class being visited"""
     def accept(self, visitor):
@@ -754,17 +763,19 @@ house.accept(hvac_specialist)
 # by invokation the visit() method
 house.accept(electrician)
 ```
-<p class=output>
+
+```bash title="Output"
 House worked on by HvacSpecialist
 House worked on by Electrician
-</p>
-</br>
+```
+
 
 ### Iterator Method
 Iterator method is a Behavioral Design Pattern that allows us to traverse the elements of the collections without taking the exposure of in-depth details of the elements. It provides a way to access the elements of complex data structure sequentially without repeating them.
-<br>
-According to GangOfFour, Iterator Pattern is used ” to access the elements of an aggregate object sequentially without exposing its underlying implementation”.
-```
+
+According to GangOfFour, Iterator Pattern is used ” to access the elements of an aggregate object sequentially without exposing its underlying implementation”.`
+
+```python
 def count_to(count):
     """Our iterator implementation"""
     
@@ -788,7 +799,8 @@ def count_to(count):
 for i in count_to(8):
     print(f"The number is: {i}.")
 ```
-<p class=output>
+
+```bash title="Output"
 The number is: uno.
 The number is: dos.
 The number is: tres.
@@ -797,12 +809,12 @@ The number is: cinco.
 The number is: seis.
 The number is: siete.
 The number is: ocho.
-</p>
-</br>
+```
 
 ### Strategy Method
 The strategy method is Behavioral Design pattern that allows you to define the complete family of algorithms, encapsulates each one and putting each of them into separate classes and also allows to interchange there objects. It is implemented in Python by dynamically replacing the content of a method defined inside a class with the contents of functions defined outside of the class. It enables selecting the algorithm at run-time. This method is also called as Policy Method.
-```
+
+```python
 import types # Types module
 
 class Strategy:
@@ -844,20 +856,21 @@ s2 = Strategy(strategy_two)
 # Let's set its name
 s2.name = "Strategy_two"
 # Let's execute the strategy
-s2.execute()
-    
+s2.execute()  
 ```
-<p class=output>
+
+```bash title="Output"
 Default Strategy is used!
 Strategy_one is used to execute method 1
 Strategy_two is used to execute method 2
-</p>
-</br>
+```
+
 
 ### Chain of Responsability Method
 Chain of Responsibility method is Behavioral design pattern and it is the object-oriented version of if … elif … elif … else and make us capable to rearrange the condition-action blocks dynamically at the run-time. It allows us to pass the requests along the chain of handlers. The processing is simple, whenever any handler received the request it has two choices either to process it or pass it to the next handler in the chain. 
 This pattern aims to decouple the senders of a request from its receivers by allowing the request to move through chained receivers until it is handled. 
-```
+
+```python
 class Handler:
     """Abstract Handler"""
     def __init__(self, succesor):
@@ -909,17 +922,18 @@ requests = [2, 5, 30]
 # Send requests
 client.delegate(requests)
 ```
-<p class=output>
+
+```bash title="Output"
 Request 2 handled in handeler 1
 Request 5 handled in handeler 1
 End of chain, no handler for 30
-</p>
-</br>
+```
+
 
 ### Command Method
 Command Method is Behavioral Design Pattern that encapsulates a request as an object, thereby allowing for the parameterization of clients with different requests and the queuing or logging of requests. Parameterizing other objects with different requests in our analogy means that the button used to turn on the lights can later be used to turn on stereo or maybe open the garage door. It helps in promoting the “invocation of a method on an object” to full object status. Basically, it encapsulates all the information needed to perform an action or trigger an event.
-```
 
+```python
 #Use built-in abc to implement Abstract classes and methods
 from abc import ABC, abstractmethod
 
@@ -975,10 +989,11 @@ if __name__ == "__main__":
     invoker.command(cmd)
     invoker.execute()
 ```
-<p class=output>
+
+```bash title="Output"
 Action performed in receiver.
-</p>
-</br>
+```
+
 
 ### Mediator Method
 Mediator Method is a Behavioral Design Pattern that allows us to reduce the unordered dependencies between the objects. In a mediator environment, objects take the help of mediator objects to communicate with each other. It reduces coupling by reducing the dependencies between communicating objects. The mediator works as a router between objects and it can have it’s own logic to provide a way of communication.
@@ -989,7 +1004,7 @@ Design Components:
 - **Colleague:** It defines the interface for communication with other colleagues
 - **Concrete Colleague:** It implements the colleague interface and communicates with other colleagues through its mediator.
   
-```
+```python
 class Course(object):
     """Mediator class."""
  
@@ -1021,11 +1036,11 @@ if __name__ == "__main__":
     lakshya.sendCourse("Software Development Engineer")
     krishna.sendCourse("Standard Template Library")
 ```
-</br>
 
 ### Memento Method
 Memento Method is a Behavioral Design pattern which provides the ability to restore an object to its previous state. Without revealing the details of concrete implementations, it allows you to save and restore the previous version of the object. It tries not to disturb the encapsulation of the code and allows you to capture and externalize an object’s internal state.
-```
+
+```python
 """Memento class for saving the data"""
  
 class Memento:
@@ -1108,9 +1123,8 @@ if __name__ == '__main__':
 
 ### State Method
 State method is Behavioral Design Pattern that allows an object to change its behavior when there occurs a change in its internal state. It helps in implementing the state as a derived class of the state pattern interface. If we have to change the behavior of an object based on its state, we can have a state variable in the Object and use if-else condition block to perform different actions based on the state. It may be termed as the object-oriented state machine. It implements the state transitions by invoking methods from the pattern’s superclass.
-```
 
-
+```python
 class State:
 """State class: Base State class"""
   
@@ -1186,7 +1200,8 @@ if __name__ == "__main__":
     for action in actions:
         action()
 ```
-<p class=output>
+
+```bash title="Output"
 Visiting... Station is 89.1 FM
 Visiting... Station is 103.9 FM
 Visiting... Station is 81.3 FM
@@ -1201,13 +1216,13 @@ Switching to FM
 Visiting... Station is 89.1 FM
 Visiting... Station is 103.9 FM
 Visiting... Station is 81.3 FM
-</p>
-</br>
+```
+
 
 ### Template Method
 The Template method is a Behavioral Design Pattern that defines the skeleton of the operation and leaves the details to be implemented by the child class. Its subclasses can override the method implementations as per need but the invocation is to be in the same way as defined by an abstract class. It is one of the easiest among the Behavioral design pattern to understand and implements. Such methods are highly used in framework development as they allow us to reuse the single piece of code at different places by making certain changes. This leads to avoiding code duplication also.
-```
 
+```python
 def get_text():
     """ method to get the text of file"""
     return "plain_text"
@@ -1272,7 +1287,8 @@ if __name__ == "__main__":
  
     template_function(get_xml, to_save = True)
 ```
-<p class=output>
+
+```bash title="Output"
 Got plain_text
 Skip conversion
 [SAVE]
@@ -1284,12 +1300,9 @@ Got csv
 Skip conversion
 [SAVE]
 csv was processed
-</p>
-</br>
+```
 
-
-</br>
-- - - - - -
+---
 
 ## References and links
 

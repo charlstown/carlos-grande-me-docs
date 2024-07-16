@@ -69,6 +69,20 @@ plugins:
   - search
   - markdownextradata
   - awesome-pages
+  - glightbox:
+      touchNavigation: true
+      loop: true
+      effect: zoom
+      slide_effect: fade
+      width: 100%
+      height: auto
+      zoomable: false
+      draggable: true
+      auto_caption: false
+      caption_position: bottom
+      background: white
+      shadow: true
+      manual: false
 
 # css
 extra_css:

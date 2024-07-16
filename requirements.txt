@@ -3,3 +3,4 @@ mkdocs-material
 pymdown-extensions
 mkdocs-markdownextradata-plugin
 mkdocs-awesome-pages-plugin
+mkdocs-glightbox

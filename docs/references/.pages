@@ -1,3 +1,4 @@
 nav:
+    - References: index.md
     - Articles: articles
     - Case studies: case-studies
