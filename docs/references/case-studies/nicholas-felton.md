@@ -19,6 +19,22 @@ The project initially served as a self-promotional piece, but has evolved fat be
 
 (Felton, 2015, quoted in Bihanic, 2015.)
 
+## Gallery
+
+<div class="gallery" markdown>
+
+![Subway taxis 2007](../../assets/images/references/felton-subway-taxis.jpg){ .image-caption }
+
+![Communication channels affiliation 2013](../../assets/images/references/felton-channels-affiliation.jpg){ .image-caption }
+
+![Daily activities 2012](../../assets/images/references/felton-daily-activities.jpg){ .image-caption }
+
+![NYC with Olga 2011](../../assets/images/references/felton-nyc-with-olga.jpg){ .image-caption }
+
+![Photos taken 2012](../../assets/images/references/felton-photos-taken.jpg){ .image-caption }
+
+</div>
+
 ---
 
 **REFERENCES:**

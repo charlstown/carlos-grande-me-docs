@@ -3,7 +3,7 @@
 In this post, I wanted to introduce **Refik Anadol**,  is a media artist, director, and pioneer in the aesthetics of machine intelligence. His main work locates creativity at the intersection of humans and machines. He takes the data that flows around us as his primary material and uses Neural Networks to design with a thinking brush. Refik offers us radical visualizations of our digitized memories and expanding the possibilities of architecture, narrative, and the body in motion.
 
 
-![refik](https://carlosgrande.me//wp-content/uploads/2020/gifs/Refik.gif)
+![refik](../../assets/images/references/refik-portrait.gif)
 
 ---
 
@@ -18,8 +18,24 @@ Just like everyone else, I love to remember and talk about my memories. The conc
 
 (Anadol, 2019)
 
+## Gallery
 
-![img](https://carlosgrande.me/wp-content/uploads/2020/11/ScrollGalery.png)
+<div class="gallery" markdown>
+
+![Dreaming archive](../../assets/images/references/anadol-dreaming-archive.jpg){ .image-caption }
+
+![Dreaming archive](../../assets/images/references/anadol-dreaming-archive-2.jpg){ .image-caption }
+
+![Dreaming archive](../../assets/images/references/anadol-dreaming-archive-3.jpg){ .image-caption }
+
+![Melting memories](../../assets/images/references/anadol-melting-memories-1.jpg){ .image-caption }
+
+![Melting memories](../../assets/images/references/anadol-melting-memories-2.jpg){ .image-caption }
+
+![visual depictions](../../assets/images/references/anadol-virtual-depictions.jpg){ .image-caption }
+
+</div>
+
 
 ---
 

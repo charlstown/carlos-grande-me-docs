@@ -1,12 +1,6 @@
-# My data product thesis { .text-center }
+# My data product thesis
 
-<div class='image-caption image-centered image-width-24' markdown>
-
-- ![data-product](https://carlosgrande.me/wp-content/uploads/2022/09/DataProductThesis.png)
-- My data Product thesis
-{ .caption }
-
-</div>
+![Data Product Thesis](https://carlosgrande.me/wp-content/uploads/2022/09/DataProductThesis.png){ .image-width-24 }
 
 After the good reception of the [My Data Mesh Thesis](https://carlosgrande.me/my-data-mesh-thesis/) article, I wanted to go down a bit into the detail of the central component of the Data Mesh paradigm, the Data Product.
 

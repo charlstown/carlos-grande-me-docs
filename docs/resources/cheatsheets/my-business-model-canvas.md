@@ -4,25 +4,18 @@ With this post, I wanted to share my latest Business Model Canvas Design and exp
 
 ---
 
+## Lean startup by definition
+
 Lean startup is a methodology for developing businesses and products that aim to shorten product development cycles and rapidly discover if a proposed business model is viable; this is achieved by adopting a combination of business-hypothesis-driven experimentation, iterative product releases, and validated learning.
 (Ries, 2011)
-
-![Lean Startup Business Model Canvas](https://carlosgrande.me/wp-content/uploads/2020/11/BusinessModelCanvas.png)
-
-
-#### DOWNLOAD THE BUSINESS MODEL CANVAS:
-
-[maxbutton id=6 url="https://carlosgrande.me/wp-content/uploads/2020/PDF/BusinessModelCanvas.pdf"]
 
 
 ## Business model canvas
 A Business Model Canvas is a strategic management and lean startup template for developing new or documenting existing business models. It helps visualize what is important and forces users to address key areas. It can also be used by a team (employees and/or advisors) to understand relationships and reach agreements.
 
-</br>
+![Lean Startup Business Model Canvas](../../assets/images/resources/business-model-canvas.png){ .image-caption }
 
-[caption id="attachment_1639" align="aligncenter" width="3508"]<a href="https://carlosgrande.me/wp-content/uploads/2020/11/BusinessModelCanvas.png"><img src="https://carlosgrande.me/wp-content/uploads/2020/11/BusinessModelCanvas.png" alt="" class="size-full wp-image-1639" /></a> Lean Startup Business Model Canvas[/caption]
-
-</br>
+[Download the Canvas in PDF](../../assets/docs/business-model-canvas.pdf){:download="business-model-canvas" .md-button }
 
 ### 1. Customer segments
 Customer segments are the community of customers or businesses that you are aiming to sell your product or services to. Customer segments is one of the most important building blocks in the business model canvas for your business, so getting this building block right is key to your success.
@@ -111,10 +104,7 @@ Here you should list all the operational costs for taking this business to marke
 - **Key resources costs (internal):** Office space, warehouse, computers, licenses, designers, etc.
 - **Key partners costs (external):** Shipping, providers, distribution, customer services.
 
-</br>
 ---
-<a id="links"></a>
-</br>
 
 ## References and links
 - [steve_mullen, An Introduction to Lean Canvas.](https://medium.com/@steve_mullen/an-introduction-to-lean-canvas-5c17c469d3e0)

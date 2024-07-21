@@ -14,6 +14,19 @@ Whenever the main purpose of visualizations is to open readers' eyes yo new know
 
 (Giorgia Lupi, 2015, quoted in Bihanic, 2015.)
 
+
+## Gallery
+
+<div class="gallery" markdown>
+
+![Novels and graduates](../../assets/images/references/lupi-novels-and-graduates.jpg){ .image-caption }
+
+![The life cycle of ideas](../../assets/images/references/lupi-the-life-cycle-of-ideas.jpg){ .image-caption }
+
+![The real Montalbano](../../assets/images/references/lupi-the-real-montalbano.jpg){ .image-caption }
+
+</div>
+
 ---
 
 **REFERENCES:**

@@ -91,6 +91,7 @@ extra_css:
 # javascript
 extra_javascript:
   - assets/javascripts/extra.js
+  - assets/javascripts/image-caption.js
 
 # Copyright message
 copyright: Copyright &copy; carlosgrande.me - 2024

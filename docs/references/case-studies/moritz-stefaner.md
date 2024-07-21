@@ -15,6 +15,23 @@ Buckminister Fuller, the famous designer and systems theorist, said once, in ess
 Design is much more than mere decoration. Often, people think of design as is the wrong approach. Good design is tightly intertwined with the content it presents. It consists of thinking about what to show; what to leave out; what to highlight; how to structure information; what rhythm, visual flow, and pace, you want your story to have. That's what design is all about. (Stefaner, 2011)
 (Stefaner, 2015, quoted in Bihanic, 2015.)
 
+
+## Gallery
+
+<div class="gallery" markdown>
+
+![Peak Spotting: Data on rails](../../assets/images/references/stefaner-peak-spotting-1.png){ .image-caption }
+
+![Peak Spotting: Data on rails](../../assets/images/references/stefaner-peak-spotting-2.png){ .image-caption }
+
+
+![Project Ukko: Seasonal wind predictions](../../assets/images/references/stefaner-project-ukko.png){ .image-caption }
+
+
+![Project: Map your moves](../../assets/images/references/stefaner-map-your-moves.png){ .image-caption }
+
+</div>
+
 ---
 
 **REFERENCES & OTHE LINKS:**

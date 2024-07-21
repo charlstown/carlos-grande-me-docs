@@ -8,6 +8,25 @@ Fischer manages to perfectly represent all hidden information from the cities, h
 
 Fischer represents data and geotags by colors and points using a code he wrote by himself. The result of the patterns produces visual galaxies of information. His work caught the attention in 2010 when he published some maps showing the list of photos taken by tourists and by locals around the city. (...) His next job focused him on racial divisions in 109 cities in the United States, showing the divisions still present in the population. Their recent works, called Look at something or say something, compare where people write about their social life and where people photograph. (...) “I want people to look at the different areas of the maps that they know well and to discover what some popular places do and other not-so-popular places, ”says Fischer. “If you live in a street that nobody goes to, what causes people to not want to go there? One of his observations is that people go on vacation to sites where they can walk to the sites, but on the contrary, they live in places where they cannot do so (Bell, 2011).
 
+## Gallery
+
+<div class="gallery" markdown>
+
+![See something or say something: Madrid](../../assets/images/references/fischer-madrid.jpg){ .image-caption }
+
+![See something or say something: London](../../assets/images/references/fischer-london.jpg){ .image-caption }
+
+![See something or say something: NYC](../../assets/images/references/fischer-nyc-2.jpg){ .image-caption }
+
+![See something or say something: NYC](../../assets/images/references/fischer-nyc.jpg){ .image-caption }
+
+![See something or say something: USA](../../assets/images/references/fischer-usa.jpg){ .image-caption }
+
+![See something or say something: Chicago](../../assets/images/references/fischer-chicago-2010.jpg){ .image-caption }
+
+
+</div>
+
 ---
 
 **REFERENCES & OTHE LINKS:**
