@@ -4,9 +4,9 @@ toc_depth: 2
 
 # My data product thesis
 
-![Data Product Thesis](https://carlosgrande.me/wp-content/uploads/2022/09/DataProductThesis.png){ .image-width-24 }
+![Data Product Thesis](../../assets/images/resources/data-product-portrait.png){ .image-width-24 }
 
-After the good reception of the [My Data Mesh Thesis](https://carlosgrande.me/my-data-mesh-thesis/) article, I wanted to go down a bit into the detail of the central component of the Data Mesh paradigm, the Data Product.
+After the good reception of the [My Data Mesh Thesis](my-data-mesh-thesis.md) article, I wanted to go down a bit into the detail of the central component of the Data Mesh paradigm, the Data Product.
 
 During the Data Mesh presentations we had in my company, I realized that the concept of data product was not completely understood. The Data Mesh paradigm was well understood, but when we focused on the data product, questions arose about whether it was a set of tables,  infrastructure or a Data Lake on a smaller scale.
 
@@ -15,6 +15,7 @@ With this post I intend to focus on the Data Product within the Data Mesh paradi
 ---
 
 ## 1. What is a Data Product
+
 When we think of data in an analytical context, we imagine a set of tables in a repository, which has gone through a cleaning process guaranteeing quality and value to its consumers.
 
 On the other hand, if we think of a product, we understand a product as a set of characteristics and attributes that a buyer accepts to satisfy some needs.
@@ -33,8 +34,8 @@ If we review these five assumptions and look for a simile in the market, we find
 > **A data product is a collection of datasets, metadata, code, and policies concerning a certain topic and serving a certain purpose in a self-serve manner. Even though, it can support multiple purposes or be used as a building block for multiple other data products.**
 
 
-
 ## 2. Architecture of a Data Product
+
 Data as a product introduces a new unit of logical architecture called, data product quantum, controlling and encapsulating all the structural components — data, metadata, code, policy and infrastructure dependencies — needed to share data as a product autonomously. (Dehghani, 2022)
 
 A Data product is the smallest unit of architecture that can be independently deployed with high functional cohesion, and includes all the structural elements required for its function.
@@ -49,24 +50,24 @@ A Data product is the smallest unit of architecture that can be independently de
 
 **The output ports:** define the format and consumption protocol in which data can be exposed. For example, the output port can be a database table, file, API, or reports. It can be accessed to a final consumer or by multiple other data products.
 
-[caption id="attachment_2457" align="aligncenter" width="1405"]<a href="https://carlosgrande.me/wp-content/uploads/2022/09/DataProduct_Mesa-de-trabajo-1_Mesa-de-trabajo-1.png"><img src="https://carlosgrande.me/wp-content/uploads/2022/09/DataProduct_Mesa-de-trabajo-1_Mesa-de-trabajo-1.png" alt="Data Product Architecture" width="1405" height="886" class="size-full wp-image-2457" /></a> Data Product Architecture[/caption]
-
-
+![Data Product Architecture](../../assets/images/resources/data-product-architecture.png){ .image-caption }
 
 
 ## 3. Data Products in a Data Mesh ecosystem
+
 The data product (1) is the most important independent unit of the Data Mesh paradigm. To get a better understanding of what it means, we must comprehend the elements interacting within the Data Mesh ecosystem. Recall that a data product belongs within a domain (2) where we can find other data products (7). Besides, a data product is managed by a Data Product Owner (3) and maintained and developed by a data product developer team (4). It is common to find a team of developers across multiple domains and data products, but there should always be a single data product owner per domain.
 
 Regarding its relationship with consumers (7), the data product is related to them through a marketplace (5) where they are published to be discovered. Once a consumer has located the data product that interests him, he can request access to the output ports (6) available in the data product.
 
-[caption id="attachment_2480" align="aligncenter" width="1236"]<a href="https://carlosgrande.me/wp-content/uploads/2022/10/DataProductEcosystem_DPT.png"><img src="https://carlosgrande.me/wp-content/uploads/2022/10/DataProductEcosystem_DPT.png" alt="Data Product Ecosystem" width="1236" height="508" class="size-full wp-image-2480" /></a> Data Product Ecosystem[/caption]
-
+![Data Product Ecosystem](../../assets/images/resources/data-product-ecosystem.png){ .image-caption }
 
 
 ## 4. Types of Data Products
+
 There isn't just one type of data product, as each data product may have different requirements and capabilities. We can classify them based on how aligned they are to consumption or origins and by the purpose they serve.
 
 ### 4.1 Classification by data alignment
+
 Compared to traditional architectures, the Data Mesh paradigm does not seek a "Single Source of Truth." It is essential to consider that in a Data Mesh architecture, the concept of the golden record is discarded in order to provide data domains that are independent of each other and publish their fully interoperable data products. In this way, data products break the silos of traditional architectures and can be more or less aggregated.
 
 - **Source-aligned:** Analytical data reflecting the business facts generated by the operational systems. This is also called native data product.
@@ -75,6 +76,7 @@ Compared to traditional architectures, the Data Mesh paradigm does not seek a "S
 
 
 ### 4.2 Classification by consuming purpose
+
 Simon O'Regan makes a great classification of data product typologies based on their purpose. In this article Designing Data Products by Simon O'Regan, you can see in-depth this classification of types of data products. 
 
 - **Raw data:** exposed data as it is in the operational systems with small processing or cleansing steps, most of the processing work is done on the consumer's side.

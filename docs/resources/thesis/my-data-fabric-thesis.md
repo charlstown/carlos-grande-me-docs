@@ -4,13 +4,7 @@ toc_depth: 2
 
 # My data fabric thesis
 
-<div class='image-caption image-centered image-width-24' markdown>
-
-- ![data-fabric](https://carlosgrande.me/wp-content/uploads/2022/07/DataFabric_MainTitle.png)
-- My data fabric thesis
-{ .caption }
-
-</div>
+![data-fabric](https://carlosgrande.me/wp-content/uploads/2022/07/DataFabric_MainTitle.png)
 
 After Posting my thesis about [Data Mesh](https://carlosgrande.me/my-data-mesh-thesis/), I realized Data fabric is often mistaken for Data Mesh. There is a lot of confusion between these two models, so I decided to do some research about the Data Fabric architectural approach.
 
