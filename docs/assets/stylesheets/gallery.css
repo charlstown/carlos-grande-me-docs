@@ -1,19 +1,17 @@
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value as needed */
-    grid-template-rows: repeat(3, auto); /* Creates 3 rows of automatic height */
     gap: .5rem; /* Space between images */
     box-sizing: border-box;
 }
 
 .gallery .parent-caption {
     width: 100%;
-    height: 250px; /* Fixed height */
+    height: 100%;
     overflow: hidden; /* Hides any overflow */
     display: block!important;
 }
 
-.gallery .parent-caption:hover img {
+.effect-zoom .parent-caption:hover img {
   transform: scale(1.15); /* Adjust the scale as needed */
 }
 
@@ -32,3 +30,23 @@
     object-fit: cover; /* Crops the image to fit the container while preserving the aspect ratio */
     transition: transform 0.5s ease;
   }
+
+.grid-auto {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax value as needed */
+  grid-template-rows: 250px; /* Creates 3 rows of automatic height */
+}
+
+.grid-1 {
+  grid-template-columns: repeat(1, auto); /* Adjust minmax value as needed */
+  grid-template-rows: auto;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Adjust minmax value as needed */
+  grid-auto-rows: 350px;
+}
+
+/*
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+grid-template-rows: repeat(3, auto);
+*/

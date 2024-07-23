@@ -1,3 +1,7 @@
+---
+toc_depth: 2
+---
+
 # My data product thesis
 
 ![Data Product Thesis](https://carlosgrande.me/wp-content/uploads/2022/09/DataProductThesis.png){ .image-width-24 }

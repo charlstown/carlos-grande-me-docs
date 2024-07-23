@@ -21,7 +21,7 @@ The project initially served as a self-promotional piece, but has evolved fat be
 
 ## Gallery
 
-<div class="gallery" markdown>
+<div class="gallery grid-2 effect-zoom" markdown>
 
 ![Subway taxis 2007](../../assets/images/references/felton-subway-taxis.jpg){ .image-caption }
 

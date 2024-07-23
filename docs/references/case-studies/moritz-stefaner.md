@@ -18,7 +18,7 @@ Design is much more than mere decoration. Often, people think of design as is th
 
 ## Gallery
 
-<div class="gallery" markdown>
+<div class="gallery grid-2 effect-zoom" markdown>
 
 ![Peak Spotting: Data on rails](../../assets/images/references/stefaner-peak-spotting-1.png){ .image-caption }
 

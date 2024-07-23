@@ -17,7 +17,7 @@ One of the greatest challenges I face in my work is finding a balance that does 
 
 ## Gallery
 
-<div class="gallery" markdown>
+<div class="gallery grid-2 effect-zoom" markdown>
 
 ![Eurozone GDP and debt stat](../../assets/images/references/willers-euro-recesion.png){ .image-caption }
 

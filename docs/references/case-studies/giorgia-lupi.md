@@ -17,7 +17,7 @@ Whenever the main purpose of visualizations is to open readers' eyes yo new know
 
 ## Gallery
 
-<div class="gallery" markdown>
+<div class="gallery grid-2 effect-zoom" markdown>
 
 ![Novels and graduates](../../assets/images/references/lupi-novels-and-graduates.jpg){ .image-caption }
 

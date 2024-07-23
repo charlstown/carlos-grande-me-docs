@@ -26,7 +26,7 @@ To develop the model, I defined these four Python classes:
 
 As a graphic support I drew a pattern with the classes, their methods and the calls between the different components in the infographic below.
 
-![OOP Rubik's Cube](../assets/images/projects/AbstractSyntaxTree.png)
+![Architecture of the Rubik's cube code](../assets/images/projects/AbstractSyntaxTree.png){ .image-caption }
 
 
 ## Cube notation model
@@ -107,7 +107,7 @@ t2l3b1r2
 
 The final output displayed was way faster than I expected. The trick of regenerating the whole geometry for each move works like a charm is capable of applying over a hundred permutations in less than 30 seconds. Here is a capture of the final output applying twenty random moves to the cube.
 
-![Rubiks cube animation result](../assets/images/projects/rubiks-cube-animation.gif)
+![Rubiks cube animation result](../assets/images/projects/rubiks-cube-animation.gif){ .image-caption }
 
 ---
 

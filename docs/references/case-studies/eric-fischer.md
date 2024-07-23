@@ -10,7 +10,7 @@ Fischer represents data and geotags by colors and points using a code he wrote b
 
 ## Gallery
 
-<div class="gallery" markdown>
+<div class="gallery grid-2 effect-zoom" markdown>
 
 ![See something or say something: Madrid](../../assets/images/references/fischer-madrid.jpg){ .image-caption }
 

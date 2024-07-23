@@ -20,7 +20,7 @@ Just like everyone else, I love to remember and talk about my memories. The conc
 
 ## Gallery
 
-<div class="gallery" markdown>
+<div class="gallery grid-2 effect-zoom" markdown>
 
 ![Dreaming archive](../../assets/images/references/anadol-dreaming-archive.jpg){ .image-caption }
 

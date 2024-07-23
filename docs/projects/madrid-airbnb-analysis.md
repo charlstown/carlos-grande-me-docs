@@ -43,14 +43,15 @@ After the analysis, you are able to understand the 180 thousand rows from the da
 - Figure 7: final digital cartography showing the affection of each urban square.
 - Figure 5: graph comparison showing the traditional renting vs. p2p renting evolution from 2015 to 2018.
 
+<div class="gallery grid-1" markdown>
 
+![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-animation.gif){ .image-caption }
 
-![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-animation.gif){data-gallery="taipei"}
+![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-digital-cartography.png){ .image-caption }
 
-![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-digital-cartography.png){data-gallery="taipei"}
+![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-evolution-1518.png){ .image-caption }
 
-![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-evolution-1518.png){data-gallery="taipei"}
-
+</div>
 
 
 ### Other links

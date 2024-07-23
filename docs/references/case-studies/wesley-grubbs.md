@@ -18,7 +18,7 @@ It never ceases to amaze me how frequent the importance of good design and esthe
 
 ## Gallery
 
-<div class="gallery" markdown>
+<div class="gallery grid-2 effect-zoom" markdown>
 
 ![NYC daily complaint calls](../../assets/images/references/grubbs-nyc-calls-1.jpg){ .image-caption }
 

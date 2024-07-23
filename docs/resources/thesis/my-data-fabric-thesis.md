@@ -1,4 +1,8 @@
-# My data fabric thesis { .text-center }
+---
+toc_depth: 2
+---
+
+# My data fabric thesis
 
 <div class='image-caption image-centered image-width-24' markdown>
 
