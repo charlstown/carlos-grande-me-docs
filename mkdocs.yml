@@ -87,11 +87,13 @@ plugins:
 # css
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/output_code.css
 
 # javascript
 extra_javascript:
   - assets/javascripts/extra.js
-  - assets/javascripts/image-caption.js
+  - assets/javascripts/image_caption.js
+  - assets/javascripts/output_code.js
 
 # Copyright message
 copyright: Copyright &copy; carlosgrande.me - 2024

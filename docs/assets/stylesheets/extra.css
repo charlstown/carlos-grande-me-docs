@@ -90,12 +90,13 @@ p:has(.bottom) {
   padding: .2rem .6rem; /* Some padding for better spacing */
   box-sizing: border-box; /* Ensure padding doesn't affect the total width */
   width: 100%; /* Make the caption span the full width */
+  font-size: smaller;
   text-align: right; /* Right align the text within the caption */
   font-style: italic;
 }
 /* caption image */
 
-
+/* steps */
 .steps ul {
   list-style-type: none;
   counter-reset: item;
@@ -125,6 +126,7 @@ font-size: .7rem;
   margin-bottom: 1rem!important;
   position: relative;
   padding-left: 30px;
+  margin-left: 0!important;
 }
 
 .unit {
@@ -155,6 +157,8 @@ font-size: .7rem;
   position: relative;
   margin-left: 0!important;
 }
+
+/* steps */
 
 .output {
 width: 200px;
