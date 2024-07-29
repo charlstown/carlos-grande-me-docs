@@ -12,4 +12,3 @@
 - [Mkdocs introductory tutorial](https://www.mkdocs.org/getting-started/)
 - [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/)
 
-</br>

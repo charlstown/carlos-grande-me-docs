@@ -7,7 +7,7 @@ Stefaner has a quite diverse background. After school, he applied for art school
 ---
 
 ## Truth and Beauty. (Moritz Stefaner)
-</br>
+
 
 To me, truth and beauty are equally important. In a visualization project, if you have only one without the other, you are not done yet.
 Buckminister Fuller, the famous designer and systems theorist, said once, in essence, that he didn't think about beauty when he started a design, engineering, or architectural project. He was just concerned with its function. He wanted to find the right way to devise the product. But then, in the end, if the solution he came up with was not beautiful, he knew something was wrong. For Buckminister Fuller, in some sense, beauty was an indicator of functionality and truth.

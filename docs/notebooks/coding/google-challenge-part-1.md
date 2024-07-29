@@ -8,7 +8,7 @@
 
 </div>
 
-</br>
+
 I've been recently working with my friend [Álvaro Simón Merino](https://alvarosimon.me/) doing some research in Google about coding. We got an unusual message on the google site background, with a message:
 > You're speaking our language. Up for a challenge?
 
@@ -92,7 +92,7 @@ solution("wrw blf hvv ozhg mrtsg'h vkrhlwv?")
 ```
 *"did you see last night's episode?"*
 
-</br>
+
 ## Level II
 ### Challenge 2: Bunny Worker Locations
 
@@ -111,7 +111,7 @@ For example, the bunny worker at (1, 1) has ID 1, the bunny worker at (3, 2) has
 
 Write **a function solution(x, y) which returns the worker ID of the bunny at location (x, y). Each value of x and y will be at least 1 and no greater than 100,000.** Since the worker ID can be very large, return your solution as a string representation of the number.
 
-</br>
+
 ### Test cases
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
@@ -169,7 +169,7 @@ solution(2, 3)
 ```
 *"8"*
 
-</br>
+
 ### Challenge 2: Don't Get Volunteered!
 
 As a henchman on Commander Lambda's space station, you're expected to be resourceful, smart, and a quick thinker. It's not easy building a doomsday device and ordering the bunnies around at the same time, after all! In order to make sure that everyone is sufficiently quick-witted, Commander Lambda has installed new flooring outside the henchman dormitories. It looks like **a chessboard**, and every morning and evening you have to solve a new movement puzzle in order to cross the floor. That would be fine if you got to be the rook or the queen, but instead, **you have to be the knight**. Worse, if you take too much time solving the puzzle, you get "volunteered" as a test subject for the LAMBCHOP doomsday device!

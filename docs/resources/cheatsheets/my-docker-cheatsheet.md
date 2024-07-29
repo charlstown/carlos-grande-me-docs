@@ -1,6 +1,6 @@
 # Docker cheatsheet
 
-![My Docker cheat sheet](../../assets/images/resources/cheatsheet-docker-mockup.png){ .image-width-24 }
+![My Docker cheat sheet](../../assets/images/resources/cheat-sheet-docker-mockup.png){ .image-width-24 }
 
 With this post, I wanted to share my latest Docker cheatsheet and explain some basics I founded so useful.
 
@@ -8,7 +8,7 @@ With this post, I wanted to share my latest Docker cheatsheet and explain some b
 
 ## The Docker cheatsheet
 
-![My docker cheatsheet](../../assets/images/resources/Cheatsheat_Docker.png){ .image-caption }
+![My docker cheatsheet](../../assets/images/resources/docker-cheatsheet.png){ .image-caption }
 
 [Download the cheatsheet](../../assets/docs/cheatsheet-docker.pdf){:download="Docker Cheatsheet" .md-button }
 

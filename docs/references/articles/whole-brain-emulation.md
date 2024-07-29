@@ -2,7 +2,7 @@
 
 ![Robot](https://carlosgrande.me/wp-content/uploads/2021/01/ba1e4da68a8260760c07e20617db0893-186x300.jpg)
 
-</br>
+
 
 I wanted to post some conclusions from a recent book I've been reading. **The Technological Singularity** (Shanahan, M. 2015). A singularity in human society would occur if the exponential technological progress brought such a dramatic change that human affairs as we understand them today came to an end. In this case, the *whole brain emulation theory* could make a singularity in our human society.
 
@@ -15,7 +15,7 @@ The idea behind the *whole brain emulation theory (WBE)* is to make an exact wor
 Shanahan says that there are three stages to achieve the whole brain emulation **mapping, simulation, and embodiment**.
 
 [caption id="attachment_1738" align="aligncenter" width="413"]<a href="https://carlosgrande.me/wp-content/uploads/2021/01/SuccesLevelsWBE.jpg"><img src="https://carlosgrande.me/wp-content/uploads/2021/01/SuccesLevelsWBE.jpg" alt="Success levels for WBE." width="413" height="610" class="size-full wp-image-1738" /></a> Success levels for WBE.<br />Sandberg, A. and Bostrom, N. (2008), "Whole Brain Emulation: A Roadmap".[/caption]
-</br>
+
 
 **The first stage is to map the brain of the subject at high spatial resolution**. The result will be an exquisitely detailed blueprint of a particular brain at a particular time.
 

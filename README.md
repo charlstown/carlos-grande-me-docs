@@ -6,7 +6,7 @@
 
 An mkdocs-powered site featuring projects, articles, resources, and ideas focused on data science, visualization, business, and coding.
 
-</br>
+
 
 <details><summary><b>Readme contents</b></summary>
 
@@ -20,7 +20,7 @@ An mkdocs-powered site featuring projects, articles, resources, and ideas focuse
 
 </details>
 
-</br>
+
 
 ---
 
