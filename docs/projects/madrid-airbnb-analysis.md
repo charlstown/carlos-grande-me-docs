@@ -10,7 +10,7 @@ This research aims to process big data information from the city using data desi
 
 ### Objectives
 
-Test case presenting the Data Design as an urban tool and it\'s application. Applying the opportunistic sensing method where all the data used in the project was generated before for another purpose to study the Airbnb growth data analysis in Madrid.
+Test case presenting the Data Design as an urban tool and it's application. Applying the opportunistic sensing method where all the data used in the project was generated before for another purpose to study the Airbnb growth data analysis in Madrid.
 
 #### Specific objectives:
 

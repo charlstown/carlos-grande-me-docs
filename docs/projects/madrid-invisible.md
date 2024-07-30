@@ -6,7 +6,7 @@ Madrid invisible, data analysis of 230.000 complaints called in to 010, the muni
 
 ![Análisis de 230.000 llamadas al 010, el teléfono de servicios municipales de Madrid, 2018.](../assets/images/projects/madrid-invisible.jpeg){ .image-caption }
 
-- - - - - -
+---
 
 ##### REFERENCES & OTHE LINKS:
 

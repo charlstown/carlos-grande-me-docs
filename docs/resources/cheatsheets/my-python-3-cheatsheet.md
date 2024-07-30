@@ -13,7 +13,7 @@ I wanted to post my Python3 cheat sheet and some useful functions I use almost e
 
 [Download the cheatsheet](../../assets/docs/cheatsheet-python.pdf){:download="Docker Cheatsheet" .md-button }
 
-- - - - - -
+---
 
 ## Usefull scripts:
 
@@ -184,7 +184,7 @@ invert_dictionary(dictionary)
  0: ['b', 'c']}
 ```
 
-- - - - - -
+---
 
 ## OTHER LINKS
 

@@ -2,7 +2,7 @@
 
 In this post, I wanted to introduce **Eric Fischer**, a data designer and software developer at San Francisco. His works have been published in the Modern Art Museum, in Wired magazine, and other online magazine publications. Fischer is particularly interested in using geographic data to understand and improve pedestrian traffic and movements within the cities. Fischer never expected his private reflections to become in national art, but his data maps uploaded to your account Flickr, have been praised by art blogs, imitated by the New York Times, and exhibited at the Museum of Modern Art. Fisher creates maps by extracting resources such as the US data census UU., Flickr photographs, and tweets.
 
-Fischer manages to perfectly represent all hidden information from the cities, he has published around 100 city maps in his investigations. He wrote a software that allowed him to represent all these maps and he developed it to such a level where It has become a payment tool known as MapBox. This tool provides an opportunity for data scientists and engineers leaving them a powerful tool capable of displaying dynamic maps in real-time. - - - - - -
+Fischer manages to perfectly represent all hidden information from the cities, he has published around 100 city maps in his investigations. He wrote a software that allowed him to represent all these maps and he developed it to such a level where It has become a payment tool known as MapBox. This tool provides an opportunity for data scientists and engineers leaving them a powerful tool capable of displaying dynamic maps in real-time. ---
 
 ## The Washington Post: Eric Fischer uses maps
 

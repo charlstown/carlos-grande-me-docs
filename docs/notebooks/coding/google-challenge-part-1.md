@@ -266,7 +266,7 @@ solution(0, 7)
 *5*
 
 
-- - - - - -
+---
 
 ## References and links
 

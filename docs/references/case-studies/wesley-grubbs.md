@@ -8,7 +8,7 @@ Built upon his life experiences, education and his innate interest in the brain 
 
 ## A process Dedicated to Cognition and Memory. By Wesley Grubbs
 
-The most effective form of communication is a visual one. Even when we speak we use visual metaphors to help our communication (i.e., to bark up the wrong tree or to push one\'s buttons). Focusing on a visual that helps bring attention to the story can also help establish a memory of the story, and this is the key aspect we take into consideration in every visualization we build.
+The most effective form of communication is a visual one. Even when we speak we use visual metaphors to help our communication (i.e., to bark up the wrong tree or to push one's buttons). Focusing on a visual that helps bring attention to the story can also help establish a memory of the story, and this is the key aspect we take into consideration in every visualization we build.
 
 [...]
 

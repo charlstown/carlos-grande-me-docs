@@ -235,7 +235,7 @@ Data Fabric isn't a static architecture although it has some related terms. At t
 
 ## 8. Discovery Roadmap
 
-To elaborate this Thesis, I have been recollecting links and resources about the Data Fabric architecture. I wanted to share the discovery path I\'ve followed to understand the Data Fabric implications.
+To elaborate this Thesis, I have been recollecting links and resources about the Data Fabric architecture. I wanted to share the discovery path I've followed to understand the Data Fabric implications.
 
 
 ### 8.1 Introductory content
@@ -267,7 +267,7 @@ To elaborate this Thesis, I have been recollecting links and resources about the
 - [Data Fabric TechTarget](https://searchdatamanagement.techtarget.com/definition/data-fabric)
 - [Data Fabric: What is it and Why Do You Need it?](https://www.striim.com/data-fabric-what-is-it-and-why-do-you-need-it/)
 
-- - - - - -
+---
 
 
 ## References and links
