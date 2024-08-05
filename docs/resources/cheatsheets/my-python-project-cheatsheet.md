@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Python project cheatsheet
 
 ![My Python 3 project structure](../../assets/images/resources/cheatsheet-python-project-portrait.jpeg){ .image-width-24 }

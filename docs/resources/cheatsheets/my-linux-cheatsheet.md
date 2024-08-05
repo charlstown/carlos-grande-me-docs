@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Linux cheatsheet
 
 With this post, I wanted to share my latest GNU Bash cheatsheet, with my most used commands at my daily projects.

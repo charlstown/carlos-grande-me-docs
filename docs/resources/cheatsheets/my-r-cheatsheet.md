@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # R cheatsheet
 
 ![My R cheat sheet](../../assets/images/resources/cheatsheet-r-portrait.jpeg){ .image-width-24 }

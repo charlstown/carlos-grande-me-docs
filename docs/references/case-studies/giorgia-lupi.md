@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Giorgia Lupi
 
 In this post, I wanted to introduce **Giorgia Lupi**, Co-Founder and Design Director at Accurat, she is an information designer and researcher. Her work in information visualization frequently crosses the divide between digital and print, exploring visual models and metaphors to represent dense and rich data-driven stories.

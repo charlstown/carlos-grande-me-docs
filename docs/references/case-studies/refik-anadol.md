@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Refik Anadol
 
 In this post, I wanted to introduce **Refik Anadol**,  is a media artist, director, and pioneer in the aesthetics of machine intelligence. His main work locates creativity at the intersection of humans and machines. He takes the data that flows around us as his primary material and uses Neural Networks to design with a thinking brush. Refik offers us radical visualizations of our digitized memories and expanding the possibilities of architecture, narrative, and the body in motion.

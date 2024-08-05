@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Moritz Stefaner
 
 In this post, I wanted to introduce **Moritz Stefaner**, a designer dedicated to data visualization and big data. He works as a designer, consultant, and researcher, collaborating and helping organizations and companies to find the real meaning of the data he works with.

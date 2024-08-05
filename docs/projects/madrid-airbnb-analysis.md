@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Madrid Airbnb analysis
 
 This research aims to process big data information from the city using data design as an urban analysis tool. For this project, it is proposed to use this tool on big data from tourist rentals in the city of Madrid, to code the information collected and display it under a visual language that allows us to see the relationships and links that occur at the urban level.

@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Git cheatsheet
 
 ![My Git cheat sheet](../../assets/images/resources/cheatsheet-git-mockup.jpg){ .image-width-24 }
@@ -7,7 +11,7 @@ With this post, I wanted to share my latest Git cheatsheet, with my most used co
 
 ### The Git cheat sheet
 
-![My git cheatsheet](../../assets/images/resources/Cheatsheat_Docker.png){ .image-caption }
+![My git cheatsheet](../../assets/images/resources/cheatsheet-git.png){ .image-caption }
 
 [Download the cheatsheet](../../assets/docs/cheatsheet-git.pdf){:download="Git Cheatsheet" .md-button }
 

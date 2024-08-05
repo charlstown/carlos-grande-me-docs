@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Business model canvas
 
 With this post, I wanted to share my latest Business Model Canvas Design and explain all the sections that you should fill to organize and develop your project.

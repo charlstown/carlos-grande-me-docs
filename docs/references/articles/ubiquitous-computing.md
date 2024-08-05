@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Ubiquitous computing
 
 ![Don](https://carlosgrande.me/wp-content/uploads/2020/01/Ubicomp01_Thumnail-300x300.jpg)

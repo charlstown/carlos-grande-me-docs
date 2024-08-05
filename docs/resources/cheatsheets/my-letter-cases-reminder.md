@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Letter cases reminder
 
 ![Camel case, snake case and other popular letter cases](../../assets/images/resources/letter-cases-portrait.jpg)

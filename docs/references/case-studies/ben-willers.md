@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Ben Willers
 
 In this post, I wanted to introduce **Ben Willers**, a freelance graphic and data designer in the UK, who enjoys exploring and creating data-rich visualizations. He has published amazing big data design works full of inspiration capable of giving shape and meaning to Big Data. Ben Willers as a data designer believes stories in data should be built on a solid foundation of facts. As a result allows the audience to arrive at their own conclusions based on the evidence provided.

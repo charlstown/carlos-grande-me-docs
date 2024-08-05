@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # My Python template
 
 ![Cookiecutter Python template](../../assets/images/resources/template-python-portrait.png){ .image-width-24 }

@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # SQL cheatsheet
 
 ![My SQL cheat sheet](../../assets/images/resources/cheatsheet-sql-portrait.jpeg){ .image-width-24 }

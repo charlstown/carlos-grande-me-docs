@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Wesley Grubbs
 
 In this post, I wanted to introduce **Wesley Grubbs**, is an artist, data visualizer and provocateur based in Berkeley. Grubbs founded in 2007 the data visualization studio Pitch Interactive, he is in charge of technical and creative direction and managing all crucial aspects that define the project scope, client expectations, deliverables and story telling.

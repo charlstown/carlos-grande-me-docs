@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # My rubiks cube model
 
 ![Rubik's Cube Notebook](../assets/images/projects/RubiksCubeMockup.png)

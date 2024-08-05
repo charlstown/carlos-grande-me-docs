@@ -1,6 +1,10 @@
+---
+description: none
+---
+
 # Docker cheatsheet
 
-![My Docker cheat sheet](../../assets/images/resources/cheat-sheet-docker-mockup.png){ .image-width-24 }
+![My Docker cheat sheet](../../assets/images/resources/cheatsheet-docker-portrait.png){ .image-width-24 }
 
 With this post, I wanted to share my latest Docker cheatsheet and explain some basics I founded so useful.
 

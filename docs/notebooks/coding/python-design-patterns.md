@@ -1,3 +1,7 @@
+---
+description: none
+---
+
 # Python design patterns
 
 <div class='image-caption image-centered image-width-24' markdown>
