@@ -1,3 +1,10 @@
+---
+title: The chinese room
+description: none
+date: 2019-01-01
+thumbnail: /assets/images/resources/data-mesh-portrait.png
+---
+
 # The chinese room
 
 ![chineseroom](https://carlosgrande.me/wp-content/uploads/2020/02/ChineseRoom_Square.jpg)

@@ -1,5 +1,8 @@
 ---
+title: Python design patterns
 description: none
+date: 2019-01-01
+thumbnail: /assets/images/resources/data-mesh-portrait.png
 ---
 
 # Python design patterns
@@ -17,6 +20,7 @@ I wanted to share a post with some notes from the **Jungwoo Ryoo** Python Design
 ---
 
 ## 1. Creational Design Patterns
+
 Creational patterns provides essential information regarding the Class instantiation or the object instantiation. Class Creational Pattern and the Object Creational pattern is the major categorization of the Creational Design Patterns. While class-creation patterns use inheritance effectively in the instantiation process, object-creation patterns use delegation effectively to get the job done.
 
 

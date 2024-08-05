@@ -1,3 +1,10 @@
+---
+title: Google challenge part 1
+description: none
+date: 2019-01-01
+thumbnail: /assets/images/resources/data-mesh-portrait.png
+---
+
 # Google challenge part 1
 
 <div class='image-caption image-centered image-width-24' markdown>

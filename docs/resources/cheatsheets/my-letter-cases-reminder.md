@@ -1,5 +1,8 @@
 ---
+title: Letter cases reminder
 description: none
+date: 2019-01-01
+thumbnail: /assets/images/resources/letter-cases-portrait.jpg
 ---
 
 # Letter cases reminder

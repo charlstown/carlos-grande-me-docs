@@ -1,5 +1,0 @@
----
-description: none
----
-
-# Team topologies

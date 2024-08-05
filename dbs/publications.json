@@ -1,22 +1,380 @@
-{
-  "publications": [
-      {
-          "title": "Reinforcement learning basics",
-          "image_link": "https://carlosgrande.me/wp-content/uploads/2023/01/really-crappy-robots_Square.png",
-          "date": "2024-01-15",
-          "category": "Articles"
-      },
-      {
-          "title": "My Python Template",
-          "image_link": "https://carlosgrande.me/wp-content/uploads/2022/12/CookiecutterPyTemplate.png",
-          "date": "2023-08-22",
-          "category": "Case studies"
-      },
-      {
-          "title": "My Data Product Thesis",
-          "image_link": "https://carlosgrande.me/wp-content/uploads/2022/09/DataProductThesis.png",
-          "date": "2024-05-10",
-          "category": "Projects"
-      }
-  ]
-}
+[
+    {
+        "id": "business-model-design",
+        "src": "notebooks/business/business-model-design.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/business/business-model-design",
+        "title": "Business model design",
+        "date": "2020-01-01",
+        "thumbnail": "ass"
+    },
+    {
+        "id": "team-topologies",
+        "src": "notebooks/business/team-topologies.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/business/team-topologies",
+        "title": "Team topologies",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "google-challenge-part-1",
+        "src": "notebooks/coding/google-challenge-part-1.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/coding/google-challenge-part-1",
+        "title": "Google challenge part 1",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "python-design-patterns",
+        "src": "notebooks/coding/python-design-patterns.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/coding/python-design-patterns",
+        "title": "Python design patterns",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "python-generators",
+        "src": "notebooks/coding/python-generators.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/coding/python-generators",
+        "title": "Python generators",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "azure-big-picture",
+        "src": "notebooks/data-architecture/azure-big-picture.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/data-architecture/azure-big-picture",
+        "title": "Azure Big Picture",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "cloud-migration-planning",
+        "src": "notebooks/data-architecture/cloud-migration-planning.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/data-architecture/cloud-migration-planning",
+        "title": "Cloud migration planning",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "dimensionality-reduction-using-pca",
+        "src": "notebooks/data-science/dimensionality-reduction-using-pca.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/data-science/dimensionality-reduction-using-pca",
+        "title": "Dimensionality reduction using PCA",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "machine-learning-basics",
+        "src": "notebooks/data-science/machine-learning-basics.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/data-science/machine-learning-basics",
+        "title": "Machine learning basics",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "reinforcement-learning-basics",
+        "src": "notebooks/data-science/reinforcement-learning-basics.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/data-science/reinforcement-learning-basics",
+        "title": "Reinforcement learning basics",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "sample-size-determination",
+        "src": "notebooks/data-science/sample-size-determination.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/data-science/sample-size-determination",
+        "title": "Sample size determination",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "text-mining-sentiment-analysis",
+        "src": "notebooks/data-science/text-mining-sentiment-analysis.md",
+        "category": "notebooks",
+        "link": "/carlosgrande.me/notebooks/data-science/text-mining-sentiment-analysis",
+        "title": "Text mining sentiment analysis",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "madrid-airbnb-analysis",
+        "src": "projects/madrid-airbnb-analysis.md",
+        "category": "projects",
+        "link": "/carlosgrande.me/projects/madrid-airbnb-analysis",
+        "title": "Team topologies",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "madrid-invisible",
+        "src": "projects/madrid-invisible.md",
+        "category": "projects",
+        "link": "/carlosgrande.me/projects/madrid-invisible",
+        "title": "Team topologies",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "my-rubiks-cube-model",
+        "src": "projects/my-rubiks-cube-model.md",
+        "category": "projects",
+        "link": "/carlosgrande.me/projects/my-rubiks-cube-model",
+        "title": "Team topologies",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "death-of-distance",
+        "src": "references/articles/death-of-distance.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/articles/death-of-distance",
+        "title": "Death of distance",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "space-of-flow",
+        "src": "references/articles/space-of-flow.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/articles/space-of-flow",
+        "title": "Space of flows",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "the-chinese-room",
+        "src": "references/articles/the-chinese-room.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/articles/the-chinese-room",
+        "title": "The chinese room",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "ubiquitous-computing",
+        "src": "references/articles/ubiquitous-computing.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/articles/ubiquitous-computing",
+        "title": "Ubiquitous computing",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "whole-brain-emulation",
+        "src": "references/articles/whole-brain-emulation.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/articles/whole-brain-emulation",
+        "title": "Whole brain emulation",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "3000000-kms",
+        "src": "references/case-studies/3000000-kms.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/case-studies/3000000-kms",
+        "title": "300.000 Km/s studio",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "ben-willers",
+        "src": "references/case-studies/ben-willers.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/case-studies/ben-willers",
+        "title": "Ben Willers",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "eric-fischer",
+        "src": "references/case-studies/eric-fischer.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/case-studies/eric-fischer",
+        "title": "Eric Fischer",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "giorgia-lupi",
+        "src": "references/case-studies/giorgia-lupi.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/case-studies/giorgia-lupi",
+        "title": "Giorgia Lupi",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "moritz-stefaner",
+        "src": "references/case-studies/moritz-stefaner.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/case-studies/moritz-stefaner",
+        "title": "Moritz Stefaner",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "nicholas-felton",
+        "src": "references/case-studies/nicholas-felton.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/case-studies/nicholas-felton",
+        "title": "Nicholas Felton",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "refik-anadol",
+        "src": "references/case-studies/refik-anadol.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/case-studies/refik-anadol",
+        "title": "Refik Anadol",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "wesley-grubbs",
+        "src": "references/case-studies/wesley-grubbs.md",
+        "category": "references",
+        "link": "/carlosgrande.me/references/case-studies/wesley-grubbs",
+        "title": "Wesley Grubbs",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "my-business-model-canvas",
+        "src": "resources/cheatsheets/my-business-model-canvas.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-business-model-canvas",
+        "title": "Business model canvas",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "my-docker-cheatsheet",
+        "src": "resources/cheatsheets/my-docker-cheatsheet.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-docker-cheatsheet",
+        "title": "Docker cheatsheet",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/cheatsheet-docker-portrait.png"
+    },
+    {
+        "id": "my-git-cheatsheet",
+        "src": "resources/cheatsheets/my-git-cheatsheet.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-git-cheatsheet",
+        "title": "Git cheatsheet",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/cheatsheet-git-mockup.jpg"
+    },
+    {
+        "id": "my-letter-cases-reminder",
+        "src": "resources/cheatsheets/my-letter-cases-reminder.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-letter-cases-reminder",
+        "title": "Letter cases reminder",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/letter-cases-portrait.jpg"
+    },
+    {
+        "id": "my-linux-cheatsheet",
+        "src": "resources/cheatsheets/my-linux-cheatsheet.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-linux-cheatsheet",
+        "title": "Linux cheatsheet",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/cheatsheet-linux-portrait.png"
+    },
+    {
+        "id": "my-python-3-cheatsheet",
+        "src": "resources/cheatsheets/my-python-3-cheatsheet.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-python-3-cheatsheet",
+        "title": "Python 3 cheatsheet",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/cheatsheet-python-portrait.png"
+    },
+    {
+        "id": "my-python-project-cheatsheet",
+        "src": "resources/cheatsheets/my-python-project-cheatsheet.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-python-project-cheatsheet",
+        "title": "Python project cheatsheet",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/cheatsheet-python-project-portrait.jpeg"
+    },
+    {
+        "id": "my-r-cheatsheet",
+        "src": "resources/cheatsheets/my-r-cheatsheet.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-r-cheatsheet",
+        "title": "R cheatsheet",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/cheatsheet-r-portrait.jpeg"
+    },
+    {
+        "id": "my-sql-cheatsheet",
+        "src": "resources/cheatsheets/my-sql-cheatsheet.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/cheatsheets/my-sql-cheatsheet",
+        "title": "SQL cheatsheet",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/cheatsheet-sql-portrait.jpeg"
+    },
+    {
+        "id": "my-python-template",
+        "src": "resources/templates/my-python-template.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/templates/my-python-template",
+        "title": "My Python template",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "my-data-fabric-thesis",
+        "src": "resources/thesis/my-data-fabric-thesis.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/thesis/my-data-fabric-thesis",
+        "title": "My data fabric thesis",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-fabric-portrait.png"
+    },
+    {
+        "id": "my-data-mesh-thesis",
+        "src": "resources/thesis/my-data-mesh-thesis.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/thesis/my-data-mesh-thesis",
+        "title": "My data mesh thesis",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-mesh-portrait.png"
+    },
+    {
+        "id": "my-data-product-thesis",
+        "src": "resources/thesis/my-data-product-thesis.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/thesis/my-data-product-thesis",
+        "title": "My data product thesis",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/data-product-portrait.png"
+    },
+    {
+        "id": "my-favorite-screen-splitter",
+        "src": "resources/tools/my-favorite-screen-splitter.md",
+        "category": "resources",
+        "link": "/carlosgrande.me/resources/tools/my-favorite-screen-splitter",
+        "title": "Screen Splitter",
+        "date": "2019-01-01",
+        "thumbnail": "/assets/images/resources/cheatsheet-sql-portrait.jpeg"
+    }
+]

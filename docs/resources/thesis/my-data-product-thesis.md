@@ -1,4 +1,7 @@
 ---
+title: My data product thesis
+date: 2019-01-01
+thumbnail: /assets/images/resources/data-product-portrait.png
 description: none
 toc_depth: 2
 ---
