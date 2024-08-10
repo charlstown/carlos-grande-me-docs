@@ -1,71 +1,39 @@
-let page = 1;
-const limit = 5;
-let isLoading = false;
+// Global Vars
+const dataPath = 'assets/javascripts/publications.json'
 
-window.addEventListener('load', function () {
-    loadPublications();
-    window.addEventListener('scroll', handleScroll);
-});
 
-function loadPublications() {
-    if (isLoading) return;
-    isLoading = true;
-
-    fetch('https://raw.githubusercontent.com/charlstown/carlos-grande-me/main/dbs/publications.json')
+// Extracts data from the file
+function getData(url) {
+    return fetch(url)
         .then(response => response.json())
-        .then(jsonData => {
-            renderPublications(jsonData.publications);
-            page++;
-            isLoading = false;
-        })
-        .catch(error => {
-            console.error('Error fetching or parsing JSON file:', error);
-            isLoading = false;
-        });
+        .catch(error => console.error('Error fetching data:', error));
 }
 
-function renderPublications(publications) {
-    const publicationsContainer = document.getElementById('publicationsList');
-    let ul = publicationsContainer.querySelector('ul');
+// Generates the first elements
+function createGalleryElement(item) {
+  const galleryItem = document.createElement('div');
+  galleryItem.className = 'gallery-item card'; // Added 'card' class for styling
 
-    if (!ul) {
-        ul = document.createElement('ul');
-        publicationsContainer.appendChild(ul);
-    }
+  const img = document.createElement('img');
+  img.src = item.image;
+  img.alt = item.title;
 
-    publications.forEach(publication => {
-        const listItem = document.createElement('li');
-        const image = document.createElement('img');
-        const divText = document.createElement('div');
-        const title = document.createElement('h4');
-        const date = document.createElement('p');
+  const title = document.createElement('h3');
+  title.textContent = item.title;
 
-        image.src = publication.image_link;
-        title.textContent = publication.title;
-        date.textContent = publication.date;
-        date.classList.add('date-subtitle');
+  const link = document.createElement('a');
+  link.href = item.link;
+  link.appendChild(title);
 
-        // Set the category as a data attribute
-        listItem.setAttribute('data-category', publication.category);
-        // listItem.setAttribute('onclick', "handleClick()");
-        listItem.setAttribute('class', 'card-content');
-        divText.setAttribute('class', 'card-header');
+  galleryItem.appendChild(img);
+  galleryItem.appendChild(link);
 
-        divText.appendChild(title);
-        divText.appendChild(date);
-
-        listItem.appendChild(image);
-        listItem.appendChild(divText);
-
-        ul.appendChild(listItem);
-    });
+  return galleryItem;
 }
 
-function handleScroll() {
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled = window.scrollY;
-
-    if (Math.ceil(scrolled) === scrollable) {
-        loadPublications();
-    }
-}
+// Function to fetch JSON data and store it in a variable
+getData(dataPath).then(data => {
+  if (data && Array.isArray(data)) {
+    console.lo
+  }
+});

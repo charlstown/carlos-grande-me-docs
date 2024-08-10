@@ -257,13 +257,6 @@ md-container a:hover {
     cursor: pointer;
 }
 
-#publicationsList img {
-    width: 100%;
-    height: 250px; /* Fixed height */
-    object-fit: cover; /* Crop the image to fit the container */
-    margin-bottom: .6rem;
-}
-
 .date-subtitle {
     font-style: italic;
     font-size: small;

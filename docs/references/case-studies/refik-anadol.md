@@ -1,5 +1,5 @@
 ---
-title: Refik Anadol
+short_title: Refik Anadol
 description: none
 date: 2019-01-01
 thumbnail: /assets/images/resources/data-mesh-portrait.png

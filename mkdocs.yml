@@ -91,6 +91,7 @@ plugins:
 extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/output_code.css
+  - assets/stylesheets/gallery.css
 
 # javascript
 extra_javascript:

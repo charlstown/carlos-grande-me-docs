@@ -1,5 +1,5 @@
 ---
-title: Python design patterns
+short_title: Python design patterns
 description: none
 date: 2019-01-01
 thumbnail: /assets/images/resources/data-mesh-portrait.png

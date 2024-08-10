@@ -1,5 +1,5 @@
 ---
-title: Python project cheatsheet
+short_title: Python project cheatsheet
 description: none
 date: 2019-01-01
 thumbnail: /assets/images/resources/cheatsheet-python-project-portrait.jpeg

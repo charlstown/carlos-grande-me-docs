@@ -1,5 +1,5 @@
 ---
-title: Python 3 cheatsheet
+short_title: Python 3 cheatsheet
 description: none
 date: 2019-01-01
 thumbnail: /assets/images/resources/cheatsheet-python-portrait.png

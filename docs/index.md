@@ -13,43 +13,17 @@ hide:
 - Case studies
 - Notebooks
 - Projects
-- Resources
+- Resourcess
 
 </div>
 
-<div id="publicationsList" class="cards row-3">
+<div id="publicationsList" class="row-auto">
+
+    <div class="asdfasdfasdf">
+    </div>
 
 </div>
-
-<div class="cards row-3" markdown>
-
-- :material-square: **Feature One**
-
-    ---  
-
-    Description for this feature.
-
-    [:octicons-arrow-right-24: Go to the feature](#)
-    
-
-- :material-triangle: **Feature Two**  
-
-    ---  
-
-    Description for this feature.
-
-    [:octicons-arrow-right-24: Go to the feature](#)
-
-- :material-circle: **Feature Three**  
-
-    ---  
-
-    Description for this feature.
-
-    [:octicons-arrow-right-24: Go to the feature](#)
-
-</div>
-
+![](./assets/images/resources/cheatsheet-git-branches.png)
 
 <!-- Custom styles for the home site -->
-<script src="/assets/javascripts/publications.js"></script>
+<!-- <script src="/assets/javascripts/publications.js"></script> -->

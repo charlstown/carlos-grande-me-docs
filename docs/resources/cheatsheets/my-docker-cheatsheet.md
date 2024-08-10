@@ -1,5 +1,5 @@
 ---
-title: Docker cheatsheet
+short_title: Docker cheatsheet
 description: none
 date: 2019-01-01
 thumbnail: /assets/images/resources/cheatsheet-docker-portrait.png
