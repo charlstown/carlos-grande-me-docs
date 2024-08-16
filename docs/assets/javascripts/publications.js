@@ -1,5 +1,5 @@
 // Global Vars
-const dataPath = 'assets/javascripts/publications.json'
+const dataPath = 'publications.json'
 
 
 // Extracts data from the file

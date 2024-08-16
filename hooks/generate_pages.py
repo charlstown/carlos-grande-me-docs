@@ -5,7 +5,7 @@ import yaml
 import json
 
 # Global Vars
-output_path = "docs/assets/javascripts/publications.json"
+output_path = "publications.json"
 
 # Code
 def get_link(doc_file: File, site_name: str) -> str:
