@@ -95,6 +95,7 @@ extra_css:
   - assets/stylesheets/output_code.css
   - assets/stylesheets/gallery.css
   - https://unpkg.com/katex@0/dist/katex.min.css  # Katex Math
+  - assets/stylesheets/my_katex.css
 
 # javascript
 extra_javascript:

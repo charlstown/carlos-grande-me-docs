@@ -1,0 +1,4 @@
+.katex-sol {
+    border: .05rem solid var(--md-typeset-color);
+    padding: .4rem;
+}

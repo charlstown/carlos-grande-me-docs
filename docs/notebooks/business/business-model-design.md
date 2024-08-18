@@ -67,27 +67,35 @@ Now let's work on a harder estimation. This is the classic example originated by
 
 
 <div class="steps" markdown>
-- Population in Madrid province
+- Population in Madrid province ($P_m$)
 
-	$P_m \thickapprox 6,5 \cdotp 10^6$
+	$P_m \thickapprox 6,5 \cdotp 10^6${ .katex-sol }
 
-- Proportion of cars per person
+- Number ($N_{cars}$) of total cars in Madrid
 
 	$1 family \thickapprox 4 p \implies 2 cars$
 
 	$\frac{4}{2} \simeq \frac{6,5\cdotp 10^6}{N_{cars}}$
 
-	$N_{cars} \simeq \frac{6,5\cdotp 10^6}{2} \simeq 2\cdotp 10^6$
+	$N_{cars} \simeq \frac{6,5\cdotp 10^6}{2} \simeq 2\cdotp 10^6${ .katex-sol }
 
-- How often each car has a breakdown per year
+- How often ($N_{fixes}$) each car has a breakdown per year
 
 	$(1 carcheck + 1 fix)/year$
 
-	$N_{fixes} \simeq 2/year$
+	$N_{fixes} \simeq 2/year${ .katex-sol }
 
-- How much time it takes to repair each car
+- How much time ($R_t$) it takes to repair each car
 
-- How much time each mechanic works per year
+	$3h > R_t > 20h$
+
+	$R_t \simeq 8h${ .katex-sol }
+
+- How much time ($W_t$) each mechanic works per year
+
+	$1 worker \implies 40h \cdotp 50 weeks$
+
+	$W_t \simeq 2000h/year${ .katex-sol }
 
 </div>
 
