@@ -62,6 +62,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.arithmatex:  # Katex library math
+      generic: true
 
 # Hooks
 hooks:
@@ -92,12 +94,16 @@ extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/output_code.css
   - assets/stylesheets/gallery.css
+  - https://unpkg.com/katex@0/dist/katex.min.css  # Katex Math
 
 # javascript
 extra_javascript:
   - assets/javascripts/extra.js
   - assets/javascripts/image_caption.js
   - assets/javascripts/output_code.js
+  - assets/javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 # Copyright message
 copyright: Copyright &copy; carlosgrande.me - 2024
