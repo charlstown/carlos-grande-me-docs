@@ -2,3 +2,12 @@
     border: .05rem solid var(--md-typeset-color);
     padding: .4rem;
 }
+
+.katex-fsol {
+    border: 1rem solid var(--md-typeset-color);
+    padding: .4rem;
+}
+
+p:has(> .katex-sol) {
+    margin-top: 1rem!important;
+  }

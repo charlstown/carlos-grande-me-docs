@@ -71,43 +71,59 @@ Now let's work on a harder estimation. This is the classic example originated by
 
 	$P_m \thickapprox 6,5 \cdotp 10^6${ .katex-sol }
 
-- Number ($N_{cars}$) of total cars in Madrid
+- Number of total cars in Madrid ($N_{cars}$)
 
-	$1 family \thickapprox 4 p \implies 2 cars$
+	$1 family \thickapprox 4 people \implies 2 cars$
 
 	$\frac{4}{2} \simeq \frac{6,5\cdotp 10^6}{N_{cars}}$
 
-	$N_{cars} \simeq \frac{6,5\cdotp 10^6}{2} \simeq 2\cdotp 10^6${ .katex-sol }
+	$N_{cars} \simeq \frac{6,5\cdotp 10^6}{2} \simeq 3,25\cdotp 10^6${ .katex-sol }
 
-- How often ($N_{fixes}$) each car has a breakdown per year
+- How often each car has a breakdown per year ($N_{fixes}$)
 
 	$(1 carcheck + 1 fix)/year$
 
 	$N_{fixes} \simeq 2/year${ .katex-sol }
 
-- How much time ($R_t$) it takes to repair each car
+- How much time it takes to repair each car ($t_{repair}$)
 
-	$3h > R_t > 20h$
+	$3h > t_{repair} > 20h$
 
-	$R_t \simeq 8h${ .katex-sol }
+	$t_{repair} \simeq 8h${ .katex-sol }
 
-- How much time ($W_t$) each mechanic works per year
+- How much time each mechanic works per year ($t_{work}$)
 
 	$1 worker \implies 40h \cdotp 50 weeks$
 
-	$W_t \simeq 2000h/year${ .katex-sol }
+	$t_{work} \simeq 2000h/year${ .katex-sol }
 
 </div>
 
 ##### Resolution
 
-[caption id="attachment_1606" align="aligncenter" width="1000"]<a href="https://carlosgrande.me/wp-content/uploads/2020/11/BCN_Mechanics_Solved.png"><img src="https://carlosgrande.me/wp-content/uploads/2020/11/BCN_Mechanics_Solved.png" alt="" class="size-full wp-image-1606" /></a> How many mechanics are in Barcelona?[/caption]
+<div class="steps" markdown>
 
+- Total time needed to repair all the cars in Madrid per year ($T$)
 
-<a id="modeldesign"></a>
+	$T = N_{cars} \cdotp N_{fixes} \cdotp t_{repair}$
+
+	$T = 3,25 \cdotp 10^6 \cdotp 2 \cdotp 8$
+
+	$T = 52 \cdotp 10^6 hours/year${ .katex-sol }
+
+- Number of Mechanics in Madrid N_{mechanics}
+
+	$N_{mechanics} = \frac{T}{t_{work}}$
+
+	$N_{mechanics} = \frac{52 \cdotp 10^6}{2 \cdotp 10^3} $
+
+	$N_{mechanics} = 26.000${ .katex-sol }
+
+</div>
 
 
 ## The Business Model
+
 A great example of this relation between the product and the business model could be the coffee bean as a product. 
 
 Company A: serves coffee directly to consumers in a place where the coffee experience was about creating a sense of community. A lounge space with sofas and wifi where you feel so comfortable.
@@ -117,8 +133,6 @@ Company B: sells coffee ready to make in capsules and coffee machines with excel
 Can you guess the name of this company A? yes, it's Nespresso.
 
 With these two examples, we can see how the business model is the real company product.
-
-<a id="formulas"></a>
 
 
 ### 6 formulas to develop your business model
