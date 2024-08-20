@@ -155,84 +155,81 @@ With these two examples, we can see how the business model is the real company p
 
 6. **Hybridization**: another method to develop a business model is by hybridization, mixing products with services, or vice versa. A great example of this method is the *Smartbox* company which, developed a business model using a service as a product, in this case, experiences becoming them into a gift box.
 
-<a id="resources"></a>
-
 
 ### 6 Resources by google to discover market insights for your business
+
 These three tools are essential to analyze the market and discover the trends, ideas, and problems to solve in the actual society.
 
+
 #### Google Trends
+
 A Google website that analyzes the popularity of top search queries in Google Search across various regions and languages. The website uses graphs to compare the search volume of different queries over time.
 
-Link: https://trends.google.com/
+[:octicons-arrow-right-16: Google trends](https://trends.google.com/)
+
 
 #### Google Insights Library
+
 Stay up to date with all the latest research from across Think with Google. Insights Library is your destination to search, discover, and interact with the insights that will fuel your business.
 
-Link: https://www.thinkwithgoogle.com/tools/data-insights-library/
+[:octicons-arrow-right-16: Google insights](https://www.thinkwithgoogle.com/tools/data-insights-library/)
 
 #### Google Find My Audience
+
 Find My Audience helps you understand who your most valuable customers are on YouTube — so you can discover new audiences and learn how to reach them individually with relevant messages.
 
-Link: https://www.thinkwithgoogle.com/feature/findmyaudience/
+[:octicons-arrow-right-16: Google find my audience](https://www.thinkwithgoogle.com/feature/findmyaudience/)
 
 #### Google Market Finder
+
 Free tool to identify new potential markets, discover helpful operational information and start selling to customers at home and around the world.
 
-Link: https://marketfinder.thinkwithgoogle.com
+[:octicons-arrow-right-16: Market finder](https://marketfinder.thinkwithgoogle.com)
 
 #### Rising Retail Categories
+
 Use this interactive tool to understand fast-rising retail categories in Google Search, the locations where they’re growing, and the queries associated with them. The data will update daily to reflect changes in Search interests.
 
-Link: https://www.thinkwithgoogle.com/feature/category-trends
+[:octicons-arrow-right-16: Trends category](https://www.thinkwithgoogle.com/feature/category-trends)
 
 #### Google Grow My Store
+
 Google offers a service to analyze your retail site, give you an overall score and offer you detailed insights and recommendations to help you strengthen your business.
 
-Link: https://growmystore.thinkwithgoogle.com/
-
-
-<a id="stakeholders"></a>
+[:octicons-arrow-right-16: Grow my store](https://growmystore.thinkwithgoogle.com/)
 
 
 ### Mapping the stakeholders
+
 Stakeholders are those people, groups, or individuals who either have the power to affect, or are affected by the endeavour you're engaged with. Stakeholders are affected and can affect your endeavours to varying degrees, and the degrees should be considered when analysing and mapping out the stakeholder landscape.
 
 As Lean Startup declares, the golden rule is to validate the customer environment and the product/service to discover rapidly if a proposed business model is viable. Accordingly, the next step to understand better our business model is to conduct a stakeholder analysis. This activity helps you identify project stakeholders, their expectations, and their relationships. There are three steps to follow in Stakeholder Analysis:
 
 1. **Identify who your stakeholders are.** Think of all the people/organizations that are affected by your work. Who gives value to whom or have an interest in it.
+
 	There are two types of stakeholders, the inside stakeholders like employees, chiefs, co-founders, etc., and the outside stakeholders like providers, society, government, clients, etc.
 
 2. **Map your stakeholders.** A significant way to map the stakeholders is by dividing them into two different groups, the inside, and the outside. Subsequently, you can draw them by their relations following the value proposition, the buyers, and the sellers. After generating this map you should ask yourself where is located your business model inside this map.
 
+	![Online privacy stakeholders](../../assets/images/notebooks/business-stakeholders.jpeg){ .image-caption }
 
-
-[caption id="attachment_1624" align="aligncenter" width="768"]<a href="https://carlosgrande.me/wp-content/uploads/2020/11/StakeholderMap02.jpg"><img src="https://carlosgrande.me/wp-content/uploads/2020/11/StakeholderMap02.jpg" alt="Stakholder map" class="size-full wp-image-1624" /></a> Credits to: https://emergentpractices.wordpress.com[/caption]
-
-
-
-3. **Understand Your Key Stakeholders.**
-A simple way to summarize the level of backing you have from your stakeholders is to color-code them. For example, show advocates and supporters in green, blockers and critics in red, and those who are neutral in orange.
-
-
-<a id="canvas"></a>
-
+3. **Understand Your Key Stakeholders.** A simple way to summarize the level of backing you have from your stakeholders is to color-code them. For example, show advocates and supporters in green, blockers and critics in red, and those who are neutral in orange.
 
 ## Business model canvas
+
 A Business Model Canvas is a strategic management and lean startup template for developing new or documenting existing business models. It helps visualize what is important and forces users to address key areas. It can also be used by a team (employees and/or advisors) to understand relationships and reach agreements.
 
-
-
-[caption id="attachment_1639" align="aligncenter" width="3508"]<a href="https://carlosgrande.me/wp-content/uploads/2020/11/BusinessModelCanvas.png"><img src="https://carlosgrande.me/wp-content/uploads/2020/11/BusinessModelCanvas.png" alt="" class="size-full wp-image-1639" /></a> Lean Startup Business Model Canvas[/caption]
-
+![Business model canvas](../../assets/images/notebooks/business-model-canvas.png)
 
 
 ### 1. Customer segments
+
 Customer segments are the community of customers or businesses that you are aiming to sell your product or services to. Customer segments is one of the most important building blocks in the business model canvas for your business, so getting this building block right is key to your success.
 
 - **Define your client/s type:** Try to summarize your client features like age, hobbies, routines, environment...
 
 - **Estimate and define your TAM, SAM and SOM:**
+
 	- **TAM:** total addresssable market
 	- **SAM:** serviceable available market
 	- **SOM:** serviceable obtainable market
@@ -240,6 +237,7 @@ Customer segments are the community of customers or businesses that you are aimi
 - **Define the problem or need solved with your business model:** Focus and describes how you solve your client’s need.
 
 ### 2. Value propositions
+
 A value proposition is designed to convince a potential customer that your particular product or service will add more value or better solve a problem than your competition. It should answer the fundamental question of **“Why should I buy your product instead of your competitor’s product?”**
 
 - **Describe your product or service:** Describe and list your value proposition, focus on the problem you are solving.
@@ -249,6 +247,7 @@ A value proposition is designed to convince a potential customer that your parti
 - **Describe the reason why your potential client is choosing you:** Describe the reason and link it your client’s type.
 
 ### 3. Customer relationships
+
 Customer relationships describes **the type of relationship a company establishes with it’s specific customer segments.** Customer relationships are driven by customer acquisition, customer retention, and boosting sales – in other words you need to get, keep, and grow your customer relationships.
 
 - **Capture:** List at least three the activities to gain clients
@@ -260,6 +259,7 @@ Customer relationships describes **the type of relationship a company establishe
 In this section, it would be helpful to estimate the **conversion rates** from these activities.
 
 ### 4. Channels
+
 Channels are ways for you to reach your Customer Segments. And remember that in the initial stages it’s important not to think about scale but to **focus on learning**. With that in mind try to think which channels will give you enough access to your Customer Segments at the same time give you enough learning. Channels can be email, social, CPC ads, blogs, articles, trade shows, radio & TV, webinars etc. and BTW you don’t have to be on all of them, just where your Customer Segments are.
 
 **Channels:** Describe 2-3 channels to provide your value proposition.
@@ -276,18 +276,22 @@ How you price your business will depend on the type of model it is, however, it�
 - **Revenue model:** Describe your revenue model type like pay per use, license, renting, asset sale, advertising, subscription...
 
 - **Price estimation:** 3 alternatives
-	A) By cost-benefit
-	B) By competitors
-	C) By demand curve
+
+	- By cost-benefit
+	- By competitors
+	- By demand curve
 
 ### 6. Key activities
+
 These are really the activities that you do on a daily basis and **what you need to understand is your strengths and weaknesses to which you can play on.** These may include sales and marketing, research and development, manufacturing or distribution. Perhaps if you were an app development or software company your core focus should be to program and develop.
 
 Define this section with action verbs. **Find the key activities to provide your value proposition to your customers.** Ex: Develop an app, Website construction, customer service, software development, etc.
 
 Focus on those essential activities that enable your value proposition.
 
+
 ### 7. Key resources
+
 This is really the part that explains how you will create your value proposition. Have a think about what types of products, services, assets you may need to create your value proposition. This often includes intellectual property, talent, and infrastructure. Perhaps you have a website that is unique, perhaps you have offices or property that are very unique.
 
 **Elements needed to provide your value proposition. 4 types:**
@@ -298,30 +302,36 @@ This is really the part that explains how you will create your value proposition
 - **Liquid assets**
 
 ### 8. Key partners
+
 Define your **strategic allies** essential for your business model.
+
 Ex: distribution, shipping, hosting provider, software development, marketing, customer service, etc.
 
 **4 Different partner types:**
+
 - Buyer-Supplier partnership
 - Coopetition and partnering
 - Strategic Alliance
 - Complementary partnering
 
 ### 9. Cost structure
+
 Here you should list all the operational costs for taking this business to market. How much will it cost to build your idea? What is your burn rate — your total monthly running costs? How much will it cost to interview your customer segment? How much do market research papers cost? etc. You can then use these costs and potential revenue streams to calculate a rough break-even point.
 
 - **Key activities costs (internal):** App development, design, customer service, shiping etc.
 - **Key resources costs (internal):** Office space, warehouse, computers, licenses, designers, etc.
 - **Key partners costs (external):** Shipping, providers, distribution, customer services.
 
-
 ---
-<a id="links"></a>
-
 
 ## References and links
+
 - [What is Market Size, Alexa blog.](https://blog.alexa.com/marketing-research/market-size/#:~:text=Market%20size%20is%20the%20number,a%20new%20product%20or%20service.&text=By%20outlining%20the%20difference%20between,tackle%20that%20consumer%20sweet%20spot.)
+
 - [steve_mullen, An Introduction to Lean Canvas.](https://medium.com/@steve_mullen/an-introduction-to-lean-canvas-5c17c469d3e0)
+
 - [Ries, E. (2011) personal interview. 2011](https://www.fastcompany.com/1778706/eric-ries-lean-startup-machine)
+
 - [Geissdoerfer, M., and Savaget, P., and Evans, S. (2017) The Cambridge Business Model Innovation Process](https://www.sciencedirect.com/science/article/pii/S2351978917300392?via%3Dihub)
+
 - [Guesstimation book](https://www.amazon.es/Guesstimation-Solving-Worlds-Problems-Cocktail/dp/0691129495)
