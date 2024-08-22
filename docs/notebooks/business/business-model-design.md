@@ -121,7 +121,7 @@ Now let's work on a harder estimation. This is the classic example originated by
 
 
 
-	This estimate suggests that Madrid likely requires around 26,000 mechanics to service its 3.25 million cars, based on repair frequency and work hours. While not exact, this approximation highlights the importance of structured problem-solving in making educated guesses.
+This estimate suggests that Madrid likely requires around **26,000 mechanics to service its 3.25 million cars**, based on repair frequency and work hours. While not exact, this approximation highlights the importance of structured problem-solving in making educated guesses.
 </div>
 
 
