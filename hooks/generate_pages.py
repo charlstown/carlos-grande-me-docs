@@ -19,7 +19,7 @@ def get_link(doc_file: File, site_name: str) -> str:
     uri = '/'.join(doc_file.dest_uri.split('/')[:-1])
     
     # add site name to the uri
-    link = f"/{uri}"
+    link = f"{uri}"
     return link
 
 def is_folder(doc: File) -> bool:
