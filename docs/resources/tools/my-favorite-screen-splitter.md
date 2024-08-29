@@ -2,7 +2,7 @@
 short_title: Screen Splitter
 description: none
 date: 2019-01-01
-thumbnail: /assets/images/resources/screen-splitter-portrait.png
+thumbnail: assets/images/resources/screen-splitter-portrait.png
 ---
 
 # Screen splitter

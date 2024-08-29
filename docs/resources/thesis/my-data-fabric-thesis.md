@@ -2,7 +2,7 @@
 short_title: My data fabric thesis
 description: none
 date: 2019-01-01
-thumbnail: /assets/images/resources/data-fabric-portrait.png
+thumbnail: assets/images/resources/data-fabric-portrait.png
 toc_depth: 2
 ---
 

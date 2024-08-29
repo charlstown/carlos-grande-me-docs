@@ -2,7 +2,7 @@
 short_title: R cheatsheet
 description: none
 date: 2019-01-01
-thumbnail: /assets/images/resources/cheatsheet-r-portrait.jpeg
+thumbnail: assets/images/resources/cheatsheet-r-portrait.jpeg
 ---
 
 # R cheatsheet

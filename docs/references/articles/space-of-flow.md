@@ -2,7 +2,7 @@
 short_title: Space of flows
 description: none
 date: 2019-01-01
-thumbnail: /assets/images/resources/data-mesh-portrait.png
+thumbnail: assets/images/resources/data-mesh-portrait.png
 ---
 
 # Space of flows

@@ -2,7 +2,7 @@
 short_title: Linux cheatsheet
 description: none
 date: 2019-01-01
-thumbnail: /assets/images/resources/cheatsheet-linux-portrait.png
+thumbnail: assets/images/resources/cheatsheet-linux-portrait.png
 ---
 
 # Linux cheatsheet

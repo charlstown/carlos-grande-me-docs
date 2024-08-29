@@ -2,7 +2,7 @@
 short_title: My data mesh thesis
 description: none
 date: 2019-01-01
-thumbnail: /assets/images/resources/data-mesh-portrait.png
+thumbnail: assets/images/resources/data-mesh-portrait.png
 toc_depth: 2
 ---
 

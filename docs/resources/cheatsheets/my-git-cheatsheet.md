@@ -2,7 +2,7 @@
 short_title: Git cheatsheet
 description: none
 date: 2019-01-01
-thumbnail: /assets/images/resources/cheatsheet-git-mockup.jpg
+thumbnail: assets/images/resources/cheatsheet-git-mockup.jpg
 ---
 
 # Git cheatsheet
