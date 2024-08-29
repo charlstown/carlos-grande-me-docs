@@ -4,7 +4,7 @@ const dataPath = 'publications.json'
 // Function to fetch JSON data from the specified URL  
 async function fetchPublications() {  
   try {  
-   const response = await fetch('/assets/publications.json');  
+   const response = await fetch('assets/publications.json');  
   
    // Check if the response status is OK (status code 200-299)  
    if (!response.ok) {  
