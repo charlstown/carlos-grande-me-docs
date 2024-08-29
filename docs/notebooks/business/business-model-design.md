@@ -1,8 +1,8 @@
 ---
-short_title: This is a test
+short_title: The Business model design
 description: none
-date: 2020-01-01
-thumbnail: ass
+date: 2024-01-01
+thumbnail: /assets/images/notebooks/business-model-portrait.jpg
 ---
 
 # The Business model design

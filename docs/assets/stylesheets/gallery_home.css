@@ -12,3 +12,20 @@
     object-fit: cover; /* Crop the image to fit the container */
     margin-bottom: .1rem;
 }
+
+.row-gallery {
+    display: grid;
+    gap: 2rem 2rem!important; /* Optional: space between grid items rox-col */
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); /* Adjust columns automatically */
+
+}
+
+.gallery-item h3 {
+    color: var(--md-default-fg-color);
+    margin: 0;
+    overflow-wrap: break-word; /* Break words at the edge of the container */
+}
+
+.gallery-item:hover h3 {
+    color: var(--md-accent-fg-color); /* Hover color for h3 */
+  }

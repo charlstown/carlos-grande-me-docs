@@ -68,6 +68,7 @@ markdown_extensions:
 # Hooks
 hooks:
   - hooks/generate_pages.py
+  - hooks/ignore_file_autoreload.py
 
 # Plugins
 plugins:
@@ -105,6 +106,7 @@ extra_javascript:
   - assets/javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - assets/javascripts/publications.js
 
 # Copyright message
 copyright: Copyright &copy; carlosgrande.me - 2024

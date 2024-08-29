@@ -17,13 +17,8 @@ hide:
 
 </div>
 
-<div id="publicationsList" class="row-auto">
+<div id="publicationsList" class="row-gallery">
 
-    <div class="asdfasdfasdf">
-    </div>
+
 
 </div>
-![](./assets/images/resources/cheatsheet-git-branches.png)
-
-<!-- Custom styles for the home site -->
-<!-- <script src="/assets/javascripts/publications.js"></script> -->
