@@ -13,6 +13,10 @@
     margin-bottom: .1rem;
 }
 
+#publicationsList{
+    padding: 1.4rem;
+}
+
 .row-gallery {
     display: grid;
     gap: 2rem 2rem!important; /* Optional: space between grid items rox-col */
@@ -21,7 +25,10 @@
 }
 
 .gallery-item h3 {
-    color: var(--md-default-fg-color);
+    /* color: var(--md-default-fg-color); */
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--md-main-title);
     margin: 0;
     overflow-wrap: break-word; /* Break words at the edge of the container */
 }
