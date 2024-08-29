@@ -1,0 +1,15 @@
+.output-code code {
+    border-radius: .4rem!important;
+    border: 0.1rem solid var(--md-code-bg-color);
+    background-color: transparent!important;
+}
+
+.output-code span.filename {
+    background-color: transparent!important;
+    font-style: italic;
+    font-weight: 200;
+    margin: 0!important;
+    padding: 0!important;
+    border: 0!important;
+    color: var(--md-main-title);
+}

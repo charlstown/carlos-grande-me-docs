@@ -1,0 +1,2867 @@
+<!-- Elements added to main will be displayed on all pages -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="none">
+      
+      
+        <meta name="author" content="Charlstown">
+      
+      
+      
+        <link rel="prev" href="../my-data-product-thesis/">
+      
+      
+        <link rel="next" href="../../cheatsheets/my-business-model-canvas/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Data fabric - carlosgrande.me</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/output_code.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/gallery.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/my_katex.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#my-data-fabric-thesis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="carlosgrande.me" class="md-header__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            carlosgrande.me
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data fabric
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../references/" class="md-tabs__link">
+          
+  
+    
+  
+  References
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/" class="md-tabs__link">
+          
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../notebooks/" class="md-tabs__link">
+          
+  
+    
+  
+  Notebooks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about-me/" class="md-tabs__link">
+        
+  
+    
+  
+  About me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="carlosgrande.me" class="md-nav__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    carlosgrande.me
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../references/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Articles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Articles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/death-of-distance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Death of distance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/space-of-flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Space of flows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/the-chinese-room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The chinese room
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/ubiquitous-computing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubiquitous computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/whole-brain-emulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Whole brain emulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Case studies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Case studies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/3000000-kms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    300.000 Km/s studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/ben-willers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ben Willers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/eric-fischer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eric Fischer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/giorgia-lupi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giorgia Lupi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/moritz-stefaner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moritz Stefaner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/nicholas-felton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nicholas Felton
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/refik-anadol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refik Anadol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/wesley-grubbs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wesley Grubbs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../projects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-airbnb-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Madrid Airbnb analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-invisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Madrid invisible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/my-rubiks-cube-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My rubiks cube model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My thesis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            My thesis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-data-mesh-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Mesh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-data-product-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data fabric
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Data fabric
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#1-context" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. Context
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-principles" class="md-nav__link">
+      <span class="md-ellipsis">
+        2. Principles
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2. Principles">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-data-fabric-architecture" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. Data Fabric Architecture
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="3. Data Fabric Architecture">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#4-market-state-use-cases" class="md-nav__link">
+      <span class="md-ellipsis">
+        4. Market State &amp; Use Cases
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#5-data-fabric-implementation" class="md-nav__link">
+      <span class="md-ellipsis">
+        5. Data Fabric Implementation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="5. Data Fabric Implementation">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#6-conclussion" class="md-nav__link">
+      <span class="md-ellipsis">
+        6. Conclussion
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#7-terminology" class="md-nav__link">
+      <span class="md-ellipsis">
+        7. Terminology
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#8-discovery-roadmap" class="md-nav__link">
+      <span class="md-ellipsis">
+        8. Discovery Roadmap
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="8. Discovery Roadmap">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#references-and-links" class="md-nav__link">
+      <span class="md-ellipsis">
+        References and links
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My cheat sheets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            My cheat sheets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-business-model-canvas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business model canvas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-docker-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-git-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-letter-cases-reminder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Letter cases reminder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-linux-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-python-3-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python 3 cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-python-project-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python project cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-r-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-sql-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My coding templates
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            My coding templates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/my-python-template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Python template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My favorite tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            My favorite tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/my-favorite-screen-splitter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen splitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../notebooks/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Notebooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Business
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Business
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/business/business-model-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Business model design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/business/team-topologies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Team topologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Coding
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Coding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/google-challenge-part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google challenge part 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/python-design-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python design patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/python-generators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python generators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/dimensionality-reduction-using-pca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dimensionality reduction using PCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/machine-learning-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine learning basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/reinforcement-learning-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reinforcement learning basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/sample-size-determination/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample size determination
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/text-mining-sentiment-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text mining sentiment analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-architecture/azure-big-picture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Big Picture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-architecture/cloud-migration-planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud migration planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-me/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About me
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#1-context" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. Context
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-principles" class="md-nav__link">
+      <span class="md-ellipsis">
+        2. Principles
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2. Principles">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-data-fabric-architecture" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. Data Fabric Architecture
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="3. Data Fabric Architecture">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#4-market-state-use-cases" class="md-nav__link">
+      <span class="md-ellipsis">
+        4. Market State &amp; Use Cases
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#5-data-fabric-implementation" class="md-nav__link">
+      <span class="md-ellipsis">
+        5. Data Fabric Implementation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="5. Data Fabric Implementation">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#6-conclussion" class="md-nav__link">
+      <span class="md-ellipsis">
+        6. Conclussion
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#7-terminology" class="md-nav__link">
+      <span class="md-ellipsis">
+        7. Terminology
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#8-discovery-roadmap" class="md-nav__link">
+      <span class="md-ellipsis">
+        8. Discovery Roadmap
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="8. Discovery Roadmap">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#references-and-links" class="md-nav__link">
+      <span class="md-ellipsis">
+        References and links
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="my-data-fabric-thesis">My data fabric thesis</h1>
+<p><a class="glightbox" href="../../../assets/images/resources/data-fabric-portrait.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Product Thinking Example" class="image-width-24" src="../../../assets/images/resources/data-fabric-portrait.png" /></a></p>
+<p>After Posting my thesis about <a href="https://carlosgrande.me/my-data-mesh-thesis/">Data Mesh</a>, I realized Data fabric is often mistaken for Data Mesh. There is a lot of confusion between these two models, so I decided to do some research about the Data Fabric architectural approach.</p>
+<p>The goal of this article is to try and bring some clarity to all concepts associated with a <strong>Data Fabric</strong>, including an end to end storytelling with a thesis structure. This is just my public personal attempt to make sense of all the information I have found about this matter.</p>
+<hr />
+<h2 id="1-context">1. Context</h2>
+<p>Current methods of managing data attempt to meet all the objectives using data warehouses and data lakes, but those legacy architectures cannot include all the data that is needed. Although, they remain important components in a larger distributed data landscape.</p>
+<p>Data sharing isn’t too hard at a small scale but rapidly becomes challenging as variables like the number of independent projects, the variety of database technologies, variation of computing platforms, etc. increase. Satisfying these complex scenarios becomes prohibitively difficult and expensive to accomplish through independent bespoke processes.</p>
+<p>In this context, Data Fabric emerges as a design concept that acts as an integrated layer (fabric) of data and connecting processes. It represents a single environment having a combination of architecture and technology designed to ease the complications of managing dynamic, distributed, and diverse data.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-fabric-layers.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data fabric layers" class="image-caption" src="../../../assets/images/resources/data-fabric-layers.png" /></a></p>
+<p>So what is a Data Fabric? Data fabric is an architectural approach and a set of technologies to break down data silos and get data into the hands of data users. if I would like to say what is a Data Fabric in a short definition, I would pick the following:</p>
+<blockquote>
+<p><strong>A Data Fabric is a metadata-driven unified platform that connects multiple technologies, deployment platforms, and automation services, with a single and consistent data management framework. It provides seamless data access and processing by design across siloed storage.</strong></p>
+</blockquote>
+<p><a class="glightbox" href="../../../assets/images/resources/data-fabric-comparison.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data fabric comparison" class="image-caption" src="../../../assets/images/resources/data-fabric-comparison.png" /></a></p>
+<h2 id="2-principles">2. Principles</h2>
+<p>Basically, data fabric is an architecture that improves data management by reducing data complexity and enabling agility. The effectiveness of data fabric approach, however depends on its abilities to meet numbers of principles. These principles that define data fabric can be divided into: data access, data storage, data management, and data expose.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-fabric-principles.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data fabric principles" class="image-caption" src="../../../assets/images/resources/data-fabric-principles.png" /></a></p>
+<h3 id="21-unified-data-access">2.1 Unified data access</h3>
+<p>Providing a single and seamless point of access to all data
+regardless of structure, database technology, and deployment platform creates a cohesive analytics experience working across data storage silos.</p>
+<ul>
+<li>
+<p>Data fabric needs to support <strong>different data types</strong> and <strong>access protocols</strong> to allow organizations to easily access data from everywhere, anywhere at any time.</p>
+</li>
+<li>
+<p><strong>Multitenancy</strong> is essential in data fabric such that it gives organizations the ability to create logical separations for administration, access, update, and execution.</p>
+</li>
+<li>Data fabric should provide <strong>support for integrating data streaming</strong> to easily integrate data in transit with data at rest.</li>
+</ul>
+<h3 id="22-infrastructure-resilience">2.2 Infrastructure resilience</h3>
+<p>Decoupling data management processes and practices from specific deployment technologies makes for a more resilient infrastructure. Whether adopting edge computing, GPU databases, or technology innovations not yet known, the data fabric’s management framework offers a degree of “future-proofing” that reduces the disruptions of new technologies. New infrastructure end-points are connected to the data fabric without impact to existing infrastructure and deployments.</p>
+<p>Supports the full variety of data storage options, automatically applying the best mix of storage technologies depending on use cases.</p>
+<ul>
+<li>Data fabric should give <strong>linear scalability</strong> where fabric is not limited by the number of files, concurrent client access, and increase in data volumes.</li>
+<li>Data fabric is designed to ensure data <strong>consistency</strong> so that data is manageable across multiple environments regardless of its location. A layer built on top of many data sources. This layer presents information as a single virtual (or logical) view regardless of its type and model. It all happens on-demand and in real-time.</li>
+<li><strong>Distributed metadata</strong> across all data storing nodes should be supported in the fabric to prevent bottlenecks.</li>
+<li>It is necessary for a data fabric to give <strong>distributed location support</strong> where it can be installed and deployed in any location (any environment) across the entire infrastructure.</li>
+</ul>
+<h3 id="23-unified-data-management">2.3 Unified data management</h3>
+<p>Providing a single framework to manage data across
+disparate deployments reduce the complexity of data management.</p>
+<ul>
+<li>Data fabric provides<strong>Governance and privacy</strong> ensuring the right users in our platform have access to the right data by using <strong>active metadata</strong>, to automate a lot of the enforcement of the policies we define (Mask datasets, RBAC, data lineage, and data quality).</li>
+<li>Data fabric helps us <strong>define compliance policies</strong> like GDPR, CCPA, HIPAA, FCRA, etc.</li>
+<li>Metadata management is another ubiquitous component with touch points throughout the data fabric. Metadata reduces friction throughout the processes of working with data. It is needed to search and understand data, assess data quality, prepare and provision data, protect and govern data, trace data lineage, and trust data and analysis results.</li>
+</ul>
+<h3 id="24-consolidated-data-protection">2.4 Consolidated data protection</h3>
+<p>Data security, backup, and disaster recovery methods are built into the data fabric framework. They are applied consistently across the infrastructure for all data whether deployed in cloud, multi-cloud, hybrid, or on premises.</p>
+<p>A distinct security and protection component is needed to provide cohesion and continuity across all security and protection touch points. Smart data security interoperates with existing authentication and authorization infrastructure. Smart data protection guards against risks from intrusion, corruption, and loss by automating detection and tagging of sensitive data assets and by providing data recovery capabilities.</p>
+<h3 id="25-cloud-mobility-and-portability">2.5 Cloud mobility and portability</h3>
+<p>Minimizing the technical differences that lead to cloud service lock-in and enabling quick migration from one cloud platform to another supports the goal of a true cloud-hybrid environment.</p>
+<p>Data stored across multiple environments should not be isolated or siloed. Processing can’t be confined to a single execution environment when data resides on multiple platforms. With data fabric orchestration, a single control platform can execute a sequence of services, built with diverse technologies and distributed across multiple execution environments. When data is distributed across multiple platforms, it makes sense to push the processing to the data location. Smart data fabric automates the coordination of multi-services workflows across all execution environments for comprehensive cloud, multi-cloud, and cloud-hybrid support.</p>
+<h2 id="3-data-fabric-architecture">3. Data Fabric Architecture</h2>
+<p>A well designed data fabric architecture is modular and supports massive scale, distributed multi-cloud, onpremise, and hybrid deployment.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-fabric-architecture.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Fabric Architecture building blocks" class="image-caption" src="../../../assets/images/resources/data-fabric-architecture.png" /></a></p>
+<h3 id="31-connection-layer">3.1 Connection layer</h3>
+<p>In order <strong>to provide data across “otherwise siloed storage” a connection layer governs access to data assets and metadata</strong> through standard mechanisms whilst preserving (where possible) the native asset access APIs.  It provides interfaces and factories for named connectors that access distributed data resources. These data resources may be data stores (databases, files, etc.) or APIs for application data, transformations, and analytical functions.</p>
+<ul>
+<li>SQL and NoSQL databases like MySQL, Oracle, and MongoDB</li>
+<li>CRMs and ERPs</li>
+<li>Cloud data warehouses like Amazon Redshift or Google Big Query</li>
+<li>Data lakes and enterprise data warehouses</li>
+<li>Streaming sources like IoT and IoMT devices</li>
+<li>SaaS (Software-as-a-Service) applications like Salesforce</li>
+<li>Social media platforms and websites</li>
+<li>Spreadsheets and flat files like CSV, JSON, and XML</li>
+<li>Big data systems like Hadoop, and many more.</li>
+</ul>
+<p><strong>The Connection Layer acts as a secure factory for connectors to data stores.</strong>  The application supplies the name of the connection it needs and assuming it is authorized, the Connection layer returns the connector.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-fabric-connection-layer.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data fabric connection layer" class="image-caption" src="../../../assets/images/resources/data-fabric-connection-layer.png" /></a></p>
+<p>The main components of a Connection layer are:</p>
+<ul>
+<li><em>Connection:</em> The connection is a metadata entity that defines the set of parameters needed to access a specific data resource.  Each connection has a unique name.  An application can request a connector instance from the OCF using the name of a connection.</li>
+<li><em>Connector Broker:</em> A connector instance is an object that implements the Connector API.   It provides access to a data resource, along with its related metadata stored.  The connector instance is responsible for calling the governance action framework when it is initialized and before and after every access request to the data resource.</li>
+<li><em>Connector Provider:</em> A connector provider is the factory for a particular type of connector.  The connection stored in the Metadata repository will identify the connector provider. The connector provider is responsible for the overall management of the physical data resources that is it using. It may therefore implement capabilities such as connector pooling and limit the number of active connectors to the data resource if appropriate.</li>
+</ul>
+<h3 id="32-virtualization-layer">3.2 Virtualization layer</h3>
+<p>In a nutshell, data virtualization happens via middleware that is nothing but a unified, virtual data access layer built on top of many data sources. This layer presents information as a single virtual (or logical) view regardless of its type and model. It all happens on-demand and in real-time.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-fabric-virtualization-layer.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data fabric virtualization layer" class="image-caption" src="../../../assets/images/resources/data-fabric-virtualization-layer.png" /></a></p>
+<h4 id="321-storage-mapping">3.2.1 Storage &amp; Mapping</h4>
+<p>The layer where the virtual and the physical data resides. The virtual store only contains logical views and metadata needed to access the sources, during the physical store.</p>
+<p><strong>The SQL engine</strong> is responsible for processing SQL queries in SAP HANA. The SQL Parser (part of SQL Engine) first checks the syntactic and semantic correctness of the SQL query. The SQL query is then parsed through the SQL optimizer to create an acyclic tree-structure of operations and estimated cost is assigned to each operation in the tree structure. Depending on the complexity involved, the SQL Optimizer may generate multiple execution plan and the most cost-effective execution plan will be forwarded to the SQL Executor.</p>
+<p><strong>The SQL executor</strong> will then forward the request to the appropriate engines i.e. Row store engines to deal with row tables and Column store engines (Calc. Engine, Join Engine and OLAP engine) for the column tables.</p>
+<p><strong>The calculation engine</strong> is used to perform field level calculations and union/rank operations on the dataset, unfolding the definitions, meaning, origin, and rules of the information used by its metadata. There are three types of metadata:</p>
+<ul>
+<li><em>Business Metadata:</em> stores business-critical definitions of information</li>
+<li><em>Technical metadata:</em> stores data mapping and transformations from source systems to the target and is mostly used by data integration experts and ETL developers.</li>
+<li><em>Operational metadata:</em> describes information from operational systems and runtime environments.</li>
+</ul>
+<h4 id="322-virtual-data-models">3.2.2 Virtual data models</h4>
+<p>It is a structured representation of the virtual and local data with consistent modeling rules applied and providing direct access.</p>
+<ul>
+<li><em>Calculation views</em> fully support set based operations enabling real-time analytics and on the fly calculations without the use of persistent aggregates. Calculation views are un-folded to the table/database objects and any table/database objects not contributing to the SQL execution are eliminated to build a single acyclic data-flow graph for the SQL query.</li>
+</ul>
+<h3 id="33-data-access-layer">3.3 Data access layer</h3>
+<p>A single point of access to data kept in the underlying sources. The delivery of abstracted data views happens through various protocols and connectors depending on the type of the consumer. They may communicate with the virtual layer via SQL and all sorts of APIs, including access standards like JDBC and ODBC, REST and SOAP APIs, and many others.</p>
+<ul>
+<li><em>Data Catalog:</em> To provide a service which allows one to search for data and datasets across an enterprise. Sounds like a search index on data and metadata right? That’s the basis but the key is not to just return data records but help one find the topics in the data fabric that they came from.</li>
+<li><em>Query services:</em> provides a user interface and a RESTful API from which you can create SQL queries to better analyze your data. With the user interface, you can write and execute queries, view previously executed queries, and access queries saved by users within your Organization.</li>
+<li><em>APIs:</em> offering an access to your business logic through an Interface (the API), with full control on what you want to show or not.</li>
+<li><em>Data provisioning:</em> the process of making data available in an orderly and secure way to users, application developers, and applications that need it.</li>
+</ul>
+<h3 id="34-data-governance">3.4 Data Governance</h3>
+<p>When consuming from a data fabric it can be very useful to understand some details about what you are getting. What is the quality? Where did it come from? What is its lineage? The necessity of data governance services is highly dependent on the organization building the data fabric.</p>
+<p>Governance, data privacy, and data sovereignty must be aligned. Because data stored in binary or digital form is subject to the conditions of the country in which the data resides, it is imperative that organizations understand the nature of their cloud architecture and interactions. Moreover, it is important to understand the rules, legislation, and regulations that apply to various countries as they apply to personal information, data privacy, and data protection.</p>
+<h3 id="35-data-security-policies">3.5 Data security &amp; policies</h3>
+<p>The data fabric must accommodate governance and data privacy in a way that is appropriate for the service models (that is, IaaS, PaaS, SaaS) being provided. Security capabilities must be considered through every architectural layer of the data fabric. It is also imperative that organizations know how their data is being secured.</p>
+<ul>
+<li><em>Secure Multitenancy (SMT):</em> Organizations must understand how their service providers segment and isolate each customer in their cloud infrastructure and how that manifests itself across a data fabric.</li>
+<li><em>Data in Use, in Motion, and at Rest:</em> refers to any data being processed by a cloud service provider. It is key to maintaining security throughout the lifecycle because it is crucial to maintaining an organization’s security posture. The fact that cloud solutions rely on shared processes and resources introduces the requirement for more diligence. The security criteria that are maintained within an organization must be maintained and possibly enhanced across the data fabric.</li>
+<li><em>Key Management:</em> refers to safeguarding and managing keys in order to manage a secure environment that effectively safeguards an organization’s data. A key aspect of the key management solution across a data fabric is maintaining proper access to the keys while securely storing them.</li>
+</ul>
+<h2 id="4-market-state-use-cases">4. Market State &amp; Use Cases</h2>
+<p>Data fabric is a relatively new concept and the technology market is best characterized as emerging and evolving. Today no single vendor provides a complete data fabric solution in a single product. Data fabric vendors fit into the following three main categories:</p>
+<ul>
+<li><em>Single Product:</em> A few vendors offer a single product that provides much, but not all, data fabric functionality. These are good choices if they offer the functions that are most essential for your organization and have a strong roadmap for the future.</li>
+<li><em>Single Vendor:</em> Some vendors offer multiple products, each providing a subset of data fabric functionality. They emphasize interoperability among the products as the approach to delivering some (again, not all) data fabric functionality. These may be good choices if the product suite provides the most needed functions, especially for those who already use some of their products.</li>
+<li><em>Multiple Vendors:</em> Many vendors offer products that deliver a subset of data fabric functionality. These can be good choices for those organizations whose technology infrastructure includes diverse products that each provide some data fabric functionality, and who have the technical ability to resolve interoperability among disparate products.</li>
+</ul>
+<p>In enterprise operations, there are scores of use cases that require a high-scale, high-speed data architecture capable of supporting thousands of simultaneous transactions. Examples include:</p>
+<ul>
+<li><em>Delivering a 360 customer view:</em> delivering a single view of the customer to a selfservice IVR, customer service agents (CRM), customer self-service portal (web or mobile), chat service bots, and field-service technicians</li>
+<li><em>Complying with data privacy laws:</em> with a flexible workflow and data automation solution that orchestrates compliance across people, systems, and data designed to address current and future regulations.</li>
+<li><em>Pipelining enterprise data into data lakes and warehouses:</em> enabling data engineers to prepare and deliver fresh, trusted data from all sources, to all targets quickly and at scale.</li>
+<li><em>Provisioning test data on demand:</em> creating a test data warehouse, and delivering anonymized test data to testers and CI/CD pipelines automatically, and in minutes with complete data integrity.</li>
+<li><em>Modernizing legacy systems:</em> safely migrating data from legacy systems into data fabric, and then using the fabric as the database of record for newly developed applications.</li>
+<li><em>Securing credit card transactions:</em> Protecting sensitive cardholder information by encrypting and tokenizing the original data to avoid
+data breaches.</li>
+<li>Predicting churn, detecting customer, and others.</li>
+</ul>
+<h2 id="5-data-fabric-implementation">5. Data Fabric Implementation</h2>
+<p>As we have seen, data fabric is a high-level data architecture, and each company and provider offer it with different patterns and technologies. In this way, it is essential to remember that the Data Fabric is not static. It is a journey that iterates over the development of the platform, looking to abstract the silos of physical information into a logical layer of data.</p>
+<h3 id="51-as-is-analysis">5.1 AS-IS analysis</h3>
+<ul>
+<li><strong>Identify your data sources:</strong> decide what and how much data there is to be virtualized. For this purpose, make a comprehensive list of all datasets, applications, services, and systems producing information. Along with that, determine their locations, management demands, and connectivity requirements to enable them to easily communicate with the virtualization layer. Some systems lay on the surface as they are used in your day-to-day operations while others may be in the depths of IoT devices and social media sites. It is a good idea to include all sources that can enhance business analytics.</li>
+<li><strong>Identify your consumers:</strong> Similar to the previous step, you may want to list all the tools and applications that will reside on the consumer side. Specify what connectors and protocols each of the consumers require for it to have access to the virtual views. Which of the operations in your company will benefit from the virtualization the most? Start with the tools supporting these operations.</li>
+<li><strong>Decide on resources and people involved:</strong>  While it is easier and less costly to implement compared to traditional ETL, you will still have to determine your budget and available resources — both tech and human. Along with business analysts, you may need such specialists as data engineers and SQL developers to model data, build transformations, design data services, optimize queries, and manage resources.</li>
+</ul>
+<h3 id="52-developing-a-technical-reference-model-trm">5.2 Developing a technical reference model (TRM)</h3>
+<p>Data fabric can be implemented with multiple technologies and patterns. It is mandatory to  provide a reference of generic platform services, technology elements and patterns for each layer (connection, virtualization, and data access layers). The TRM provides a set of architectural and solution building blocks that will ultimately provide the platform for business and infrastructure applications that will deliver the application and infrastructure services. The Technical Reference Model ensures that architectures are created consistently and repeatedly based on a standard set of elements. The model should be created as part of the set up of the architecture programs but will typically require extending as technology standards are introduced and retired.</p>
+<h3 id="53-trm-implementation-and-tech-stack">5.3 TRM implementation and Tech Stack</h3>
+<p>Once defined, the Technical Reference Model can be used as the basis for all Infrastructure Architecture models by creating instances of the Infrastructure elements. We also need to define/update our company tech stack (a tech stack typically consists of programming languages, frameworks, a database, front-end tools, back-end tools, and applications connected via APIs). For example, in the Connection layer, we could use Apache Atlas as a Connector directory providing a list of related connections.</p>
+<h2 id="6-conclussion">6. Conclussion</h2>
+<p>A data fabric is not an off the shelf sort of thing. It is currently more of a design pattern for something that has been built in different ways across many different organizations. That being said, It’s also not something that needs to be built from scratch. There are many off the shelf components with a little integration work that will get you to the promised land.</p>
+<hr />
+<h2 id="7-terminology">7. Terminology</h2>
+<p>Data Fabric isn't a static architecture although it has some related terms. At the next table, I tried to extract the main vocabulary around this topic.</p>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Fabric</strong></td>
+<td>A metadata-driven unified platform that connects multiple technologies, deployment platforms, and automation services, with a single and consistent data management framework. It provides seamless data access and processing by design across siloed storage.</td>
+</tr>
+<tr>
+<td><strong>Connection layer</strong></td>
+<td>A layer to provide data across siloed storage, governing the access to data assets and metadata through standard mechanisms and acting as a secure factory for connectors to data stores.</td>
+</tr>
+<tr>
+<td><strong>Virtualization layer</strong></td>
+<td>A layer to present information as a single virtual (or logical) view on-demand and in real-time, regardless of its type and model.</td>
+</tr>
+<tr>
+<td><strong>Data access layer</strong></td>
+<td>A single point of access to data kept in the underlying sources. The delivery of abstracted data views happens through various protocols and connectors depending on the type of the consumer.</td>
+</tr>
+<tr>
+<td><strong>Connector</strong></td>
+<td>An object to provide access to a data resource, along with its related metadata stored.</td>
+</tr>
+<tr>
+<td><strong>Metadata</strong></td>
+<td>Metadata unfolds the definitions, meaning, origin, and rules of the information used in the platform.</td>
+</tr>
+<tr>
+<td><strong>Virtual data model</strong></td>
+<td>It is a structured representation of the virtual and local data with consistent modeling rules applied and providing direct access.</td>
+</tr>
+<tr>
+<td><strong>Calculated View</strong></td>
+<td>stores data mapping and transformations from source systems enabling real-time analytics and on the fly calculations without the use of persistent aggregates.</td>
+</tr>
+<tr>
+<td><strong>Calculation engine</strong></td>
+<td>An engine used to perform field level calculations and union/rank operations on the dataset.</td>
+</tr>
+<tr>
+<td><strong>Data mapping</strong></td>
+<td>A process to map the data path from the source system that contains different data fields from the target, appliying on the fly calculations.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-discovery-roadmap">8. Discovery Roadmap</h2>
+<p>To elaborate this Thesis, I have been recollecting links and resources about the Data Fabric architecture. I wanted to share the discovery path I've followed to understand the Data Fabric implications.</p>
+<h3 id="81-introductory-content">8.1 Introductory content</h3>
+<ul>
+<li><a href="https://www.idginsiderpro.com/article/3226393/what-is-a-data-fabric-and-why-should-you-care.html">What is a data fabric and why should you care?</a></li>
+<li><a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">Data Fabric Architecture is Key to Modernizing Data Management and Integration</a></li>
+<li><a href="https://www.trifacta.com/blog/what-is-data-fabric/">What is Data Fabric? Trifacta</a></li>
+<li><a href="https://www.bmc.com/blogs/data-fabric/">Data Fabric Explained: Concepts, Capabilities &amp; Value Props</a></li>
+<li><a href="https://www.e-spincorp.com/what-are-the-principles-that-define-data-fabric/">What are the principles that define data fabric?</a></li>
+<li><a href="https://lingarogroup.com/blog/is-data-fabric-the-future-of-data-management-platforms/">An introduction to the concept of Data Fabric</a></li>
+<li><a href="https://www.atscale.com/blog/what-is-a-data-fabric/">ATSCALE: What is a Data Fabric?</a></li>
+<li><a href="https://www.youtube.com/watch?v=0Zzn4eVbqfk">Data Fabric Explained by Ellen Fridman and Ted Dunning</a></li>
+<li><a href="https://www.softtek.eu/en/tech-magazine-en/data-ecosystem-en/managing-data-fabric-architecture-for-data-driven-business-challenges/">Managing Data Fabric architecture for data-driven business challenges</a></li>
+</ul>
+<h3 id="82-architecture">8.2 Architecture</h3>
+<ul>
+<li><a href="https://www.itprotoday.com/analytics-and-reporting/data-fabric-architecture-advantages-and-disadvantages">Data Fabric Architecture: Advantages and Disadvantages</a></li>
+<li><a href="https://atlan.com/data-fabric-vs-data-virtualization/">Comparing Data Fabric vs Data Virtualization</a></li>
+<li><a href="https://www.youtube.com/watch?v=qi6sTvu8osk">What's a data fabric and how does it work?</a></li>
+<li><a href="https://www.altoros.com/blog/metadata-and-data-virtualization/#:~:text=From%20metadata%20to%20data%20virtualization,in%20a%20single%20virtual%20warehouse.">Metadata and Data Virtualization Explained</a></li>
+</ul>
+<h3 id="83-deep-dive">8.3 Deep Dive</h3>
+<ul>
+<li><a href="https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/">Data Mesh Vs. Data Fabric: Understanding the Differences</a></li>
+<li><a href="https://searchdatamanagement.techtarget.com/feature/The-top-6-use-cases-for-a-data-fabric-architecture">The top 6 use cases for a data fabric architecture</a></li>
+<li><a href="https://www.tibco.com/reference-center/what-is-data-fabric#:~:text=Data%20fabric%20is%20an%20end,helps%20organizations%20manage%20their%20data.">What is Data Fabric</a></li>
+<li><a href="https://searchdatamanagement.techtarget.com/definition/data-fabric">Data Fabric TechTarget</a></li>
+<li><a href="https://www.striim.com/data-fabric-what-is-it-and-why-do-you-need-it/">Data Fabric: What is it and Why Do You Need it?</a></li>
+</ul>
+<hr />
+<h2 id="references-and-links">References and links</h2>
+<ul>
+<li>CaraDonna, J. and Lent, A. <em>NetApp Data Fabric Architecture Fundamentals. White Paper.</em> Infoworks.</li>
+<li>D.Tupper, C. <em>Data Architecture: From Zen to Reality</em> (1st ed.). ELSEVIER.</li>
+<li>LaPlante, A. <em>Data Fabric as Modern Data Architecture. Report.</em> (1st ed.). O'Reilly.</li>
+<li>Wells, D. <em>Data Fabric: Smart Data Engineering, Operations and Orchestration</em> Infoworks.</li>
+<li>Pattanayak, A. <em>High Performance Analytics with SAP HANA Virtual Models.</em> Scientific Research Publishing Inc.</li>
+<li>Freeman, L. and C. Miller, L. <em>Hybrid Cloud &amp; Data Fabric For Dummies, NetApp Special Edition</em> John Wiley &amp; Sons, Inc. </li>
+<li><a href="https://carlosgrande.me/#resources-cheatsheets/">More Resources like this here</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright &copy; carlosgrande.me - 2024
+                </div>
+                
+            </div>
+            
+            <div class="md-social">
+  
+</div>
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.tracking", "navigation.tabs", "navigation.tabs", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../../../assets/javascripts/extra.js"></script>
+      
+        <script src="../../../assets/javascripts/image_caption.js"></script>
+      
+        <script src="../../../assets/javascripts/output_code.js"></script>
+      
+        <script src="../../../assets/javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../assets/javascripts/publications.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": false, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

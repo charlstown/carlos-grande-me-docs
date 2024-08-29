@@ -1,0 +1,3067 @@
+<!-- Elements added to main will be displayed on all pages -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="none">
+      
+      
+        <meta name="author" content="Charlstown">
+      
+      
+      
+        <link rel="prev" href="../business-model-design/">
+      
+      
+        <link rel="next" href="../../coding/google-challenge-part-1/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Team topologies - carlosgrande.me</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/output_code.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/gallery.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/my_katex.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#team-topologies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="carlosgrande.me" class="md-header__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            carlosgrande.me
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Team topologies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../references/" class="md-tabs__link">
+          
+  
+    
+  
+  References
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/" class="md-tabs__link">
+          
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../resources/" class="md-tabs__link">
+          
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Notebooks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about-me/" class="md-tabs__link">
+        
+  
+    
+  
+  About me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="carlosgrande.me" class="md-nav__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    carlosgrande.me
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../references/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Articles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Articles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/death-of-distance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Death of distance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/space-of-flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Space of flows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/the-chinese-room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The chinese room
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/ubiquitous-computing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubiquitous computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/whole-brain-emulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Whole brain emulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Case studies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Case studies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/3000000-kms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    300.000 Km/s studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/ben-willers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ben Willers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/eric-fischer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eric Fischer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/giorgia-lupi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giorgia Lupi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/moritz-stefaner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moritz Stefaner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/nicholas-felton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nicholas Felton
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/refik-anadol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refik Anadol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/wesley-grubbs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wesley Grubbs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../projects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-airbnb-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Madrid Airbnb analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-invisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Madrid invisible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/my-rubiks-cube-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My rubiks cube model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../resources/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My thesis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            My thesis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/thesis/my-data-mesh-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Mesh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/thesis/my-data-product-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/thesis/my-data-fabric-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data fabric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My cheat sheets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            My cheat sheets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-business-model-canvas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business model canvas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-docker-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-git-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-letter-cases-reminder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Letter cases reminder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-linux-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-python-3-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python 3 cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-python-project-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python project cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-r-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-sql-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My coding templates
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            My coding templates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/templates/my-python-template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Python template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My favorite tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            My favorite tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/tools/my-favorite-screen-splitter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen splitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Notebooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Business
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Business
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business-model-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Business model design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Team topologies
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Team topologies
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#1-team-concepts" class="md-nav__link">
+      <span class="md-ellipsis">
+        1 Team concepts
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="1 Team concepts">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#11-the-reverse-conway-maneuver" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.1 The Reverse Conway Maneuver
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#12-team-first-approach" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.2 Team First Approach
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="1.2 Team First Approach">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#121-limiting-the-size-of-the-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.2.1 Limiting the Size of the teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#122-limiting-the-number-and-type-of-domains-per-team" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.2.2 Limiting the number and type of domains per team
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#123-limiting-the-team-cognitive-load" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.2.3 Limiting the team cognitive load
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#13-organizational-sensing" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.3 Organizational sensing
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-team-topologies" class="md-nav__link">
+      <span class="md-ellipsis">
+        2 Team Topologies
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2 Team Topologies">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#21-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1 Teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2.1 Teams">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#211-stream-aligned-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1.1 Stream-aligned teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#212-platform-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1.2 Platform teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#213-enabling-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1.3 Enabling teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#214-complicated-subsystem-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1.4 Complicated subsystem teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#22-teams-interactions" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2. Teams Interactions
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2.2. Teams Interactions">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#221-collaboration" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2.1 Collaboration
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#222-x-as-a-service" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2.2 X as a Service
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#223-facilitating" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2.3 Facilitating
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-team-topologies-vocabulary" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. Team topologies vocabulary
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#references-and-links" class="md-nav__link">
+      <span class="md-ellipsis">
+        References and links
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Coding
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Coding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding/google-challenge-part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google challenge part 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding/python-design-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python design patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding/python-generators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python generators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/dimensionality-reduction-using-pca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dimensionality reduction using PCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/machine-learning-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine learning basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/reinforcement-learning-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reinforcement learning basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/sample-size-determination/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample size determination
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/text-mining-sentiment-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text mining sentiment analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-architecture/azure-big-picture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Big Picture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-architecture/cloud-migration-planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud migration planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-me/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About me
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#1-team-concepts" class="md-nav__link">
+      <span class="md-ellipsis">
+        1 Team concepts
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="1 Team concepts">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#11-the-reverse-conway-maneuver" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.1 The Reverse Conway Maneuver
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#12-team-first-approach" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.2 Team First Approach
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="1.2 Team First Approach">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#121-limiting-the-size-of-the-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.2.1 Limiting the Size of the teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#122-limiting-the-number-and-type-of-domains-per-team" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.2.2 Limiting the number and type of domains per team
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#123-limiting-the-team-cognitive-load" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.2.3 Limiting the team cognitive load
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#13-organizational-sensing" class="md-nav__link">
+      <span class="md-ellipsis">
+        1.3 Organizational sensing
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-team-topologies" class="md-nav__link">
+      <span class="md-ellipsis">
+        2 Team Topologies
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2 Team Topologies">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#21-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1 Teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2.1 Teams">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#211-stream-aligned-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1.1 Stream-aligned teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#212-platform-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1.2 Platform teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#213-enabling-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1.3 Enabling teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#214-complicated-subsystem-teams" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1.4 Complicated subsystem teams
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#22-teams-interactions" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2. Teams Interactions
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2.2. Teams Interactions">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#221-collaboration" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2.1 Collaboration
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#222-x-as-a-service" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2.2 X as a Service
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#223-facilitating" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2.3 Facilitating
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-team-topologies-vocabulary" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. Team topologies vocabulary
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#references-and-links" class="md-nav__link">
+      <span class="md-ellipsis">
+        References and links
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="team-topologies">Team topologies</h1>
+<p><a class="glightbox" href="../../../assets/images/notebooks/team-topologies-portrait.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Components from four of the earliest electronic computers, held by Patsy Boyce Simmers, Gail Taylor, Millie Beck and Norma Stec, employees at the United States Army’s Ballistics Research Laboratory." class="image-caption" src="../../../assets/images/notebooks/team-topologies-portrait.png" /></a></p>
+<p>I recently joined a new project to design an Internal Developer Platform (IDP) from the scratch. I was so interested in analyzing the organization of the teams, its typologies and its interactions. I started looking for references and found the book The <a href="https://teamtopologies.com/book"><em>Team Topologies: Organizing Business and Technology Teams for Fast Flow</em></a> by Matthew Skelton and Manuel Pais.</p>
+<p>I've long enjoyed learning from Matthew's and Manuel's work, and totally recommend their content. It's great to see that their vision for organizing teams has been collated into a single book.  For anyone in the tech/organization design field, <em>Team Topologies</em> is well worth reading. I share in this post my notes on reading this great book.</p>
+<h2 id="1-team-concepts">1 Team concepts</h2>
+<h3 id="11-the-reverse-conway-maneuver">1.1 The Reverse Conway Maneuver</h3>
+<p>The reverse Conway maneuver gained traction in the technology world around 2015 and has been applied in many organizations since. Accelerate: The Science of Dev Ops by Nicole Forsgren, PhD, Jez Humble, and Gene Kim supports the importance of this strategy for high-performing organizations.</p>
+<blockquote>
+<p><strong>Conway law: Organizations wich design systems, are constrained to produce designs wich are copies of the communication structures of these organizations.</strong></p>
+</blockquote>
+<p><a class="glightbox" href="../../../assets/images/notebooks/team-topologies-reverse-conway.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Reverse Conway Maneuver" src="../../../assets/images/notebooks/team-topologies-reverse-conway.png" /></a></p>
+<p>Conway’s law tells us that an organization’s structure and the actual communication paths between teams persevere in the resulting architecture of the systems built. They void the attempts of designing software as a separate activity from the design of the teams themselves.</p>
+<p>The effects of this simple law are far reaching. On one hand, the organization’s design limits the number of possible solutions for a given system’s architecture. On the other hand, the speed of software delivery is strongly affected by how many team dependencies the organization design instills.</p>
+<p>Fast flow requires restricting communication between teams. Team collaboration is important for gray areas of development, where discovery and expertise is needed to make progress. But in areas where execution prevails—not discovery—communication becomes an unnecessary overhead.</p>
+<p>In short, by considering the impact of Conway’s law when designing software architectures and/or reorganizing team structures, you will be able to takeadvantage of the isomorphic force at play, which converges the software architecture and the team design.</p>
+<blockquote>
+<p><strong>Organizations should evolve their team and organizational structure to achieve the desired architecture. The goal is for your architecture to support the ability of teams to get their work done—from design through to deployment—without requiring high-bandwidth communication between teams.</strong></p>
+</blockquote>
+<h3 id="12-team-first-approach">1.2 Team First Approach</h3>
+<p>A research by Google on their own teams found that when it comes to measuring performance, teams matter more than individuals. It is a good approach to start with the team for effective software delivery. There are multiple aspects to consider like team size, team domains, team relationships, and team cognition.</p>
+<h4 id="121-limiting-the-size-of-the-teams">1.2.1 Limiting the Size of the teams</h4>
+<p>Amazon, for instance, is known for limiting the size of its software teams to those that can be fed by two pizzas. This limit, recommended by popular frameworks such as Scrum, derives from evolutionary limits on group recognition and trust known as <strong>Dunbar’s number</strong> (after anthropologist Robin Dunbar). Dunbar found fifteen to be the limit of the number of people one person can trust deeply. From those, only around five people can be known and trusted closely.</p>
+<p><a class="glightbox" href="../../../assets/images/notebooks/team-topologies-dunbar-number.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Dunbar-compatible groupings" src="../../../assets/images/notebooks/team-topologies-dunbar-number.png" /></a></p>
+<p>In the context of products and services enabled by software systems, the limits exposed by Dunbar’s number mean that the number of people in different business lines or streams of work should also explicitly be limited when the number of people in a department exceeds fifty (or 150, or 500), the internal and external dynamics with other groupings will change. This, in turn, means that the software architecture needs to be realigned with the new team groupings so that teams can continue to own the architecture effectively. This is an example of what we like to call “team-first architecture,” which requires a substantially new way of thinking for many organizations</p>
+<ul>
+<li>A single team: around five to eight people (based on industry experience)</li>
+<li>In high-trust organizations: no more than fifteen people</li>
+<li>Families (“tribes”): groupings of teams of no more than fifty people</li>
+<li>In high-trust organizations: groupings of no more than 150 people</li>
+<li>Divisions/streams/profit &amp; loss (P&amp;L) lines: groupings of no more than 150 or 500 people.</li>
+</ul>
+<p>Organizations can be composed from Dunbar-compatible groupings of these sizes; when one of the limits is reached, the need to split off another unit as a semi-independent grouping arises. We can visualize this “scaling by Dunbar” as concentric circles of increasingly larger or smaller groups (see Figure)</p>
+<h4 id="122-limiting-the-number-and-type-of-domains-per-team">1.2.2 Limiting the number and type of domains per team</h4>
+<p>To get started, identify distinct domains that each team has to deal with, and classify these domains into simple (most of the work has a clear path of action), complicated (changes need to be analyzed and might require a few iterations on the solution to get it right), or complex (solutions require a lot of experimentation and discovery). You should finetune the resulting classification by comparing pairs of domains across teams.</p>
+<ul>
+<li>The first heuristic is to <strong>assign each domain to a single team</strong>. If a domain is too large for a team, instead of splitting responsibilities of a single domain to multiple teams, first split the domain into subdomains and then assign each new subdomain to a single team.</li>
+<li>The second heuristic is that <strong>a single team should be able to accommodate two to three “simple” domains</strong>. Because such domains are quite procedural, the cost of context switching between domains is more bearable, as responses are more mechanical.</li>
+<li>The third heuristic is that <strong>a team responsible for a complex domain should not have any more domains assigned</strong> to them—not even a simple one.</li>
+<li>The last heuristic is <strong>to avoid a single team responsible for two complicated domains</strong>. Instead, it’s best to split the team into two separate teams of five people (by recruiting one or two more team members), so they can each be more focused and autonomous.</li>
+</ul>
+<p><a class="glightbox" href="../../../assets/images/notebooks/team-topologies-limiting-domains.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Limiting domains" src="../../../assets/images/notebooks/team-topologies-limiting-domains.png" /></a></p>
+<h4 id="123-limiting-the-team-cognitive-load">1.2.3 Limiting the team cognitive load</h4>
+<p>With a team-first approach, the team's responsibilities are matched to the cognitive load that the team can handle. For software-delivery teams a team-first approach to cognitive load means limiting the size of the software system that a team is expected to work with; that is, organizations should not allow a software subsystem to grow beyond the cognitive load of a team responsible for the software.</p>
+<p><strong>Cognitive load</strong> was characterized in 1988 by psychologist Jhon Sweller as <strong>"the total amount of mental effort being used in the working memory."</strong> Sweller defines three different kinds of cognitive load:</p>
+<ul>
+<li><strong>Intrinsic cognitive load:</strong> relates to aspect of the task fundamental to the problem space. (How do I create a new method?)</li>
+<li><strong>Extraneous cognitive load:</strong> relates to the environment in which the task is being done (How do I deploy this component again?)</li>
+<li><strong>Germane cognitive load:</strong> relates to aspects of the task that need special attention for learning or high performance. (How should a service interact with other service)</li>
+</ul>
+<p><a class="glightbox" href="../../../assets/images/notebooks/team-topologies-cognitive-load.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Cognitive load" src="../../../assets/images/notebooks/team-topologies-cognitive-load.png" /></a></p>
+<p>For example, the intrinsic cognitive load for a developer could be the knowledge of the computer language being used, the extraneous cognitive load might be details of the commands needed to instantiate a dynamic testing environment, and the germane cognitive load could be the specific aspects of the business domain that the developer is programming.</p>
+<p>For effective delivery and operations of modern software systems, organizations should attempt to minimize intrinsic cognitive load (through training, good choice of technologies, hiring, pair programming, etc.) and eliminate extraneous cognitive load altogether (boring or superfluous tasks or commands that add little value to retain in the working memory and can often be automated away), leaving more space for germane cognitive load (which is where the “value add” thinking lies).</p>
+<h3 id="13-organizational-sensing">1.3 Organizational sensing</h3>
+<p>Organizational sensing uses teams and their internal and external communication as the “senses” of the organization (sight, sound, touch, smell, taste)—what Peter Drucker calls “synthetic sense organs for the outside.” To sense things (and make sense of things), organisms need defined, reliable communication pathways. Similarly, with well-defined and stable communication pathways between teams, organizations can detect signals from across the organization and outside it, becoming something like an organism.</p>
+<blockquote>
+<p><strong>Organizational sensing is the use of sociotechnical inputs (software, digital sensors, human groups, and “weak signals”) to provide rich awareness of the internal and external business environment.</strong></p>
+</blockquote>
+<p>A key aspect of this sensory feedback is the use of IT operations teams as high-fidelity sensory input for development teams, requiring joined-up communications between teams running systems (Ops) and teams building systems (Dev). It is essential that organizations use signals from maintenance work as input to software-development activities. In the The DevOps Handbook, Gene Kim and colleagues define The Three Ways of DevOps for modern, high-performing organizations:</p>
+<ul>
+<li><strong>Systems thinking:</strong> optimize for fast flow across the whole organization, not just in small parts.</li>
+<li><strong>Feedback loops:</strong> Development informed and guided by Operations.</li>
+<li><strong>Culture of continual experimentation and learning:</strong> sensing and feedback for every team interaction.</li>
+</ul>
+<p><a class="glightbox" href="../../../assets/images/notebooks/team-topologies-devops-teams.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="DevOps team formation" src="../../../assets/images/notebooks/team-topologies-devops-teams.png" /></a></p>
+<h2 id="2-team-topologies">2 Team Topologies</h2>
+<p>By deploying the four fundamental team topologies with the three core team interaction modes, organizations gain crucial clarity of purpose for their teams on an ongoing basis. Teams understand how, when, and why they need to collaborate with other teams; how, when, and why they should be consuming or providing something “as a service”; and how, when, and why they should provide or seek facilitation with another team. Thus, an organization should expect to see different kinds of interactions between different kinds of teams at any given time as the organization responds to new challenges.</p>
+<h3 id="21-teams">2.1 Teams</h3>
+<p>The four fundamental team topologies—stream aligned, enabling, complicated subsystem, and platform—should act as “magnets” for all team types. All teams should move toward one of these four magnetic poles; that is, we should prefer these types, and aim to adopt the purpose, role, responsibility, and interaction behavior of these fundamental types for every team in our organization. Simplifying the types of teams to just these four helps to reduce ambiguity within the organization.</p>
+<p><a class="glightbox" href="../../../assets/images/notebooks/team-topologies-topologies.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="The four team topologies" src="../../../assets/images/notebooks/team-topologies-topologies.png" /></a></p>
+<h4 id="211-stream-aligned-teams">2.1.1 Stream-aligned teams</h4>
+<p>A “stream” is the continuous flow of work aligned to a business domain or organizational capability. Continuous flow requires clarity of purpose and responsibility so that multiple teams can coexist, each with their own flow of work.</p>
+<blockquote>
+<p><strong>Is a team aligned to a single, valuable stream of work; this might be a single product or service, a single set of features, a single user journey, or a single user persona.</strong></p>
+</blockquote>
+<p>The stream-aligned team is the primary team type in an organization, and the purpose of the other fundamental team topologies is to reduce the burden on the stream-aligned teams.</p>
+<p>Because a stream-aligned team works on the full spectrum of delivery, they are, by necessity, closer to the customer and able to quickly incorporate feedback from customers while monitoring their software in production. Such a team can react to system problems in near real-time, steering the work as needed. In the words of Don Reinertsen: “In product development, we can change direction more quickly when we have a small team of highly skilled people instead of a large team.</p>
+<p>In most organizations, an effective team has a maximum size of around seven to nine people. Amazon, for instance, is known for limiting the size of its software teams to those that can be fed by two pizzas.</p>
+<p>The Amazon two-pizza-team model is an example of stream-aligned teams: the teams are substantially independent, have ownership over their services, and have responsibility for the runtime success of the software they write. The fact that Amazon has been using this model for over seventeen years shows how effective it can be to align teams to independent streams of change.</p>
+<h4 id="212-platform-teams">2.1.2 Platform teams</h4>
+<p>Jutta Eckstein has a suitable recommendation: “Technical-service teams should always regard themselves as pure service providers for the domain teams.”</p>
+<blockquote>
+<p><strong>The purpose of a platform team is to enable stream-aligned teams to deliver work with substantial autonomy. The platform team provides internal services to reduce the cognitive load that would be required from stream-aligned teams to develop these underlying services.</strong></p>
+</blockquote>
+<p>In practice, platform teams are expected to focus on providing a smaller number of services of acceptable quality rather than a large number of services with many resilience and quality problems.</p>
+<p>In large organizations, a platform will need more than one team to build and run it (and in some cases, separate streams may each have their own platform). In these situations, a platform is composed of groups of other fundamental team types: stream aligned, enabling, complicated subsystem, and platform. Yes: the platform is itself built on a platform (see more on this later in this chapter).</p>
+<p>Traditionally, many infrastructure teams were responsible for all aspects of the live/production infrastructure, including any changes to applications deployed on that infrastructure. Converting an infrastructure team into a platform team enables rapid, safe flow of change both within the platform and—crucially—within stream-aligned teams.</p>
+<h4 id="213-enabling-teams">2.1.3 Enabling teams</h4>
+<p>How can a stream-aligned team with end-to-end ownership find the space for researching, reading about, learning, and practicing new skills? Stream-aligned teams are also under constant pressure to deliver and respond to change quickly.</p>
+<blockquote>
+<p><strong>An enabling team is composed of specialists in a given technical (or product) domain, cross-cut to the stream-aligned teams and have the required bandwidth to research, try out options, and make informed suggestions on adequate tooling, practices, frameworks, and any of the ecosystem choices around the application stack.</strong></p>
+</blockquote>
+<p>Enabling teams have a strongly collaborative nature; they thrive to understand the problems and shortcomings of stream-aligned teams in order to provide effective guidance. Jutta Eckstein calls them “Technical Consulting Teams. The end goal of an enabling team is to increase the autonomy of stream-aligned teams by growing their capabilities with a focus on their problems first, not the solutions per se. </p>
+<h4 id="214-complicated-subsystem-teams">2.1.4 Complicated subsystem teams</h4>
+<p>We can’t expect to embed the necessary specialists in all the stream-aligned teams that make use of the subsystem; it would not be feasible, cost-effective, or in line with the stream-aligned team’s goals.</p>
+<blockquote>
+<p><strong>A complicated-subsystem team is responsible for building and maintaining a part of the system that depends heavily on specialist knowledge. The goal of this team is to reduce the cognitive load of stream-aligned teams working on systems that include or use the complicated subsystem.</strong></p>
+</blockquote>
+<p>The critical difference between a traditional component team (created when a subsystem is identified as being or expected to be shared by multiple systems) and a complicated-subsystem team is that the complicated-subsystem team is created only when a subsystem needs mostly specialized knowledge. The decision is driven by team cognitive load, not by a perceived opportunity to share the component.</p>
+<h3 id="22-teams-interactions">2.2. Teams Interactions</h3>
+<p>When considering the relationship between any teams, a key decision is whether to collaborate with another team to achieve an objective or to treat the other team as providing a service. This choice between collaboration or consuming a service can be made at many different levels within the organization: consuming infrastructure as a service (from AWS, Azure, or Google Cloud, for instance), collaborating on logging and metrics, relying on a complicated-subsystem team to build a complex audio-processing codec, or working together on application deployment.</p>
+<p>To understand how and when to adapt the Team Topologies model for software systems, we need to define and understand three essential ways in which teams can and should interact, taking into account team-first dynamics and Conway’s law.</p>
+<p><a class="glightbox" href="../../../assets/images/notebooks/team-topologies-interactions.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Team interactions" src="../../../assets/images/notebooks/team-topologies-interactions.png" /></a></p>
+<h4 id="221-collaboration">2.2.1 Collaboration</h4>
+<p>During early phases of new systems development, and during periods where there is a need to quickly discover new information, technology limitations, and suitable practices, the collaboration mode is highly valuable. This is because team topologies that use collaboration can rapidly uncover new ways of working and unexpected behaviors of technologies.</p>
+<p>The collaboration team mode is suitable where a high degree of adaptability or discovery is needed, particularly when exploring new technologies or techniques.</p>
+<blockquote>
+<p><strong>Two teams work closely together for a defined period to discover new patterns, approaches, and limitations. Responsibility is shared and boundaries blurred, but problems are solved rapidly and the organization learns quickly.</strong></p>
+</blockquote>
+<p>The collaboration interaction mode is good for rapid discovery of new things, because it avoids costly hand-offs between teams.</p>
+<h4 id="222-x-as-a-service">2.2.2 X as a Service</h4>
+<p>The X-as-a-Service team interaction mode is suited to situations where there is a need for one or more teams to use a code library, component, API, or platform that “just works” without much effort, where a component or aspect of the system can be effectively provided “as a service” by a distinct team or group of teams. The goal is to consume or provide something with minimal collaboration.</p>
+<blockquote>
+<p><strong>One team consumes something (such as a service or an API) provided “as a service” from another team. Responsibilities are clearly delineated and—if the boundary is effective—the consuming team can deliver rapidly. The team providing the service seeks to make their service as easy to consume as possible.</strong></p>
+</blockquote>
+<p>During later phases of systems development and periods where predictable delivery is needed (rather than discovery of new approaches), the X-as-a-Service model works best. In this model, teams can rely on certain aspects of their technology landscape being provided as a service by other teams (internal or external), allowing the team to focus on delivering their work.</p>
+<h4 id="223-facilitating">2.2.3 Facilitating</h4>
+<p>The facilitating team interaction mode is suited to situations where one or more teams would benefit from the active help of another team facilitating (or coaching) some aspect of their work. The facilitating interaction mode is the main operating mode of an enabling team and provides support and capabilities to many other teams, helping to enhance the productivity and effectiveness of these teams. </p>
+<blockquote>
+<p><strong>One team helps another team to learn or adopt new approaches for a defined period of time. The team providing the facilitation aims to make the other team self-sufficient as soon as possible, while the team receiving the facilitation has an open-minded attitude to learning.</strong></p>
+</blockquote>
+<p>Teams that interact using the facilitating mode typically work across many other teams, detecting and reducing cross-team problems and helping to inform the direction and capabilities of things like code libraries, APIs, and platforms provided as a service by other teams or organizations.</p>
+<h2 id="3-team-topologies-vocabulary">3. Team topologies vocabulary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Team Topologies:</strong></td>
+<td>a model for organizational design that provides a key technology-agnostic mechanism for modern software-intensive enterprises to sense when a change in strategy is required (either from a business or technology point of view).</td>
+</tr>
+<tr>
+<td><strong>Digital Platform:</strong></td>
+<td>a digital platform is a foundation of self-service APIs, tools, services, knowledge and support which are arranged as a compelling internal product. Autonomous delivery teams can make use of the platform to deliver product features at a higher pace, with reduced coordination. Evan Bottcher’s.</td>
+</tr>
+<tr>
+<td><strong>Team:</strong></td>
+<td>a stable grouping of five to nine people who work toward a shared goal as a unit as the smallest entity of delivery within the organization.</td>
+</tr>
+<tr>
+<td><strong>Platform team:</strong></td>
+<td>enables stream-aligned teams to deliver work with substantial autonomy.</td>
+</tr>
+<tr>
+<td><strong>Enabling team:</strong></td>
+<td>team(s) composed of specialists in a given technical (or product) domain; they help bridge the capability gap.</td>
+</tr>
+<tr>
+<td><strong>stream-aligned team:</strong></td>
+<td>a team aligned to a single, valuable stream of work.</td>
+</tr>
+<tr>
+<td><strong>Dunbar’s number:</strong></td>
+<td>is a suggested cognitive limit to the number of people with whom one can maintain stable social relationships—relationships in which an individual knows who each person is and how each person relates to every other person. This number was first proposed in the 1990s by British anthropologist Robin Dunbar, who found a correlation between primate brain size and average social group size. By using the average human brain size and extrapolating from the results of primates, he proposed that humans can comfortably maintain 150 stable relationships.</td>
+</tr>
+<tr>
+<td><strong>Brooks’s law:</strong></td>
+<td>is an observation about software project management according to which "adding manpower to a late software project makes it later". It was coined by Fred Brooks in his 1975 book The Mythical Man-Month. According to Brooks, under certain conditions, an incremental person when added to a project makes it take more, not less time.</td>
+</tr>
+<tr>
+<td><strong>Conway’s law:</strong></td>
+<td>law coined by Mel Conway that states that organizations, who design systems, are constrained to produce designs which are copies of the communication structures of these organizations.</td>
+</tr>
+<tr>
+<td><strong>Cognitive load:</strong></td>
+<td>the amount of working memory being used.</td>
+</tr>
+<tr>
+<td><strong>Collaboration mode:</strong></td>
+<td>team(s) working closely together with another team.</td>
+</tr>
+<tr>
+<td><strong>Facilitating mode:</strong></td>
+<td>team(s) helping (or being helped by) another team to clear impediments.</td>
+</tr>
+<tr>
+<td><strong>X-as-a-Service mode:</strong></td>
+<td>consuming or providing something with minimal collaboration.</td>
+</tr>
+<tr>
+<td><strong>Domain complexity:</strong></td>
+<td>how complex the problem is that is being solved via software.</td>
+</tr>
+<tr>
+<td><strong>Fracture plane:</strong></td>
+<td>a natural “seam” in the software system that allows it to be easily split into two or more parts.</td>
+</tr>
+<tr>
+<td><strong>Organizational sensing:</strong></td>
+<td>teams and their internal and external communication are the “senses” of the organization (sight, sound, touch, smell, taste).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="references-and-links">References and links</h2>
+<ul>
+<li><a href="https://www.docker.com/blog/building-stronger-happier-engineering-teams-with-team-topologies/">Building Stronger, Happier Engineering Teams with Team Topologies</a></li>
+<li><a href="https://teamtopologies.com/">Team Topologies official website</a></li>
+<li><a href="https://teamtopologies.com/book">Team Topologies book</a></li>
+<li><a href="https://teamtopologies.com/industry-examples/organizational-evolution-accelerating-delivery-of-comparison-services-uswitch">Organizational evolution for accelerating delivery of comparison services at Uswitch</a></li>
+<li><a href="https://xebia.com/blog/using-team-topologies-to-discover-and-improve-reliability-qualities/">Using Team Topologies to discover and improve reliability qualities</a></li>
+<li><a href="https://towardsdatascience.com/organizing-data-teams-where-to-make-the-cut-49969c5ec093">Organizing Data Teams — Where to Make The Cut</a></li>
+<li><a href="https://about.gitlab.com/handbook/business-technology/data-team/organization/">Data Team Organization</a></li>
+<li><a href="https://medium.com/snaptravel/how-should-our-company-structure-our-data-team-e71f6846024d">How should our company structure our data team?</a></li>
+<li><a href="https://carlosgrande.me/category/
+myworks/notebooks/">More Notebooks like this here</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright &copy; carlosgrande.me - 2024
+                </div>
+                
+            </div>
+            
+            <div class="md-social">
+  
+</div>
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.tracking", "navigation.tabs", "navigation.tabs", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../../../assets/javascripts/extra.js"></script>
+      
+        <script src="../../../assets/javascripts/image_caption.js"></script>
+      
+        <script src="../../../assets/javascripts/output_code.js"></script>
+      
+        <script src="../../../assets/javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../assets/javascripts/publications.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": false, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

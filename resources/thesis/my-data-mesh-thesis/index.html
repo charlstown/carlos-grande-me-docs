@@ -1,0 +1,3058 @@
+<!-- Elements added to main will be displayed on all pages -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="none">
+      
+      
+        <meta name="author" content="Charlstown">
+      
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../my-data-product-thesis/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Data Mesh - carlosgrande.me</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/output_code.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/gallery.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/my_katex.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#my-data-mesh-thesis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="carlosgrande.me" class="md-header__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            carlosgrande.me
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Mesh
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../references/" class="md-tabs__link">
+          
+  
+    
+  
+  References
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/" class="md-tabs__link">
+          
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../notebooks/" class="md-tabs__link">
+          
+  
+    
+  
+  Notebooks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about-me/" class="md-tabs__link">
+        
+  
+    
+  
+  About me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="carlosgrande.me" class="md-nav__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    carlosgrande.me
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../references/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Articles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Articles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/death-of-distance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Death of distance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/space-of-flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Space of flows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/the-chinese-room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The chinese room
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/ubiquitous-computing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubiquitous computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/whole-brain-emulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Whole brain emulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Case studies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Case studies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/3000000-kms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    300.000 Km/s studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/ben-willers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ben Willers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/eric-fischer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eric Fischer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/giorgia-lupi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giorgia Lupi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/moritz-stefaner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moritz Stefaner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/nicholas-felton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nicholas Felton
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/refik-anadol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refik Anadol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/wesley-grubbs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wesley Grubbs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../projects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-airbnb-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Madrid Airbnb analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-invisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Madrid invisible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/my-rubiks-cube-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My rubiks cube model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My thesis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            My thesis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data Mesh
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Data Mesh
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#1-context" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. Context
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="1. Context">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-principles" class="md-nav__link">
+      <span class="md-ellipsis">
+        2. Principles
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2. Principles">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-data-mesh-architecture" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. Data Mesh Architecture
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="3. Data Mesh Architecture">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#4-data-mesh-implementation" class="md-nav__link">
+      <span class="md-ellipsis">
+        4. Data Mesh Implementation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="4. Data Mesh Implementation">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#5-case-studies" class="md-nav__link">
+      <span class="md-ellipsis">
+        5. Case Studies
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="5. Case Studies">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#6-conclusion" class="md-nav__link">
+      <span class="md-ellipsis">
+        6. Conclusion
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#7-data-mesh-vocabulary" class="md-nav__link">
+      <span class="md-ellipsis">
+        7. Data Mesh Vocabulary
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#8-discovery-roadmap" class="md-nav__link">
+      <span class="md-ellipsis">
+        8. Discovery Roadmap
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="8. Discovery Roadmap">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#acknowledgements" class="md-nav__link">
+      <span class="md-ellipsis">
+        Acknowledgements
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#references-and-links" class="md-nav__link">
+      <span class="md-ellipsis">
+        References and links
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-data-product-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-data-fabric-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data fabric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My cheat sheets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            My cheat sheets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-business-model-canvas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business model canvas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-docker-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-git-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-letter-cases-reminder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Letter cases reminder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-linux-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-python-3-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python 3 cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-python-project-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python project cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-r-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheets/my-sql-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My coding templates
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            My coding templates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/my-python-template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Python template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My favorite tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            My favorite tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/my-favorite-screen-splitter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen splitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../notebooks/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Notebooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Business
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Business
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/business/business-model-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Business model design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/business/team-topologies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Team topologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Coding
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Coding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/google-challenge-part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google challenge part 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/python-design-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python design patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/python-generators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python generators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/dimensionality-reduction-using-pca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dimensionality reduction using PCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/machine-learning-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine learning basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/reinforcement-learning-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reinforcement learning basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/sample-size-determination/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample size determination
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/text-mining-sentiment-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text mining sentiment analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-architecture/azure-big-picture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Big Picture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-architecture/cloud-migration-planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud migration planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-me/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About me
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#1-context" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. Context
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="1. Context">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-principles" class="md-nav__link">
+      <span class="md-ellipsis">
+        2. Principles
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2. Principles">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-data-mesh-architecture" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. Data Mesh Architecture
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="3. Data Mesh Architecture">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#4-data-mesh-implementation" class="md-nav__link">
+      <span class="md-ellipsis">
+        4. Data Mesh Implementation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="4. Data Mesh Implementation">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#5-case-studies" class="md-nav__link">
+      <span class="md-ellipsis">
+        5. Case Studies
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="5. Case Studies">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#6-conclusion" class="md-nav__link">
+      <span class="md-ellipsis">
+        6. Conclusion
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#7-data-mesh-vocabulary" class="md-nav__link">
+      <span class="md-ellipsis">
+        7. Data Mesh Vocabulary
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#8-discovery-roadmap" class="md-nav__link">
+      <span class="md-ellipsis">
+        8. Discovery Roadmap
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="8. Discovery Roadmap">
+        <ul class="md-nav__list">
+          
+          
+          
+          
+          
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#acknowledgements" class="md-nav__link">
+      <span class="md-ellipsis">
+        Acknowledgements
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#references-and-links" class="md-nav__link">
+      <span class="md-ellipsis">
+        References and links
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="my-data-mesh-thesis">My data mesh thesis</h1>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-portrait.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Mesh thesis" class="image-width-24" src="../../../assets/images/resources/data-mesh-portrait.png" /></a></p>
+<p>I wanted to write a post with my thesis about the  <strong>Data Mesh</strong> paradigm coined by <strong>Zhamak Dehghani</strong>. To be honest, I’m still wondering what a Data Mesh is.</p>
+<p>Looking at different articles, videos and talking to other people wondering the same thing, you realize some ideas differ considerably. It seems that the Data Mesh paradigm has some abstract ideas, and hence it has different interpretations. Although if I would like to say what a Data Mesh is in a short definition, I would pick the following:</p>
+<blockquote>
+<p>Data meshes are a decentralization technique of the ownership, transformation &amp; serving of data. It is proposed as a solution for centralized architectures, where growth is limited by its dependencies and complexity.</p>
+</blockquote>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-comparison.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Mesh: Centralized VS decentralized architecture" class="image-caption" src="../../../assets/images/resources/data-mesh-comparison.png" /></a></p>
+<p>The goal of this article is to try and bring some clarity to all concepts associated with a <strong>Data Mesh</strong>, including an end to end storytelling with a thesis structure. This is just my public personal attempt to make sense of all the information I have found about this matter.</p>
+<hr />
+<h2 id="1-context">1. Context</h2>
+<h3 id="11-first-generation-data-warehouse-architecture">1.1 First Generation: Data Warehouse Architecture</h3>
+<p><strong>Data warehousing architecture</strong> today is <strong>influenced by early concepts</strong> such as facts and dimensions formulated <strong>in the 1960s.</strong> The architecture intends to flow data from operational systems to business intelligence systems that traditionally have served the management with operations and planning of an organization. While data warehousing solutions have greatly evolved, many of the original characteristics and assumptions of their architectural model remain the same. (Dehghani, 2022)</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-data-warehouse.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Warehouse Architecture" class="image-caption" src="../../../assets/images/resources/data-mesh-data-warehouse.png" /></a></p>
+<h3 id="12-second-generation-data-lake-architecture">1.2 Second Generation: Data Lake Architecture</h3>
+<p>Data lake architecture was introduced in 2010 in response to challenges of data warehousing architecture in satisfying the new uses of data; access to data based on data science and machine learning model training workflows, and supporting massively parallelized access to data. </p>
+<p>Unlike data warehousing, <strong>data lake</strong> assumes no or very little transformation and modeling of the data upfront; it attempts to <strong>retain the data close to its original form.</strong> Once the data becomes available in the lake, the architecture gets extended with elaborate transformation pipelines to model the higher value data and store it in lakeshore marts.</p>
+<p><strong>This evolution</strong> to data architecture <strong>aims to improve</strong> ineffectiveness and friction introduced by <strong>extensive upfront modeling that data warehousing demands.</strong> The upfront transformation is a blocker and leads to slower iterations of model training. Additionally, it alters the nature of the operational system’s data and mutates the data in a way that models trained with transformed data fail to perform against the real production queries. (Dehghani, 2022)</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-data-lake.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Lake Architecture" class="image-caption" src="../../../assets/images/resources/data-mesh-data-lake.png" /></a></p>
+<h3 id="13-third-generation-multimodal-cloud-architecture">1.3 Third Generation: Multimodal Cloud Architecture</h3>
+<p>The third and current generation data architectures are more or less similar to the previous generations, with a few modern twists:</p>
+<ul>
+<li><strong>Streaming for real-time</strong> data availability with architectures such as Kappa</li>
+<li>Attempting to <strong>unify the batch and stream processing</strong> for data transformation with frameworks such as Apache Beam</li>
+<li>Fully <strong>embracing cloud based managed services</strong> with modern cloud-native implementations with isolated compute and storage</li>
+<li><strong>Convergence of warehouse and lake</strong>, either extending data warehouse to include embedded ML training, e.g. Google BigQuery ML, or alternatively build data warehouse integrity, transactionality and querying systems into data lake solutions, e.g., Databricks Lakehouse</li>
+</ul>
+<p>The third generation data platform is addressing some of the gaps of the previous generations such as real-time data analytics, as well as reducing the cost of managing big data infrastructure. However it suffers from many of the underlying characteristics that have led to the limitations of the previous generations. (Dehghani, 2022)</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-multimodal-cloud.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Multimodal Cloud Architecture" class="image-caption" src="../../../assets/images/resources/data-mesh-multimodal-cloud.png" /></a></p>
+<h2 id="2-principles">2. Principles</h2>
+<p>There are four principles that can capture what supports the logical architecture and operating model of Data Mesh.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-principles.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Mesh Principles" class="image-caption" src="../../../assets/images/resources/data-mesh-principles.png" /></a></p>
+<h3 id="21-domain-oriented-ownership">2.1 Domain-oriented ownership</h3>
+<p>This principle <strong>aim to decentralize the ownership of sharing analytical data to business domains who are closest to the data</strong> — either are the source of the data or its main consumers. Decompose the data artefacts (data, code, metadata, policies) - logically - based on the business domain they represent and manage their life cycle independently. (Dehghani, 2022)</p>
+<h3 id="22-data-as-a-product">2.2 Data as a Product</h3>
+<p>This simply means <strong>applying widely used product thinking to data</strong> and, in doing so, making data a first-class citizen: supporting operations with its owner and development team behind it.</p>
+<p>Existing or new business domains become accountable to share their data as a product served to data users – data analysts and data scientists. Data as a product introduces a new unit of logical architecture called, data product quantum, controlling and encapsulating all the structural components — data, code, policy and infrastructure dependencies — needed to share data as a product autonomously. (Dehghani, 2022)</p>
+<h3 id="23-self-serve-data-platform">2.3 Self-serve Data Platform</h3>
+<p>The principle of creating a self-serve infrastructure is to <strong>provide tools and user-friendly interfaces so that generalist developers can develop analytical data</strong> products where, previously, the sheer range of operational platforms made this incredibly difficult.</p>
+<p>A new generation of self-serve data platform to empower domain-oriented teams to manage the end-to-end life cycle of their data products, to manage a reliable mesh of interconnected data products and share the mesh’s emergent knowledge graph and lineage, and to streamline the experience of data consumers to discover, access, and use the data products. (Dehghani, 2022)</p>
+<h3 id="24-federated-computational-governance">2.4 Federated Computational Governance:</h3>
+<p>This is an inevitable consequence of the first principle. Wherever you deploy decentralised services—microservices, for example—it’s essential to introduce overarching rules and regulations to govern their operation. As Dehghani puts it, it’s crucial to "maintain an equilibrium between centralisation and decentralisation".</p>
+<p><strong>A data governance operational model that is based on a federated decision</strong> making and accountability structure, with a team made up of domains, data platform, and subject matter experts — legal, compliance, security, etc. It creates an incentive and accountability structure that balances the autonomy and agility of domains, while respecting the global conformance, interoperability and security of the mesh. The governance model heavily relies on codifying and automated execution of policies at a fine-grained level, for each and every data product. (Dehghani, 2022)</p>
+<h2 id="3-data-mesh-architecture">3. Data Mesh Architecture</h2>
+<h3 id="31-data-product">3.1 Data Product</h3>
+<p>A <strong>data product</strong> consists of the <strong>code</strong> including pipelines, the <strong>data</strong> itself including metadata and the <strong>infrastructure</strong> required to run the pipelines. The goal is to have application code and data pipelines code under the same domain owned by the same team. As you can see, we are shifting responsibility to the people who actually understand the domain and create the data, instead of “data” owners in the data plane that usually struggle to understand the data and create friction between teams. This means that <strong>the people who change the application and within the data, are in charge of owning that change</strong> using schema versioning and documentation to broadcast the data evolution to the different stakeholders. This ensures that data schema changes can be implemented easily by the data creators instead of data analysts trying to adapt to changes after the fact.</p>
+<p><strong>Data as a product inverts the model of responsibility</strong> compared to the past paradigms. In data lake or data warehousing architectures the accountability to create data with expected quality and integrity resides downstream from the source; in the case of data warehouse the accountability remains with the warehouse team, and in the case of the lake it’s left with the consumers.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-quantum.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Mesh Quantum: Data Products" class="image-caption" src="../../../assets/images/resources/data-mesh-quantum.png" /></a></p>
+<h3 id="32-roles">3.2 Roles</h3>
+<p>The idea behind the <strong>Domain Ownership</strong> principle is to use <strong>Domain Driven Design</strong> in the data plane alongside the operational plane to close the gap between the two planes. The goal is to split teams around business domains being each team fully cross functional, but not only on the operational level (<strong>DevOps</strong>) but also on the analytical level. Each team should have a data owner, data engineers and QA teams that not only validate mircroservices but also data quality.</p>
+<p>Following the Zhamak Dehghani book we find two specific key roles related to a data product domain:</p>
+<ul>
+<li><strong>Data product developer roles</strong>: A group of roles responsible for developing, serving and maintaining the domain’s data products as long as the  data products remain to exist and serve its consumers. Data product developers will be working alongside regular developers in the domain. Each domain team may serve one or multiple data products.</li>
+</ul>
+<p>Key domain specific objects: </p>
+<ul>
+<li>Transformation code, the domain-specific logic that generates and maintains the
+    data</li>
+<li>Tests to verify and maintain the domain’s data integrity.</li>
+<li>Tests to continuously monitor that the data product meets its quality guarantees.</li>
+<li>
+<p>Generating data products meta-data such as its schema, documentation, etc.</p>
+</li>
+<li>
+<p><strong>Data product owner</strong>: A role accountable for the success of domain’s data products in delivering value, satisfying and growing the data consumers, and defining the lifecycle of the data products.</p>
+</li>
+</ul>
+<p>Domain <strong>data product owners must have a deep understanding of who the data users are</strong>, how they use the data,and what are the native methods that they are comfortable with consuming the data. The conversation between users of the data and product owners is a necessary piece for establishing the interfaces of data products.</p>
+<ul>
+<li><strong>Data Mesh Architect</strong>: A role responsible for the infrastructure team, with the big picture of the Data Mesh, ensuring the data is self-served and acting as the link between the infrastructure layer and the Federated Governance team.</li>
+</ul>
+<p>Following the Data Mesh layer Architecture we would have three team types:</p>
+<ul>
+<li><strong>Data infrastructure teams</strong> (located on the infrastructure plane): Providing the underliying infrastructure required to build, run and monitor data products.</li>
+<li><strong>Data Product teams</strong> (located on the Data Product developer plane): Supporting the common data product developer journey. They are conformed by the Data Product Developer roles and a Data Product Owner.</li>
+<li><strong>Federated Computatinal Governance Team</strong> (located on the mesh supervision plane): maintaining an <em>equilibrium between centralization and decentralization</em>; what decisions need to be localized to each domain and what decisions should be made globally for all domains.</li>
+</ul>
+<p>In a data mesh, <strong>each data product team is in charge of dealing with the data related to the team domain.</strong> They must gather the data and move it to the right storage so it can be easily consume by data users. Data engineers will be part of the team and they may use stream engines to move the data and perform ETL or run data pipelines in a batch or micro batch fashion. The key is that a <strong>data pipeline is simply an internal complexity</strong> and implementation of the data domain and is handled internally within the domain instead of having separate data engineering teams.</p>
+<p>On this next visualization, I tried to reflect the teams and roles involved in a Data Mesh. These roles are not exclusive, they may be conditioned by the company, the organizational structure, and the platform differing considerably, but <strong>it's important to highlight the different layers and the teams to which they belong</strong>.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-roles.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Mesh Teams &amp; Roles" class="image-caption" src="../../../assets/images/resources/data-mesh-roles.png" /></a></p>
+<h3 id="33-self-serve-platform">3.3 Self-Serve Platform</h3>
+<p>Data Mesh’s fourth principle, self-serve data infrastructure as a platform, exists. It is not that we have any shortage of data and analytics platforms and technologies, but we need to make changes to them so that they can scale out sharing, <strong>accessing and using analytical data, in a decentralized manner</strong>, for a new population of generalist technologists. This is the key differentiation of data platforms that enable a Data Mesh implementation.</p>
+<p>We need <strong>self-service data platforms</strong> that can easily <strong>scale and can be self provisioned</strong>. Standard tooling is required to provide a good experience to data users. This includes monitoring, observability, security, etc. This is something indispensable in the OLTP world, but somehow it is often missing in the data world where lack of observability creates data quality issues and security vulnerabilities. Although tools were created to overcome these issues, they are focused on solving a specific problem using a new tool instead of reusing the concepts and tooling from the OLTP world. We are used to implement static code analysis, container image scanners, metrics, logs etc for our code, but checking the data and metadata for quality issues, generating change logs, lineage, etc is often missing in the OLAP world.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-services.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Mesh Service Infrastructure" class="image-caption" src="../../../assets/images/resources/data-mesh-services.png" /></a></p>
+<h3 id="34-data-governance">3.4 Data Governance</h3>
+<p>A data mesh implementation requires a governance model that embraces decentralization, interoperability through global standardization, and an automated execution of decisions in the platform. The idea is to create a team to maintain an <strong>equilibrium between centralization and decentralization</strong>; that is what decisions need to be localized to each domain and what decisions should be made globally for all domains.</p>
+<p>Data mesh’s federated governance, embraces change and multiple bounded contexts. A supportive organizational structure, incentive model and architecture is necessary for the federated governance model to function in order to arrive at global decisions and standards for <strong>interoperability</strong>, while respecting autonomy of local domains, and implement global policies effectively.</p>
+<p>The idea is to <strong>localize decisions as close to the source as possible</strong> while keeping interoperability and integration standards at a global level, so the mesh components can be easily integrated. In a data mesh, tools can be used to enforce global policies such as GDPR enforcement or access management and also local policies where each domain sets its own policies for their data products such as access control or data retention.</p>
+<table>
+<thead>
+<tr>
+<th>Pre Data Mesh Governance</th>
+<th>Data Mesh Governance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Centralized team</td>
+<td>Federated team</td>
+</tr>
+<tr>
+<td>Responsible for data quality</td>
+<td>Responsible for defining how to model what constitutes quality</td>
+</tr>
+<tr>
+<td>Responsible for data security</td>
+<td>Responsible for defining aspects of data security i.e. data sensivity levels for the platform to build in and monitor automatically</td>
+</tr>
+<tr>
+<td>Responsible for complying with regulation</td>
+<td>Responsible for defining the regulation requirements for the platform to build in and monitor automatically</td>
+</tr>
+<tr>
+<td>Centralized custodianship of data</td>
+<td>Federated custodianship of data by domains</td>
+</tr>
+<tr>
+<td>Responsible for global canonical data modeling</td>
+<td>Responsible for modeling polysemes, data elements that cross the boundaries of multiple domains</td>
+</tr>
+<tr>
+<td>Team is independent from domains</td>
+<td>Team is made of domains representatives</td>
+</tr>
+<tr>
+<td>Aiming for a well defined static structure of data</td>
+<td>Aiming for enabling effective mesh operation embracing a continuously changing and dynamic topology of the mesh</td>
+</tr>
+<tr>
+<td>Centralized technology used by monolithic lake/warehouse</td>
+<td>Self-serve platform technologies used by each domain</td>
+</tr>
+<tr>
+<td>Measure success based on number or volume of governed data (tables)</td>
+<td>Measure success based on the network effect, the connections representing the consumption of data on the mesh</td>
+</tr>
+<tr>
+<td>Manual process with human intervention</td>
+<td>Automated processes implemented by the platform</td>
+</tr>
+<tr>
+<td>Prevent error</td>
+<td>Detect error and recover through platform's automated processing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-data-mesh-architecture">3.5 Data Mesh Architecture</h3>
+<p>There are many applied Data Mesh architectures, some are more decentralized than others, and we have different tools and services. Even though there isn't a Data Mesh architecture itself, we can define and relate their main components.</p>
+<h4 id="storage">Storage</h4>
+<p><strong>Deep Store:</strong> a Repository store to make data addressable using URLs, access control, versioning, encryption, metadata, and observability. Where you can easily monitor and govern the data stored in a data lake.</p>
+<p>New modern engines have been created to be able to unify real time and batch data and perform OLAP queries with very low latency. As an example, Apache Druid can ingest and store massive amounts of data in a cost efficient way, minimizing the needs for data lakes.</p>
+<p><strong>Data Warehouse / Data Virtualization:</strong> A fast data layer in a relational database used for data analysis, particularly of historical data.</p>
+<p>The main advantage of Data Virtualization is speed-to-market, where we can build a solution in a fraction of the time it takes to build a data warehouse.  This is because you don’t need to design and build the data warehouse and the ETL to copy the data into it, and also don’t need to spend as much time testing.</p>
+<h4 id="stream-engine-platform">Stream engine platform</h4>
+<p>A stream engine platform such as Kafka or Pulsar to migrate to microservices and unify batch and streaming. This is the first step in order to close the gap between OLTP and OLAP workloads, both can use the streaming platform either to develop event driven microservices or to move data.</p>
+<p>These platforms will allow you to duplicate the data in different formats or databases in a reliable way. This way you can start serving the same data in different shapes to match the needs of the downstream consumers.</p>
+<h4 id="metadata-and-data-catalogs">Metadata and Data Catalogs</h4>
+<p>A collection of metadata, combined with data management and search tools, that helps analysts and other data users to find the data that they need, serves as an inventory of available data, and provides information to evaluate fitness data for intended uses.</p>
+<h4 id="query-engines">Query Engines</h4>
+<p>This type of tools focus on querying different data sources and formats in an unified way. The idea is to query your data lake using SQL queries like if it was a relational database, although it has some limitations. Some of these tools can also query NoSQL databases and much more. Query engines are the slowest option but provide the maximum flexibility.</p>
+<p>Some query engines can integrate with data catalogs and join data from different data sources.</p>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-architecture.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Mesh Architecture" class="image-caption" src="../../../assets/images/resources/data-mesh-architecture.png" /></a></p>
+<h2 id="4-data-mesh-implementation">4. Data Mesh Implementation</h2>
+<p>Currently, we have many kinds of Data Meshes, some highly centralized and others more de-centralized. Migrating to a decentralized architecture is difficult and time consuming, it takes a long time to reach the right level of maturity to be able to run it at a scale. Although there are technical challenges, the main difficulty is trying to change the organization mindset.</p>
+<h3 id="41-data-mesh-investment-factors">4.1 Data Mesh Investment Factors</h3>
+<p>Data Mesh is difficult to implement because of the de-centralized nature, but at the end, it is required in order to solve the scalability issues that companies are currently facing. Centralized architectures work better for small companies or companies which are not data driven.</p>
+<p>Only implement a data mesh if you have difficulties scaling, team friction, data quality issues, bottlenecks and governance/securities problems. You must also have a Big Data problem with huge amounts of structure and unstructured data.</p>
+<p>In my opinion, to be able to decide if your company needs the Data Mesh paradigm, there are so many factors you should analyze before taking the step. That said, after reading different articles, there are three main factors to keep in mind:</p>
+<ul>
+<li>The <strong>number of data sources</strong> your company has to feed the analytical Data Platform.</li>
+<li>The <strong>size of your data team</strong>, how many data analysts, data engineers, and product managers.</li>
+<li>The number of <strong>data domains</strong> your company has. How many functional teams (marketing, sales, operations, etc.) rely on your data sources to drive decision-making, and how many products does your company have?</li>
+</ul>
+<p><a class="glightbox" href="../../../assets/images/resources/data-mesh-investment.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Data Mesh Investment Factors" class="image-caption" src="../../../assets/images/resources/data-mesh-investment.png" /></a></p>
+<p>There is an excellent article from <strong>Barr Moses</strong> about Data Mesh. She proposes a <a href="https://towardsdatascience.com/what-is-a-data-mesh-and-how-not-to-mesh-it-up-210710bb41e0">simple calculation to determine if it makes sense for your organization to invest in a data mesh.</a></p>
+<h3 id="42-building-a-data-mesh">4.2 Building a Data Mesh</h3>
+<p>In their blogs, Javier Ramos and Sven Balnojan have done an excellent job explaining the different steps required to build a data mesh. I really recommend checking their articles to get more details.</p>
+<ul>
+<li><a href="https://towardsdatascience.com/data-mesh-applied-21bed87876f2">Data Mesh Applied by Sven Balnojan</a></li>
+<li><a href="https://itnext.io/introduction-to-data-mesh-59e6f3a4c15e">Building a Data Mesh: A beginners guide by Javier Ramos</a></li>
+</ul>
+<p>I have tried to summarize the different steps to decentralize your architecture and, start building a Data Mesh.</p>
+<div class="steps">
+<ul>
+<li>
+<p>Addressable data</p>
+<p><strong>Adress your data</strong> by standardizing path names and using the REST approach to name the data products using resource names, and add SLAs to the end points and monitor them to make sure the data is always available.</p>
+<p><em>Example:</em>
+<div class="highlight"><pre><span></span><code>s3://my-domain/data-service-a/resource/date.
+</code></pre></div></p>
+<p><strong>Re route your query engines and BI tools</strong> to use the new data products which are independent and addressable.</p>
+<p>The <strong>data infrastructure team</strong> will be in charge of this step, still using a centralized approach.  </p>
+</li>
+<li>
+<p>Discoverability (Metadata and Data Catalog)</p>
+<p>Create a space to find the new data source with the following capabilities:</p>
+<ul>
+<li><strong>Search, discover and “add to the cart”</strong> for data within your enterprise. </li>
+<li><strong>Request access and grant access to data products</strong> in a way that is usable to data owners and consumers without the involvement of a central team.</li>
+</ul>
+<p>In this step, <strong>work on the data product features</strong> adding tests for data quality, lineage, monitoring, etc.</p>
+</li>
+<li>
+<p>Step 3 : Decentralize and implement DDD</p>
+<p>Now we can start adding nodes to our data mesh. </p>
+<ul>
+<li><strong>Migrate the ownership</strong> into the domain team creating the data moving towards a de centralized architecture. Each team must own their data assets, ETL pipelines, quality, testing, etc.</li>
+<li><strong>Introduce the federated governance</strong> for data standardization,security and interoperability, by introducing DataOps practices and improving observability and self services capabilities. This way you can unify your OLTP and OLAP processes and tooling.</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Once you have created your first “data microservice”, repeat the above process breaking the legacy data monolith into more decentralized services.</p>
+<h2 id="5-case-studies">5. Case Studies</h2>
+<h3 id="51-zalando">5.1 Zalando</h3>
+<p>An excellent presentation by Max Schultze and Arif Wider, about the Zalando analytics cloud journey. The presentation begins with their legacy analytics and how they manage to evolve this legacy from the ingestion, storage, and serving layer.</p>
+<p><a href="https://www.youtube.com/watch?v=eiUhV56uVUc"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Data Mesh in Practice: How Europe's Leading Online Platform for Fashion Goes Beyond the Data Lake by Max Schultze (Zalando)</a></p>
+<h3 id="52-intuit">5.2 Intuit</h3>
+<p>A great post from Tristan Baker about the followed strategy at Intuit. They have migrated from an on-premise architecture of centrally-managed analytics data sets and data infrastructure tools to a fully cloud-native set of data and tools. Tristan will take you through a full articulation of their vision, inherent challenges, and strategy for building better data-driven systems at Intuit.</p>
+<p><a href="https://medium.com/intuit-engineering/intuits-data-mesh-strategy-778e3edaa017"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Intuit’s Data Mesh Strategy</a></p>
+<h3 id="53-saxo-bank">5.3 Saxo Bank</h3>
+<p>An outstanding post by Sheetal Pratik about the Saxo Journey. They show how they implement the Data Mesh paradigm and focus on the Governance Framework and Data Mesh architecture. The post has very clear diagrams to explain their points.</p>
+<p><a href="https://blog.datahubproject.io/enabling-data-discovery-in-a-data-mesh-the-saxo-journey-451b06969c8f"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Enabling Data Discovery in a Data Mesh: The Saxo Journey</a></p>
+<h3 id="54-jp-morgan-chase">5.4 JP Morgan Chase</h3>
+<p>An AWS blog co-authored with Anu Jain, Graham Person, and Paul Conroy from JP Morgan Chase.</p>
+<p>They provide a blueprint for instantiating data lakes that implements the mesh architecture in a standardized way using a defined set of cloud services, we enable data sharing across the enterprise while giving data owners the control and visibility they need to manage their data effectively.</p>
+<p><a href="https://aws.amazon.com/es/blogs/big-data/how-jpmorgan-chase-built-a-data-mesh-architecture-to-drive-significant-value-to-enhance-their-enterprise-data-platform/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> How JPMorgan Chase built a data mesh architecture to drive significant value to enhance their enterprise data platform</a></p>
+<h3 id="55-kolibri-games">5.5 Kolibri Games</h3>
+<p>A presentation by António Fitas, Barr Moses and, Scorr O'Leary. They talks about the evolution of teams on the data/engineering side as well as the pain points of their setup at that point, and discuss how to evaluate whether data mesh is right for a company and how to measure the return on investment of data mesh, especially the increase in agility and the increase in the number of decisions you deem "data driven".</p>
+<p><a href="https://www.youtube.com/watch?v=31BTUYaVSqw"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Kolibri Games' Data Mesh Journey and Measuring Data Mesh ROI</a></p>
+<h3 id="56-netflix">5.6 Netflix</h3>
+<p>A presentation by Justin Cunningham about the Keystone Platform’s unique approach to declarative configuration and schema evolution, as well as our approach to unifying batch and streaming data and processing covered in depth.</p>
+<p><a href="https://www.youtube.com/watch?v=TO_IiN06jJ4"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Malla de datos de Netflix: procesamiento de datos componibles - Justin Cunningham</a></p>
+<h3 id="57-adevinta">5.7 Adevinta</h3>
+<p>An excellent post by Xavier Gumara Rigol, about how Adevinta evolved from a centralised approach to data for analytics to a data mesh by setting some working agreements.</p>
+<p><a href="https://medium.com/adevinta-tech-blog/building-a-data-mesh-to-support-an-ecosystem-of-data-products-at-adevinta-4c057d06824d"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> Building a data mesh to support an ecosystem of data products at Adevinta</a></p>
+<h3 id="58-hellofresh">5.8 HelloFresh</h3>
+<p>In this blog, Clemence W. Chee describes their journey of implementing the Data Mesh principles by showing the different phases they have faced.</p>
+<p><a href="https://engineering.hellofresh.com/hellofresh-journey-to-the-data-mesh-7fe590f26bda"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> HelloFresh Journey to the Data Mesh</a></p>
+<h2 id="6-conclusion">6. Conclusion</h2>
+<p>Data Mesh isn't a static platform nor an architecture. <strong>Data Mesh is a product continuously evolving</strong>, and it may have different interpretations, but the core principles always remain. Domain-driven design, decentralization, data ownership, automation, observability, and federated governance.</p>
+<p>The main important aspect, as Zhamak Dehghani mentions, is to stop thinking about data as an asset, like something we want to keep and collect. The new way of imaging the data should shift from an asset to a product. The moment we think about data as a product, we start delighting the experience of the consumers, <strong>shifting the perspective from the producer collecting data to the producer serving the data.</strong></p>
+<p>Start building a Data Mesh can be overwhelming. First, we need to understand this is an evolutionary path starting from your own company vision and introduce the Mesh principles slowly. We may start by <strong>select two or three source-aligned use cases</strong>, locating the domain working backwards from the use case to the sources and <strong>empower those teams to start serving those data products</strong>. Then, think about the <strong>platform capabilities</strong> we need and put the platform team in place to start building this first generation Data Mesh. Finally, we iterate with new use cases moving towards the Data Mesh vision.</p>
+<h2 id="7-data-mesh-vocabulary">7. Data Mesh Vocabulary</h2>
+<p>Data Mesh is a complex paradigm with many abstract terms. At the next table, I tried to extract the main vocabulary around this topic.</p>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Mesh</strong></td>
+<td>A data mesh is a set of read-only products, designed for sharing the data on the outside for non-real-time consumption/analytics.  They are shared in an interoperable way so you can combine data from multiple domains owned by each domain team.</td>
+</tr>
+<tr>
+<td><strong>Data Domain</strong></td>
+<td>A business domain, where experts analyze data and build reports themselves, with minimal IT support. A data domain should create and publish their data as a product for the rest of the business to consume as well.</td>
+</tr>
+<tr>
+<td><strong>Data Product</strong></td>
+<td>A Data Product is a collection of datasets concerning a certain topic which has risen to fulfill a certain purpose, yet which can support multiple purposes or be used as building block for multiple other data products.</td>
+</tr>
+<tr>
+<td><strong>Data Product Owner</strong></td>
+<td>A role accountable for the success of domain’s data products in delivering value, satisfying and growing the data consumers, and defining the lifecycle of the data products.</td>
+</tr>
+<tr>
+<td><strong>Data Mesh Architect</strong></td>
+<td>A role responsible for the infrastructure team, with the big picture of the Data Mesh, ensuring the data is self-served and acting as the link between the infrastructure layer and the Federated Governance team.</td>
+</tr>
+<tr>
+<td><strong>Source-aligned domain</strong></td>
+<td>Analytical data reflecting the business facts generated<br/>by the operational systems. This is also called native data product.</td>
+</tr>
+<tr>
+<td><strong>Aggregated domain</strong></td>
+<td>Analytical data that is an aggregate of multiple upstream domains.</td>
+</tr>
+<tr>
+<td><strong>Consumer-aligned domain</strong></td>
+<td>Analytical data transformed to fit the needs of one or multiple specific use cases and consuming applications. This is also called fit-for-purpose domain data.</td>
+</tr>
+<tr>
+<td><strong>Inside data</strong></td>
+<td>Refers to the encapsulated private data contained within the service itself. As a sweeping statement, this is the data that has always been considered "normal"—at least in your database class in college. The classic data contained in a SQL database and manipulated by a typical application is inside data.</td>
+</tr>
+<tr>
+<td><strong>Outside data</strong></td>
+<td>Data on the outside refers to the information that flows between these independent services. This includes messages, files, and events. It's not your classic SQL data.</td>
+</tr>
+<tr>
+<td><strong>Architectural Quantum</strong></td>
+<td>Smallest unit of architecture that can be independently deployed with high functional cohesion, and includes all the structural elements required for its function.</td>
+</tr>
+<tr>
+<td><strong>IDP</strong></td>
+<td>Input data ports to the data product.</td>
+</tr>
+<tr>
+<td><strong>ODP</strong></td>
+<td>Output data ports from the data product.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-discovery-roadmap">8. Discovery Roadmap</h2>
+<p>To elaborate this Thesis, I have been recollecting links and resources about the Data Mesh paradigm. I wanted to share the discovery path I've followed to understand the Data Mesh implications.</p>
+<h3 id="81-zhamak-dehghani">8.1 Zhamak Dehghani</h3>
+<ul>
+<li><a href="https://martinfowler.com/articles/data-monolith-to-mesh.html">How to Move Beyond a Monolithic Data Lake to a Distributed Data Mesh</a></li>
+<li><a href="https://martinfowler.com/articles/data-mesh-principles.html">Data Mesh Principles and Logical Architecture</a></li>
+<li><a href="https://www.starburst.io/resources/datanova-2021/?wchannelid=d4oyeh306b&amp;wmediaid=1z50qr8fh6">Introduction to Data Mesh: A Paradigm Shift in Analytical Data Management by Zhamak Dehghani (Part I)</a></li>
+<li><a href="https://www.starburst.io/resources/datanova-2021/?wchannelid=d4oyeh306b&amp;wmediaid=3sb7nbjc7f">How to Build a Foundation for Data Mesh: A Principled Approach by Zhamak Dehghani (Part II)</a>  </li>
+</ul>
+<h3 id="82-introductory-content">8.2 Introductory Content</h3>
+<ul>
+<li><a href="https://towardsdatascience.com/what-is-a-data-mesh-and-how-not-to-mesh-it-up-210710bb41e0">Data Mesh Score calculator</a></li>
+<li><a href="https://www.youtube.com/watch?v=-ubu2WjnJjw">Decentralizing Data: From Data Monolith to Data Mesh with Zhamak Dehghani, Creator of Data Mesh</a></li>
+<li><a href="https://eleks.com/blog/data-mesh-distributed-architecture/">Data Mesh: The Four Principles of the Distributed Architecture by Eugene Berko</a></li>
+<li><a href="https://futurice.com/blog/how-to-achieve-data-mesh-teams-and-culture">How to achieve Data Mesh teams and culture?</a> </li>
+<li><a href="https://www.youtube.com/watch?v=-ubu2WjnJjw&amp;t=2282s">Decentralizing Data: From Data Monolith to Data Mesh with Zhamak Dehghani, Creator of Data Mesh</a></li>
+</ul>
+<h3 id="83-deep-dive">8.3 Deep Dive</h3>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1XnQHYuVe9rxVs-kLLPTZhBBIhqNAhCu8U2T8mKrxZVA/edit#slide=id.ge4e19f328c_0_50">Anatomy of Data Products in Data Mesh</a></li>
+<li><a href="https://itnext.io/introduction-to-data-mesh-59e6f3a4c15e">Building a Data Mesh: A beginners guide</a></li>
+<li><a href="https://towardsdatascience.com/data-mesh-applied-21bed87876f2">Data Mesh Applied: Moving step-by-step from mono data lake to decentralized 21st-century data mesh.</a></li>
+<li><a href="https://towardsdatascience.com/theres-more-than-one-kind-of-data-mesh-three-types-of-data-meshes-7cb346dc2819">There’s More Than One Kind of Data Mesh: Three Types of Data Meshes</a></li>
+<li><a href="https://www.linkedin.com/pulse/building-successful-data-mesh-more-than-just-nazia-shahrin/">Building a successful Data Mesh – More than just a technology initiative</a></li>
+<li><a href="https://cinchy.tv/all-content/799">How the **ck (heck) do you build a Data Mesh?</a></li>
+<li><a href="https://towardsdatascience.com/data-mesh-architecture-patterns-98cc1014f251">Data Mesh architecture patterns</a></li>
+<li><a href="https://towardsdatascience.com/data-mesh-topologies-and-domain-granularity-65290a4ebb90">Data Mesh: Topologies and domain granularity</a></li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>I am so grateful to <strong><a href="https://datameshlearning.com/">Data Mesh Learning Community</a></strong> founded and run by Scott Hirleman. I appreciate the help from the community, the meetups, and the resources published and organized. It has been a great point to start researching for this thesis.</p>
+<p>I also wanted to acknowledge all the authors from my sources for sharing their knowledge.</p>
+<hr />
+<h2 id="references-and-links">References and links</h2>
+<ul>
+<li>Dehghani, Z. <em>Data Mesh: Delivering Data-Driven Value at Scale</em> (1st ed.). O’Reilly.</li>
+<li><a href="https://datameshlearning.com/">Data Mesh Learning Community</a></li>
+<li><a href="https://itnext.io/introduction-to-data-mesh-59e6f3a4c15e">Building a Data Mesh: A beginners guide</a></li>
+<li><a href="https://towardsdatascience.com/what-is-a-data-mesh-and-how-not-to-mesh-it-up-210710bb41e0">What is a Data Mesh and How Not to Mesh it Up</a></li>
+<li><a href="https://carlosgrande.me/#resources-cheatsheets/">More Resources like this here</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright &copy; carlosgrande.me - 2024
+                </div>
+                
+            </div>
+            
+            <div class="md-social">
+  
+</div>
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.tracking", "navigation.tabs", "navigation.tabs", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../../../assets/javascripts/extra.js"></script>
+      
+        <script src="../../../assets/javascripts/image_caption.js"></script>
+      
+        <script src="../../../assets/javascripts/output_code.js"></script>
+      
+        <script src="../../../assets/javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../assets/javascripts/publications.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": false, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

@@ -1,0 +1,2918 @@
+<!-- Elements added to main will be displayed on all pages -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="none">
+      
+      
+        <meta name="author" content="Charlstown">
+      
+      
+      
+        <link rel="prev" href="../my-python-3-cheatsheet/">
+      
+      
+        <link rel="next" href="../my-r-cheatsheet/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Python project cheatsheet - carlosgrande.me</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/output_code.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/gallery.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/my_katex.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-project-cheatsheet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="carlosgrande.me" class="md-header__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            carlosgrande.me
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python project cheatsheet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../references/" class="md-tabs__link">
+          
+  
+    
+  
+  References
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/" class="md-tabs__link">
+          
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../notebooks/" class="md-tabs__link">
+          
+  
+    
+  
+  Notebooks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about-me/" class="md-tabs__link">
+        
+  
+    
+  
+  About me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="carlosgrande.me" class="md-nav__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    carlosgrande.me
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../references/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Articles
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Articles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/death-of-distance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Death of distance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/space-of-flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Space of flows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/the-chinese-room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The chinese room
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/ubiquitous-computing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubiquitous computing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/whole-brain-emulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Whole brain emulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Case studies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Case studies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/3000000-kms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    300.000 Km/s studio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/ben-willers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ben Willers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/eric-fischer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eric Fischer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/giorgia-lupi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giorgia Lupi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/moritz-stefaner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Moritz Stefaner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/nicholas-felton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nicholas Felton
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/refik-anadol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refik Anadol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/wesley-grubbs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wesley Grubbs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../projects/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-airbnb-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Madrid Airbnb analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-invisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Madrid invisible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/my-rubiks-cube-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My rubiks cube model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Resources
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My thesis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            My thesis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thesis/my-data-mesh-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Mesh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thesis/my-data-product-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Product
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thesis/my-data-fabric-thesis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data fabric
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My cheat sheets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            My cheat sheets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-business-model-canvas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Business model canvas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-docker-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-git-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-letter-cases-reminder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Letter cases reminder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-linux-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-python-3-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python 3 cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Python project cheatsheet
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Python project cheatsheet
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#download-the-cheatsheet" class="md-nav__link">
+      <span class="md-ellipsis">
+        DOWNLOAD THE CHEATSHEET:
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#1-the-directory-layout" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. The directory layout
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-naming-the-project-and-the-package" class="md-nav__link">
+      <span class="md-ellipsis">
+        2. Naming the project and the package
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2. Naming the project and the package">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#21-the-project-name" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1 The project name
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#22-the-package-name" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2 The package name
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-the-configuration-files" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. The configuration files
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="3. The configuration files">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#31-the-structure-layout" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.1 The structure layout
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#32-the-file-format" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.2 The file format
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#4-the-project-documentation" class="md-nav__link">
+      <span class="md-ellipsis">
+        4. The project documentation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="4. The project documentation">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#41-where-to-add-your-documentation" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.1 Where to add your documentation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#5-additional-files" class="md-nav__link">
+      <span class="md-ellipsis">
+        5. Additional files
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#51-the-readme-file" class="md-nav__link">
+      <span class="md-ellipsis">
+        5.1 The readme file
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="5.1 The readme file">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#52-the-license-file" class="md-nav__link">
+      <span class="md-ellipsis">
+        5.2 The license file
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#53-the-code-of-conduct-file" class="md-nav__link">
+      <span class="md-ellipsis">
+        5.3 The code of conduct file
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#other-references-and-links" class="md-nav__link">
+      <span class="md-ellipsis">
+        Other references and links
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-r-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-sql-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SQL cheatsheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My coding templates
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            My coding templates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/my-python-template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My Python template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    My favorite tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            My favorite tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/my-favorite-screen-splitter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen splitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../notebooks/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Notebooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Business
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Business
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/business/business-model-design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Business model design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/business/team-topologies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Team topologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Coding
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Coding
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/google-challenge-part-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google challenge part 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/python-design-patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python design patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/python-generators/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python generators
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/dimensionality-reduction-using-pca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dimensionality reduction using PCA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/machine-learning-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine learning basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/reinforcement-learning-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reinforcement learning basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/sample-size-determination/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample size determination
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/text-mining-sentiment-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Text mining sentiment analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-architecture/azure-big-picture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure Big Picture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-architecture/cloud-migration-planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud migration planning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-me/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About me
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+    <a href="#download-the-cheatsheet" class="md-nav__link">
+      <span class="md-ellipsis">
+        DOWNLOAD THE CHEATSHEET:
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#1-the-directory-layout" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. The directory layout
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-naming-the-project-and-the-package" class="md-nav__link">
+      <span class="md-ellipsis">
+        2. Naming the project and the package
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="2. Naming the project and the package">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#21-the-project-name" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.1 The project name
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#22-the-package-name" class="md-nav__link">
+      <span class="md-ellipsis">
+        2.2 The package name
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-the-configuration-files" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. The configuration files
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="3. The configuration files">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#31-the-structure-layout" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.1 The structure layout
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#32-the-file-format" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.2 The file format
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#4-the-project-documentation" class="md-nav__link">
+      <span class="md-ellipsis">
+        4. The project documentation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="4. The project documentation">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#41-where-to-add-your-documentation" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.1 Where to add your documentation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#5-additional-files" class="md-nav__link">
+      <span class="md-ellipsis">
+        5. Additional files
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#51-the-readme-file" class="md-nav__link">
+      <span class="md-ellipsis">
+        5.1 The readme file
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="5.1 The readme file">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#52-the-license-file" class="md-nav__link">
+      <span class="md-ellipsis">
+        5.2 The license file
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#53-the-code-of-conduct-file" class="md-nav__link">
+      <span class="md-ellipsis">
+        5.3 The code of conduct file
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#other-references-and-links" class="md-nav__link">
+      <span class="md-ellipsis">
+        Other references and links
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="python-project-cheatsheet">Python project cheatsheet</h1>
+<p><a class="glightbox" href="../../../assets/images/resources/cheatsheet-python-project-portrait.jpeg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="My Python 3 project structure" class="image-width-24" src="../../../assets/images/resources/cheatsheet-python-project-portrait.jpeg" /></a></p>
+<p>There is no one "right" way to structure a Python project, as the appropriate structure can depend on the specific needs and goals of the project. However, here are some general guidelines that you might find helpful when organizing your Python project files.</p>
+<h3 id="download-the-cheatsheet">DOWNLOAD THE CHEATSHEET:</h3>
+<p><a class="md-button" download="Python Project Cheatsheet" href="../../../assets/docs/Cheatsheet-python-project.pdf">Download the cheatsheet</a></p>
+<p>Visit my post <a href="https://github.com/charlstown/py-template">PyTemplate</a> to use my template for general python developers. Recommended for DevOps &amp; Data Science projects. PyTemplate follows a customizable project structure using cookiecutter as the template generator.</p>
+<hr />
+<p>When it comes to organizing a Python project, "structure" refers to the decisions you make about how to best achieve the goals of your project. Proper project structure is important because it helps to ensure that your code is clean, well-organized, and easy to understand. In order to create an effective project structure, it is important to consider how to leverage Python's features to create clean, efficient code, as well as how to organize your files and folders in the filesystem. By taking the time to carefully plan and structure your project, you can save time and effort in the long run and make it easier for you and others to work on and maintain your code.</p>
+<h2 id="1-the-directory-layout">1. The directory layout</h2>
+<p>The appropriate structure for a particular project will depend on the specific needs and goals of that project. However, here are some common tree file structures that you might find useful when organizing your Python project:</p>
+<ol>
+<li><strong>Single module structure.</strong> This is a simple structure that is suitable for small projects that only have one module (i.e. a single .py file). The structure might look something like this:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>my_project/
+├──<span class="w"> </span>code_of_conduct.md
+├──<span class="w"> </span>LICENSE
+├──<span class="w"> </span>my_module.py
+├──<span class="w"> </span>README.md
+└──<span class="w"> </span>requirements.txt
+└──<span class="w"> </span>...
+</code></pre></div>
+<ol>
+<li><strong>Package structure.</strong> This structure is suitable for larger projects that consist of multiple modules and packages. It might look something like this:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>my_project/
+├──<span class="w"> </span>my_package/
+│<span class="w">      </span>├──<span class="w"> </span>config/
+│<span class="w">      </span>│<span class="w">       </span>├──<span class="w"> </span>settings.yaml
+│<span class="w">      </span>│<span class="w">       </span>└──<span class="w"> </span>additional_settings.yaml
+│<span class="w">      </span>├──<span class="w"> </span>__init__.py
+│<span class="w">      </span>├──<span class="w"> </span>main.py
+│<span class="w">      </span>├──<span class="w"> </span>module_1.py
+│<span class="w">      </span>├──<span class="w"> </span>module_2.py
+│<span class="w">      </span>├──<span class="w"> </span>...
+├──<span class="w"> </span>tests/
+│<span class="w">      </span>├──<span class="w"> </span>test_module_1.py
+│<span class="w">      </span>├──<span class="w"> </span>test_module_2.py
+│<span class="w">      </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>data/
+│<span class="w">      </span>├──<span class="w"> </span>input.csv
+│<span class="w">      </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>docs/
+│<span class="w">      </span>├──<span class="w"> </span>index.md
+│<span class="w">      </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>requirements.txt
+├──<span class="w"> </span>LICENSE
+└──<span class="w"> </span>...
+</code></pre></div>
+<ol>
+<li><strong>Monolithic structure.</strong> This is a more complex structure that is suitable for large projects that have multiple packages and modules, as well as a variety of supporting files and resources. It might look something like this:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>my_project/
+├──<span class="w"> </span>src/
+│<span class="w">      </span>├──<span class="w"> </span>package_1/
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>config/
+│<span class="w">      </span>│<span class="w">      </span>│<span class="w">        </span>└──<span class="w"> </span>settings.yaml
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>__init__.py
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>module_1.py
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>module_2.py
+│<span class="w">      </span>│<span class="w">      </span>└──<span class="w"> </span>...
+│<span class="w">      </span>├──<span class="w"> </span>package_2/
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>config/
+│<span class="w">      </span>│<span class="w">      </span>│<span class="w">        </span>└──<span class="w"> </span>settings.yaml
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>__init__.py
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>module_3.py
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>module_4.py
+│<span class="w">      </span>│<span class="w">      </span>└──<span class="w"> </span>...
+│<span class="w">      </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>tests/
+│<span class="w">      </span>├──<span class="w"> </span>tests_package_1/
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>test_module_1.py
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>test_module_2.py
+│<span class="w">      </span>│<span class="w">      </span>└──<span class="w"> </span>...
+│<span class="w">      </span>├──<span class="w"> </span>tests_package_2/
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>test_module_3.py
+│<span class="w">      </span>│<span class="w">      </span>├──<span class="w"> </span>test_module_4.py
+│<span class="w">      </span>│<span class="w">      </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>data/
+│<span class="w">      </span>├──<span class="w"> </span>input.csv
+│<span class="w">      </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>docs/
+│<span class="w">      </span>├──<span class="w"> </span>index.md
+│<span class="w">      </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>requirements.txt
+├──<span class="w"> </span>LICENSE
+└──<span class="w"> </span>...
+</code></pre></div>
+<p>Remember, the key is to choose a structure that makes sense for your project and is easy for you and other users to understand. You can always refactor your project's structure as it evolves to better suit its needs.</p>
+<h2 id="2-naming-the-project-and-the-package">2. Naming the project and the package</h2>
+<p>There are no strict rules for naming a Python project or package, but there are some best practices that you can follow to choose meaningful and descriptive names.</p>
+<h3 id="21-the-project-name">2.1 The project name</h3>
+<p>There are no strict rules for naming a coding project, but there are some best practices that you can follow to choose a descriptive and meaningful name:</p>
+<ul>
+<li>Choose a name that is descriptive and reflects the purpose of your project. Avoid using vague or generic names, as they may not be meaningful to other users.</li>
+<li>Use lowercase letters and separate words with hyphens. For example, a project called "my-project" would be easier to read and understand than "MyProject" or "my_project".</li>
+<li>Avoid using reserved words or names that are already used by GitHub or other projects. You can check the list of reserved words on GitHub to see which names are not allowed.</li>
+<li>Consider using a name that is unique within the GitHub ecosystem. This can help prevent conflicts with other projects that might have the same name.</li>
+</ul>
+<p>Remember, the key is to choose a name that is descriptive, meaningful, and easy to understand. This will make it easier for other users to find and understand your project on GitHub.</p>
+<h3 id="22-the-package-name">2.2 The package name</h3>
+<p>In Python, the term "package" refers to a directory of Python modules, while the term "project" refers to a collection of related packages and modules. The package name is the name of the directory that contains the Python modules, while the project name is the overall name of the collection of packages and modules.</p>
+<p>It is not required for the package name and the project name to be the same, although it is common for them to be similar. For example, you might have a project called "my-project" that consists of several packages, one of which is called "my_package". In this case, the project name is "my-project" and the package name is "my_package".</p>
+<p>One thing to keep in mind is that the package name should be unique within the Python ecosystem, since it will be used to import the package's modules. For this reason, it is a good idea to choose a package name that is descriptive and specific to your project, rather than a generic name that might be used by other packages.</p>
+<h2 id="3-the-configuration-files">3. The configuration files</h2>
+<p>Configuration files can be useful for storing data that is specific to your application or environment, such as database credentials or API keys, and can help you avoid hardcoding this information in your code. This can make it easier to deploy your application in different environments or to share your code with others.</p>
+<h3 id="31-the-structure-layout">3.1 The structure layout</h3>
+<p>It is generally a good practice to save configuration files in a separate folder within your Python package. One common convention is to create a "config" folder at the root of your package and store all configuration files there. For example, if your package is structured like this:</p>
+<p><div class="highlight"><pre><span></span><code>my_project/
+├──<span class="w"> </span>my_package/
+│<span class="w">      </span>├──<span class="w"> </span>...
+│<span class="w">      </span>└──<span class="w"> </span>config/
+│<span class="w">              </span>├──<span class="w"> </span>settings.yaml
+│<span class="w">              </span>└──<span class="w"> </span>additional_settings.yaml
+└──<span class="w"> </span>...
+</code></pre></div>
+Then you can access the configuration files from within your code using the following path: my_package/config/settings.yaml. This way, you can keep your configuration files separate from your code and easily import them when needed.</p>
+<p>Alternatively, you could also consider using a configuration management library such as PyYAML or configparser to manage your configuration files and easily access their contents from within your code.</p>
+<h3 id="32-the-file-format">3.2 The file format</h3>
+<p>The file format for storing configuration settings in a Python project, as the appropriate choice will depend on the specific requirements and goals of your project. Some common file formats that can be used for storing configuration data in Python include:</p>
+<ul>
+<li><strong>.cfg:</strong> This is a simple and easy-to-understand format that is commonly used for storing configuration data. It consists of key-value pairs, with each line in the file representing a single setting.</li>
+<li><strong>.yaml:</strong> This is a more flexible format that can represent a wider range of data types, such as lists and dictionaries. It is generally more human-readable than .cfg files, but requires an additional library (e.g. PyYAML) to parse and read the data.</li>
+<li><strong>.json:</strong> This is a widely used format that is well-suited for storing structured data. It can represent a variety of data types, including lists and dictionaries, and is easy to parse using the built-in json library in Python.</li>
+</ul>
+<p>Ultimately, the choice of which format to use will depend on the specific needs of your project. If you need to store simple configuration data (e.g. strings, integers, and floating point values) and don't need any advanced features, then .cfg files may be sufficient. On the other hand, if you need to store more complex data structures or want more flexibility in your configuration format, then .yaml or .json files may be a better choice.</p>
+<h2 id="4-the-project-documentation">4. The project documentation</h2>
+<p>There are several ways to write documentation for a Python project, and the specific approach you choose will depend on the needs and goals of your project. Here are some general guidelines for writing and saving documentation in a Python project:</p>
+<ul>
+<li>Write documentation that is clear, concise, and easy to understand. This can include an overview of the project, instructions for installation and usage, and details about the project's architecture and design.</li>
+<li>Use a documentation generator tool to automatically create documentation based on the code and comments in your project. Popular documentation generators for Python include Sphinx, MkDocs, and Doxygen.</li>
+<li>Save your documentation in a dedicated folder within your project. A common convention is to use a folder called "docs" for this purpose.</li>
+<li>Consider including a README file at the root level of your project folder. This file should provide a high-level overview of your project and include any information that users might need to get started with your project, such as installation instructions and dependencies.</li>
+</ul>
+<p>Remember, the key is to provide clear and concise documentation that helps users understand and use your project. By taking the time to write and maintain good documentation, you can make it easier for others to understand and use your code.</p>
+<h3 id="41-where-to-add-your-documentation">4.1 Where to add your documentation</h3>
+<p>It is common to save documentation for a Python project in a dedicated folder within the project directory tree. A common convention is to use a folder called "docs" for this purpose. For example, your project directory tree might look something like this:</p>
+<div class="highlight"><pre><span></span><code>my_project/
+├──<span class="w"> </span>my_package/
+│<span class="w">      </span>└──...
+├──<span class="w"> </span>docs/
+│<span class="w">      </span>├──<span class="w"> </span>index.md
+│<span class="w">      </span>└──<span class="w"> </span>...
+└──<span class="w"> </span>...
+</code></pre></div>
+<p>In this example, the "docs" folder contains the documentation for the project, which might include files such as a user manual, API reference, or installation instructions.</p>
+<p>It is also a good idea to include a README file at the root level of your project folder. This file should provide a high-level overview of your project and include any information that users might need to get started with your project, such as installation instructions and dependencies.</p>
+<p>Remember, the key is to keep your documentation organized and easy to find. By saving your documentation in a dedicated folder, you can make it easier for users to access and understand your project.</p>
+<h2 id="5-additional-files">5. Additional files</h2>
+<p>In addition to the code files, there are a number of other files and resources that you might want to include in a Python project. The specific files and resources that you include in your project will depend on the needs and goals of your project. The key is to include any necessary files and resources that will help users understand and use your project.</p>
+<h2 id="51-the-readme-file">5.1 The readme file</h2>
+<p>A <em>README</em> file is a text file that provides a high-level overview of a project and includes any information that users might need to get started with the project. It is typically located at the root level of a project directory and is used to introduce the project to users and provide them with the information they need to understand and use the project.</p>
+<p>The contents of a <em>README</em> file will vary depending on the specific needs and goals of the project, but it might include information such as:</p>
+<ul>
+<li>A description of the project and its purpose</li>
+<li>Installation instructions</li>
+<li>Dependencies and requirements</li>
+<li>Usage instructions</li>
+<li>Troubleshooting</li>
+<li>A disclaimer section</li>
+<li>Possible help wanted</li>
+<li>Links to documentation and other resources</li>
+</ul>
+<p>The <em>README</em> file is often the first thing that users will see when they encounter your project, so it is important to make it clear, concise, and easy to understand. By including all of the necessary information in the <em>README</em> file, you can make it easier for users to get started with your project and understand how to use it.</p>
+<h3 id="52-the-license-file">5.2 The license file</h3>
+<p>A <em>LICENSE</em> file is a text file that includes information about the terms and conditions under which a project is licensed. It specifies how users are allowed to use, modify, and distribute the code and resources of the project.</p>
+<p>Having a <em>LICENSE</em> file is important because it allows users to understand the legal terms that apply to the use of your project, and helps to protect your rights as the creator of the project. Without a <em>LICENSE</em> file, users may not be clear on what they are allowed to do with your code, and you may not have legal recourse if your code is used in ways that you did not intend.</p>
+<p>There are many different types of open source licenses available, each with its own specific terms and conditions. Some of the most common open source licenses include:</p>
+<ul>
+<li><strong>MIT License:</strong> This is a permissive license that allows users to use, modify, and distribute the code and resources of the project as long as they include a copy of the license and attribute the original authors.</li>
+<li><strong>Apache License:</strong> This is a permissive license that allows users to use, modify, and distribute the code and resources of the project as long as they include a copy of the license and attribute the original authors. It also includes a patent grant to protect users from patent lawsuits.</li>
+<li><strong>GNU General Public License (GPL):</strong> This is a copyleft license that requires users to distribute any modifications they make to the code and resources of the project under the same license. This helps to ensure that the code remains freely available and open source.</li>
+</ul>
+<p>Ultimately, the choice of which license to use will depend on the specific needs and goals of your project. I recommend the <a href="https://choosealicense.com/">Choose an open source license</a> site to decide witch license fits best to your project. You can also learn more about open licenses at <a href="https://opensource.org/licenses">the open source initiative</a>.</p>
+<h3 id="53-the-code-of-conduct-file">5.3 The code of conduct file</h3>
+<p>A code of conduct is a set of guidelines that outline the behavior that is expected of users and contributors to a project. It is often included in a CODE_OF_CONDUCT file within a project's repository.</p>
+<p>Having a code of conduct is important because it helps to create a positive and inclusive community around a project. It can help to establish clear expectations for behavior and ensure that all users and contributors feel welcome and respected.</p>
+<p>There are many different codes of conduct available, and the specific code that is right for your project will depend on the needs and goals of your community. Some common codes of conduct include:</p>
+<ul>
+<li><strong><a href="https://www.contributor-covenant.org/">Contributor Covenant</a></strong>: This is a widely-used code of conduct that outlines expected behaviors and provides guidance on how to report and address violations.</li>
+<li><strong><a href="https://github.com/todogroup/opencodeofconduct">Open Code of Conduct</a>:</strong> This is a simple and straightforward code of conduct that outlines basic expectations for behavior and provides guidance on how to report and address violations.</li>
+<li><strong><a href="https://geekfeminismdotorg.wordpress.com/about/code-of-conduct/">Geek Feminism code fo conduct</a>:</strong> This code of conduct from the Geek Feminism community prioritizes marginalized people’s safety over privileged people’s comfort. It is dedicated to providing a harassment-free experience for everyone, regardless of gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of participants in any form.</li>
+<li><strong><a href="https://web.archive.org/web/20200330154000/http://citizencodeofconduct.org/">Citizen Code of Conduct</a>:</strong> This is a code of conduct that is specifically designed for use in open source projects and communities. It includes guidelines on appropriate behavior and provides a framework for addressing violations.</li>
+</ul>
+<p>It is a good idea to carefully consider the different codes of conduct available and choose one that aligns with the values and goals of your community.</p>
+<h2 id="other-references-and-links">Other references and links</h2>
+<ul>
+<li><a href="https://github.com/charlstown/Python-Project-Structure">Template with the Python structure on github</a></li>
+<li><a href="https://www.jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/">Open Sourcing a Pthon Project the Right way</a></li>
+<li><a href="http://as.ynchrono.us/2007/12/filesystem-structure-of-python-project_21.html">Filesystem structure of a Python project</a></li>
+<li>Github repository: <a href="https://github.com/charlstown/CodeCheatsheets">cheatsheets</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright &copy; carlosgrande.me - 2024
+                </div>
+                
+            </div>
+            
+            <div class="md-social">
+  
+</div>
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.tracking", "navigation.tabs", "navigation.tabs", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../../../assets/javascripts/extra.js"></script>
+      
+        <script src="../../../assets/javascripts/image_caption.js"></script>
+      
+        <script src="../../../assets/javascripts/output_code.js"></script>
+      
+        <script src="../../../assets/javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../assets/javascripts/publications.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": false, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
