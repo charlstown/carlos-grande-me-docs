@@ -10,7 +10,7 @@
 
 /* Global CSS */
 
-article h1 {
+.md-main article h1 {
   font-weight: 600!important;
   font-size: 3rem!important;
   margin: 0 0 1rem!important;
