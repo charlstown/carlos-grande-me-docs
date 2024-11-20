@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="{{ base_url }}/{{ '/assets/stylesheets/home.css' | url }}" />
     <link rel="stylesheet" href="{{ base_url }}/{{ '/assets/stylesheets/particles.css' | url }}" />
     <link rel="stylesheet" href="{{ base_url }}/{{ '/assets/stylesheets/gallery_home.css' | url }}" />
-    <script src="{{ base_url }}/{{ '/assets/javascripts/cards_menu.js' | url }}"></script>
+    <script src="{{ base_url }}/{{ 'assets/javascripts/cards_menu.js' | url }}"></script>
 {% endblock %}
 
 
 <!-- Custom javascript for the home site -->
 {% block libs %}
     {{ super() }}
-    <script src="{{ base_url }}/{{ '/assets/javascripts/particles.js' | url }}"></script>
+    <script src="{{ base_url }}/{{ 'assets/javascripts/particles.js' | url }}"></script>
     <script>
         particlesJS.load('particles-js', 'assets/javascripts/particles.json', function() {
             console.log('particles.js loaded - callback');
