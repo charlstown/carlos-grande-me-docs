@@ -1,8 +1,8 @@
 ---
-short_title: Team topologies
+short_title: My Rubiks cube model
 description: none
 date: 2019-01-01
-thumbnail: assets/images/resources/data-mesh-portrait.png
+thumbnail: assets/images/thumbnails/my-rubiks-cube-portrait.png
 ---
 
 # My rubiks cube model

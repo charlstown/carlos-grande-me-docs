@@ -1,8 +1,8 @@
 ---
-short_title: Team topologies
+short_title: Airbnb growth analysis
 description: none
 date: 2019-01-01
-thumbnail: assets/images/resources/data-mesh-portrait.png
+thumbnail: assets/images/thumbnails/airbnb-portrait.png
 ---
 
 # Madrid Airbnb analysis

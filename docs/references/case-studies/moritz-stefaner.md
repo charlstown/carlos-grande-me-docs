@@ -2,7 +2,7 @@
 short_title: Moritz Stefaner
 description: none
 date: 2019-01-01
-thumbnail: assets/images/resources/data-mesh-portrait.png
+thumbnail: assets/images/thumbnails/moritz-stefaner-portrait.png
 ---
 
 # Moritz Stefaner

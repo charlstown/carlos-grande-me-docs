@@ -1,3 +1,4 @@
+import os
 from mkdocs.structure.files import Files, File
 from datetime import date
 import re
@@ -196,4 +197,5 @@ def on_files(files: Files, config):
     sorted_publications = sorted(publications, key=lambda x: (x['date'] is None, x['date']), reverse=True)
 
     # Write to a JSON file named 'data.json'
-    write_dict_to_json(sorted_publications, output_path)
+    if not os.path.exists(output_path):
+        write_dict_to_json(sorted_publications, output_path)
