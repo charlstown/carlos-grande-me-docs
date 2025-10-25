@@ -30,3 +30,24 @@
 .filter-btn.active {
   font-weight: 600;
 }
+
+/* Superscript counter for filter menu */
+.filter-btn .filter-count {
+  position: absolute;
+  top: -0.5em;
+  right: -0.2em;
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--light, #aaa);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s cubic-bezier(.4,1,.6,1);
+}
+.filter-btn.active .filter-count,
+.filter-btn:hover .filter-count,
+.filter-btn:focus .filter-count {
+  opacity: 1;
+}
+.filter-btn {
+  position: relative;
+}
