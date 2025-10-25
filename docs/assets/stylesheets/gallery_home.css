@@ -45,20 +45,13 @@
 /* Responsive grid: auto-fit with minmax ensures square items shrink but never collapse */
 #gallery-home {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 20vw, 260px), 1fr));
   gap: 1.5rem;
   width: 100%;
   padding: 0;
   margin: 0 auto;
-  /* Limit to max 4 columns on wide screens */
-  max-width: calc(4 * 220px + 3 * 1.5rem); /* 4 columns + 3 gaps */
-}
-
-@media (min-width: 1200px) {
-  #gallery-home {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    max-width: calc(4 * 300px + 3 * 1.5rem);
-  }
+  /* Limit to max 5 columns on wide screens */
+  max-width: calc(5 * 260px + 4 * 1.5rem); /* 5 columns + 4 gaps */
 }
 
 /* Gallery item: fixed square, centered */
