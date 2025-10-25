@@ -47,6 +47,7 @@
     <script type="module">
     import { Gallery } from '/assets/javascripts/components/GalleryHome.js';
     import { FilterMenu } from '/assets/javascripts/components/FilterMenu.js';
+    import { LazyLoader } from '/assets/javascripts/components/LazyLoader.js';
     const categories = [
       'All',
       'Articles',
@@ -56,8 +57,26 @@
       'Notebooks'
     ];
     const gallery = new Gallery('#gallery-home', '/assets/publications.json');
-    gallery.init();
-    new FilterMenu('#filterMenu', categories, cat => gallery.setFilter(cat));
+    let lazyLoader = null;
+
+    async function startLazyLoader() {
+      if (!gallery.filteredItems.length) return;
+      if (lazyLoader) lazyLoader.destroy();
+      gallery.container.innerHTML = '';
+      lazyLoader = new LazyLoader({
+        container: gallery.container,
+        items: gallery.filteredItems,
+        batchSize: 8,
+        renderFn: items => gallery.renderItems(items, { append: true })
+      });
+      lazyLoader.init();
+    }
+
+    gallery.init().then(startLazyLoader);
+    new FilterMenu('#filterMenu', categories, cat => {
+      gallery.setFilter(cat);
+      startLazyLoader();
+    });
     </script>
   </section>
 {% endblock %}

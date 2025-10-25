@@ -8,6 +8,7 @@ export class Gallery {
     this.container = document.querySelector(containerSelector);
     this.jsonPath = jsonPath;
     this.allItems = [];
+    this.filteredItems = [];
     this.currentFilter = 'All';
   }
 
@@ -20,7 +21,7 @@ export class Gallery {
       if (!data.items || !Array.isArray(data.items)) throw new Error('Invalid data format');
       // Sort by date descending
       this.allItems = [...data.items].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-      this.renderItems(this.allItems);
+      this.filteredItems = this.allItems;
     } catch (err) {
       this.container.innerHTML = '<p class="error">Failed to load gallery data.</p>';
     }
@@ -28,9 +29,8 @@ export class Gallery {
 
   setFilter(category) {
     this.currentFilter = category;
-    let filtered;
     if (category === 'All') {
-      filtered = this.allItems;
+      this.filteredItems = this.allItems;
     } else {
       // Map UI label to data category
       const map = {
@@ -41,35 +41,41 @@ export class Gallery {
         'Resources': 'resources',
       };
       if (category === 'Articles') {
-        filtered = this.allItems.filter(i => i.category === 'references' && i.src && i.src.includes('/articles/'));
+        this.filteredItems = this.allItems.filter(i => i.category === 'references' && i.src && i.src.includes('/articles/'));
       } else if (category === 'Case studies') {
-        filtered = this.allItems.filter(i => i.category === 'references' && i.src && i.src.includes('/case-studies/'));
+        this.filteredItems = this.allItems.filter(i => i.category === 'references' && i.src && i.src.includes('/case-studies/'));
       } else {
-        filtered = this.allItems.filter(i => i.category === map[category]);
+        this.filteredItems = this.allItems.filter(i => i.category === map[category]);
       }
     }
-    this.renderItems(filtered);
   }
 
-  renderItems(items) {
+  renderItems(items, { append = false } = {}) {
     if (!Array.isArray(items)) return;
-    // Fade out
-    this.container.style.opacity = 0.3;
-    setTimeout(() => {
-      const html = items.map(item => `
-        <div class="gallery-item" data-category="${item.category || ''}" data-date="${item.date || ''}" data-id="${item.id || ''}">
-          <a href="${item.link || '#'}">
-            <div class="gallery-image-wrapper">
-              <img src="${item.thumbnail || ''}" alt="${item.title || ''}">
-            </div>
-          </a>
-          <p class="gallery-title">${item.title || ''}</p>
-        </div>
-      `).join('');
-      this.container.innerHTML = html;
-      // Fade in
-      this.container.style.transition = 'opacity 0.25s';
-      this.container.style.opacity = 1;
-    }, 120);
+    if (!append) this.container.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    let baseDelay = 0;
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      const div = document.createElement('div');
+      div.className = 'gallery-item';
+      div.setAttribute('data-category', item.category || '');
+      div.setAttribute('data-date', item.date || '');
+      div.setAttribute('data-id', item.id || '');
+      div.innerHTML = `
+        <a href="${item.link || '#'}">
+          <div class="gallery-image-wrapper">
+            <img src="${item.thumbnail || ''}" alt="${item.title || ''}">
+          </div>
+        </a>
+        <p class="gallery-title">${item.title || ''}</p>
+      `;
+      fragment.appendChild(div);
+      // Staggered fade-in
+      setTimeout(() => {
+        div.classList.add('visible');
+      }, baseDelay + i * 80);
+    }
+    this.container.appendChild(fragment);
   }
 }
