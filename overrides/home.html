@@ -58,6 +58,28 @@
     ];
     const gallery = new Gallery('#gallery-home', '/assets/publications.json');
     let lazyLoader = null;
+    let filterMenu = null;
+
+    function computeCounts(items) {
+      const counts = { All: items.length };
+      for (const cat of categories) {
+        if (cat === 'All') continue;
+        if (cat === 'Articles') {
+          counts[cat] = items.filter(i => i.category === 'references' && i.src && i.src.includes('/articles/')).length;
+        } else if (cat === 'Case studies') {
+          counts[cat] = items.filter(i => i.category === 'references' && i.src && i.src.includes('/case-studies/')).length;
+        } else {
+          // Map UI label to data category
+          const map = {
+            'Notebooks': 'notebooks',
+            'Projects': 'projects',
+            'Resources': 'resources',
+          };
+          counts[cat] = items.filter(i => i.category === map[cat]).length;
+        }
+      }
+      return counts;
+    }
 
     async function startLazyLoader() {
       if (!gallery.filteredItems.length) return;
@@ -72,9 +94,14 @@
       lazyLoader.init();
     }
 
-    gallery.init().then(startLazyLoader);
-    new FilterMenu('#filterMenu', categories, cat => {
-      gallery.setFilter(cat);
+    gallery.init().then(() => {
+      // Compute counts from allItems
+      const counts = computeCounts(gallery.allItems);
+      filterMenu = new FilterMenu('#filterMenu', categories, cat => {
+        gallery.setFilter(cat);
+        startLazyLoader();
+        // Update counts for filtered set if needed (optional)
+      }, counts);
       startLazyLoader();
     });
     </script>
