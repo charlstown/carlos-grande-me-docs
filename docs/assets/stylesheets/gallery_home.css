@@ -1,10 +1,10 @@
-/* Fade-in animation for gallery items */
-.gallery-item {
+/* Fade-in animation for homepage gallery items */
+.gallery-home-item {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s cubic-bezier(.4,1,.6,1), transform 0.5s cubic-bezier(.4,1,.6,1);
 }
-.gallery-item.visible {
+.gallery-home-item.visible {
   opacity: 1;
   transform: none;
 }
@@ -29,7 +29,7 @@
 }
 
 /* Gallery Section Layout */
-.gallery-wrapper {
+.gallery-home-wrapper {
   width: 100%;
   max-width: 61rem;
   margin: 0 auto;
@@ -42,9 +42,10 @@
 }
 
 /* Layout: Responsive grid, fixed-size squares */
+/* Responsive grid: auto-fit with minmax ensures square items shrink but never collapse */
 #gallery-home {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   width: 100%;
   padding: 0;
@@ -54,7 +55,7 @@
 /* Gallery item: fixed square, centered */
 
 /* Gallery item: stack image and title, image always square */
-.gallery-item {
+.gallery-home-item {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -66,7 +67,7 @@
 }
 
 /* Image wrapper always square, independent of title */
-.gallery-image-wrapper {
+.gallery-home-image-wrapper {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 16px;
@@ -76,30 +77,35 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  min-height: 0;
+  min-width: 0;
 }
 
 /* Image container: perfect square, rounded corners */
-
-
-.gallery-image-wrapper img {
+.gallery-home-image-wrapper img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
   border-radius: 16px;
   transition: transform 0.35s cubic-bezier(.4,1,.6,1);
   display: block;
   background: none;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* Hover effect: only image zooms */
-.gallery-image-wrapper:hover img,
-.gallery-image-wrapper:focus-within img {
+.gallery-home-image-wrapper:hover img,
+.gallery-home-image-wrapper:focus-within img {
   transform: scale(1.07);
 }
 
 /* Title: minimal, clear, proportional */
-.gallery-title {
+.gallery-home-title {
   margin-top: 0.85rem;
   font-size: 1.08rem;
   font-weight: 500;
@@ -112,27 +118,20 @@
 }
 
 /* Cambia el color del título al hacer hover sobre la imagen */
-.gallery-item:hover .gallery-title,
-.gallery-image-wrapper:hover + .gallery-title {
+.gallery-home-item:hover .gallery-home-title,
+.gallery-home-image-wrapper:hover + .gallery-home-title {
   color: var(--md-accent-fg-color, #00bcd4);
 }
 
 /* Responsive: grid auto-fits, but squares stay fixed size */
-@media (min-width: 1200px) {
-  #gallery-home {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
-  .gallery-wrapper {
+  .gallery-home-wrapper {
     padding: 1rem;
   }
   #gallery-home {
-    grid-template-columns: 1fr;
     gap: 1rem;
   }
-  .gallery-title {
+  .gallery-home-title {
     font-size: 1rem;
   }
 }

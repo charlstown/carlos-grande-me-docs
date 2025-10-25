@@ -58,17 +58,17 @@ export class Gallery {
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
       const div = document.createElement('div');
-      div.className = 'gallery-item';
+      div.className = 'gallery-home-item';
       div.setAttribute('data-category', item.category || '');
       div.setAttribute('data-date', item.date || '');
       div.setAttribute('data-id', item.id || '');
       div.innerHTML = `
         <a href="${item.link || '#'}">
-          <div class="gallery-image-wrapper">
+          <div class="gallery-home-image-wrapper">
             <img src="${item.thumbnail || ''}" alt="${item.title || ''}">
           </div>
         </a>
-        <p class="gallery-title">${item.title || ''}</p>
+        <p class="gallery-home-title">${item.title || ''}</p>
       `;
       fragment.appendChild(div);
       // Staggered fade-in
