@@ -111,17 +111,6 @@
     margin-bottom: 30px;
 }
 
-.md-footer-meta__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 1.0rem;
-}
-
-.md-footer-social {
-    padding-top: 20px;
-}
-
 .gluon-numbers {
     background: #ffffff;
     padding: 25px;
@@ -502,62 +491,4 @@ md-container a:hover {
     color: var(--my-font-color--light);
     font-weight: 100;
     padding-bottom: 1rem;
-}
-
-/* --- Footer attributes --- */
-.footer {
-    background-color: var(--md-footer-bg-color);
-    text-align: left;
-    position: relative;
-}
-
-.footer-meta {
-    padding: 2rem;
-    color: var(--md-footer-fg-color);
-    min-width: 60%;
-}
-
-.footer h2 {
-    margin-bottom: 10px;
-    color: white;
-}
-
-.content-column {
-    flex: 1;
-    padding: 1rem;
-}
-
-.footer a {
-    color: var(--md-accent-bg-color--light);
-}
-
-.footer a:hover {
-    color: var(--md-primary-fg-color);
-}
-
-.footer__main {
-    margin-top: 0px;
-}
-
-.footer__main a {
-    margin-top: 0.3rem;
-    width: fit-content;
-    display: block;
-}
-
-.footer__main a:hover {
-    margin-top: 0.3rem;
-}
-
-.footer__base {
-    padding-top: 2rem;
-}
-
-.footer__base a {
-    display: inline;
-}
-
-.footer__base p {
-    text-align: center;
-    font-weight: 500;
 }
