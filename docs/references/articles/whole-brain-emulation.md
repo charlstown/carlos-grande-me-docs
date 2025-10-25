@@ -21,7 +21,7 @@ The idea behind the *whole brain emulation theory (WBE)* is to make an exact wor
 ### The three stages behind the "WBE" theory
 Shanahan says that there are three stages to achieve the whole brain emulation **mapping, simulation, and embodiment**.
 
-[caption id="attachment_1738" align="aligncenter" width="413"]<a href="https://carlosgrande.me/wp-content/uploads/2021/01/SuccesLevelsWBE.jpg"><img src="https://carlosgrande.me/wp-content/uploads/2021/01/SuccesLevelsWBE.jpg" alt="Success levels for WBE." width="413" height="610" class="size-full wp-image-1738" /></a> Success levels for WBE.<br />Sandberg, A. and Bostrom, N. (2008), "Whole Brain Emulation: A Roadmap".[/caption]
+![Success levels for WBE. Sandberg, A. and Bostrom, N. (2008), "Whole Brain Emulation: A Roadmap](../../assets/images/references/sandberg-bostrom-wbe.jpg)
 
 
 **The first stage is to map the brain of the subject at high spatial resolution**. The result will be an exquisitely detailed blueprint of a particular brain at a particular time.
