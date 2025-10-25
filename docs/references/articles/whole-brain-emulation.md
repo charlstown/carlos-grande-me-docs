@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/whole-brain-emulation-portrait.jpeg
 
 # Whole brain emulation
 
-![Robot](https://carlosgrande.me/wp-content/uploads/2021/01/ba1e4da68a8260760c07e20617db0893-186x300.jpg)
+![Human habits, machine mind – The illusion of embodiment.](../../assets/images/references/shanahan-wbe.jpg){ .image-caption }
 
 
 

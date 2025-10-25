@@ -72,6 +72,16 @@ p:has(.bottom) {
 }
 
 /* caption image */
+p > img.image-caption {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+p:has(img.image-caption) {
+  text-align: center;
+}
+
 .parent-caption {
   border-radius: 1rem;
   border: 0.1rem solid var(--md-default-fg-color--lightest);
@@ -80,6 +90,12 @@ p:has(.bottom) {
   display: inline-flex;
   flex-direction: column; /* To stack caption below the image */
   align-items: center; /* Center items horizontally */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-caption {
+  max-height: 500px!important;
 }
 
 .caption {

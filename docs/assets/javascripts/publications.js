@@ -1,10 +1,10 @@
 // Global Vars  
-const dataPath = 'publications.json'  
+const dataPath = '/assets/publications.json';  // Use absolute path
   
 // Function to fetch JSON data from the specified URL  
 async function fetchPublications() {  
   try {  
-   const response = await fetch('assets/publications.json');  
+    const response = await fetch(dataPath);  // Always fetch from root
   
    // Check if the response status is OK (status code 200-299)  
    if (!response.ok) {  

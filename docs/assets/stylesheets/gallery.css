@@ -1,18 +1,50 @@
+/* Responsive Gallery Grid */
+.gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  /* Default: 2 columns */
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    padding: 0.7rem 0.2rem;
+  }
+}
+
+/* Ensure images fill their grid cell and remain proportional */
+.gallery img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s cubic-bezier(.4,1,.6,1);
+  display: block;
+  background: #f8f8f8;
+}
 /* =============================
    Minimalist Gallery Layout
    ============================= */
 
 /* Layout */
-#gallery {
-  --gallery-columns: 3;
-  --gallery-gap: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(var(--gallery-columns), 1fr);
-  gap: var(--gallery-gap);
-  padding: 2rem 1rem;
-  justify-items: center;
-  background: none;
-}
 
 .gallery-item {
   width: 100%;
@@ -135,9 +167,17 @@
   grid-template-rows: auto;
 }
 
+
 .grid-2 {
-  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Adjust minmax value as needed */
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
   grid-auto-rows: 350px;
+}
+
+@media (max-width: 600px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+  }
 }
 
 /*
