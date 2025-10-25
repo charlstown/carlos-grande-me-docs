@@ -32,14 +32,15 @@ jobs:
             python -m pip install --upgrade pip
             pip install -r requirements.txt
             python -m mkdocs build
-      - name: Configure AWS Creadentials
+      - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
-        env:
-          S3_PATH: "s3://carlos-grande-me"
         with:
-          aws-region: eu-west-3
-          aws-access-key-id: ${{ secrets.S3_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.S3_SECRET_KEY }}
-      - name: Syncronize files with S3 bucket # Name of the step
-        run: | # Command to run
-            aws s3 sync site/ s3://${{ secrets.S3_BUCKET_NAME }}
+          # The role ARN to assume via OpenID Connect (GitHub OIDC)
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Synchronize files with S3 bucket
+        env:
+          S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          aws s3 sync site/ s3://$S3_BUCKET/ --delete

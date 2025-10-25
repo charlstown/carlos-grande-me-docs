@@ -6,19 +6,3 @@ hide:
     - nav
 ---
 
-<div class="cards-menu" markdown>
-
-- All
-- Articles
-- Case studies
-- Notebooks
-- Projects
-- Resourcess
-
-</div>
-
-<div id="publicationsList" class="row-gallery">
-
-
-
-</div>

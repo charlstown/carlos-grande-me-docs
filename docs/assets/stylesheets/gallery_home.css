@@ -1,38 +1,128 @@
-#publicationsList ul li {
-    padding: 0;
+#gallery-home {
+  transition: opacity 0.25s;
+}
+/* Reset MkDocs content layout for gallery page */
+.md-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
 }
 
-#publicationsList ul li p {
-    margin: 0;
+.md-content__inner {
+  display: block !important;
+  width: 100% !important;
+  max-width: 61rem !important;
+  margin-top: 1rem !important;
+  padding: 0 1rem !important;
+  text-align: left !important;
 }
 
-#publicationsList img {
-    width: 100%;
-    height: 250px; /* Fixed height */
-    object-fit: cover; /* Crop the image to fit the container */
-    margin-bottom: .1rem;
+/* Gallery Section Layout */
+.gallery-wrapper {
+  width: 100%;
+  max-width: 61rem;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  clear: both;
 }
 
-#publicationsList{
-    padding: 1.4rem;
+/* Layout: Responsive grid, fixed-size squares */
+#gallery-home {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
 }
 
-.row-gallery {
-    display: grid;
-    gap: 2rem 2rem!important; /* Optional: space between grid items rox-col */
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); /* Adjust columns automatically */
+/* Gallery item: fixed square, centered */
 
+/* Gallery item: stack image and title, image always square */
+.gallery-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  background: none;
+  margin: 0;
+  padding: 0;
 }
 
-.gallery-item h3 {
-    /* color: var(--md-default-fg-color); */
-    font-weight: 600;
-    font-size: 1.4rem;
-    color: var(--md-main-title);
-    margin: 0;
-    overflow-wrap: break-word; /* Break words at the edge of the container */
+/* Image wrapper always square, independent of title */
+.gallery-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.gallery-item:hover h3 {
-    color: var(--md-accent-fg-color); /* Hover color for h3 */
+/* Image container: perfect square, rounded corners */
+
+
+.gallery-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  transition: transform 0.35s cubic-bezier(.4,1,.6,1);
+  display: block;
+  background: none;
+}
+
+/* Hover effect: only image zooms */
+.gallery-image-wrapper:hover img,
+.gallery-image-wrapper:focus-within img {
+  transform: scale(1.07);
+}
+
+/* Title: minimal, clear, proportional */
+.gallery-title {
+  margin-top: 0.85rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Lato', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  min-height: 1.3em;
+  transition: color 0.18s cubic-bezier(.4,1,.6,1);
+}
+
+/* Cambia el color del título al hacer hover sobre la imagen */
+.gallery-item:hover .gallery-title,
+.gallery-image-wrapper:hover + .gallery-title {
+  color: var(--md-accent-fg-color, #00bcd4);
+}
+
+/* Responsive: grid auto-fits, but squares stay fixed size */
+@media (min-width: 1200px) {
+  #gallery-home {
+    grid-template-columns: repeat(4, 1fr);
   }
+}
+
+@media (max-width: 768px) {
+  .gallery-wrapper {
+    padding: 1rem;
+  }
+  #gallery-home {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .gallery-title {
+    font-size: 1rem;
+  }
+}

@@ -1,3 +1,97 @@
+/* =============================
+   Minimalist Gallery Layout
+   ============================= */
+
+/* Layout */
+#gallery {
+  --gallery-columns: 3;
+  --gallery-gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-columns), 1fr);
+  gap: var(--gallery-gap);
+  padding: 2rem 1rem;
+  justify-items: center;
+  background: none;
+}
+
+.gallery-item {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.gallery-item a {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Image effects */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(.4,1,.6,1);
+  background: #f8f8f8;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-within img {
+  transform: scale(1.05);
+}
+
+/* Title styling */
+.gallery-title {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Lato', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  background: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  #gallery {
+    --gallery-columns: 3;
+    --gallery-gap: 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  #gallery {
+    --gallery-columns: 2;
+    --gallery-gap: 1rem;
+    padding: 1.2rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #gallery {
+    --gallery-columns: 1;
+    --gallery-gap: 0.7rem;
+    padding: 0.7rem 0.2rem;
+  }
+  .gallery-item img {
+    aspect-ratio: 4/3;
+  }
+  .gallery-title {
+    font-size: 1rem;
+    margin-top: 0.6rem;
+  }
+}
 .gallery {
     display: grid;
     gap: .5rem; /* Space between images */

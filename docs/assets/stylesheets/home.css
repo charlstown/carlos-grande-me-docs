@@ -24,16 +24,16 @@
     .tx-hero {
         display: flex;
         align-items: center;
-        justify-content: center;
+        /* left-align horizontally on large screens */
+        justify-content: flex-start;
     }
 
     .tx-hero__content {
         max-width: 22rem;
-        margin-top: 3.5rem;
-        margin-bottom: 3.5rem;
-        margin-left: 1.0rem;
-        margin-right: 4.0rem;
+        /* place a comfortable gap from the left edge */
+        margin: 0 0 0 4rem;
         align-items: center;
+        padding: 1rem;
     }
 }
 
@@ -129,6 +129,12 @@
 
 
 /* CLEAN CSS BELOW */
+
+/* --- custom md content --- */
+.md-main__inner {
+    margin-top: 0!important;
+}  
+
 /* --- General attributes --- */
 h1 {
     font-size:1.3rem;
@@ -264,37 +270,60 @@ md-container a:hover {
 }
 
 /* --- Hero attributes --- */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* usa toda la altura del hero */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
 .hero-section {
-    height: auto;   
-    background: linear-gradient(to bottom, var(--md-primary-fg-color), var(--md-primary-fg-color--dark) 99%);
-    position: relative;
-    height: 40vh;
+  position: relative;
+  height: 40vh; /* mantiene tu altura actual */
+  background: linear-gradient(
+    to bottom,
+    var(--md-primary-fg-color),
+    var(--md-primary-fg-color--dark) 99%
+  );
+  overflow: hidden;
 }
 
 .tx-hero {
-    margin: 32px 2.8rem;
+    /* position the hero overlay and vertically center content; align left horizontally */
     color: var(--md-primary-bg-color);
     height: 40vh;
-    width: auto;
+    width: 100%;
     position: absolute;
-    top: auto;
-    left: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .tx-hero h1 {
-    margin-bottom: 1rem;
-    color: currentColor;
-    font-size: 2rem;
-    font-weight: 600;
+  margin-bottom: 1rem;
+  color: currentColor;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .tx-hero p {
-    color: white;
+  color: white;
+  margin: 0;
 }
 
 .tx-hero__content {
-    padding-bottom: 3rem;
     max-width: 32rem;
+    /* keep a comfortable gap from the left edge */
+    margin-left: 4rem;
+    padding: 0 1rem;
 }
 
 .tx-hero .md-button {

@@ -1,0 +1,31 @@
+/* Minimal text-only Filter Menu */
+.filter-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 auto 1.2rem auto;
+  padding: 0.3rem 0 0.3rem 0;
+}
+.filter-btn {
+  background: none;
+  border: none;
+  color: var(--md-default-fg-color, #444);
+  font-size: 0.97rem;
+  font-family: inherit;
+  font-weight: 400;
+  padding: 0.1rem 0.7rem;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.15s, font-weight 0.18s cubic-bezier(.4,1,.6,1);
+  outline: none;
+  box-shadow: none;
+}
+.filter-btn:hover,
+.filter-btn:focus {
+  color: var(--md-accent-fg-color, #00bcd4);
+}
+.filter-btn.active {
+  font-weight: 600;
+}

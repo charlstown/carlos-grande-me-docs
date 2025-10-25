@@ -101,17 +101,26 @@ def serialize_entry(entry):
     return entry
 
 def write_dict_to_json(data, filename):
-    """Writes a list of dictionaries to a JSON file.
+    """Writes a dictionary (possibly containing dates) to a JSON file.
 
-    :param data: _description_
-    :param filename: _description_
+    :param data: dictionary or nested structure to write to JSON
+    :param filename: output filename
     """
-    # Serialize the data
-    serialized_data = [serialize_entry(entry) for entry in data]
-    
+    def serialize_obj(obj):
+        # Recursively convert date objects to ISO strings
+        if isinstance(obj, dict):
+            return {k: serialize_obj(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [serialize_obj(v) for v in obj]
+        if isinstance(obj, date):
+            return obj.isoformat()
+        return obj
+
+    serialized_data = serialize_obj(data)
+
     # Write to JSON file
-    with open(filename, 'w') as file:
-        json.dump(serialized_data, file, indent=4)
+    with open(filename, 'w', encoding='utf-8') as file:
+        json.dump(serialized_data, file, indent=4, ensure_ascii=False)
 
 def extract_fields_from_doc(doc, site):
     """Extract fields from the doc file
@@ -196,6 +205,12 @@ def on_files(files: Files, config):
     # Sort results by date
     sorted_publications = sorted(publications, key=lambda x: (x['date'] is None, x['date']), reverse=True)
 
-    # Write to a JSON file named 'data.json'
-    if not os.path.exists(output_path):
-        write_dict_to_json(sorted_publications, output_path)
+    # Create time stamp version
+    dct_output = {
+        "version": date.today().isoformat(),
+        "items": sorted_publications
+    }
+
+
+    # Write to a JSON file
+    write_dict_to_json(dct_output, output_path)
