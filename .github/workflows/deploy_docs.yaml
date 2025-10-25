@@ -18,6 +18,9 @@ on:
 jobs:
   main:
     name: Build + Deploy
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       # checkout this repo
