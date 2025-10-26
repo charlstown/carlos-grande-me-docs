@@ -7,13 +7,7 @@ thumbnail: assets/images/thumbnails/python-design-patterns-portrait.jpg
 
 # Python design patterns
 
-<div class='image-caption image-centered image-width-24' markdown>
-
-- ![Margaret Hamilton in 1969](https://carlosgrande.me/wp-content/uploads/2021/12/MargaretHamilton.jpg)
-- Margaret Hamilton in 1969
-{ .caption }
-
-</div>
+![Building reliable systems – Margaret Hamilton in 1969](../../assets/images/notebooks/python-design-patterns-margaret-hamilton.png){ .image-caption }
 
 I wanted to share a post with some notes from the **Jungwoo Ryoo** Python Design Patterns course. Dr. Jungwoo Ryoo educates people in the field of Software Security/cybersecurity, Computer networking, Data Science and others.
 

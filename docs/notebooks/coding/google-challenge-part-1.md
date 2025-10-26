@@ -7,13 +7,7 @@ thumbnail: assets/images/thumbnails/google-challenge-part-1-portrait.jpg
 
 # Google challenge part 1
 
-<div class='image-caption image-centered image-width-24' markdown>
-
-- ![Google Data Center 2079 By Beeple Crap](https://carlosgrande.me/wp-content/uploads/2022/03/BeepleCrap_GOOGLE-DATA-CENTER-2079.jpg)
-- Google Data Center 2079 By Beeple Crap
-{ .caption }
-
-</div>
+![Playing with algorithms – Beeple’s Google Data Center 2079.](https://carlosgrande.me/wp-content/uploads/2022/03/BeepleCrap_GOOGLE-DATA-CENTER-2079.jpg){ .image-caption }
 
 
 I've been recently working with my friend [Álvaro Simón Merino](https://alvarosimon.me/) doing some research in Google about coding. We got an unusual message on the google site background, with a message:
