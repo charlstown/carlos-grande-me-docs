@@ -2,7 +2,7 @@
 short_title: Team topologies
 description: none
 date: 2019-01-01
-thumbnail: assets/images/thumbnails/team-topologies-portrait.png
+thumbnail: assets/images/notebooks/team-topologies-portrait.png
 ---
 
 # Team topologies

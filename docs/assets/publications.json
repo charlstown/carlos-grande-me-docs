@@ -17,7 +17,7 @@
             "link": "./notebooks/business/team-topologies",
             "title": "Team topologies",
             "date": "2019-01-01",
-            "thumbnail": "assets/images/thumbnails/team-topologies-portrait.png"
+            "thumbnail": "assets/images/notebooks/team-topologies-portrait.png"
         },
         {
             "id": "google-challenge-part-1",
@@ -206,7 +206,7 @@
             "link": "./references/case-studies/eric-fischer",
             "title": "Eric Fischer",
             "date": "2019-01-01",
-            "thumbnail": "assets/images/thumbnails/eric-fischer-portrait.jpeg"
+            "thumbnail": "assets/images/thumbnails/eric-fischer-portrait.png"
         },
         {
             "id": "giorgia-lupi",
