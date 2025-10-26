@@ -1,7 +1,7 @@
 ---
 short_title: Docker cheatsheet
 description: none
-date: 2019-01-01
+date: 2020-10-10
 thumbnail: assets/images/resources/cheatsheet-docker-portrait.png
 ---
 

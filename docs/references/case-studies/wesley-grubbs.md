@@ -1,7 +1,7 @@
 ---
 short_title: Wesley Grubbs
 description: none
-date: 2019-01-01
+date: 2020-01-19
 thumbnail: assets/images/thumbnails/wesley-grubbs-portrait.jpeg
 ---
 

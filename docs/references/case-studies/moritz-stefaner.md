@@ -1,7 +1,7 @@
 ---
 short_title: Moritz Stefaner
 description: none
-date: 2019-01-01
+date: 2020-04-10
 thumbnail: assets/images/thumbnails/moritz-stefaner-portrait.png
 ---
 

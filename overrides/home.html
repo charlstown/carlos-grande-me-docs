@@ -1,109 +1,98 @@
-<!-- Custom HTML site displayed as the Home chapter -->
+{# Home page template #}
 {% extends "main.html" %}
 
-
-<!-- Custom styles for the home site -->
+{# Styles specific to the home page #}
 {% block styles %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/home.css' | url }}" />
-    <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/particles.css' | url }}" />
-    <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/gallery_home.css' | url }}" />
-    <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/filter_menu.css' | url }}" />
+  {{ super() }}
+  <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/home.css' | url }}" />
+  <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/particles.css' | url }}" />
+  <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/gallery_home.css' | url }}" />
+  <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/filter_menu.css' | url }}" />
   <link rel="stylesheet" href="{{ base_url }}/{{ 'assets/stylesheets/home_footer.css' | url }}" />
-    <script src="{{ base_url }}/{{ 'assets/javascripts/cards_menu.js' | url }}"></script>
 {% endblock %}
 
-
-<!-- Custom javascript for the home site -->
+{# Libraries and page-level scripts #}
 {% block libs %}
-    {{ super() }}
-    <script src="{{ base_url }}/{{ 'assets/javascripts/particles.js' | url }}"></script>
-    <script>
-        particlesJS.load('particles-js', 'assets/javascripts/particles.json', function() {
-            console.log('particles.js loaded - callback');
-        });
-    </script>
-    <script src="assets/javascripts/extra.js"></scriptsrc>></script>
+  {{ super() }}
+  <script src="{{ base_url }}/{{ 'assets/javascripts/particles.js' | url }}"></script>
+  <script>
+    // Initialize particles once DOM and target container are available
+    document.addEventListener('DOMContentLoaded', function () {
+      const targetId = 'particles-js';
+      const cfgPath = "{{ base_url }}/{{ 'assets/javascripts/particles.json' | url }}";
+      function initParticles() {
+        const el = document.getElementById(targetId);
+        if (!el) { requestAnimationFrame(initParticles); return; }
+        if (window.particlesJS?.load) {
+          window.particlesJS.load(targetId, cfgPath);
+        }
+      }
+      initParticles();
+    });
+  </script>
+  <script src="{{ base_url }}/{{ 'assets/javascripts/extra.js' | url }}"></script>
 {% endblock %}
 
-
-{# ----------  Hero Section  ---------- #}
+{# Hero section (title + particles background) #}
 {% block tabs %}
   {{ super() }}
   {% include "partials/hero.html" %}
 {% endblock %}
 
-
-{% block container %}
-  {{ super() }}
-{% endblock %}
-
+{# Main content: filter + gallery #}
 {% block content %}
   {{ super() }}
-  <section class="gallery-wrapper">
+  <section class="gallery-home-wrapper">
     <div id="filterMenu"></div>
     <div id="gallery-home"></div>
 
     <script type="module">
-    import { Gallery } from '/assets/javascripts/components/GalleryHome.js';
-    import { FilterMenu } from '/assets/javascripts/components/FilterMenu.js';
-    import { LazyLoader } from '/assets/javascripts/components/LazyLoader.js';
-    const categories = [
-      'All',
-      'Articles',
-      'Case studies',
-      'Projects',
-      'Resources',
-      'Notebooks'
-    ];
-    const gallery = new Gallery('#gallery-home', '/assets/publications.json');
-    let lazyLoader = null;
-    let filterMenu = null;
+      // Use base_url-aware module paths to work under subpaths
+      import { Gallery } from "{{ base_url }}/assets/javascripts/components/GalleryHome.js";
+      import { FilterMenu } from "{{ base_url }}/assets/javascripts/components/FilterMenu.js";
+      import { LazyLoader } from "{{ base_url }}/assets/javascripts/components/LazyLoader.js";
 
-    function computeCounts(items) {
-      const counts = { All: items.length };
-      for (const cat of categories) {
-        if (cat === 'All') continue;
-        if (cat === 'Articles') {
-          counts[cat] = items.filter(i => i.category === 'references' && i.src && i.src.includes('/articles/')).length;
-        } else if (cat === 'Case studies') {
-          counts[cat] = items.filter(i => i.category === 'references' && i.src && i.src.includes('/case-studies/')).length;
-        } else {
-          // Map UI label to data category
-          const map = {
-            'Notebooks': 'notebooks',
-            'Projects': 'projects',
-            'Resources': 'resources',
-          };
-          counts[cat] = items.filter(i => i.category === map[cat]).length;
+      const categories = ['All','Articles','Case studies','Projects','Resources','Notebooks'];
+      const gallery = new Gallery('#gallery-home', '{{ base_url }}/assets/publications.json');
+      let lazyLoader = null;
+
+      function computeCounts(items) {
+        const counts = { All: items.length };
+        for (const cat of categories) {
+          if (cat === 'All') continue;
+          if (cat === 'Articles') {
+            counts[cat] = items.filter(i => i.category === 'references' && i.src?.includes('/articles/')).length;
+          } else if (cat === 'Case studies') {
+            counts[cat] = items.filter(i => i.category === 'references' && i.src?.includes('/case-studies/')).length;
+          } else {
+            const map = { 'Notebooks': 'notebooks', 'Projects': 'projects', 'Resources': 'resources' };
+            counts[cat] = items.filter(i => i.category === map[cat]).length;
+          }
         }
+        return counts;
       }
-      return counts;
-    }
 
-    async function startLazyLoader() {
-      if (!gallery.filteredItems.length) return;
-      if (lazyLoader) lazyLoader.destroy();
-      gallery.container.innerHTML = '';
-      lazyLoader = new LazyLoader({
-        container: gallery.container,
-        items: gallery.filteredItems,
-        batchSize: 8,
-        renderFn: items => gallery.renderItems(items, { append: true })
-      });
-      lazyLoader.init();
-    }
+      async function startLazyLoader() {
+        if (!gallery.filteredItems.length) return;
+        if (lazyLoader) lazyLoader.destroy();
+        gallery.container.innerHTML = '';
+        lazyLoader = new LazyLoader({
+          container: gallery.container,
+          items: gallery.filteredItems,
+          batchSize: 8,
+          renderFn: items => gallery.renderItems(items, { append: true })
+        });
+        lazyLoader.init();
+      }
 
-    gallery.init().then(() => {
-      // Compute counts from allItems
-      const counts = computeCounts(gallery.allItems);
-      filterMenu = new FilterMenu('#filterMenu', categories, cat => {
-        gallery.setFilter(cat);
+      gallery.init().then(() => {
+        const counts = computeCounts(gallery.allItems);
+        new FilterMenu('#filterMenu', categories, (cat) => {
+          gallery.setFilter(cat);
+          startLazyLoader();
+        }, counts);
         startLazyLoader();
-        // Update counts for filtered set if needed (optional)
-      }, counts);
-      startLazyLoader();
-    });
+      });
     </script>
   </section>
 {% endblock %}

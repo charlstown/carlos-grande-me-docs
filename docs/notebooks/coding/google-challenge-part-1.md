@@ -1,7 +1,7 @@
 ---
 short_title: Google challenge part 1
 description: none
-date: 2019-01-01
+date: 2022-03-27
 thumbnail: assets/images/thumbnails/google-challenge-part-1-portrait.jpg
 ---
 

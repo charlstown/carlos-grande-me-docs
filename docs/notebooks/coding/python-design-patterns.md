@@ -1,7 +1,7 @@
 ---
 short_title: Python design patterns
 description: none
-date: 2019-01-01
+date: 2021-12-16
 thumbnail: assets/images/thumbnails/python-design-patterns-portrait.jpg
 ---
 

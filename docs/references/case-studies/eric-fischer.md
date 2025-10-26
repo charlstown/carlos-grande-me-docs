@@ -1,7 +1,7 @@
 ---
 short_title: Eric Fischer
 description: none
-date: 2019-01-01
+date: 2020-01-13
 thumbnail: assets/images/thumbnails/eric-fischer-portrait.png
 ---
 

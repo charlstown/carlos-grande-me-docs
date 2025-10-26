@@ -1,7 +1,7 @@
 ---
 short_title: Nicholas Felton
 description: none
-date: 2019-01-01
+date: 2020-10-09
 thumbnail: assets/images/thumbnails/nicholas-felton-portrait.jpeg
 ---
 

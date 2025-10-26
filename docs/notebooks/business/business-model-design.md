@@ -1,7 +1,7 @@
 ---
 short_title: The Business model design
 description: none
-date: 2024-01-01
+date: 2020-11-16
 thumbnail: assets/images/thumbnails/business-model-portrait.jpg
 ---
 

@@ -1,7 +1,7 @@
 ---
 short_title: Whole brain emulation
 description: none
-date: 2019-01-01
+date: 2021-01-24
 thumbnail: assets/images/thumbnails/whole-brain-emulation-portrait.jpeg
 ---
 

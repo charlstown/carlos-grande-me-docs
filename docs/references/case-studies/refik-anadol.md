@@ -1,7 +1,7 @@
 ---
 short_title: Refik Anadol
 description: none
-date: 2019-01-01
+date: 2020-11-18
 thumbnail: assets/images/thumbnails/refik-anadol-portrait.jpeg
 ---
 

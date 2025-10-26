@@ -1,7 +1,7 @@
 ---
 short_title: My Python template
 description: none
-date: 2019-01-01
+date: 2022-12-22
 thumbnail: assets/images/resources/data-mesh-portrait.png
 ---
 

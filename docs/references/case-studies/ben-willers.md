@@ -1,7 +1,7 @@
 ---
 short_title: Ben Willers
 description: none
-date: 2019-01-01
+date: 2020-01-07
 thumbnail: assets/images/thumbnails/ben-willers-portrait.png
 ---
 

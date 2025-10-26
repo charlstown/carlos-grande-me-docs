@@ -2,7 +2,7 @@
 .gallery-home-item {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s cubic-bezier(.4,1,.6,1), transform 0.5s cubic-bezier(.4,1,.6,1);
+  transition: opacity 1s cubic-bezier(.4,1,.6,1), transform 0.5s cubic-bezier(.4,1,.6,1);
 }
 .gallery-home-item.visible {
   opacity: 1;

@@ -1,7 +1,7 @@
 ---
 short_title: My Rubiks cube model
 description: none
-date: 2019-01-01
+date: 2022-04-05
 thumbnail: assets/images/thumbnails/my-rubiks-cube-portrait.png
 ---
 

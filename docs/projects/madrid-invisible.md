@@ -1,7 +1,7 @@
 ---
 short_title: Madrid 010 calls
 description: none
-date: 2019-01-01
+date: 2020-01-06
 thumbnail: assets/images/thumbnails/madrid-invisible-portrait.png
 ---
 

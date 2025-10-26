@@ -1,7 +1,7 @@
 ---
 short_title: SQL cheatsheet
 description: none
-date: 2019-01-01
+date: 2020-01-19
 thumbnail: assets/images/resources/cheatsheet-sql-portrait.jpeg
 ---
 

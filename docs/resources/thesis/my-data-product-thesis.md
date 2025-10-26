@@ -1,6 +1,6 @@
 ---
 short_title: My data product thesis
-date: 2019-01-01
+date: 2022-10-10
 thumbnail: assets/images/resources/data-product-portrait.png
 description: none
 toc_depth: 2

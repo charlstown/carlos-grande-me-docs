@@ -1,7 +1,7 @@
 ---
 short_title: The chinese room
 description: none
-date: 2019-01-01
+date: 2020-02-03
 thumbnail: assets/images/thumbnails/chinese-room-portrait.jpeg
 ---
 

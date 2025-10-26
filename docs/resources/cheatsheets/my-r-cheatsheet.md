@@ -1,7 +1,7 @@
 ---
 short_title: R cheatsheet
 description: none
-date: 2019-01-01
+date: 2020-03-30
 thumbnail: assets/images/resources/cheatsheet-r-portrait.jpeg
 ---
 

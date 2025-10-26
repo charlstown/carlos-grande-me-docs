@@ -1,7 +1,7 @@
 ---
 short_title: Giorgia Lupi
 description: none
-date: 2019-01-01
+date: 2020-10-11
 thumbnail: assets/images/thumbnails/giorgia-lupi-portrait.png
 ---
 

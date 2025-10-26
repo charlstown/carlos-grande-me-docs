@@ -1,7 +1,7 @@
 ---
 short_title: Text mining sentiment analysis
 description: none
-date: 2019-01-01
+date: 2020-04-08
 thumbnail: assets/images/thumbnails/text-mining-sentiment-analysis-portrait.jpg
 ---
 

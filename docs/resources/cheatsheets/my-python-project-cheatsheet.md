@@ -1,7 +1,7 @@
 ---
 short_title: Python project cheatsheet
 description: none
-date: 2019-01-01
+date: 2020-10-04
 thumbnail: assets/images/resources/cheatsheet-python-project-portrait.jpeg
 ---
 

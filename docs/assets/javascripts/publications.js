@@ -1,58 +1,62 @@
-// Global Vars  
-const dataPath = '/assets/publications.json';  // Use absolute path
-  
-// Function to fetch JSON data from the specified URL  
-async function fetchPublications() {  
-  try {  
-    const response = await fetch(dataPath);  // Always fetch from root
-  
-   // Check if the response status is OK (status code 200-299)  
-   if (!response.ok) {  
-    throw new Error(`HTTP error! Status: ${response.status}`);  
-   }  
-  
-   const publications = await response.json(); // Parse JSON data  
-   console.log(publications); // Log JSON data for debugging purposes  
-   return publications;  
-  } catch (error) {  
-   console.error('Error fetching publications:', error);  
-  }  
-}  
-  
-// Generates the first elements  
-function createGalleryElement(item) {  
-  console.log(`creating: ${item}`)  
-  const galleryItem = document.createElement('a');  
-  galleryItem.className = 'gallery-item card'; // Added 'card' class for styling
-  galleryItem.href = item.link; 
-  
-  const img = document.createElement('img');  
-  img.src = item.thumbnail;  
-  img.alt = item.title;  
-  
-  const title = document.createElement('h3');  
-  title.textContent = item.title;  
-  
-  // const link = document.createElement('a');  
-  // link.href = item.link;  
-  // link.appendChild(title);  
-  
-  galleryItem.appendChild(img);  
-  galleryItem.appendChild(title);  
-  
-  return galleryItem;  
-}  
-  
-async function mainFunction(){  
-  const publications = await fetchPublications();  
-  const sortedPublications = publications.sort((a, b) => {  
-   return new Date(b.date) - new Date(a.date);  
-  });  
-  const publicationsList = document.getElementById('publicationsList');  
-  sortedPublications.forEach(publication => {  
-   const galleryElement = createGalleryElement(publication);  
-   publicationsList.appendChild(galleryElement);  
-  });  
-}  
-  
+// Global Vars
+const dataPath = '/assets/publications.json'; // Use absolute path
+
+// Fetch JSON data and return the items array
+async function fetchPublications() {
+  try {
+    const response = await fetch(dataPath);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    if (!data || !Array.isArray(data.items)) {
+      throw new Error('Invalid publications.json format: missing items[]');
+    }
+    return data.items;
+  } catch (error) {
+    console.error('Error fetching publications:', error);
+    return [];
+  }
+}
+
+// Build a gallery card element
+function createGalleryElement(item) {
+  const galleryItem = document.createElement('a');
+  galleryItem.className = 'gallery-item card';
+  galleryItem.href = item.link;
+
+  const img = document.createElement('img');
+  img.src = item.thumbnail;
+  img.alt = item.title || '';
+
+  const title = document.createElement('h3');
+  title.textContent = item.title || '';
+
+  galleryItem.appendChild(img);
+  galleryItem.appendChild(title);
+
+  return galleryItem;
+}
+
+async function mainFunction() {
+  const publicationsList = document.getElementById('publicationsList');
+  if (!publicationsList) {
+    // Not on a page that renders the publications list; no-op
+    return;
+  }
+
+  const items = await fetchPublications();
+  // Sort by date descending (newest first); invalid dates go last
+  const sortedPublications = items.sort((a, b) => {
+    const da = new Date(a && a.date ? a.date : 0);
+    const db = new Date(b && b.date ? b.date : 0);
+    return db - da;
+  });
+
+  sortedPublications.forEach((publication) => {
+    const galleryElement = createGalleryElement(publication);
+    publicationsList.appendChild(galleryElement);
+  });
+}
+
 mainFunction();
