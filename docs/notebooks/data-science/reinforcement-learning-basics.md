@@ -7,9 +7,7 @@ thumbnail: assets/images/thumbnails/reinforcement-learning-basics-portrait.png
 
 # Reinforcement learning basics
 
-![Reinforcement learning basics](https://carlosgrande.me/wp-content/uploads/2023/01/really-crappy-robots_24.png)
-
-Reinforcement learning basics
+![Reinforcement learning basics](https://carlosgrande.me/wp-content/uploads/2023/01/really-crappy-robots_24.png){ .image-caption }
 
 I set out to write a post diving into the depths of the Explore-Exploit Dilemma and Multi-armed Bandit problem in reinforcement learning. I created a basic bandit machine model in Python to play with and better understand the basics. This post serves as a personal reminder of the journey, and a guide for others looking to navigate the maze of reinforcement learning methods.
 
@@ -61,7 +59,7 @@ class bandit_machine:
 
 The explore-exploit dilemma is a fundamental problem in reinforcement learning that refers to the trade-off between gathering information about the different options available to an agent and maximizing the immediate reward by exploiting the current best option. In simple terms, it is the decision of choosing between trying something new or sticking to what you know. This dilemma arises because there is a trade-off between exploration and exploitation: the more the agent explores, the less it exploits, and the less it explores, the more it exploits. Finding the right balance between exploration and exploitation is crucial to achieve the best overall performance in reinforcement learning.
 
-![Explore-exploit dilemma](https://carlosgrande.me/wp-content/uploads/2023/01/a5f.jpg)
+![Explore-exploit dilemma](../../assets/images/notebooks/reinforcement-learning-dilema.jpg){ .image-caption }
 
 > The Explore-exploit dilemma is the trade-off between gathering information and exploiting the best option in decision-making and reinforcement learning.
 
@@ -73,34 +71,34 @@ A naive sample mean approach in reinforcement learning can be problematic becaus
 
 Starting from the sample mean equation we can calculate the sample mean using constant time and space.
 
-```katex
+$$
 \bar{X}_N = \frac{1}{N} \sum_{i=1}^{N} X_i
-```
+$$
 
 An alternative approach to calculating the sample mean in reinforcement learning is to use a constant space and time algorithm by updating the previous sample mean with each new reward received, rather than storing all past rewards.
 
-```katex
+$$
 \bar{X}_N = \frac{1}{N} \sum_{i=1}^{N} X_i ; \quad
 \bar{X}_{N-1} = \frac{1}{N-1} \sum_{i=1}^{N-1} X_i;
-```
+$$
 
 To do so we can start by splitting the sample mean equation \(X_i\) into \(\sum_{i=1}^{N-1} X_i + X_N\):
 
-```katex
+$$
 \bar{X}_N = \frac{1}{N} (\sum_{i=1}^{N-1} X_i + X_N)
-```
+$$
 
 Now we can leave the sum on one side of the equation:
 
-```katex
+$$
 \bar{X}_{N-1} = \frac{1}{N-1} \sum_{i=1}^{N-1} X_i  \Leftrightarrow  \sum_{i=1}^{N-1} X_i = \bar{X}_{N-1} (N-1)
-```
+$$
 
 And finally we solve the equation:
 
-```katex
+$$
 \boxed{\bar{X}_{N} = \frac{\bar{X}_{N-1} (N-1) + X_N}{N}}
-```
+$$
 
 This is known as the online sample mean method. It avoids the problem of running out of space to store rewards and it's less computationally expensive than storing all past rewards.
 
@@ -150,7 +148,7 @@ machine_1 (39 pulls):
 The bandit has a estimated probability of 0.29/0.35
 ```
 
-![Bandit machine 1](https://carlosgrande.me/wp-content/uploads/2023/01/machine_0.png)
+![Bandit machine 1](../../assets/images/notebooks/reinforcement-learning-machine-1.png)
 
 **Machine 2:**
 
@@ -159,7 +157,7 @@ machine_2 (40 pulls):
 The bandit has a estimated probability of 0.46/0.5
 ```
 
-![Bandit machine 2](https://carlosgrande.me/wp-content/uploads/2023/01/machine_1.png)
+![Bandit machine 2](../../assets/images/notebooks/reinforcement-learning-machine-2.png)
 
 **Machine 3:**
 
@@ -168,7 +166,7 @@ machine_3 (924 pulls):
 The bandit has a estimated probability of 0.77/0.75
 ```
 
-![Bandit machine 3](https://carlosgrande.me/wp-content/uploads/2023/01/machine_2.png)
+![Bandit machine 3](../../assets/images/notebooks/reinforcement-learning-machine-3.png)
 
 The previous plots show the estimated mean of the probability of gaining a reward for each bandit machine as the number of iterations increases.
 
@@ -198,7 +196,7 @@ self.p_estimated = 2.
 
 Then we run 200 experiments obtaining a comparison with the Epsilon Greedy plot.
 
-![Epsilon greedy VS Optimistic initial values](https://carlosgrande.me/wp-content/uploads/2023/01/EGvsOIV.png)
+![Epsilon greedy VS Optimistic initial values](../../assets/images/notebooks/reinforcement-learning-egvsoiv.png)
 
 As a reminder, Epsilon-greedy is a more general method while Optimistic Initial Values is a specific strategy. In some cases, Optimistic Initial Values may perform better, but in other cases, epsilon-greedy may be more suitable. It's important to test and evaluate both methods in the specific context.
 
@@ -216,15 +214,15 @@ The upper confidence bound is calculated as the average reward of an arm plus a 
 
 We can use this made-up function to illustrate the idea:
 
-```katex
+$$
 p(sampleMean - trueMean  \geq error)  \le f(error)
-```
+$$
 
 The function represents the probability that the difference between the sample mean (estimated mean) and the true mean (actual mean) of the rewards is greater than a certain error, with \(f(t)\) being a decreasing function that depends on the desired level of confidence. The UCB algorithm uses this function to determine the upper bound on the error, which is used to select the arm to play. In short, it represents the probability that the arm selected by UCB is not the best one.
 
-```katex
+$$
 p(\bar{X}_n - E(X)  \geq t)  \le f(t)
-```
+$$
 
 If the function (\(f(t)\)) is a decreasing function, it means that as the error value gets smaller, the probability of a big error becomes smaller, while the probability of a small error becomes bigger. This is because as the number of samples increases, the sample mean becomes a better estimate of the true mean, and the degree of uncertainty in that estimate decreases, making it less likely that a large error will occur.
 
@@ -232,21 +230,21 @@ The decreasing functions:
 
 - Markov Inequality — the function decreases proportional to \(1/t\)
 
-```katex
+$$
 p(\bar{X}_n - E(X)  \geq t)  \le \frac{1}{t}
-```
+$$
 
 - Chebyshev Inequality — the function decreases faster proportional to \(1/t^2\)
 
-```katex
+$$
 p(\bar{X}_n - E(X)  \geq t)  \le \frac{1}{t^2}
-```
+$$
 
 - Hoeffding's inequality — the function decreases faster than any polynomial proportional to \(e^{-2nt^2}\)
 
-```katex
+$$
 p(\bar{X}_n - E(X)  \geq t)  \le e^{-2nt^2}
-```
+$$
 
 We are going to use the Hoeffding's inequality in our model.
 
@@ -256,12 +254,12 @@ Before diving into the code, a high-level overview of the algorithm via pseudoco
 
 Loop:
 
-```katex
+$$
 \boxed{j = max( \bar{X}_{nj} + \sqrt{ 2 \frac{\log{N}}{n_j} })} \\
  \bar{X}_{nj}: \textrm{mean from j machine} \\
 N: \textrm{total plays made} \\
 n_j: \textrm{plays made on j machine}
-```
+$$
 
 The code only needs to update the way the bandit machine is selected by adding the weight from Hoeffding's inequality, without modifying the rest of the code.
 
@@ -274,7 +272,7 @@ def apply_weight(x_mean, n_plays, n_samples):
 
 The code selects the best machine in each iteration of the loop by applying the weights and updating the way the bandit machine is chosen.
 
-![OIV VS. UCB1](https://carlosgrande.me/wp-content/uploads/2023/01/OIVvsUCB1.png)
+![OIV VS. UCB1](../../assets/images/notebooks/reinforcement-learning-oivvsucb1.png)
 
 In the next plot, we can see two lines. The blue line represents the estimated mean obtained using the optimistic initial values method, and the orange line represents the estimated mean obtained using the UCB1 method. The plot helps us visualize the convergence of the estimated means towards the actual probability of gaining a reward for each bandit machine.
 
@@ -295,11 +293,11 @@ To understand Thompson Sampling, it is important to have a basic understanding o
 
 The Bayes rule formula is:
 
-```katex
+$$
 posterior = \frac{prior X likelihood}{evidence} \\
 ---\\
 \boxed{P(\theta | X) = \frac{P(\theta | X) P(\theta)}{P(X)}}
-```
+$$
 
 The prior represents our initial belief about the probability of an event, the likelihood is the probability of observing the data given the event, and the evidence is the total probability of observing the data.
 
