@@ -61,6 +61,7 @@ jobs:
             "docs/**/*.md" "overrides/**/*.md"
           format: json
           output: lychee/lychee.json
+          jobsummary: false
           fail: false
 
       - name: Annotate broken links as warnings
@@ -111,23 +112,4 @@ jobs:
           else:
               for file, url, status in broken:
                   print(f"::warning file={rel(file)}::Broken link {url} [{status}]")
-              # Write a concise summary table
-              summary = os.environ.get('GITHUB_STEP_SUMMARY')
-              if summary:
-                  with open(summary, 'a', encoding='utf-8') as out:
-                      out.write('### Broken links found\n\n')
-                      out.write('| File | URL | Status |\n|---|---|---|\n')
-                      for file, url, status in broken:
-                          out.write(f'| {rel(file)} | {url} | {status} |\n')
           PY
-
-      - name: Upload lychee report artifact
-        if: always() && hashFiles('lychee/lychee.json') != ''
-        uses: actions/upload-artifact@v4
-        with:
-          name: lychee-report
-          path: lychee/lychee.json
-          if-no-files-found: warn
-          compression-level: 6
-          overwrite: false
-          include-hidden-files: false
