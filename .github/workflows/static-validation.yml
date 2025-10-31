@@ -45,15 +45,21 @@ jobs:
             echo "No recognizable tests found. Skipping."
           fi
 
+      - name: Prepare lychee report directory
+        if: always()
+        shell: bash
+        run: mkdir -p lychee
+
       - name: Check links with lychee
         id: lychee
         uses: lycheeverse/lychee-action@v1
         with:
           args: >-
             --verbose --no-progress --require-https --exclude-mail
-            --timeout 10 --max-redirects 5
-            --format json --output lychee.json
+            --timeout 10 --max-redirects 5 --max-concurrency 5
             "docs/**/*.md" "overrides/**/*.md"
+          format: json
+          output: lychee/lychee.json
           fail: false
 
       - name: Annotate broken links as warnings
@@ -61,13 +67,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ ! -f lychee.json ]; then
+          if [ ! -f lychee/lychee.json ]; then
             echo "No lychee.json produced."
             exit 0
           fi
           python3 - << 'PY'
           import json, os
-          p = 'lychee.json'
+          p = 'lychee/lychee.json'
           with open(p, encoding='utf-8') as f:
               data = json.load(f)
           broken = []
@@ -115,8 +121,12 @@ jobs:
           PY
 
       - name: Upload lychee report artifact
-        if: always()
+        if: always() && hashFiles('lychee/lychee.json') != ''
         uses: actions/upload-artifact@v4
         with:
           name: lychee-report
-          path: lychee.json
+          path: lychee/lychee.json
+          if-no-files-found: warn
+          compression-level: 6
+          overwrite: false
+          include-hidden-files: false
