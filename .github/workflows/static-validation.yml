@@ -57,7 +57,7 @@ jobs:
           args: >-
             --verbose --no-progress --require-https --exclude-mail
             --timeout 10 --max-redirects 5 --max-concurrency 5
-            --headers "User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121 Safari/537.36"
+            --header "User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121 Safari/537.36"
             "docs/**/*.md" "overrides/**/*.md"
           format: json
           output: lychee/lychee.json
