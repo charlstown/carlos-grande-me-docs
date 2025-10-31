@@ -1,23 +1,17 @@
 name: Build + Deploy docs
-# This workflow is triggered on pushes to the repository.
+# Run only after Static Validation completes successfully on push to main
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-      - 'overrides/**'
-      - '.github/workflows/**'
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-      - 'overrides/**'
-      - '.github/workflows/**'
+  workflow_run:
+    workflows: ["Static Validation"]
+    types: [completed]
 jobs:
   main:
     name: Build + Deploy
+    # Only deploy when Static Validation succeeded on push to main
+    if: >-
+      ${{ github.event.workflow_run.conclusion == 'success' &&
+          github.event.workflow_run.event == 'push' &&
+          github.event.workflow_run.head_branch == 'main' }}
     permissions:
       contents: read
       id-token: write
