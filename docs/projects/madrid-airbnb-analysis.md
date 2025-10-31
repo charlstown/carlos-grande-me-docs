@@ -29,8 +29,8 @@ Test case presenting the Data Design as an urban tool and it's application. Appl
 
 For this project, I used data from these different websites:
 
-- Airbnb data: [http://insideairbnb.com/get-the-data.html](http://insideairbnb.com/get-the-data.html)
-- Traditional renting: [https://www.idealista.com/labs/](https://www.idealista.com/labs/)
+- Airbnb data: [http://insideairbnb.com/get-the-data.html](https://insideairbnb.com/get-the-data/)
+- Traditional renting: [https://www.idealista.com/labs/blog/](https://www.idealista.com/labs/blog/)
 - Cartographies: [https://datos.madrid.es/](https://datos.madrid.es)
 
 ### Data analysis contents
@@ -63,5 +63,4 @@ After the analysis, you are able to understand the 180 thousand rows from the da
 
 ### Other links
 
-- You can read the whole project here: [https://issuu.com/charlstown/docs/carlos_grande-cv-isuue](https://issuu.com/charlstown/docs/carlos_grande-cv-isuue)
-- More post like this here: [https://carlosgrande.me/category/projects/](https://carlosgrande.me/category/projects/)
+- More post like this here: [https://carlosgrande.me/projects/](https://carlosgrande.me/projects/)

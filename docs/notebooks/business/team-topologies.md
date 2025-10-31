@@ -227,8 +227,7 @@ Teams that interact using the facilitating mode typically work across many other
 - [Team Topologies book](https://teamtopologies.com/book)
 - [Organizational evolution for accelerating delivery of comparison services at Uswitch](https://teamtopologies.com/industry-examples/organizational-evolution-accelerating-delivery-of-comparison-services-uswitch)
 - [Using Team Topologies to discover and improve reliability qualities](https://xebia.com/blog/using-team-topologies-to-discover-and-improve-reliability-qualities/)
-- [Organizing Data Teams — Where to Make The Cut](https://towardsdatascience.com/organizing-data-teams-where-to-make-the-cut-49969c5ec093)
-- [Data Team Organization](https://about.gitlab.com/handbook/business-technology/data-team/organization/)
+- [Organizing Data Teams — Where to Make The Cut](https://medium.com/data-science/organizing-data-teams-where-to-make-the-cut-49969c5ec093)
+- [Data Team Organization](https://handbook.gitlab.com/handbook/enterprise-data/organization/)
 - [How should our company structure our data team?](https://medium.com/snaptravel/how-should-our-company-structure-our-data-team-e71f6846024d)
-- [More Notebooks like this here](https://carlosgrande.me/category/
-myworks/notebooks/)
+- [More Notebooks like this here](https://carlosgrande.me/notebooks/)

@@ -13,8 +13,8 @@ Every time I have started a new Python project, I have spent a lot of time setti
 
 This is where **PyTemplate** comes into play. The template follows a customizable project structure using cookiecutter as the project generator. PyTemplate contains the usual files that a Python project needs, base code based on classes with an integrated logger and a Docker file to containerize your application. It also allows you to choose between multiple licenses and customize the documentation, deploying it on GitHub pages with GitHub workflows included in the template.
 
-- **Documentation:** https://charlstown.github.io/py-template/
-- **Github Repo:** https://github.com/charlstown/py-template
+- **Documentation:** https://charlstown.github.io/cookie-python/
+- **Github Repo:** https://github.com/charlstown/cookie-python
 
 The easiest way to understand what PyTemplate does is to create a simple project from this template and see how it works.
 
@@ -35,8 +35,8 @@ Visit these links to learn more about cookiecutter:
 
 A Cookiecutter template for general python developers. Recommended for DevOps & Data Science projects. The template follows a customizable project structure using cookiecutter as the template generator.
 
-- **Documentation:** https://charlstown.github.io/py-template/
-- **Github Repo:** https://github.com/charlstown/py-template
+- **Documentation:** https://charlstown.github.io/cookie-python/
+- **Github Repo:** https://github.com/charlstown/cookie-python
 
 
 ### The project structure
@@ -98,7 +98,7 @@ Visit the link to the [cookiecutter documentation](https://cookiecutter.readthed
 Run the cookiecutter command followed by the template repository URL. When this command is finished, it generates a folder with your project name and all the template files customized.
 
 ```bash
-python -m cookiecutter https://github.com/charlstown/py-template.git
+python -m cookiecutter https://github.com/charlstown/cookie-python.git
 ```
 
 ### 3. Customizing the template
@@ -155,8 +155,8 @@ Remember, to deploy the documentation in Github Pages the repository must be a p
 
 ## References and links
 
-- [Pytemplate Documentation](https://charlstown.github.io/py-template/)
-- [Pytemplate repository](https://github.com/charlstown/py-template)
+- [Pytemplate Documentation](https://charlstown.github.io/cookie-python/)
+- [Pytemplate repository](https://github.com/charlstown/cookie-python)
 - [Cookiecutter Documentation](https://cookiecutter.readthedocs.io/)
 - [Cookiecutter repository](https://github.com/cookiecutter/cookiecutter)
 - [Mkdocs main page](https://www.mkdocs.org/)
