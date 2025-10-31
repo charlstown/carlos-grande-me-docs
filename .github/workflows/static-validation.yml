@@ -74,10 +74,17 @@ jobs:
             exit 0
           fi
           python3 - << 'PY'
-          import json, os
+          import json, os, sys
           p = 'lychee/lychee.json'
-          with open(p, encoding='utf-8') as f:
-              data = json.load(f)
+          if not os.path.exists(p) or os.path.getsize(p) == 0:
+              print('Lychee report missing or empty; skipping annotations.')
+              sys.exit(0)
+          try:
+              with open(p, encoding='utf-8') as f:
+                  data = json.load(f)
+          except Exception as e:
+              print(f'Could not parse lychee JSON: {e}. Skipping annotations.')
+              sys.exit(0)
           broken = []
           cwd = os.getcwd()
           def rel(path):
