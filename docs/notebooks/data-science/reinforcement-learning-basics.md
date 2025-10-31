@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/reinforcement-learning-basics-portrait.png
 
 # Reinforcement learning basics
 
-![Reinforcement learning basics](https://carlosgrande.me/wp-content/uploads/2023/01/really-crappy-robots_24.png){ .image-caption }
+![Reinforcement learning basics](../../assets/images/notebooks/reinforcement-learning-portrait.png){ .image-caption }
 
 I set out to write a post diving into the depths of the Explore-Exploit Dilemma and Multi-armed Bandit problem in reinforcement learning. I created a basic bandit machine model in Python to play with and better understand the basics. This post serves as a personal reminder of the journey, and a guide for others looking to navigate the maze of reinforcement learning methods.
 

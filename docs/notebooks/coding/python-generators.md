@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/python-generators-portrait.png
 
 # Python generators
 
-![Relativity meets recursion – A doctored photo of Einstein coding.](https://carlosgrande.me/wp-content/uploads/2021/12/PythonGenerators.png){ .image-caption }
+![Relativity meets recursion – A doctored photo of Einstein coding.](../../assets/images/notebooks/python-generators-einstein.png){ .image-caption }
 
 Python generators overview
 

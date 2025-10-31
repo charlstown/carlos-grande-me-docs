@@ -49,7 +49,7 @@ def tolist(tag):
     return out
 ```
 
-## Build DataFrame
+## 1. Build DataFrame
 
 Create visits table; preview rows.
 
@@ -76,7 +76,7 @@ print(df_visits.head())
 4  57771    Jerome Moore            True      False         0.0
 ```
 
-## Baseline Conversion
+## 2. Baseline Conversion
 
 Compute current conversion rate (payers / visitors).
 
@@ -97,7 +97,7 @@ Number of total visitors: 500
 The baseline is: 18.6 %
 ```
 
-## Min Detectable Effect
+## 3. Min Detectable Effect
 
 Turn a weekly revenue goal ($1240) into conversion uplift via AOV and extra purchases.
 
@@ -120,7 +120,7 @@ The average payment is: 27.0 $
 We need 46 payments to pull in the revenue
 ```
 
-## Required Lift
+## 4. Required Lift
 
 Compute absolute conversion increase (extra purchases / visitors).
 
@@ -144,7 +144,7 @@ print('The minimum detectable effect is: {}'.format(minimum_detectable_effect))
 The minimum detectable effect is: 1.0
 ```
 
-## Two-Prop Z Test
+## 5. Two-Prop Z Test
 
 Define the Z‑statistic to compare two conversion rates.
 
@@ -188,7 +188,7 @@ def sample_required(p1, p_diff, alpha):
     return n
 ```
 
-## Required Sample Size
+## 6. Required Sample Size
 
 Find the smallest n meeting 95% confidence for a 9.2% lift over an 18.6% baseline.
 
@@ -208,7 +208,7 @@ The final sample size is calculated with a baseline of 18.6% and a lift of 9.2%.
 For this example Nosh Mish Mosh needs to show the new pictures to 114 people to make sure there is any improvement
 ```
 
-## Size vs Baseline
+## 7. Size vs Baseline
 
 Simulate required n across baselines (fixed lift, 95% confidence).
 
@@ -271,7 +271,7 @@ plot.set_xticklabels(labels=labels);
 
 As the figure shows, required sample size is highest when baseline is near 50% of the population. Differences are hardest to detect around mid-probabilities.
 
-## Size vs Lift
+## 8. Size vs Lift
 
 Simulate required n across lifts (fixed baseline, 95% confidence).
 
@@ -327,7 +327,7 @@ plot.set_xticklabels(labels=labels);
 
 ![Sample size Vs. Lifts](../../assets/images/notebooks/sample-size-lift-detection.png)
 
-## Summary & Tips
+## 9. Summary & Tips
 
 This notebook shows how to translate business targets into MDE, then compute the required sample size and visualize how it varies with baseline and lift.
 
@@ -335,22 +335,3 @@ This notebook shows how to translate business targets into MDE, then compute the
     - Size tests using baseline, MDE, and confidence level.
     - Derive MDE from revenue targets via average order value.
     - Sample size is largest near 50% baseline and for small lifts.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

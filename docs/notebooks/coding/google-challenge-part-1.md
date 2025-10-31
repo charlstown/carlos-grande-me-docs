@@ -15,13 +15,8 @@ I've been recently working with my friend [Álvaro Simón Merino](https://alvaro
 
 At first, we thought it was fake, a virus, or something like that. Then we realize the site was official! We could not believe to see Google sending us a challenge to solve and we accepted it immediately! Clicking on “I want to play” landed us on Google’s Foobar page...
 
-<div class="image-caption" markdown>
 
-- ![Google Foobar](https://carlosgrande.me/wp-content/uploads/2022/03/GoogleFooBar-1.png)
-- Google Foobar
-{ .caption }
-
-</div>
+![Google Foobar](../../assets/images/notebooks/google-challenge-foo-bar.png){ .image-caption }
 
 
 ## What is Google Foobar
@@ -138,9 +133,7 @@ solution.solution("Yvzs! I xzm'g yvorvev Lzmxv olhg srh qly zg gsv xlolmb!!")
 ### Resolution
 The second challenge was easy too, but way more interesting. It purposes a triangular sequence represented with numbers, where you need to map the location of each number by coordinates returning the index of the position.
 
-![Google challenge 02](https://carlosgrande.me/wp-content/uploads/2022/03/challenge02-1.png)
-*Google challenge 02*
-
+![Google challenge 02](../../assets/images/notebooks/google-challenge-level-2.png)
 
 In my opinion, you can approach this challenge from multiple sides. The key, as always, is to divide the problem into smaller problems. So in my case, first I create a rule to get the row index in the triangle by summing both coordinates:
 - line 1 -> (1, 1) -> (1+1) - 1 row
@@ -224,7 +217,7 @@ The third challenge was a great challenge. I enjoy solving this one. Given a che
 
 I'm sure you can apply more rules and optimize this solution. Although, in my case, I solved by extracting all the possible moves from the initial position and recursively calculating all possible moves from these new positions, until I reached the destination square.
 
-[caption width="450" align="aligncenter"]<img src="https://carlosgrande.me/wp-content/uploads/2022/03/Challenge_3.gif" width="600" height="600" alt="Google challenge 3" class="size-medium" /> Google challenge 3[/caption]
+![Challenge II](../../assets/images/notebooks/google-challenge-level-3.gif)
 
 So to do that I start with a structure like this:
 ```
@@ -273,4 +266,4 @@ solution(0, 7)
 
 - Download the Jupyter notebook from: [github.com/charlstown/MyGoogleFooBar](https://github.com/charlstown/MyGoogleFooBar)
 - [Google Foobar official](https://foobar.withgoogle.com/)
-- [More Notebooks like this here](https://carlosgrande.me/category/myworks/notebooks/)
+- [More Notebooks like this here](https://carlosgrande.me/notebooks/)

@@ -32,7 +32,7 @@ Azure App Service is a fully managed web hosting service for building web applic
 
 Quickly build, deploy, and scale web apps and APIs on your terms. Work with .NET, .NET Core, Node.js, Java, Python, or PHP in containers or running on Windows or Linux.
 
-![Azure APP Service Architecture](https://carlosgrande.me/wp-content/uploads/2021/09/benefit-2.png)
+![Azure APP Service Architecture](../../assets/images/notebooks/azure-big-picture-1.png)
 
 Azure APP Service Architecture
 

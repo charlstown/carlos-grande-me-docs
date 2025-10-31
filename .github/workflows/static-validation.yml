@@ -1,0 +1,121 @@
+name: Static Validation
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  static-validation:
+    name: Static validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run tests (if present)
+        shell: bash
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          echo "Detecting tests..."
+          ran=0
+          # Prefer pytest if available
+          if command -v pytest >/dev/null 2>&1; then
+            echo "Running pytest"
+            pytest -q || true
+            ran=1
+          fi
+
+          # Fallback to npm test if defined
+          if [ $ran -eq 0 ] && [ -f package.json ]; then
+            if command -v jq >/dev/null 2>&1 && jq -e '.scripts.test' package.json >/dev/null 2>&1; then
+              echo "Running npm test"
+              npm ci
+              npm test --silent || true
+              ran=1
+            fi
+          fi
+
+          if [ $ran -eq 0 ]; then
+            echo "No recognizable tests found. Skipping."
+          fi
+
+      - name: Check links with lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >-
+            --verbose --no-progress --require-https --exclude-mail
+            --retry 2 --timeout 10 --max-redirects 5
+            --format json --output lychee.json
+            "docs/**/*.md" "overrides/**/*.md"
+          fail: false
+
+      - name: Annotate broken links as warnings
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f lychee.json ]; then
+            echo "No lychee.json produced."
+            exit 0
+          fi
+          python3 - << 'PY'
+          import json, os
+          p = 'lychee.json'
+          with open(p, encoding='utf-8') as f:
+              data = json.load(f)
+          broken = []
+          cwd = os.getcwd()
+          def rel(path):
+              path = str(path)
+              return path[len(cwd)+1:] if path.startswith(cwd + os.sep) else path
+          # Handle multiple possible lychee JSON shapes
+          if isinstance(data, dict):
+              # Common aggregated map
+              if isinstance(data.get('fail_map'), dict):
+                  for file, issues in data['fail_map'].items():
+                      for issue in issues or []:
+                          url = issue.get('link') or issue.get('uri') or issue.get('url')
+                          status = issue.get('status') or issue.get('message') or 'broken'
+                          broken.append((file, url, status))
+              # Per-input results
+              elif isinstance(data.get('results'), list):
+                  for r in data['results']:
+                      inp = r.get('input', '')
+                      if isinstance(inp, dict):
+                          file = inp.get('file_path') or inp.get('file') or ''
+                      else:
+                          file = inp
+                      for l in r.get('links', []):
+                          code = str(l.get('status', ''))
+                          is_broken = l.get('error', False) or code.startswith('4') or code.startswith('5')
+                          if is_broken:
+                              url = l.get('uri') or l.get('url') or l.get('link')
+                              status = l.get('status_text') or code or 'broken'
+                              broken.append((file, url, status))
+          if not broken:
+              print('No broken links found.')
+          else:
+              for file, url, status in broken:
+                  print(f"::warning file={rel(file)}::Broken link {url} [{status}]")
+              # Write a concise summary table
+              summary = os.environ.get('GITHUB_STEP_SUMMARY')
+              if summary:
+                  with open(summary, 'a', encoding='utf-8') as out:
+                      out.write('### Broken links found\n\n')
+                      out.write('| File | URL | Status |\n|---|---|---|\n')
+                      for file, url, status in broken:
+                          out.write(f'| {rel(file)} | {url} | {status} |\n')
+          PY
+
+      - name: Upload lychee report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: lychee.json
+
