@@ -2,7 +2,7 @@
 short_title: Letter cases reminder
 description: none
 date: 2021-02-12
-thumbnail: assets/images/resources/letter-cases-portrait.jpg
+thumbnail: assets/images/thumbnails/letter-cases-reminder.png
 ---
 
 # Letter cases reminder
@@ -11,6 +11,10 @@ thumbnail: assets/images/resources/letter-cases-portrait.jpg
 
 
 With this post, I would like to clarify something that we use every day when we name files, folders, emails, etc. **The Letter Cases**. Letter case (or just case) is the distinction between the letters that are in larger uppercase or capitals and smaller lowercase in the written representation of certain languages. In computer programming are a set of rules to be used for identifiers. That denote variables, types, functions, files, directories, and other entities.
+
+### DOWNLOAD THE CHEAT SHEET:
+
+[Download the cheatsheet](../../assets/docs/cheatsheet-letter-cases.pdf){:download="Cheatsheet Letter Cases" .md-button }
 
 ---
 

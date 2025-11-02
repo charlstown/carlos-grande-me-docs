@@ -1,5 +1,5 @@
 {
-    "version": "2025-10-31",
+    "version": "2025-11-02",
     "items": [
         {
             "id": "reinforcement-learning-basics",
@@ -152,7 +152,7 @@
             "link": "./resources/cheatsheets/my-letter-cases-reminder",
             "title": "Letter cases reminder",
             "date": "2021-02-12",
-            "thumbnail": "assets/images/resources/letter-cases-portrait.jpg"
+            "thumbnail": "assets/images/thumbnails/letter-cases-reminder.png"
         },
         {
             "id": "whole-brain-emulation",
