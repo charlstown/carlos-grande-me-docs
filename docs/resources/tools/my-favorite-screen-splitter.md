@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Screen Splitter
 description: none
 date: 2021-08-07
@@ -29,7 +29,7 @@ WinDock is easy to use. Follow these steps to design your ideal configuration.
 2. **Add rules** using specific corners, edges, or areas.
 3. **Snap your windows** against your selected regions and enjoy.
 
-![windock configuration](../../assets/images/resources/screen-splitter-adding-rules.png){ .image-caption }
+![windock configuration](../../assets/images/resources/screen-splitter-adding-rules.png)
 
 
 ## My favorite Screen Splitter for Ubuntu
@@ -48,7 +48,7 @@ PutWindows is more complicated to configure. It works by three defined sizes tha
 3. Go to section **Keyboard Shortcuts**.
 4. **Customize your own triggered commands** and enjoy.
 
-![windock configuration](../../assets/images/resources/screen-splitter-putwindows-adding-rules.jpeg){ .image-caption }
+![windock configuration](../../assets/images/resources/screen-splitter-putwindows-adding-rules.jpeg)
 
 
 ## My daily windows profile

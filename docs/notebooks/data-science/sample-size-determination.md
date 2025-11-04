@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Sample size determination
 description: none
 date: 2020-02-25
@@ -29,7 +29,7 @@ Core inputs for sizing A/B tests.
 | Confidence level | 1 - alpha (often 95%). |
 
 !!! tip
-    Use a recent baseline, pick a business‑relevant MDE, and default to a two‑sided, 95% confidence test.
+    Use a recent baseline, pick a businessâ€‘relevant MDE, and default to a twoâ€‘sided, 95% confidence test.
 
 Import libraries and define a small helper.
 
@@ -146,7 +146,7 @@ The minimum detectable effect is: 1.0
 
 ## 5. Two-Prop Z Test
 
-Define the Z‑statistic to compare two conversion rates.
+Define the Zâ€‘statistic to compare two conversion rates.
 
 The two-sample Z test for proportions determines whether a population proportion p1 is equal to another population proportion p2. In our example, p1 and p2 are the proportion of visitors before and after the marketing change, and we want to see whether there was a statistically significant increase in p2 over p1.
 
@@ -160,9 +160,9 @@ $$
 
 Where p* is the proportion of 'successes'. In this example the number of paying visitors.
 
-Ultimately, we want to make sure we’re able to calculate a difference between p1 and p2 when it exists. So, let’s assume you know that the “true” difference that exists between p1 and p2. Then, we can look at sample size requirements for various confidence levels and absolute levels of p1.
+Ultimately, we want to make sure weâ€™re able to calculate a difference between p1 and p2 when it exists. So, letâ€™s assume you know that the â€œtrueâ€ difference that exists between p1 and p2. Then, we can look at sample size requirements for various confidence levels and absolute levels of p1.
 
-We need a way of figuring out Z, so we can determine whether a given sample size provides statistically significant results, so let’s define a function that returns the Z value given p1, p2, n1, and n2.
+We need a way of figuring out Z, so we can determine whether a given sample size provides statistically significant results, so letâ€™s define a function that returns the Z value given p1, p2, n1, and n2.
 
 ```py
 # Test that both populations have the same proportion (Z statistic).
@@ -171,7 +171,7 @@ def z_calc(p1, p2, n1, n2):
     return (p2 - p1) / math.sqrt(p_star*(1 - p_star)*((1.0 / n1) + (1.0 / n2)))
 ```
 
-Then, we can define a function that returns the sample required, given p1 (the before probability), p_diff (i.e. p2-p1), and alpha (which represents the p-value, or 1 minus the confidence level). For simplicity, we’ll just assume that n1 = n2. If you know in advance that n1 will have about a quarter of the size of n2, then it’s trivial to incorporate this into the function. However, you typically don’t know this in advance and in our scenario an equal sample assumption seems reasonable.
+Then, we can define a function that returns the sample required, given p1 (the before probability), p_diff (i.e. p2-p1), and alpha (which represents the p-value, or 1 minus the confidence level). For simplicity, weâ€™ll just assume that n1 = n2. If you know in advance that n1 will have about a quarter of the size of n2, then itâ€™s trivial to incorporate this into the function. However, you typically donâ€™t know this in advance and in our scenario an equal sample assumption seems reasonable.
 
 The function is fairly simplistic: it counts up from n starting from 1, until n gets large enough where the probability of that statistic being that large (i.e. the p-value) is less than alpha (in this case, we would reject the null hypothesis that p1 = p2). The function uses the normal distribution available from the scipy library to calculate the p-value and compare it to alpha.
 
@@ -203,7 +203,7 @@ print('For this example Nosh Mish Mosh needs to show the new pictures to {} peop
 ```
 
 ```output
-The final sample size is calculated with a baseline of 18.6% and a lift of 9.2%. 
+The final sample size is calculated with a baseline of 18.6% and a lift of 9.2%.
 
 For this example Nosh Mish Mosh needs to show the new pictures to 114 people to make sure there is any improvement
 ```
@@ -234,18 +234,18 @@ print(df.head())
 
 ```output
    Probability Difference  Sample Size to Detect Difference Confidence Level  \
-0                   0.092                                29              95%   
-1                   0.092                                34              95%   
-2                   0.092                                40              95%   
-3                   0.092                                45              95%   
-4                   0.092                                51              95%   
+0                   0.092                                29              95%
+1                   0.092                                34              95%
+2                   0.092                                40              95%
+3                   0.092                                45              95%
+4                   0.092                                51              95%
 
-   Initial Probability  
-0                  0.0  
-1                  1.0  
-2                  2.0  
-3                  3.0  
-4                  4.0  
+   Initial Probability
+0                  0.0
+1                  1.0
+2                  2.0
+3                  3.0
+4                  4.0
 ```
 
 ```py
@@ -282,8 +282,8 @@ lift_range = range(5, 80)
 
 
 samples_lift = [sample_required(baseline, lift/100, .05) for lift in lift_range]
-dic = {'Lift': lift_range, 'Sample required': samples_lift, 'Confidence Level': '95%'} 
-    
+dic = {'Lift': lift_range, 'Sample required': samples_lift, 'Confidence Level': '95%'}
+
 df = pd.DataFrame(dic)
 print(df)
 ```
@@ -335,3 +335,4 @@ This notebook shows how to translate business targets into MDE, then compute the
     - Size tests using baseline, MDE, and confidence level.
     - Derive MDE from revenue targets via average order value.
     - Sample size is largest near 50% baseline and for small lifts.
+

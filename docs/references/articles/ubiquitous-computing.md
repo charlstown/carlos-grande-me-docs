@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Ubiquitous computing
 description: none
 date: 2020-01-06
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/ubiquitous-computing-portrait.jpeg
 
 # Ubiquitous computing
 
-![Technology becomes invisible - Secret-agent gadgets](../../assets/images/references/mark-weiser-ubicomp.jpg){ .image-caption }
+![Technology becomes invisible - Secret-agent gadgets](../../assets/images/references/mark-weiser-ubicomp.jpg)
 
 I wanted to post one of my favorite visions about future cities, the *ubiquitous computing* coined in 1988 by Mark Weiser. Ubicom for me is one of the keys to future technologies and smart cities, it is a total revolution. As we follow the tech progress with the first computers like Zuse or Eniac, the World Wide Web in 1992, the arrival of the smartphones in 2000 and the Internet of things in 2015 we can see how the connectivity is spreading like a virus and surrounding all around us. For Mark Weiser this state where the technology and connectivity start losing the hardware and mimetizing in the environment becoming invisible is called *ubiquitous computing*.
 

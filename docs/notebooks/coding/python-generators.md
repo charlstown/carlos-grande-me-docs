@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Python generators
 description: none
 date: 2021-12-07
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/python-generators-portrait.png
 
 # Python generators
 
-![Relativity meets recursion – A doctored photo of Einstein coding.](../../assets/images/notebooks/python-generators-einstein.png){ .image-caption }
+![Relativity meets recursion â€“ A doctored photo of Einstein coding.](../../assets/images/notebooks/python-generators-einstein.png)
 
 Python generators overview
 
@@ -85,7 +85,7 @@ print(list(generator_expression)) # return a generator object
 def even_integers_generator(n):
     for i in range(0, n+1, 2):
         yield i
-        
+
 integers = even_integers_generator(10)
 print(next(integers))
 print(next(integers))
@@ -131,7 +131,7 @@ try:
     next(generator_3)
 except StopIteration as e:
     print('Error: Generator is exahusted!')
-    
+
 # Avoid the exahusted generator
 print('Avoiding exahusted generator')
 for i in even_integers_generator(3):
@@ -227,7 +227,7 @@ def simple_context_manager(obj):
         yield
     finally:
         obj.some_property -= 1 # Wrap up
-        
+
 class SomeObj(object):
     def __init__(self, arg):
         self.some_property = arg
@@ -241,7 +241,7 @@ print(f"some_property = {obj.some_property}")
 # Print yield property with the context manager
 with simple_context_manager(obj):
     print(f"some_property = {obj.some_property}")
-    
+
 # Print some property again to check
 print(f"some_property = {obj.some_property}")
 ```
@@ -261,7 +261,7 @@ HEADER = "this is the header \n\n"
 FOOTER = "\n\nthis is the footer \n"
 
 @contextmanager
-def new_log_file(name):    
+def new_log_file(name):
     try:
         logname = name
         f = open(logname, 'w')
@@ -271,13 +271,13 @@ def new_log_file(name):
         f.write(FOOTER)
         f.close()
 
-        
+
 # TEST CODE
 # Test new_log_file context manager
 file_name = "Test Name.txt"
 with new_log_file(file_name) as f:
     f.write('this is a test')
-    
+
 # Print file generated
 with open(file_name) as f:
     print(f.read())
@@ -320,8 +320,8 @@ def counter(string):
                 print('Not a string')
     except GeneratorExit:
         print(count)
-        
-        
+
+
 # TEST CODE
 # Initializates the corutine function
 c = counter('California')
@@ -364,7 +364,7 @@ def coroutine_example():
         x = yield
         #do something with x
         print(x)
-        
+
 c = coroutine_example()
 c.send('Test the coroutine')
 ```
@@ -394,7 +394,7 @@ def sender(string, target):
     for i in var_ready:
         target.send(i.lower())
     target.close()
-    
+
 
 @coroutine_decorator
 def match_counter(string):
@@ -409,7 +409,7 @@ def match_counter(string):
                 count += 1
     except GeneratorExit:
         print(f'{count} results founded for string "{string}"')
-        
+
 @coroutine_decorator
 def longer_than(n):
     """Check the number of elements longer than n
@@ -454,7 +454,7 @@ def router():
     """It both receives data and sends data.
     Can branch in more than one direction and send to multiple targets"""
     try:
-        while True: 
+        while True:
             name = yield
             (first, last) = name.split(' ')
             fnames.send(first)
@@ -462,7 +462,7 @@ def router():
     except GeneratorExit:
         fnames.close()
         lnames.close()
-        
+
 
 # Creating file_write coroutine
 @coroutine_decorator
@@ -481,7 +481,7 @@ if __name__=="__main__":
     fnames = file_write('first_names.txt')
     lnames = file_write('last_names.txt')
     router = router()
-    
+
     # Loop to iterate through the names
     for name in names:
         router.send(name)
@@ -496,3 +496,4 @@ if __name__=="__main__":
 - [Python Generators course from Josh McQuiston](https://www.linkedin.com/learning/learning-python-generators)
 - [Josh McQuiston LinkedIn profile](https://www.linkedin.com/in/joshmcquiston/)
 - [More Notebooks like this here](https://carlosgrande.me/category/myworks/notebooks/)
+

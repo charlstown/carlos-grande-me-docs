@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Nicholas Felton
 description: none
 date: 2020-10-09
@@ -30,15 +30,15 @@ The project initially served as a self-promotional piece, but has evolved fat be
 
 <div class="gallery grid-2 effect-zoom" markdown>
 
-![Subway taxis 2007](../../assets/images/references/felton-subway-taxis.jpg){ .image-caption }
+![Subway taxis 2007](../../assets/images/references/felton-subway-taxis.jpg)
 
-![Communication channels affiliation 2013](../../assets/images/references/felton-channels-affiliation.jpg){ .image-caption }
+![Communication channels affiliation 2013](../../assets/images/references/felton-channels-affiliation.jpg)
 
-![Daily activities 2012](../../assets/images/references/felton-daily-activities.jpg){ .image-caption }
+![Daily activities 2012](../../assets/images/references/felton-daily-activities.jpg)
 
-![NYC with Olga 2011](../../assets/images/references/felton-nyc-with-olga.jpg){ .image-caption }
+![NYC with Olga 2011](../../assets/images/references/felton-nyc-with-olga.jpg)
 
-![Photos taken 2012](../../assets/images/references/felton-photos-taken.jpg){ .image-caption }
+![Photos taken 2012](../../assets/images/references/felton-photos-taken.jpg)
 
 </div>
 

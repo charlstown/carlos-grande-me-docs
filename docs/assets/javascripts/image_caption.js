@@ -1,35 +1,61 @@
-function addCaption () {
-    // Get all images
-    const images = document.querySelectorAll('.image-caption');
+// Auto-wrap images with a caption container on all pages except home
+(function () {
+  function isHome() {
+    try {
+      const logo = document.querySelector('a.md-logo, a.md-header__button.md-logo');
+      const baseHref = logo ? logo.getAttribute('href') : '/';
+      const basePath = new URL(baseHref, window.location.origin)
+        .pathname.replace(/index\.html$/, '')
+        .replace(/\/$/, '/');
+      const here = window.location.pathname
+        .replace(/index\.html$/, '')
+        .replace(/\/$/, '/');
+      return here === basePath;
+    } catch (e) {
+      const p = window.location.pathname;
+      return p === '/' || p.endsWith('/index.html');
+    }
+  }
 
-    // Convert to array
-    const imagesArray = Array.from(images);
+  function captionize(scope = document) {
+    if (isHome()) return;
 
-    // Create the caption element
-    imagesArray.forEach(createCaption);
-}
+    const root = scope.querySelector('.md-content') || scope;
+    const imgs = root.querySelectorAll('img');
 
+    imgs.forEach((img) => {
+      if (img.closest('.parent-caption')) return;              // already processed
+      if (img.classList.contains('no-auto-caption')) return;   // manual opt-out
+      if (img.closest('.md-header, .md-footer, .md-nav, .md-sidebar')) return; // outside content
 
-function createCaption (imageElement) {
-    // Create de Element in the document
-    const newDiv = document.createElement('div');
-    const parentDiv = document.createElement('div');
+      const alt = (img.getAttribute('alt') || '').trim();
 
-    // Get the text of the element
-    const captionText = imageElement.alt;
+      const parent = document.createElement('div');
+      parent.className = 'parent-caption';
+      parent.setAttribute('data-captionized', '1');
 
-    // Add properties
-    parentDiv.className = 'parent-caption';
+      const caption = document.createElement('div');
+      caption.className = 'caption';
+      if (alt) caption.textContent = alt; // if empty, remains :empty for CSS to hide
 
-    newDiv.className = 'caption';
-    newDiv.textContent = captionText;
+      const ref = img;
+      const container = ref.parentNode;
+      container.insertBefore(parent, ref);
+      parent.appendChild(ref);
+      parent.appendChild(caption);
+    });
+  }
 
-    //Insert parent div element before the image
-    imageElement.parentNode.insertBefore(parentDiv, imageElement);
+  function run() { captionize(document); }
 
-    // Move the existing elements into the parent element
-    parentDiv.appendChild(imageElement);
-    parentDiv.appendChild(newDiv);
-}
-
-addCaption()
+  // Support Material for MkDocs instant navigation
+  if (window.document$ && typeof window.document$.subscribe === 'function') {
+    window.document$.subscribe(() => { run(); });
+  } else {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', run);
+    } else {
+      run();
+    }
+  }
+})();

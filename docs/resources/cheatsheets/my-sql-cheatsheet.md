@@ -1,4 +1,4 @@
----
+﻿---
 short_title: SQL cheatsheet
 description: none
 date: 2020-01-19
@@ -15,9 +15,9 @@ In this post I wanted to share some helpful codes I learned from SQL and my own 
 
 ## The SQL cheatsheet
 
-![My docker cheatsheet front](../../assets/images/resources/cheatsheet-sql-1.png){ .image-caption }
+![My docker cheatsheet front](../../assets/images/resources/cheatsheet-sql-1.png)
 
-![My docker cheatsheet back](../../assets/images/resources/cheatsheet-sql-2.png){ .image-caption }
+![My docker cheatsheet back](../../assets/images/resources/cheatsheet-sql-2.png)
 
 
 [Download the cheatsheet](../../assets/docs/cheatsheet-sql.pdf){:download="Docker Cheatsheet" .md-button }
@@ -37,7 +37,7 @@ import sqlite3
 # creates de connection
 conn = sqlite3.connect("factbook.db")
 
-# you can create a Cursor object and call its execute() 
+# you can create a Cursor object and call its execute()
 c = conn.cursor()
 
 # write the query and call it
@@ -74,8 +74,8 @@ In this code it's shown how to make multiples subqueries in different situations
 
 
 ```sql
-SELECT 
-COUNT(CAST(ShareWomen AS float)) / (SELECT CAST(COUNT(ShareWomen) AS float) FROM recent_grads) AS proportion_abv_avg 
+SELECT
+COUNT(CAST(ShareWomen AS float)) / (SELECT CAST(COUNT(ShareWomen) AS float) FROM recent_grads) AS proportion_abv_avg
 FROM recent_grads
 WHERE ShareWomen > (SELECT AVG(ShareWomen) FROM recent_grads);
 ```
@@ -133,7 +133,7 @@ JOIN (SELECT customer_id, SUM(total) total_spent, COUNT(invoice_id) number_of_pu
 The *WITH* clause creates a temporal subquery that can be used as another table. This example shows how to use *WITH* clause in a multi-join operation.
 
 ````sql
-WITH customers_usa AS 
+WITH customers_usa AS
     (
         SELECT * FROM customer_usa
         INTERSECT
@@ -153,7 +153,7 @@ The *VIEW* clause works as the *WITH* clause allowing to save the new table for 
 ````sql
 /* view creation */
 CREATE VIEW chinook.customer_gt_90_dollars AS
-    SELECT 
+    SELECT
         c.*
     FROM customer c
     JOIN
@@ -175,3 +175,4 @@ SELECT * FROM chinook.customer_gt_90_dollars;
 - A nice website to learn SQL: [https://www.codecademy.com/](https://www.codecademy.com/ "https://www.codecademy.com/")
 - Another nice website to learn SQL: [https://www.dataquest.io/](https://www.dataquest.io/ "https://www.dataquest.io/")
 - More resources like this here: [https://carlosgrande.me/category/resources](https://carlosgrande.me/category/resources "https://carlosgrande.me/category/resources")
+

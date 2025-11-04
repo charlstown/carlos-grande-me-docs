@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Google challenge part 1
 description: none
 date: 2022-03-27
@@ -7,16 +7,16 @@ thumbnail: assets/images/thumbnails/google-challenge-part-1-portrait.jpg
 
 # Google challenge part 1
 
-![Playing with algorithms – Beeple’s Google Data Center 2079.](https://carlosgrande.me/wp-content/uploads/2022/03/BeepleCrap_GOOGLE-DATA-CENTER-2079.jpg){ .image-caption }
+![Playing with algorithms â€“ Beepleâ€™s Google Data Center 2079.](../../assets/images/notebooks/google-challenge.png)
 
 
-I've been recently working with my friend [Álvaro Simón Merino](https://alvarosimon.me/) doing some research in Google about coding. We got an unusual message on the google site background, with a message:
+I've been recently working with my friend [Ãlvaro SimÃ³n Merino](https://alvarosimon.me/) doing some research in Google about coding. We got an unusual message on the google site background, with a message:
 > You're speaking our language. Up for a challenge?
 
-At first, we thought it was fake, a virus, or something like that. Then we realize the site was official! We could not believe to see Google sending us a challenge to solve and we accepted it immediately! Clicking on “I want to play” landed us on Google’s Foobar page...
+At first, we thought it was fake, a virus, or something like that. Then we realize the site was official! We could not believe to see Google sending us a challenge to solve and we accepted it immediately! Clicking on â€œI want to playâ€ landed us on Googleâ€™s Foobar page...
 
 
-![Google Foobar](../../assets/images/notebooks/google-challenge-foo-bar.png){ .image-caption }
+![Google Foobar](../../assets/images/notebooks/google-challenge-foo-bar.png)
 
 
 ## What is Google Foobar
@@ -34,7 +34,7 @@ This is how the Google Foobar begins:
 
 ### Challenge 1: I Love Lance & Janice
 
-You've caught two of your fellow minions passing coded notes back and forth -- while they're on duty, no less! Worse, you're pretty sure it's not job-related -- they're both huge fans of the space soap opera ""Lance & Janice"". You know how much Commander Lambda hates waste, so if you can prove that these minions are wasting time passing non-job-related notes, it'll put you that much closer to a promotion. 
+You've caught two of your fellow minions passing coded notes back and forth -- while they're on duty, no less! Worse, you're pretty sure it's not job-related -- they're both huge fans of the space soap opera ""Lance & Janice"". You know how much Commander Lambda hates waste, so if you can prove that these minions are wasting time passing non-job-related notes, it'll put you that much closer to a promotion.
 
 Fortunately for you, the minions aren't exactly advanced cryptographers. In their code, **every lowercase letter [a..z] is replaced with the corresponding one in [z..a], while every other character (including uppercase letters and punctuation) is left untouched**.  That is, 'a' becomes 'z', 'b' becomes 'y', 'c' becomes 'x', etc.  For instance, the word ""vmxibkgrlm"", when decoded, would become ""encryption"".
 
@@ -101,9 +101,9 @@ The LAMBCHOP doomsday device takes up much of the interior of Commander Lambda's
 | 2 5 9
 | 1 3 6 10
 ```
-Each cell can be represented as points (x, y), with **x being the distance from the vertical wall, and y being the height from the ground.** 
+Each cell can be represented as points (x, y), with **x being the distance from the vertical wall, and y being the height from the ground.**
 
-For example, the bunny worker at (1, 1) has ID 1, the bunny worker at (3, 2) has ID 9, and the bunny worker at (2,3) has ID 8. This pattern of numbering continues indefinitely (Commander Lambda has been adding a LOT of workers). 
+For example, the bunny worker at (1, 1) has ID 1, the bunny worker at (3, 2) has ID 9, and the bunny worker at (2,3) has ID 8. This pattern of numbering continues indefinitely (Commander Lambda has been adding a LOT of workers).
 
 Write **a function solution(x, y) which returns the worker ID of the bunny at location (x, y). Each value of x and y will be at least 1 and no greater than 100,000.** Since the worker ID can be very large, return your solution as a string representation of the number.
 

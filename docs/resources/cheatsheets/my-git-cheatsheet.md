@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Git cheatsheet
 description: none
 date: 2021-12-08
@@ -14,7 +14,7 @@ With this post, I wanted to share my latest Git cheatsheet, with my most used co
 
 ### The Git cheat sheet
 
-![My git cheatsheet](../../assets/images/resources/cheatsheet-git.png){ .image-caption }
+![My git cheatsheet](../../assets/images/resources/cheatsheet-git.png)
 
 [Download the cheatsheet](../../assets/docs/cheatsheet-git.pdf){:download="Git Cheatsheet" .md-button }
 
@@ -24,7 +24,7 @@ With this post, I wanted to share my latest Git cheatsheet, with my most used co
 "Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows (thousands of parallel branches running on different systems).
 
 
-Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development. Since 2005, Junio Hamano has been the core maintainer. As with most other distributed version control systems, and unlike most client–server systems, every Git directory on every computer is a full-fledged repository with complete history and full version-tracking abilities, independent of network access or a central server. Git is free and open-source software distributed under the GPL-2.0-only license." [wikipedia](https://en.wikipedia.org/wiki/Git)
+Git was created by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development. Since 2005, Junio Hamano has been the core maintainer. As with most other distributed version control systems, and unlike most clientâ€“server systems, every Git directory on every computer is a full-fledged repository with complete history and full version-tracking abilities, independent of network access or a central server. Git is free and open-source software distributed under the GPL-2.0-only license." [wikipedia](https://en.wikipedia.org/wiki/Git)
 
 
 ## Common Git workflows
@@ -36,7 +36,7 @@ In this section I wanted to post common workflow actions, I usually do in my dai
 
 Here is how you would transplant a topic branch to another, to pretend that you forked the topic branch from the latter branch, using rebase --onto.
 
-![From forked branch to rebased branch](../../assets/images/resources/cheatsheet-git-branches.png){ .image-caption }
+![From forked branch to rebased branch](../../assets/images/resources/cheatsheet-git-branches.png)
 
 **Steps:**
 
@@ -49,8 +49,8 @@ Here is how you would transplant a topic branch to another, to pretend that you 
     ```
 
     ```bash title="Output"
-    develop 
-    * master 
+    develop
+    * master
     ```
 
 - Run a git Fetch to update changes available in the remote repository.
@@ -146,10 +146,10 @@ For this case I pushed 3 commits due to some mistakes until I finlly had the cor
     ```
 
     ```bash title="output"
-    * be501b6 (HEAD -> main, origin/main) Files ready  
-    * 3f12dce Ups! Readme Updated  
-    * ae11087 License and Readme added  
-    * 2017231 Init files  
+    * be501b6 (HEAD -> main, origin/main) Files ready
+    * 3f12dce Ups! Readme Updated
+    * ae11087 License and Readme added
+    * 2017231 Init files
     ```
 
 - Squash until commit hash *2017231 Init files* (not included).
@@ -197,10 +197,10 @@ For this case I pushed 3 commits due to some mistakes until I finlly had the cor
     ```
 
     ```bash title="output"
-    * be501b6 (HEAD -> main, origin/main) Files ready  
-    * 3f12dce Ups! Readme updated  
-    * ae11087 License and Readme added  
-    * 2017231 Init files  
+    * be501b6 (HEAD -> main, origin/main) Files ready
+    * 3f12dce Ups! Readme updated
+    * ae11087 License and Readme added
+    * 2017231 Init files
     ```
 
 - Squash the commits by editor using git rebase.
@@ -249,8 +249,8 @@ For this case I pushed 3 commits due to some mistakes until I finlly had the cor
     ```
 
     ```bash title="output"
-    * ec8cc95 (HEAD -> main) License & Readme added 
-    * 2017231 Init files  
+    * ec8cc95 (HEAD -> main) License & Readme added
+    * 2017231 Init files
     ```
 
 </div>

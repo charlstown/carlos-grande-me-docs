@@ -1,4 +1,4 @@
----
+﻿---
 short_title: The chinese room
 description: none
 date: 2020-02-03
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/chinese-room-portrait.jpeg
 
 # The chinese room
 
-![Interpreting signals without understanding - Women updating stock prices](../../assets/images/references/jeff-hawkins-chinese-room.jpg){ .image-caption }
+![Interpreting signals without understanding - Women updating stock prices](../../assets/images/references/jeff-hawkins-chinese-room.jpg)
 
 I wanted to post one of my favorites theories based on an impressive premise: that artificial intelligence is the fastest processing but is not intelligent. Jeff Hawking in his book *On Intelligence* developed a powerful theory about how the human brain works and explained why computers are not intelligent.
 

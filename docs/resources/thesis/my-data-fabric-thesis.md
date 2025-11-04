@@ -1,4 +1,4 @@
----
+﻿---
 short_title: My data fabric thesis
 description: none
 date: 2022-07-08
@@ -20,25 +20,25 @@ The goal of this article is to try and bring some clarity to all concepts associ
 
 Current methods of managing data attempt to meet all the objectives using data warehouses and data lakes, but those legacy architectures cannot include all the data that is needed. Although, they remain important components in a larger distributed data landscape.
 
-Data sharing isn’t too hard at a small scale but rapidly becomes challenging as variables like the number of independent projects, the variety of database technologies, variation of computing platforms, etc. increase. Satisfying these complex scenarios becomes prohibitively difficult and expensive to accomplish through independent bespoke processes.
+Data sharing isnâ€™t too hard at a small scale but rapidly becomes challenging as variables like the number of independent projects, the variety of database technologies, variation of computing platforms, etc. increase. Satisfying these complex scenarios becomes prohibitively difficult and expensive to accomplish through independent bespoke processes.
 
 In this context, Data Fabric emerges as a design concept that acts as an integrated layer (fabric) of data and connecting processes. It represents a single environment having a combination of architecture and technology designed to ease the complications of managing dynamic, distributed, and diverse data.
 
-![Data fabric layers](../../assets/images/resources/data-fabric-layers.png){ .image-caption }
+![Data fabric layers](../../assets/images/resources/data-fabric-layers.png)
 
 So what is a Data Fabric? Data fabric is an architectural approach and a set of technologies to break down data silos and get data into the hands of data users. if I would like to say what is a Data Fabric in a short definition, I would pick the following:
 
 > **A Data Fabric is a metadata-driven unified platform that connects multiple technologies, deployment platforms, and automation services, with a single and consistent data management framework. It provides seamless data access and processing by design across siloed storage.**
 
 
-![Data fabric comparison](../../assets/images/resources/data-fabric-comparison.png){ .image-caption }
+![Data fabric comparison](../../assets/images/resources/data-fabric-comparison.png)
 
 
 ## 2. Principles
 
 Basically, data fabric is an architecture that improves data management by reducing data complexity and enabling agility. The effectiveness of data fabric approach, however depends on its abilities to meet numbers of principles. These principles that define data fabric can be divided into: data access, data storage, data management, and data expose.
 
-![Data fabric principles](../../assets/images/resources/data-fabric-principles.png){ .image-caption }
+![Data fabric principles](../../assets/images/resources/data-fabric-principles.png)
 
 
 ### 2.1 Unified data access
@@ -54,7 +54,7 @@ regardless of structure, database technology, and deployment platform creates a 
 
 ### 2.2 Infrastructure resilience
 
-Decoupling data management processes and practices from specific deployment technologies makes for a more resilient infrastructure. Whether adopting edge computing, GPU databases, or technology innovations not yet known, the data fabric’s management framework offers a degree of “future-proofing” that reduces the disruptions of new technologies. New infrastructure end-points are connected to the data fabric without impact to existing infrastructure and deployments.
+Decoupling data management processes and practices from specific deployment technologies makes for a more resilient infrastructure. Whether adopting edge computing, GPU databases, or technology innovations not yet known, the data fabricâ€™s management framework offers a degree of â€œfuture-proofingâ€ that reduces the disruptions of new technologies. New infrastructure end-points are connected to the data fabric without impact to existing infrastructure and deployments.
 
 Supports the full variety of data storage options, automatically applying the best mix of storage technologies depending on use cases.
 
@@ -82,19 +82,19 @@ A distinct security and protection component is needed to provide cohesion and c
 
 Minimizing the technical differences that lead to cloud service lock-in and enabling quick migration from one cloud platform to another supports the goal of a true cloud-hybrid environment.
 
-Data stored across multiple environments should not be isolated or siloed. Processing can’t be confined to a single execution environment when data resides on multiple platforms. With data fabric orchestration, a single control platform can execute a sequence of services, built with diverse technologies and distributed across multiple execution environments. When data is distributed across multiple platforms, it makes sense to push the processing to the data location. Smart data fabric automates the coordination of multi-services workflows across all execution environments for comprehensive cloud, multi-cloud, and cloud-hybrid support.
+Data stored across multiple environments should not be isolated or siloed. Processing canâ€™t be confined to a single execution environment when data resides on multiple platforms. With data fabric orchestration, a single control platform can execute a sequence of services, built with diverse technologies and distributed across multiple execution environments. When data is distributed across multiple platforms, it makes sense to push the processing to the data location. Smart data fabric automates the coordination of multi-services workflows across all execution environments for comprehensive cloud, multi-cloud, and cloud-hybrid support.
 
 
 ## 3. Data Fabric Architecture
 
 A well designed data fabric architecture is modular and supports massive scale, distributed multi-cloud, onpremise, and hybrid deployment.
 
-![Data Fabric Architecture building blocks](../../assets/images/resources/data-fabric-architecture.png){ .image-caption }
+![Data Fabric Architecture building blocks](../../assets/images/resources/data-fabric-architecture.png)
 
 
 ### 3.1 Connection layer
 
-In order **to provide data across “otherwise siloed storage” a connection layer governs access to data assets and metadata** through standard mechanisms whilst preserving (where possible) the native asset access APIs.  It provides interfaces and factories for named connectors that access distributed data resources. These data resources may be data stores (databases, files, etc.) or APIs for application data, transformations, and analytical functions.
+In order **to provide data across â€œotherwise siloed storageâ€ a connection layer governs access to data assets and metadata** through standard mechanisms whilst preserving (where possible) the native asset access APIs.  It provides interfaces and factories for named connectors that access distributed data resources. These data resources may be data stores (databases, files, etc.) or APIs for application data, transformations, and analytical functions.
 
 - SQL and NoSQL databases like MySQL, Oracle, and MongoDB
 - CRMs and ERPs
@@ -108,7 +108,7 @@ In order **to provide data across “otherwise siloed storage” a connection la
 
 **The Connection Layer acts as a secure factory for connectors to data stores.**  The application supplies the name of the connection it needs and assuming it is authorized, the Connection layer returns the connector.
 
-![Data fabric connection layer](../../assets/images/resources/data-fabric-connection-layer.png){ .image-caption }
+![Data fabric connection layer](../../assets/images/resources/data-fabric-connection-layer.png)
 
 The main components of a Connection layer are:
 
@@ -121,7 +121,7 @@ The main components of a Connection layer are:
 
 In a nutshell, data virtualization happens via middleware that is nothing but a unified, virtual data access layer built on top of many data sources. This layer presents information as a single virtual (or logical) view regardless of its type and model. It all happens on-demand and in real-time.
 
-![Data fabric virtualization layer](../../assets/images/resources/data-fabric-virtualization-layer.png){ .image-caption }
+![Data fabric virtualization layer](../../assets/images/resources/data-fabric-virtualization-layer.png)
 
 
 #### 3.2.1 Storage & Mapping
@@ -149,7 +149,7 @@ It is a structured representation of the virtual and local data with consistent 
 
 A single point of access to data kept in the underlying sources. The delivery of abstracted data views happens through various protocols and connectors depending on the type of the consumer. They may communicate with the virtual layer via SQL and all sorts of APIs, including access standards like JDBC and ODBC, REST and SOAP APIs, and many others.
 
-- *Data Catalog:* To provide a service which allows one to search for data and datasets across an enterprise. Sounds like a search index on data and metadata right? That’s the basis but the key is not to just return data records but help one find the topics in the data fabric that they came from.
+- *Data Catalog:* To provide a service which allows one to search for data and datasets across an enterprise. Sounds like a search index on data and metadata right? Thatâ€™s the basis but the key is not to just return data records but help one find the topics in the data fabric that they came from.
 - *Query services:* provides a user interface and a RESTful API from which you can create SQL queries to better analyze your data. With the user interface, you can write and execute queries, view previously executed queries, and access queries saved by users within your Organization.
 - *APIs:* offering an access to your business logic through an Interface (the API), with full control on what you want to show or not.
 - *Data provisioning:* the process of making data available in an orderly and secure way to users, application developers, and applications that need it.
@@ -167,8 +167,8 @@ Governance, data privacy, and data sovereignty must be aligned. Because data sto
 The data fabric must accommodate governance and data privacy in a way that is appropriate for the service models (that is, IaaS, PaaS, SaaS) being provided. Security capabilities must be considered through every architectural layer of the data fabric. It is also imperative that organizations know how their data is being secured.
 
 - *Secure Multitenancy (SMT):* Organizations must understand how their service providers segment and isolate each customer in their cloud infrastructure and how that manifests itself across a data fabric.
-- *Data in Use, in Motion, and at Rest:* refers to any data being processed by a cloud service provider. It is key to maintaining security throughout the lifecycle because it is crucial to maintaining an organization’s security posture. The fact that cloud solutions rely on shared processes and resources introduces the requirement for more diligence. The security criteria that are maintained within an organization must be maintained and possibly enhanced across the data fabric.
-- *Key Management:* refers to safeguarding and managing keys in order to manage a secure environment that effectively safeguards an organization’s data. A key aspect of the key management solution across a data fabric is maintaining proper access to the keys while securely storing them.
+- *Data in Use, in Motion, and at Rest:* refers to any data being processed by a cloud service provider. It is key to maintaining security throughout the lifecycle because it is crucial to maintaining an organizationâ€™s security posture. The fact that cloud solutions rely on shared processes and resources introduces the requirement for more diligence. The security criteria that are maintained within an organization must be maintained and possibly enhanced across the data fabric.
+- *Key Management:* refers to safeguarding and managing keys in order to manage a secure environment that effectively safeguards an organizationâ€™s data. A key aspect of the key management solution across a data fabric is maintaining proper access to the keys while securely storing them.
 
 
 ## 4. Market State & Use Cases
@@ -200,7 +200,7 @@ As we have seen, data fabric is a high-level data architecture, and each company
 
 - **Identify your data sources:** decide what and how much data there is to be virtualized. For this purpose, make a comprehensive list of all datasets, applications, services, and systems producing information. Along with that, determine their locations, management demands, and connectivity requirements to enable them to easily communicate with the virtualization layer. Some systems lay on the surface as they are used in your day-to-day operations while others may be in the depths of IoT devices and social media sites. It is a good idea to include all sources that can enhance business analytics.
 - **Identify your consumers:** Similar to the previous step, you may want to list all the tools and applications that will reside on the consumer side. Specify what connectors and protocols each of the consumers require for it to have access to the virtual views. Which of the operations in your company will benefit from the virtualization the most? Start with the tools supporting these operations.
-- **Decide on resources and people involved:**  While it is easier and less costly to implement compared to traditional ETL, you will still have to determine your budget and available resources — both tech and human. Along with business analysts, you may need such specialists as data engineers and SQL developers to model data, build transformations, design data services, optimize queries, and manage resources.
+- **Decide on resources and people involved:**  While it is easier and less costly to implement compared to traditional ETL, you will still have to determine your budget and available resources â€” both tech and human. Along with business analysts, you may need such specialists as data engineers and SQL developers to model data, build transformations, design data services, optimize queries, and manage resources.
 
 
 ### 5.2 Developing a technical reference model (TRM)
@@ -215,7 +215,7 @@ Once defined, the Technical Reference Model can be used as the basis for all Inf
 
 ## 6. Conclussion
 
-A data fabric is not an off the shelf sort of thing. It is currently more of a design pattern for something that has been built in different ways across many different organizations. That being said, It’s also not something that needs to be built from scratch. There are many off the shelf components with a little integration work that will get you to the promised land.
+A data fabric is not an off the shelf sort of thing. It is currently more of a design pattern for something that has been built in different ways across many different organizations. That being said, Itâ€™s also not something that needs to be built from scratch. There are many off the shelf components with a little integration work that will get you to the promised land.
 
 ---
 
@@ -281,5 +281,5 @@ To elaborate this Thesis, I have been recollecting links and resources about the
 - LaPlante, A. *Data Fabric as Modern Data Architecture. Report.* (1st ed.). O'Reilly.
 - Wells, D. *Data Fabric: Smart Data Engineering, Operations and Orchestration* Infoworks.
 - Pattanayak, A. *High Performance Analytics with SAP HANA Virtual Models.* Scientific Research Publishing Inc.
-- Freeman, L. and C. Miller, L. *Hybrid Cloud & Data Fabric For Dummies, NetApp Special Edition* John Wiley & Sons, Inc. 
+- Freeman, L. and C. Miller, L. *Hybrid Cloud & Data Fabric For Dummies, NetApp Special Edition* John Wiley & Sons, Inc.
 - [More Resources like this here](https://carlosgrande.me/#resources-cheatsheets/)

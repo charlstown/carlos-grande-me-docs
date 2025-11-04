@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Giorgia Lupi
 description: none
 date: 2020-10-11
@@ -26,11 +26,11 @@ Whenever the main purpose of visualizations is to open readers' eyes yo new know
 
 <div class="gallery grid-2 effect-zoom" markdown>
 
-![Novels and graduates](../../assets/images/references/lupi-novels-and-graduates.jpg){ .image-caption }
+![Novels and graduates](../../assets/images/references/lupi-novels-and-graduates.jpg)
 
-![The life cycle of ideas](../../assets/images/references/lupi-the-life-cycle-of-ideas.jpg){ .image-caption }
+![The life cycle of ideas](../../assets/images/references/lupi-the-life-cycle-of-ideas.jpg)
 
-![The real Montalbano](../../assets/images/references/lupi-the-real-montalbano.jpg){ .image-caption }
+![The real Montalbano](../../assets/images/references/lupi-the-real-montalbano.jpg)
 
 </div>
 

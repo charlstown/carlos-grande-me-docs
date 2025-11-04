@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Moritz Stefaner
 description: none
 date: 2020-04-10
@@ -27,15 +27,15 @@ Design is much more than mere decoration. Often, people think of design as is th
 
 <div class="gallery grid-2 effect-zoom" markdown>
 
-![Peak Spotting: Data on rails](../../assets/images/references/stefaner-peak-spotting-1.png){ .image-caption }
+![Peak Spotting: Data on rails](../../assets/images/references/stefaner-peak-spotting-1.png)
 
-![Peak Spotting: Data on rails](../../assets/images/references/stefaner-peak-spotting-2.png){ .image-caption }
-
-
-![Project Ukko: Seasonal wind predictions](../../assets/images/references/stefaner-project-ukko.png){ .image-caption }
+![Peak Spotting: Data on rails](../../assets/images/references/stefaner-peak-spotting-2.png)
 
 
-![Project: Map your moves](../../assets/images/references/stefaner-map-your-moves.png){ .image-caption }
+![Project Ukko: Seasonal wind predictions](../../assets/images/references/stefaner-project-ukko.png)
+
+
+![Project: Map your moves](../../assets/images/references/stefaner-map-your-moves.png)
 
 </div>
 

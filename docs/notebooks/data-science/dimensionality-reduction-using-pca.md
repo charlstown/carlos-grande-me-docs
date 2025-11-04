@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Dimensionality reduction using PCA
 description: none
 date: 2020-03-02
@@ -86,7 +86,7 @@ print('The iris dataset has {} rows and {} columns'.format(iris_centered.shape[0
 ```output
 [[5.1 3.5 1.4 0.2]
  [4.9 3.  1.4 0.2]
- [4.7 3.2 1.3 0.2]] 
+ [4.7 3.2 1.3 0.2]]
 
 The iris dataset has 150 rows and 4 columns
 ```
@@ -112,7 +112,7 @@ print('The iris PCs array has {} rows by {} columns'.format(shape_pcs[0], shape_
 
 ```output
 The PC1 is c1 = [ 0.36138659 -0.08452251  0.85667061  0.3582892 ]
-The PC2 is c1 = [-0.65658877 -0.73016143  0.17337266  0.07548102] 
+The PC2 is c1 = [-0.65658877 -0.73016143  0.17337266  0.07548102]
 
 The original iris array has 150 rows by 4 columns
 The iris PCs array has 4 rows by 4 columns
@@ -205,9 +205,9 @@ print('With this PCA we are able to see the {}% of the variance, loosing only a 
 ```
 
 ```output
-The variance obtained under the axis PC1 is: 0.9246187232017271 
+The variance obtained under the axis PC1 is: 0.9246187232017271
 
-The variance obtained under the axis PC2 is: 0.05306648311706782 
+The variance obtained under the axis PC2 is: 0.05306648311706782
 
 With this PCA we are able to see the 97.77% of the variance, loosing only a 2.23% of the real variance
 ```
@@ -319,32 +319,32 @@ print(df.head())
 
 ```output
               0         1         2         3         4         5        \
-pics/01.png  0.572549  0.588235  0.580392  0.584314  0.607843  0.607843   
-pics/02.png  0.588235  0.584314  0.564706  0.549020  0.568627  0.572549   
-pics/03.png  0.576471  0.596078  0.603922  0.592157  0.603922  0.611765   
-pics/04.png  0.619608  0.611765  0.584314  0.580392  0.600000  0.603922   
-pics/05.png  0.611765  0.592157  0.588235  0.603922  0.619608  0.615686   
+pics/01.png  0.572549  0.588235  0.580392  0.584314  0.607843  0.607843
+pics/02.png  0.588235  0.584314  0.564706  0.549020  0.568627  0.572549
+pics/03.png  0.576471  0.596078  0.603922  0.592157  0.603922  0.611765
+pics/04.png  0.619608  0.611765  0.584314  0.580392  0.600000  0.603922
+pics/05.png  0.611765  0.592157  0.588235  0.603922  0.619608  0.615686
 
               6         7         8         9        ...   1199990   1199991  \
-pics/01.png  0.603922  0.600000  0.588235  0.588235  ...  0.290196  0.298039   
-pics/02.png  0.592157  0.596078  0.576471  0.576471  ...  0.274510  0.294118   
-pics/03.png  0.607843  0.607843  0.603922  0.584314  ...  0.286275  0.294118   
-pics/04.png  0.600000  0.619608  0.611765  0.611765  ...  0.301961  0.286275   
-pics/05.png  0.600000  0.600000  0.592157  0.615686  ...  0.294118  0.305882   
+pics/01.png  0.603922  0.600000  0.588235  0.588235  ...  0.290196  0.298039
+pics/02.png  0.592157  0.596078  0.576471  0.576471  ...  0.274510  0.294118
+pics/03.png  0.607843  0.607843  0.603922  0.584314  ...  0.286275  0.294118
+pics/04.png  0.600000  0.619608  0.611765  0.611765  ...  0.301961  0.286275
+pics/05.png  0.600000  0.600000  0.592157  0.615686  ...  0.294118  0.305882
 
               1199992   1199993   1199994   1199995   1199996   1199997  \
-pics/01.png  0.298039  0.305882  0.298039  0.282353  0.290196  0.290196   
-pics/02.png  0.290196  0.294118  0.298039  0.274510  0.274510  0.298039   
-pics/03.png  0.290196  0.286275  0.278431  0.270588  0.266667  0.290196   
-pics/04.png  0.298039  0.298039  0.309804  0.298039  0.294118  0.282353   
-pics/05.png  0.298039  0.286275  0.294118  0.298039  0.290196  0.301961   
+pics/01.png  0.298039  0.305882  0.298039  0.282353  0.290196  0.290196
+pics/02.png  0.290196  0.294118  0.298039  0.274510  0.274510  0.298039
+pics/03.png  0.290196  0.286275  0.278431  0.270588  0.266667  0.290196
+pics/04.png  0.298039  0.298039  0.309804  0.298039  0.294118  0.282353
+pics/05.png  0.298039  0.286275  0.294118  0.298039  0.290196  0.301961
 
-              1199998   1199999  
-pics/01.png  0.278431  0.278431  
-pics/02.png  0.305882  0.301961  
-pics/03.png  0.282353  0.290196  
-pics/04.png  0.301961  0.301961  
-pics/05.png  0.305882  0.305882  
+              1199998   1199999
+pics/01.png  0.278431  0.278431
+pics/02.png  0.305882  0.301961
+pics/03.png  0.282353  0.290196
+pics/04.png  0.301961  0.301961
+pics/05.png  0.305882  0.305882
 
 [5 rows x 1200000 columns]
 ```
@@ -415,15 +415,15 @@ print('With these {} PCs we are able to see the {}% of the variance, loosing onl
 ```
 
 ```output
-The variance obtained under the axis PC0 is: 0.3115198612213135 
+The variance obtained under the axis PC0 is: 0.3115198612213135
 
-The variance obtained under the axis PC1 is: 0.2390120029449463 
+The variance obtained under the axis PC1 is: 0.2390120029449463
 
-The variance obtained under the axis PC2 is: 0.13283684849739075 
+The variance obtained under the axis PC2 is: 0.13283684849739075
 
-The variance obtained under the axis PC3 is: 0.11253062635660172 
+The variance obtained under the axis PC3 is: 0.11253062635660172
 
-The variance obtained under the axis PC4 is: 0.055096596479415894 
+The variance obtained under the axis PC4 is: 0.055096596479415894
 
 With these 5 PCs we are able to see the 85.1% of the variance, loosing only a 14.9% of the real variance
 ```
@@ -460,3 +460,4 @@ On the figures below you can see the result of different PCAs progression preser
 
 - [PCA: principal components analysis applied to images of faces. (n.d.). Medium.](https://medium.com/@sebastiannorena/pca-principal-components-analysis-applied-to-images-of-faces-d2fc2c083371)
 - [Reshaping numpy arrays in python: A step-by-step pictorial tutorial. (n.d.). Towards Data Science.](https://towardsdatascience.com/reshaping-numpy-arrays-in-python-a-step-by-step-pictorial-tutorial-aed5f471cf0b)
+

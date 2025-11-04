@@ -1,4 +1,4 @@
----
+﻿---
 short_title: My data product thesis
 date: 2022-10-10
 thumbnail: assets/images/resources/data-product-portrait.png
@@ -32,7 +32,7 @@ If we try to think of data as a product, we can establish a series of assumption
 - You always have to add value or respond to a need.
 - It will have some attributes that define and limit it.
 - The distribution channel will be direct and online.
- 
+
 If we review these five assumptions and look for a simile in the market, we find business models based on eCommerce through a managed marketplace such as (Amazon, eBay, Etsy, etc.). To apply this simile in a data context, we must abandon the conception of data as a set of tables and start thinking of data as a product under a name, with defined attributes, exposed through a platform and that a consumer accepts with quality and value.
 
 > **A data product is a collection of datasets, metadata, code, and policies concerning a certain topic and serving a certain purpose in a self-serve manner. Even though, it can support multiple purposes or be used as a building block for multiple other data products.**
@@ -40,7 +40,7 @@ If we review these five assumptions and look for a simile in the market, we find
 
 ## 2. Architecture of a Data Product
 
-Data as a product introduces a new unit of logical architecture called, data product quantum, controlling and encapsulating all the structural components — data, metadata, code, policy and infrastructure dependencies — needed to share data as a product autonomously. (Dehghani, 2022)
+Data as a product introduces a new unit of logical architecture called, data product quantum, controlling and encapsulating all the structural components â€” data, metadata, code, policy and infrastructure dependencies â€” needed to share data as a product autonomously. (Dehghani, 2022)
 
 A Data product is the smallest unit of architecture that can be independently deployed with high functional cohesion, and includes all the structural elements required for its function.
 
@@ -54,7 +54,7 @@ A Data product is the smallest unit of architecture that can be independently de
 
 **The output ports:** define the format and consumption protocol in which data can be exposed. For example, the output port can be a database table, file, API, or reports. It can be accessed to a final consumer or by multiple other data products.
 
-![Data product architecture](../../assets/images/resources/data-product-architecture.png){ .image-caption }
+![Data product architecture](../../assets/images/resources/data-product-architecture.png)
 
 
 ## 3. Data Products in a Data Mesh ecosystem
@@ -63,7 +63,7 @@ The data product (1) is the most important independent unit of the Data Mesh par
 
 Regarding its relationship with consumers (7), the data product is related to them through a marketplace (5) where they are published to be discovered. Once a consumer has located the data product that interests him, he can request access to the output ports (6) available in the data product.
 
-![Data product ecosystem](../../assets/images/resources/data-product-ecosystem.png){ .image-caption }
+![Data product ecosystem](../../assets/images/resources/data-product-ecosystem.png)
 
 
 ## 4. Types of Data Products
@@ -81,15 +81,15 @@ Compared to traditional architectures, the Data Mesh paradigm does not seek a "S
 
 ### 4.2 Classification by consuming purpose
 
-Simon O'Regan makes a great classification of data product typologies based on their purpose. In this article Designing Data Products by Simon O'Regan, you can see in-depth this classification of types of data products. 
+Simon O'Regan makes a great classification of data product typologies based on their purpose. In this article Designing Data Products by Simon O'Regan, you can see in-depth this classification of types of data products.
 
 - **Raw data:** exposed data as it is in the operational systems with small processing or cleansing steps, most of the processing work is done on the consumer's side.
 - **Derived data:**  data exposed after being processed and enriched on the platform side.
 - **Algorithms:** data run through an algorithm returning information or insights.
 - **Decision support:** data exposed as relevant information in an easy-to-digest format to the consumer to help them with decision-making. (dashboards, reports, etc.)
-- **Automated decision-making:** Here we outsource all of the intelligence within a given domain, allowing the algorithm to do the work and present the user with the final output. (E.g.: Netflix product recommendations or Spotify’s Discover Weekly).
+- **Automated decision-making:** Here we outsource all of the intelligence within a given domain, allowing the algorithm to do the work and present the user with the final output. (E.g.: Netflix product recommendations or Spotifyâ€™s Discover Weekly).
 
-![Types of data product](../../assets/images/resources/data-product-types.png){ .image-caption }
+![Types of data product](../../assets/images/resources/data-product-types.png)
 
 
 ## 5. Designing a Data Product
@@ -139,7 +139,7 @@ Data delivery is the process of sharing data as a product to a consumer or anoth
 - BI (Reporting, dashboards and visualizations)
 - Files
 
-![Data product capabilities](../../assets/images/resources/data-product-capabilities.png){ .image-caption }
+![Data product capabilities](../../assets/images/resources/data-product-capabilities.png)
 
 ## 6. Identifying a Data Product
 
@@ -154,7 +154,7 @@ There are several publications that discuss in depth how data products should be
 
 ## 7. Data as a Product
 
-Data products are “the smallest unit of architect that can be independently deployed and managed.” In the book Data Mesh, Delivering Data-Driven Value at Scale, Zhamak Dehghani says that Data Products are “discoverable, understandable, trustworthy, addressable, interoperable, and composable, secure, natively accessible, and valuable on its own”. She is applying widely used product thinking to a data domain.
+Data products are â€œthe smallest unit of architect that can be independently deployed and managed.â€ In the book Data Mesh, Delivering Data-Driven Value at Scale, Zhamak Dehghani says that Data Products are â€œdiscoverable, understandable, trustworthy, addressable, interoperable, and composable, secure, natively accessible, and valuable on its ownâ€. She is applying widely used product thinking to a data domain.
 
 - **Discoverable**: a centralized discoverability service allowing data consumers to discover all available data products with their meta information such as their owners, source of origin, lineage, sample datasets, etc.
 - **Understandable:** they can be independently discovered, understood and consumed.
@@ -168,20 +168,20 @@ Data products are “the smallest unit of architect that can be independently de
 
 ### 7.1 Product thinking in practice
 
-Product thinking is the journey from the problem space of the users to the solution space of the business. The goal of this journey is to reduce the gap between users and the business. 
+Product thinking is the journey from the problem space of the users to the solution space of the business. The goal of this journey is to reduce the gap between users and the business.
 
 When I talk at work about serving data as a product, I like to start with an example like the one in the image below. We can see an amazon product on the front of its marketplace, with which we are all familiar. From this point, if we translate Dehgani's product thinking principles into this example, we can see how each of them fits with the way Amazon offers its products.
 
-![Data product thinking example](../../assets/images/resources/data-product-thinking.png){ .image-caption }
+![Data product thinking example](../../assets/images/resources/data-product-thinking.png)
 
 
 ### 7.2 Serving data as a product
 
 As a first exercise, we can reconfigure the Amazon product delivery screen, but rethinking how it would be in a data marketplace. When solve this exercise we discover a screen similar to this one.
- 
+
 > **The heart of a data product is how data is served to consumers, from discovery to consumption. The goal is to reduce the gap between consumers and data.**
 
-![Data product example](../../assets/images/resources/data-product-example.png){ .image-caption }
+![Data product example](../../assets/images/resources/data-product-example.png)
 
 
 ## 8. Data product domain model
@@ -192,16 +192,16 @@ While domains reside in a logical dimension, data products reside in a technical
 
 > **Data domains are high level categories of data based on a logical grouping of items of interest to the organization, or areas of interest within the organization. A domain where experts analyze data and build reports themselves, with minimal IT support. A data domain should create and publish their data as a product for the rest of the business to consume as well.**
 
-![Data product domain model](../../assets/images/resources/data-product-domain-model.png){ .image-caption }
+![Data product domain model](../../assets/images/resources/data-product-domain-model.png)
 
 
 ## 9. Conclusion
 
 To conclude, I would like to emphasize that a Domain and a Data Product are two components of the Data Mesh paradigm that work on different planes. While the Domain is a logical category at the organization level, the data product is a product with technical and infrastructure dependencies. In my experience, when we talk about the data product, we must consider the platform and the technologies we use when defining its scope. On the other hand, the data domain resides at a much higher level and is not limited by these decisions.
 
-I would also like to comment that ussually we approach Data Mesh as if it were a migration. In my belief, it's a mistake to come it in this way since a radical change is not necessary at all levels of the organization. It is better to proceed with developing a product with an agile methodology allowing you to take small but valuable steps. You can start generating the first decentralized domain, with an owner and a federated government to publish the first data product. In this way, more and more data products can be federated and pivoted toward the Data Mesh model that best fits our organization. 
+I would also like to comment that ussually we approach Data Mesh as if it were a migration. In my belief, it's a mistake to come it in this way since a radical change is not necessary at all levels of the organization. It is better to proceed with developing a product with an agile methodology allowing you to take small but valuable steps. You can start generating the first decentralized domain, with an owner and a federated government to publish the first data product. In this way, more and more data products can be federated and pivoted toward the Data Mesh model that best fits our organization.
 
-To finish, let us remember that the final objective of the Data Product is to reduce the gap between the data and its consumers. We shouldn't value the Data Product for its content (the data), the principal value of a Data Product lies in its delivery and in the way in which it is received by its consumers. 
+To finish, let us remember that the final objective of the Data Product is to reduce the gap between the data and its consumers. We shouldn't value the Data Product for its content (the data), the principal value of a Data Product lies in its delivery and in the way in which it is received by its consumers.
 
 
 ## 10. Terminology
@@ -230,10 +230,11 @@ At the next table, I tried to extract the main vocabulary about Data Products.
 
 - [My Data Mesh Thesis](https://carlosgrande.me/my-data-mesh-thesis/)
 - [Designing Data Products by INNOQ](https://www.datamesh-architecture.com/data-product-canvas)
-- [Designing Data Products: The 15 faces of Data Products are a little bit different.](https://towardsdatascience.com/designing-data-products-b6b93edf3d23) 
-- [The Anatomy of a Data Product](https://towardsdatascience.com/the-anatomy-of-a-data-product-d3140f068311) 
+- [Designing Data Products: The 15 faces of Data Products are a little bit different.](https://towardsdatascience.com/designing-data-products-b6b93edf3d23)
+- [The Anatomy of a Data Product](https://towardsdatascience.com/the-anatomy-of-a-data-product-d3140f068311)
 - [Data as a product vs data products. What are the differences?](https://towardsdatascience.com/data-as-a-product-vs-data-products-what-are-the-differences-b43ddbb0f123)
 - [Applying Data Mesh principles to an IoT data architecture](https://www.acagroup.be/en/blog/applying-data-mesh-principles-to-an-iot-data-architecture/)
-- [The Fundamentals of Building Better Data Products](https://www.mindtheproduct.com/fundamentals-building-better-data-products/#:~:text=As%20I%20see%20it%20there,products%2C%20and%20data%20as%20insight.) 
+- [The Fundamentals of Building Better Data Products](https://www.mindtheproduct.com/fundamentals-building-better-data-products/#:~:text=As%20I%20see%20it%20there,products%2C%20and%20data%20as%20insight.)
 - [Product Thinking 101 by Naren Katakam](https://uxplanet.org/product-thinking-101-1d71a0784f60)
 - [More Resources like this here](https://carlosgrande.me/#resources-cheatsheets/)
+

@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Docker cheatsheet
 description: none
 date: 2020-10-10
@@ -15,7 +15,7 @@ With this post, I wanted to share my latest Docker cheatsheet and explain some b
 
 ## The Docker cheatsheet
 
-![My docker cheatsheet](../../assets/images/resources/docker-cheatsheet.png){ .image-caption }
+![My docker cheatsheet](../../assets/images/resources/docker-cheatsheet.png)
 
 [Download the cheatsheet](../../assets/docs/cheatsheet-docker.pdf){:download="Docker Cheatsheet" .md-button }
 
@@ -51,7 +51,7 @@ All this sounds a lot to a **virtual machine**, so what is the main **difference
 
 ## How to create a Dockerfile
 
-A **Dockerfile** is a text document that **contains all the commands** a user could call on the command line **to assemble an image**. Using docker build users can create an automated build that executes several command-line instructions in succession. 
+A **Dockerfile** is a text document that **contains all the commands** a user could call on the command line **to assemble an image**. Using docker build users can create an automated build that executes several command-line instructions in succession.
 
 Here you can see an **example** of a real and working **Dockerfile**. In this example, we create a container with a small Debian package and Python installed.
 

@@ -1,4 +1,4 @@
----
+﻿---
 short_title: My Rubiks cube model
 description: none
 date: 2022-04-05
@@ -33,7 +33,7 @@ To develop the model, I defined these four Python classes:
 
 As a graphic support I drew a pattern with the classes, their methods and the calls between the different components in the infographic below.
 
-![Architecture of the Rubik's cube code](../assets/images/projects/AbstractSyntaxTree.png){ .image-caption }
+![Architecture of the Rubik's cube code](../assets/images/projects/AbstractSyntaxTree.png)
 
 
 ## Cube notation model
@@ -90,7 +90,7 @@ Last but not least, it was necessary to save the state of the data. To accomplis
 
 ### Moves notation
 I used the [Singmaster notation](https://en.wikipedia.org/wiki/Rubik%27s_Cube#Move_notation) developed by [David Singmaster](https://en.wikipedia.org/wiki/David_Singmaster). Its relative nature allows algorithms to be written in such a way that they can be applied regardless of which side is designated the top or how the colors are organized on a particular cube.
-  
+
 - **t:** Top side move 1 clockwise
 - **f:** Front side move 1 clockwise
 - **d:** Down side move 1 clockwise
@@ -114,7 +114,7 @@ t2l3b1r2
 
 The final output displayed was way faster than I expected. The trick of regenerating the whole geometry for each move works like a charm is capable of applying over a hundred permutations in less than 30 seconds. Here is a capture of the final output applying twenty random moves to the cube.
 
-![Rubiks cube animation result](../assets/images/projects/rubiks-cube-animation.gif){ .image-caption }
+![Rubiks cube animation result](../assets/images/projects/rubiks-cube-animation.gif)
 
 ---
 

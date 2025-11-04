@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Whole brain emulation
 description: none
 date: 2021-01-24
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/whole-brain-emulation-portrait.jpeg
 
 # Whole brain emulation
 
-![Human habits, machine mind – The illusion of embodiment.](../../assets/images/references/shanahan-wbe.jpg){ .image-caption }
+![Human habits, machine mind â€“ The illusion of embodiment.](../../assets/images/references/shanahan-wbe.jpg)
 
 
 
@@ -58,7 +58,7 @@ What we need is hardware, one candidate is **quantum-dot cellular automata (QDCA
 
 **FURTHER READING:**
 
-- About Hodgkin Huxley model: [Hodgkin–Huxley model](https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model#:~:text=The%20Hodgkin%E2%80%93Huxley%20model%2C%20or,as%20neurons%20and%20cardiac%20myocytes.)
+- About Hodgkin Huxley model: [Hodgkinâ€“Huxley model](https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model#:~:text=The%20Hodgkin%E2%80%93Huxley%20model%2C%20or,as%20neurons%20and%20cardiac%20myocytes.)
 - About [Whole-brain functional imaging at cellular resolution using light-sheet microscopy](https://www.nature.com/articles/nmeth.2434)
 - About [Whole Brain Emulation Roadmap](https://www.fhi.ox.ac.uk/brain-emulation-roadmap-report.pdf)
 - About [Sequencing the Connectome](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001411)

@@ -1,13 +1,13 @@
----
+﻿---
 short_title: My Python template
 description: none
 date: 2022-12-22
-thumbnail: assets/images/resources/data-mesh-portrait.png
+thumbnail: assets/images/thumbnails/template-python-portrait.png
 ---
 
 # My Python template
 
-![Cookiecutter Python template](../../assets/images/resources/template-python-portrait.png){ .image-width-24 }
+![](../../assets/images/resources/template-python-portrait.png)
 
 Every time I have started a new Python project, I have spent a lot of time setting up the initial files like the README, Code of Conduct, licenses, and the base code itself to start with. Even having a template ready, the process of cloning it and starting to customize it has taken me a lot of time.
 
@@ -23,7 +23,7 @@ The easiest way to understand what PyTemplate does is to create a simple project
 
 Cookiecutter is a Python package, easily installable with pip or other package managers, that enables you to create and use templates for microservices and software projects. It is a command-line tool that requires no knowledge of Python to use. Cookiecutter is widely used among software engineers, researchers, data scientists, and other technical roles.
 
-![How the template works](../../assets/images/resources/template-python-how-it-works.png){ .image-caption }
+![How the template works](../../assets/images/resources/template-python-how-it-works.png)
 
 Visit these links to learn more about cookiecutter:
 
@@ -45,29 +45,29 @@ There is no one "right" way to structure a Python project, as the appropriate st
 
 ```bash
 my_project/
-├── my_package/
-│      └── config/
-│      │      ├── settings.yaml
-│      │      └── additional_settings.yaml
-│      ├── __init__.py
-│      ├── main.py
-│      ├── module_1.py
-│      ├── module_2.py
-│      └── ...
-├── tests/
-│      ├── test_module_1.py
-│      ├── test_module_2.py
-│      └── ...
-├── data/
-│      ├── input.csv
-│      └── ...
-├── docs/
-│      ├── index.md
-│      └── ...
-├── README.md
-├── requirements.txt
-├── LICENSE
-└── ...
+â”œâ”€â”€ my_package/
+â”‚      â””â”€â”€ config/
+â”‚      â”‚      â”œâ”€â”€ settings.yaml
+â”‚      â”‚      â””â”€â”€ additional_settings.yaml
+â”‚      â”œâ”€â”€ __init__.py
+â”‚      â”œâ”€â”€ main.py
+â”‚      â”œâ”€â”€ module_1.py
+â”‚      â”œâ”€â”€ module_2.py
+â”‚      â””â”€â”€ ...
+â”œâ”€â”€ tests/
+â”‚      â”œâ”€â”€ test_module_1.py
+â”‚      â”œâ”€â”€ test_module_2.py
+â”‚      â””â”€â”€ ...
+â”œâ”€â”€ data/
+â”‚      â”œâ”€â”€ input.csv
+â”‚      â””â”€â”€ ...
+â”œâ”€â”€ docs/
+â”‚      â”œâ”€â”€ index.md
+â”‚      â””â”€â”€ ...
+â”œâ”€â”€ README.md
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ LICENSE
+â””â”€â”€ ...
 ```
 
 You can visit my post about [My Python project cheatsheet](https://carlosgrande.me/my-python-project-cheatsheet/) to learn more about this structure.
@@ -105,7 +105,7 @@ python -m cookiecutter https://github.com/charlstown/cookie-python.git
 
 Fill out the form in the console to customize the template and the project will be generated at the end.
 
-![Running the template form on bash](../../assets/images/resources/template-python-run.png){ .image-caption }
+![Running the template form on bash](../../assets/images/resources/template-python-run.png)
 
 
 You should see a new folder with the repository name you gave as input (**my-python-project**).
@@ -144,7 +144,7 @@ Deploy your documentation in Github pages is so easy, you only need to set the p
 2. Select *Pages* at the settings menu under the *code and automation* section.
 3. Make sure pages is enable and select *gh-pages* as the site branch under *Build and deployment* section.
 
-![Github pages setting](../../assets/images/resources/template-python-ghpages.png){ .image-caption }
+![Github pages setting](../../assets/images/resources/template-python-ghpages.png)
 
 
 **Your site should be live at: [https://user.github.io/my-python-project/](https://user.github.io/my-python-project/)**
@@ -167,4 +167,5 @@ Remember, to deploy the documentation in Github Pages the repository must be a p
 - [Github Actions marketplace](https://github.com/marketplace?type=actions)
 - [Github Pages documentation](https://docs.github.com/es/pages)
 - [More Resources like this here](https://carlosgrande.me/#resources-cheatsheets/)
+
 

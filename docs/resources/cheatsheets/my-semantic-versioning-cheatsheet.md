@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Semantic versioning cheatsheet
 description: none
 date: 2025-11-03
@@ -7,18 +7,18 @@ thumbnail: assets/images/thumbnails/semantic-versioning-portrait.png
 
 # Semantic Versioning cheatsheet
 
-This post covers a topic I find both fascinating and often confusing: Semantic Versioning and the different release stages that appear as suffixes — and what each one really means. Having a clear and ordered flow of releases is key to maintaining consistency and communication across teams.
+This post covers a topic I find both fascinating and often confusing: Semantic Versioning and the different release stages that appear as suffixes â€” and what each one really means. Having a clear and ordered flow of releases is key to maintaining consistency and communication across teams.
 
-I’ve tried to make this cheatsheet as complete as possible based on my experience managing releases. Of course, there are many other suffixes, labels, and conventions not included here, but I hope it serves as a practical reference for anyone navigating the versioning lifecycle.
+Iâ€™ve tried to make this cheatsheet as complete as possible based on my experience managing releases. Of course, there are many other suffixes, labels, and conventions not included here, but I hope it serves as a practical reference for anyone navigating the versioning lifecycle.
 
 
-![Semantic versioning cheatsheet](../../assets/images/resources/cheatsheet-semantic-versioning.png){ .image-caption }
+![Semantic versioning cheatsheet](../../assets/images/resources/cheatsheet-semantic-versioning.png)
 
 ---
 
 ## Semantic versioning
 
-Semantic Versioning (SemVer) was formalized by Tom Preston-Werner in 2013 as a standardized way to communicate software changes clearly through version numbers. 
+Semantic Versioning (SemVer) was formalized by Tom Preston-Werner in 2013 as a standardized way to communicate software changes clearly through version numbers.
 
 ### 1. Release version
 
@@ -34,7 +34,7 @@ It defines the structure **MAJOR.MINOR.PATCH**, ensuring that each increment con
 
 ### 2. Release stage
 
-Each suffix indicates a specific maturity stage in the software’s lifecycle — ordered from less stable to production-ready.
+Each suffix indicates a specific maturity stage in the softwareâ€™s lifecycle â€” ordered from less stable to production-ready.
 
 | Stage                  | Suffix                   | Description                                                                      |
 | ---------------------- | ------------------------ | -------------------------------------------------------------------------------- |
@@ -45,12 +45,12 @@ Each suffix indicates a specific maturity stage in the software’s lifecycle �
 | **Preview**            | `-preview`, `-preview.1` | Public build showcasing upcoming features before final release.                  |
 | **Early Access**       | `-ea`, `-earlyaccess`    | Limited release for external users before general availability.                  |
 | **Release Candidate**  | `-rc`, `-rc.1`           | Build considered final unless critical issues are found.                         |
-| **Stable (no suffix)** | —                        | Final release without suffix; marks general availability.                        |
+| **Stable (no suffix)** | â€”                        | Final release without suffix; marks general availability.                        |
 | **Hotfix**             | `-hotfix`                | Immediate patch applied to a released version to fix a critical issue.           |
 
 ### 3. Distribution labels
 
-**Distribution labels** are labels managed outside Semantic Versioning to indicate release channels or version pointers within a package registry or distribution system. They don’t form part of the version number but define how users or systems retrieve specific releases.
+**Distribution labels** are labels managed outside Semantic Versioning to indicate release channels or version pointers within a package registry or distribution system. They donâ€™t form part of the version number but define how users or systems retrieve specific releases.
 
 | Label        | Meaning                                                         | Typical Use                                                          |
 | ---------- | --------------------------------------------------------------- | -------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ Each suffix indicates a specific maturity stage in the software’s lifecycle �
 
 ### 4. Release stage Vs distribution labels
 
-Release Stage labels define a version’s development phase inside the Semantic Versioning scheme (e.g., -alpha, -beta, -rc), while Distribution labels are external pointers in a registry (e.g., latest, next, lts) that control which version is served to users. 
+Release Stage labels define a versionâ€™s development phase inside the Semantic Versioning scheme (e.g., -alpha, -beta, -rc), while Distribution labels are external pointers in a registry (e.g., latest, next, lts) that control which version is served to users.
 
 Example:
 
@@ -74,3 +74,4 @@ Example:
 | `1.9.0`         | Stable release      | `latest`         | The label **latest** points to the most recent stable production version.            |
 | `1.8.2`         | Stable (maintained) | `lts`            | The label **lts** points to the long-term supported release still under maintenance. |
 | `2.0.0-rc.1`    | Release candidate   | `next`           | The label **next** points to the candidate for the upcoming major version.           |
+

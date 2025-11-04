@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Ben Willers
 description: none
 date: 2020-01-07
@@ -26,17 +26,17 @@ One of the greatest challenges I face in my work is finding a balance that does 
 
 <div class="gallery grid-2 effect-zoom" markdown>
 
-![Eurozone GDP and debt stat](../../assets/images/references/willers-euro-recesion.png){ .image-caption }
+![Eurozone GDP and debt stat](../../assets/images/references/willers-euro-recesion.png)
 
-![Comparison of energy usage](../../assets/images/references/willers-energy-consumption-uk.png){ .image-caption }
+![Comparison of energy usage](../../assets/images/references/willers-energy-consumption-uk.png)
 
-![Average BMI for men and women](../../assets/images/references/willers-weight-world.png){ .image-caption }
+![Average BMI for men and women](../../assets/images/references/willers-weight-world.png)
 
-![Formula 1 history](../../assets/images/references/Willers-f1-history.png){ .image-caption }
+![Formula 1 history](../../assets/images/references/Willers-f1-history.png)
 
-![Ben Willers life](../../assets/images/references/willers-life.png){ .image-caption }
+![Ben Willers life](../../assets/images/references/willers-life.png)
 
-![Eurovision Song Contest voting patterns](../../assets/images/references/willers-eurovizion.png){ .image-caption }
+![Eurovision Song Contest voting patterns](../../assets/images/references/willers-eurovizion.png)
 
 </div>
 

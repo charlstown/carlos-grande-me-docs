@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Text mining sentiment analysis
 description: none
 date: 2020-04-08
@@ -23,7 +23,7 @@ print(X[0])
 ```
 
 ```output
-'@sosagraphs Pues tan sencillo porque en su día me puse a hacerlo y es de lo que mas encargos me hacen, aparte tengo mas estilos crack '
+'@sosagraphs Pues tan sencillo porque en su dÃ­a me puse a hacerlo y es de lo que mas encargos me hacen, aparte tengo mas estilos crack '
 ```
 
 ### 1.1 Loading Tweets in English
@@ -79,13 +79,13 @@ def nbayes(X, Y):
     # Training the model
     clf = MultinomialNB().fit(X_train, y_train)
     y_pred = clf.predict(X_test)
-    
+
     # Printing results
     print("------------------------------------------")
     print(classification_report(y_test,y_pred))
     print("------------------------------------------")
     print("accuracy",accuracy_score(y_test, y_pred))
-    
+
     # Plot non-normalized confusion matrix
     titles_options = [("Confusion matrix, without normalization", None),
                       ("Normalized confusion matrix", 'true')]
@@ -110,11 +110,11 @@ target = y
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -148,11 +148,11 @@ acc = nbayes(list_tweets_en, target)
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -338,7 +338,7 @@ head(df_eda, 3) %>% kable() %>% kable_styling() %>% scroll_box(width = '100%')
 
 | X | tweets_es | tweets_en | tokens_es | tokens_es. | tokens_en | tokens_en. | lemas_es | lemas_en | stops_es | stops_en | target |
 |---|------------|------------|------------|-------------|------------|-------------|------------|------------|------------|------------|---------|
-| 0 | @sosagraphs Pues tan sencillo porque en su día me puse a hacerlo y es de lo que mas encargos me hacen, aparte tengo mas estilos crack | For @sosagraphs so simple because at the time I started to do and what makes me more commissions, other styles have more crack | ['aparte', 'puse', 'encargos', 'y', 'a', 'sencillo', 'crack', '@sosagraphs', 'estilos'] | ['aparte', 'puse', 'hacerlo', 'encargos', 'y', 'a', 'sencillo', 'crack', 'porque', '@sosagraphs', 'estilos'] | ['makes', 'commissions', 'started', 'styles', 'time', 'simple', '@sosagraphs', 'crack'] | ['makes', 'because', 'commissions', 'started', 'styles', 'time', 'simple', '@sosagraphs', 'crack'] | ['hacerlo', 'encargo', 'y', 'a', 'sencillo', 'poner', 'porque', 'apartar', 'estilo', '@sosagraphs', 'crack'] | ['because', 'make', 'commission', '@sosagraph', 'time', 'style', 'start', 'simple', 'crack'] | ['pues', 'tan', 'porque', 'en', 'su', 'día', 'me', 'hacerlo', 'es', 'de', 'lo', 'que', 'mas', 'me', 'hacen', 'tengo', 'mas'] | ['for', 'so', 'because', 'at', 'the', 'i', 'to', 'do', 'and', 'what', 'me', 'more', 'other', 'have', 'more'] | 3 |
+| 0 | @sosagraphs Pues tan sencillo porque en su dÃ­a me puse a hacerlo y es de lo que mas encargos me hacen, aparte tengo mas estilos crack | For @sosagraphs so simple because at the time I started to do and what makes me more commissions, other styles have more crack | ['aparte', 'puse', 'encargos', 'y', 'a', 'sencillo', 'crack', '@sosagraphs', 'estilos'] | ['aparte', 'puse', 'hacerlo', 'encargos', 'y', 'a', 'sencillo', 'crack', 'porque', '@sosagraphs', 'estilos'] | ['makes', 'commissions', 'started', 'styles', 'time', 'simple', '@sosagraphs', 'crack'] | ['makes', 'because', 'commissions', 'started', 'styles', 'time', 'simple', '@sosagraphs', 'crack'] | ['hacerlo', 'encargo', 'y', 'a', 'sencillo', 'poner', 'porque', 'apartar', 'estilo', '@sosagraphs', 'crack'] | ['because', 'make', 'commission', '@sosagraph', 'time', 'style', 'start', 'simple', 'crack'] | ['pues', 'tan', 'porque', 'en', 'su', 'dÃ­a', 'me', 'hacerlo', 'es', 'de', 'lo', 'que', 'mas', 'me', 'hacen', 'tengo', 'mas'] | ['for', 'so', 'because', 'at', 'the', 'i', 'to', 'do', 'and', 'what', 'me', 'more', 'other', 'have', 'more'] | 3 |
 | 1 | 1477. No pero porque apenas hay confi | 1477. No but because there just confi | ['1477', 'confi'] | ['1477', 'no', 'confi', 'porque'] | ['1477', 'confi'] | ['1477', 'confi', 'because'] | ['1477', 'no', 'confi', 'porque'] | ['1477', 'confi', 'because'] | ['no', 'pero', 'porque', 'apenas', 'hay'] | ['no', 'but', 'because', 'there', 'just'] | 0 |
 | 2 | Vale he visto la tia bebiendose su regla y me hs dado muchs grima | It've seen the aunt drinking his rule and hs given me muchs Grima | ['regla', 'tia', 'y', 'bebiendose', 'vale', 'hs', 'muchs', 'grima', 'visto'] | ['regla', 'tia', 'dado', 'y', 'bebiendose', 'vale', 'hs', 'muchs', 'grima', 'visto'] | ['aunt', 'rule', 'seen', 'given', "it've", 'hs', 'muchs', 'grima', 'drinking'] | ['aunt', 'rule', 'seen', 'his', "it've", 'given', 'hs', 'muchs', 'grima', 'drinking'] | ['tia', 'y', 'bebiendose', 'valer', 'hs', 'reglar', 'muchs', 'grima', 'vestir', 'dar'] | ['aunt', 'see', 'rule', '-PRON-', "it've", 'hs', 'muchs', 'grima', 'drink', 'give'] | ['he', 'la', 'su', 'me', 'dado'] | ['the', 'his', 'and', 'me'] | 0 |
 
@@ -362,21 +362,21 @@ def countplot(data, column = 'target', title = 'Countplot', xlab = 'class', ylab
     ax1.set_xlabel(xlab)
     ax1.set_xticklabels(labels)
     ax1.title.set_text(title)
-    
+
     # Pie plot
     total = len(data)
     data = list(data.groupby(column)[column].count()/total)
     ax2 = plt.subplot(2, 2, 2)
     ax2.pie(data, labels=labels, autopct='%1.1f%%', startangle=90)
-    ax2.title.set_text(title + ' (%)')  
+    ax2.title.set_text(title + ' (%)')
     plt.show()
-    
+
 def comparison_plot(df, colname, title = ''):
     if title == '':
         title = 'Number of tweets VS ' + colname
     filtered = df[df[colname] != ''].groupby('target').target.count()
     total_tweets = df.groupby('target').target.count()
-    
+
     # Plotting data
     labels = ['Negative', 'Neutral', 'None', 'Positive']
     plt.style.use('ggplot')
@@ -386,7 +386,7 @@ def comparison_plot(df, colname, title = ''):
     width = 0.3
     rects1 = ax.bar(x - width/2, total_tweets, width, label='tweets')
     rects2 = ax.bar(x + width/2, filtered, width, label= 'tweets with ' + colname)
-    
+
     # Setting labels
     ax.set_ylabel('Frequency')
     ax.set_title(title)
@@ -399,7 +399,7 @@ def only_mentions(lst):
     pattern = re.compile('\.?@\w+')
     mentions = [mention for mention in lst if pattern.match(mention)]
     if len(mentions) == 0:
-        mentions = ''         
+        mentions = ''
     return mentions
 
 def only_hash(string):
@@ -432,7 +432,7 @@ def hash2word(hashtag):
         words.append(word)
         words = ' '.join(words)
     return words
-    
+
 def no_mentions(lst, lang = 'es'):
     if lang == 'es':
         rep = 'usuario'
@@ -542,7 +542,7 @@ df_merged_es.head()
 16    porque    43.0    10.0
 39        ni    16.0     1.0
 40        le    16.0     3.0
-45     están    15.0     3.0
+45     estÃ¡n    15.0     3.0
 ```
 
 ```py
@@ -563,7 +563,7 @@ merge_negative_stops_es = df_merged_es.sort_values(by='freq_x', ascending=False)
 16    porque    43.0    10.0
 39        ni    16.0     1.0
 40        le    16.0     3.0
-45     están    15.0     3.0
+45     estÃ¡n    15.0     3.0
 ```
 
 ```py
@@ -579,10 +579,10 @@ false_stops_en = list(df_merged_en[(df_merged_en.freq_x > 1) | (df_merged_en.fre
 ```
 
 ```output
-['no', 'porque', 'ni', 'le', 'están']
+['no', 'porque', 'ni', 'le', 'estÃ¡n']
 ```
 
-### 6.4 Normalizing laughing ‘jaja’
+### 6.4 Normalizing laughing â€˜jajaâ€™
 
 ```py
 jaja_checker = []
@@ -594,7 +594,7 @@ pattern_en = re.compile('a*ha+h[ha]*|lo+l')
 for index, row in df.iterrows():
     tweet_es = row.tweets_es
     tweet_en = row.tweets_en
-    
+
 #     find_en = re.findall('a*ha+h[ha]* | lo+l', tweet_en)
     finded = re.findall('j\w*j\w*j\w*|a*ja+j[ja]*|lo+l', tweet_es)
     if finded != []:
@@ -616,7 +616,7 @@ df['jaja_checker'] = jaja_checker
 ```
 
 ```output
-["@ElSpeaker Life takes us through inextricable ways  laugh  I'm glad you have molado today's program", '@ Mamiauryner1 especially hope to have it with my  laugh  child. thanks beautiful ♥']
+["@ElSpeaker Life takes us through inextricable ways  laugh  I'm glad you have molado today's program", '@ Mamiauryner1 especially hope to have it with my  laugh  child. thanks beautiful â™¥']
 ```
 
 ```py
@@ -640,10 +640,10 @@ head(df_eda) %>% kable() %>% scroll_box(width = '100%')
 
 | X | tweets_es (resumen) | tweets_en (resumen) | tokens_es | tokens_en | lemas_es | lemas_en | stops_es | stops_en | target | jaja_checker | tokens_jaja_es | tokens_jaja_en | lemas_jaja_es | lemas_jaja_en |
 |---|----------------------|----------------------|------------|------------|------------|------------|------------|------------|---------|---------------|----------------|----------------|----------------|----------------|
-| 0 | @sosagraphs Pues tan sencillo porque en su día me puse a hacerlo... | For @sosagraphs so simple because at the time I started to do... | ['estilos', 'y', 'encargos', ...] | ['commissions', 'crack', 'time', ...] | ['hacerlo', 'porque', 'encargo', ...] | ['style', 'crack', 'time', ...] | ['pues', 'tan', 'porque', ...] | ['for', 'so', 'because', ...] | 3 | — | ['hacerlo', 'porque', 'estilos', ...] | ['commissions', 'crack', 'time', ...] | ['hacerlo', 'porque', 'encargo', ...] | ['style', 'crack', 'time', ...] |
-| 1 | 1477. No pero porque apenas hay confi | 1477. No but because there just confi | ['confi', '1477'] | ['confi', '1477'] | ['confi', 'porque', '1477', ...] | ['because', 'confi', '1477'] | ['no', 'pero', 'porque', ...] | ['no', 'but', 'because', ...] | 0 | — | ['confi', 'porque', '1477', ...] | ['because', 'confi', '1477'] | ['confi', 'porque', '1477', ...] | ['because', 'confi', '1477'] |
-| 2 | Vale he visto la tia bebiendose su regla y me hs dado muchs grima | It’ve seen the aunt drinking his rule and hs given me muchs grima | ['bebiendose', 'hs', 'grima', ...] | ['aunt', 'rule', 'hs', ...] | ['bebiendose', 'hs', 'grima', ...] | ['aunt', 'rule', 'hs', ...] | ['he', 'la', 'su', ...] | ['the', 'his', 'and', ...] | 0 | — | ['bebiendose', 'hs', 'grima', ...] | ['aunt', 'rule', 'hs', ...] | ['bebiendose', 'hs', 'grima', ...] | ['aunt', 'rule', 'hs', ...] |
-| 3 | @Baronachor El concepto es de lo más bonico, pero de eso a serlo hay un trecho | @Baronachor The concept is most bonico, but that there is a stretch to be | ['bonico', 'concepto', 'serlo', ...] | ['bonico', 'concept', 'stretch', ...] | ['bonico', 'concepto', 'serlo', ...] | ['bonico', 'stretch', 'concept', ...] | ['el', 'es', 'de', 'lo', ...] | ['the', 'is', 'most', 'but', ...] | 1 | — | ['bonico', 'concepto', 'serlo', ...] | ['bonico', 'stretch', 'concept', ...] | ['bonico', 'concepto', 'serlo', ...] | ['bonico', 'stretch', 'concept', ...] |
+| 0 | @sosagraphs Pues tan sencillo porque en su dÃ­a me puse a hacerlo... | For @sosagraphs so simple because at the time I started to do... | ['estilos', 'y', 'encargos', ...] | ['commissions', 'crack', 'time', ...] | ['hacerlo', 'porque', 'encargo', ...] | ['style', 'crack', 'time', ...] | ['pues', 'tan', 'porque', ...] | ['for', 'so', 'because', ...] | 3 | â€” | ['hacerlo', 'porque', 'estilos', ...] | ['commissions', 'crack', 'time', ...] | ['hacerlo', 'porque', 'encargo', ...] | ['style', 'crack', 'time', ...] |
+| 1 | 1477. No pero porque apenas hay confi | 1477. No but because there just confi | ['confi', '1477'] | ['confi', '1477'] | ['confi', 'porque', '1477', ...] | ['because', 'confi', '1477'] | ['no', 'pero', 'porque', ...] | ['no', 'but', 'because', ...] | 0 | â€” | ['confi', 'porque', '1477', ...] | ['because', 'confi', '1477'] | ['confi', 'porque', '1477', ...] | ['because', 'confi', '1477'] |
+| 2 | Vale he visto la tia bebiendose su regla y me hs dado muchs grima | Itâ€™ve seen the aunt drinking his rule and hs given me muchs grima | ['bebiendose', 'hs', 'grima', ...] | ['aunt', 'rule', 'hs', ...] | ['bebiendose', 'hs', 'grima', ...] | ['aunt', 'rule', 'hs', ...] | ['he', 'la', 'su', ...] | ['the', 'his', 'and', ...] | 0 | â€” | ['bebiendose', 'hs', 'grima', ...] | ['aunt', 'rule', 'hs', ...] | ['bebiendose', 'hs', 'grima', ...] | ['aunt', 'rule', 'hs', ...] |
+| 3 | @Baronachor El concepto es de lo mÃ¡s bonico, pero de eso a serlo hay un trecho | @Baronachor The concept is most bonico, but that there is a stretch to be | ['bonico', 'concepto', 'serlo', ...] | ['bonico', 'concept', 'stretch', ...] | ['bonico', 'concepto', 'serlo', ...] | ['bonico', 'stretch', 'concept', ...] | ['el', 'es', 'de', 'lo', ...] | ['the', 'is', 'most', 'but', ...] | 1 | â€” | ['bonico', 'concepto', 'serlo', ...] | ['bonico', 'stretch', 'concept', ...] | ['bonico', 'concepto', 'serlo', ...] | ['bonico', 'stretch', 'concept', ...] |
 
 ### 6.5 Lemas Analysis
 
@@ -734,10 +734,10 @@ df_eda_3 %>% kable()
 
 | X | tweets_es (resumen) | tweets_en (resumen) | mentions |
 |---|----------------------|----------------------|-----------|
-| 0 | @sosagraphs Pues tan sencillo porque en su día me puse a hacerlo y es de lo que más encargos me hacen... | For @sosagraphs so simple because at the time I started to do and what makes me more commissions... | ['@sosagraphs'] |
-| 1 | No pero porque apenas hay confi | No but because there just confi | — |
-| 2 | Vale he visto la tía bebiéndose su regla y me hs dado muchs grima | It’ve seen the aunt drinking his rule and hs given me muchs Grima | — |
-| 3 | @Baronachor El concepto es de lo más bonico, pero de eso a serlo hay un trecho | @Baronachor The concept is most bonico, but that there is a stretch to be | ['@baronachor'] |
+| 0 | @sosagraphs Pues tan sencillo porque en su dÃ­a me puse a hacerlo y es de lo que mÃ¡s encargos me hacen... | For @sosagraphs so simple because at the time I started to do and what makes me more commissions... | ['@sosagraphs'] |
+| 1 | No pero porque apenas hay confi | No but because there just confi | â€” |
+| 2 | Vale he visto la tÃ­a bebiÃ©ndose su regla y me hs dado muchs grima | Itâ€™ve seen the aunt drinking his rule and hs given me muchs Grima | â€” |
+| 3 | @Baronachor El concepto es de lo mÃ¡s bonico, pero de eso a serlo hay un trecho | @Baronachor The concept is most bonico, but that there is a stretch to be | ['@baronachor'] |
 
 
 ```py
@@ -769,8 +769,8 @@ df_eda_4 %>% kable()
 | X  | tweets_es (resumen) | tokens_es | hashtags |
 |----|----------------------|------------|-----------|
 | 7  | @Diego_FDM @el_pais La noticia perfecta para #NotasDelMisterio | ['notasdelmisterio', 'noticia', '@diego_fdm', 'perfecta', '@el_pais'] | ['NotasDelMisterio'] |
-| 15 | Hoy microaventura en #kayak con dos expertos kayakistas Ría de Villaviciosa. @ El Puntal… https://t.co/y7j88bRmYK | ['microaventura', 'expertos', 'kayak', 'villaviciosa', 'puntal', 'https://t.co/y7j88brmyk', 'kayakistas', 'ría'] | ['kayak'] |
-| 26 | 6 momentos en los que usar lentes de contacto es simplemente mejor ¡Feliz lunes! https://t.co/x06G1nkaH1 #optometria #lentesdecontacto | ['feliz', 'contacto', 'https://t.co/x06g1nkah1', 'lentesdecontacto', '6', 'simplemente', 'optometria', 'momentos', 'lunes', 'lentes'] | ['optometria', 'lentesdecontacto'] |
+| 15 | Hoy microaventura en #kayak con dos expertos kayakistas RÃ­a de Villaviciosa. @ El Puntalâ€¦ https://t.co/y7j88bRmYK | ['microaventura', 'expertos', 'kayak', 'villaviciosa', 'puntal', 'https://t.co/y7j88brmyk', 'kayakistas', 'rÃ­a'] | ['kayak'] |
+| 26 | 6 momentos en los que usar lentes de contacto es simplemente mejor Â¡Feliz lunes! https://t.co/x06G1nkaH1 #optometria #lentesdecontacto | ['feliz', 'contacto', 'https://t.co/x06g1nkah1', 'lentesdecontacto', '6', 'simplemente', 'optometria', 'momentos', 'lunes', 'lentes'] | ['optometria', 'lentesdecontacto'] |
 
 #### 6.7.1 Hashtags distribution analysis
 
@@ -817,14 +817,14 @@ negative_hashtags.head(10)
            hashtags  freq
 0    askalvarogango     2
 1         Algeciras     1
-2          Sangüesa     1
+2          SangÃ¼esa     1
 3              rcde     1
 4   justice4hombres     1
 5  investiduraRajoy     1
 6     emprendedores     1
 7             dgtes     1
 8            crisis     1
-9      corrupciónPP     1
+9      corrupciÃ³nPP     1
 ```
 
 ```py
@@ -841,7 +841,7 @@ positive_hashtags = df_hashtags_freq[df_hashtags_freq.target == 3]\
 3  TonyYSorayaEnMalaga     1
 4      TrendingEstreno     1
 5          WillyToledo     1
-6            ahílodejo     1
+6            ahÃ­lodejo     1
 7       altafitdonosti     1
 8               askLFI     1
 9       askalvarogango     1
@@ -889,9 +889,9 @@ read.csv('df_eda_05.csv') %>% kable()
 
 | X  | tweets_es (resumen) | tweets_en (resumen) | hash2words |
 |----|----------------------|----------------------|-------------|
-| 5  | Como siempre mi tortilla triunfa más que otros platos #playa… https://t.co/C60TC2teqV | As always my omelet triumphs over other dishes #beach… https://t.co/C60TC2teqV | playa |
+| 5  | Como siempre mi tortilla triunfa mÃ¡s que otros platos #playaâ€¦ https://t.co/C60TC2teqV | As always my omelet triumphs over other dishes #beachâ€¦ https://t.co/C60TC2teqV | playa |
 | 7  | @Diego_FDM @el_pais La noticia perfecta para #NotasDelMisterio | @Diego_FDM @el_pais The perfect news for #NotasDelMisterio | notas del Misterio |
-| 26 | 6 momentos en los que usar lentes de contacto es simplemente mejor ¡Feliz lunes! https://t.co/x06G1nkaH1 #optometria #lentesdecontacto | 6 times when contact lenses used is simply better Happy Monday! https://t.co/x06G1nkaH1 #optometria #lentesdecontacto | optometria lentesdecontacto |
+| 26 | 6 momentos en los que usar lentes de contacto es simplemente mejor Â¡Feliz lunes! https://t.co/x06G1nkaH1 #optometria #lentesdecontacto | 6 times when contact lenses used is simply better Happy Monday! https://t.co/x06G1nkaH1 #optometria #lentesdecontacto | optometria lentesdecontacto |
 
 ### 6.8 Emojis analysis
 
@@ -910,7 +910,7 @@ for tweet in df.tweets_es:
         emojis_en.append(emojis)
     else:
         emojis_en.append('')
-        
+
 df['emojis_en'] = emojis_en
 df_emojis = df[df.emojis_en != '']
 
@@ -923,7 +923,7 @@ df_emojis = df[df.emojis_es != '']
 ```
 
 ```output
-['cara con lágrimas de alegría', 'cara con lágrimas de alegría']
+['cara con lÃ¡grimas de alegrÃ­a', 'cara con lÃ¡grimas de alegrÃ­a']
 ```
 
 ```r
@@ -932,8 +932,8 @@ read.csv('df_eda_07.csv') %>% kable()
 
 | X  | tweets_es (resumen) | emojis_en | emojis_es |
 |----|----------------------|------------|------------|
-| 23 | @mamiauryner1 espero sobretodo tenerla con mi niño risa. gracias guapa ♥ | ['heart suit'] | ['palo de corazón'] |
-| 67 | @aaron_np @OjeraFarlopera_ @Nerea_RMCF93 somos antifas y bebemos agua de pantanos que hizo Franco… que pena. Mira, me meo 😂😂 | ['face with tears of joy', 'face with tears of joy'] | ['cara con lágrimas de alegría', 'cara con lágrimas de alegría'] |
+| 23 | @mamiauryner1 espero sobretodo tenerla con mi niÃ±o risa. gracias guapa â™¥ | ['heart suit'] | ['palo de corazÃ³n'] |
+| 67 | @aaron_np @OjeraFarlopera_ @Nerea_RMCF93 somos antifas y bebemos agua de pantanos que hizo Francoâ€¦ que pena. Mira, me meo ðŸ˜‚ðŸ˜‚ | ['face with tears of joy', 'face with tears of joy'] | ['cara con lÃ¡grimas de alegrÃ­a', 'cara con lÃ¡grimas de alegrÃ­a'] |
 
 ```output
                 emojis_en  target
@@ -953,7 +953,7 @@ countplot(emojis_en_freq, title = 'Number of emojis by category')
 
 ### 6.9 Unknown words analysis
 
-Let’s detect all lemas that aren’t in the vocabulary
+Letâ€™s detect all lemas that arenâ€™t in the vocabulary
 
 ```py
 def ukn_cleaner(txt):
@@ -987,7 +987,7 @@ df_unknown.head(10)
 104            gemeliers     2
 66           felizmartes     2
 90                  vmas     2
-42                niñuca     2
+42                niÃ±uca     2
 1                unicovy     1
 145                  mgw     1
 137  sesiondeinvestidura     1
@@ -1009,11 +1009,11 @@ a @sosagraphs sencillo estilos crack puse aparte encargos y
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1049,11 +1049,11 @@ print(X_tokenized_en[:2])
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1089,11 +1089,11 @@ X_tokenized_en_2 = [' '.join(lema) for lema in list(df['tokens_en*'])]
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1129,11 +1129,11 @@ X_tokenized_es_2 = [' '.join(lema) for lema in list(df['tokens_es*'])]
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1169,11 +1169,11 @@ X_lematized_es = [' '.join(lema) for lema in list(df.lemas_es)]
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1209,11 +1209,11 @@ X_lematized_en = [' '.join(lema) for lema in list(df.lemas_en)]
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1245,15 +1245,15 @@ X_tokens_emojis_es = [' '.join(token) + ' ' + ' '.join(emoji) for token, emoji i
 ```
 
 ```output
-pena meo bebemos antifas franco 😂 somos pantanos @ojerafarlopera hizo mira @aaron_np agua @nerea_rmcf93 y cara con lágrimas de alegría cara con lágrimas de alegría
+pena meo bebemos antifas franco ðŸ˜‚ somos pantanos @ojerafarlopera hizo mira @aaron_np agua @nerea_rmcf93 y cara con lÃ¡grimas de alegrÃ­a cara con lÃ¡grimas de alegrÃ­a
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1289,11 +1289,11 @@ X_tokenized_jaja_es = [' '.join(token) for token in list(df.tokens_jaja_es)]
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1328,11 +1328,11 @@ X_tokenized_jaja_en = [' '.join(token) for token in list(df.tokens_jaja_en)]
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1368,11 +1368,11 @@ X_tokenized_jaja_hash_es = [' '.join(token) + ' ' + ' '.join(hash) for token, ha
 ```
 
 ```output
-Documents processed 
+Documents processed
 
-Vectorizer Done 
+Vectorizer Done
 
-Starting trainning 
+Starting trainning
 
 ------------------------------------------
               precision    recall  f1-score   support
@@ -1441,22 +1441,22 @@ def svm_model(X, Y):
     print('Documents processed', '\n')
     vectorizer = CountVectorizer()
     X = vectorizer.fit_transform(documents).toarray()
-    
+
     # The data is divided into 20% test set and 80% training set.
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-    
-    
-    # Create the parameter grid based on the results of random search 
+
+
+    # Create the parameter grid based on the results of random search
     params_grid = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
                          'C': [1, 10, 100, 1000]},
                         {'kernel': ['linear'], 'C': [1, 10, 100, 1000]}]
-    
+
 
     clf = GridSearchCV(SVC(decision_function_shape='ovr'), params_grid, cv=5)
     final_model = clf.fit(X_train, y_train)
-    
+
 #     y_pred = final_model.predict(X_test)
-    
+
     # View the accuracy score
     print('Best score for training data:', final_model.best_score_,"\n")
 
@@ -1476,9 +1476,9 @@ def svm_model(X, Y):
 #     print(classification_report(y_test,y_pred))
 #     print("------------------------------------------")
 #     print("accuracy",accuracy_score(y_test, y_pred))
-    
+
     acc = accuracy_score(y_test, y_pred)
-    
+
     return acc, kernel, c, gamma
 ```
 
@@ -1528,7 +1528,7 @@ import math
 # Plotting data
 labels = ['tokens Spanish (Spacy)', 'default tweets_es', 'tokens English (Spacy)','tokens Spanish (false stops)' ,'tokens Spanish (fs) & jaja', 'tokens English (fs) & jaja', 'tokens Spanish (fs) & jaja & hashtag', 'lemas English (false stops)', 'tokens Spanish (fs) & emojis', 'lemas Spanish (false stops)', 'tokens English (false stops)']
 
-svm = [0.430693, 0.445545, 0.450495, 0.514851, 0.519802, 0.519802, 0.519802, 0.524752, 0.524752, 0.529703, 0.539604] 
+svm = [0.430693, 0.445545, 0.450495, 0.514851, 0.519802, 0.519802, 0.519802, 0.524752, 0.524752, 0.529703, 0.539604]
 bayes = [0.435644, 0.400990, 0.435644, 0.485149, 0.490099, 0.445545, 0.495050, 0.435644, 0.485149, 0.480198, 0.445545]
 ```
 
@@ -1541,3 +1541,4 @@ bayes = [0.435644, 0.400990, 0.435644, 0.485149, 0.490099, 0.445545, 0.495050, 0
 ## References & other links
 
 - You can check the repository [here](https://github.com/charlstown/SentimentalAnalysisTwitter)
+
