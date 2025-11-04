@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Machine learning basics
 description: none
 date: 2020-01-06
@@ -28,11 +28,11 @@ A multifeature variable is a variable that stores several related characteristic
 
     When defining your feature matrix **X**:
 
-    - Always include a **bias term**:  
-      `X₀ = 1` for all rows.
-    - **X₁ … Xₙ** → feature columns (n variables)
-    - **m** → number of training examples (rows)
-    - **X<sub>1</sub><sup>1</sup> … X<sub>1</sub><sup>m</sup>** → feature values per example
+    - Always include a **bias term**:
+      `Xâ‚€ = 1` for all rows.
+    - **Xâ‚ â€¦ Xâ‚™** â†’ feature columns (n variables)
+    - **m** â†’ number of training examples (rows)
+    - **X<sub>1</sub><sup>1</sup> â€¦ X<sub>1</sub><sup>m</sup>** â†’ feature values per example
 
 
 ### Equations
@@ -112,9 +112,9 @@ A multifeature variable is a variable that stores several related characteristic
     The initial cost for theta [0 0] is J = 32.072733877455676
     ```
 
-    The cost value of 32.07 shows that the model’s predictions are still quite far from the actual data points.
+    The cost value of 32.07 shows that the modelâ€™s predictions are still quite far from the actual data points.
 
-    This high error indicates that the initial parameters (θ = [0, 0]) need to be adjusted through training to better fit the data.
+    This high error indicates that the initial parameters (Î¸ = [0, 0]) need to be adjusted through training to better fit the data.
 
 3. __Gradient descent calculation__
 
@@ -173,18 +173,18 @@ A multifeature variable is a variable that stores several related characteristic
 
 Logistic Regression Classification is a method used to predict whether something belongs to one of two categories (like yes/no or 0/1).
 
-It works by finding a relationship between the input features and the probability of an outcome using a special “S-shaped” curve called the sigmoid function.
+It works by finding a relationship between the input features and the probability of an outcome using a special â€œS-shapedâ€ curve called the sigmoid function.
 
 ### Table data example
 
 | Data   | y | x1 | x2 | x3 | ... | x29 | x30 |
 |--------|---|----|----|----|-----|------|------|
-| Nº 1   | 0 | 1  | 0  | 1  | ... | 1    | 1    |
-| Nº 2   | 1 | 0  | 0  | 0  | ... | 1    | 1    |
-| Nº 3   | 0 | 0  | 0  | 1  | ... | 0    | 1    |
+| NÂº 1   | 0 | 1  | 0  | 1  | ... | 1    | 1    |
+| NÂº 2   | 1 | 0  | 0  | 0  | ... | 1    | 1    |
+| NÂº 3   | 0 | 0  | 0  | 1  | ... | 0    | 1    |
 | ...    |...|... |... |... | ... | ...  | ...  |
-| Nº 599 | 1 | 0  | 1  | 0  | ... | 0    | 1    |
-| Nº 600 | 1 | 1  | 0  | 1  | ... | 0    | 0    |
+| NÂº 599 | 1 | 0  | 1  | 0  | ... | 0    | 1    |
+| NÂº 600 | 1 | 1  | 0  | 1  | ... | 0    | 0    |
 
 
 ### Equations
@@ -195,7 +195,7 @@ It works by finding a relationship between the input features and the probabilit
     h_\theta(x) = g(\theta^T x) = \frac{1}{1 + e^{-\theta^T x}} \\
     h_\theta(x) = P(y = 1 \mid x; \theta)
     $$
-    
+
     ![Basic Sigmoid function](../../assets/images/notebooks/machine-learning-sigmoid-function.png)
 
     $$
@@ -250,12 +250,12 @@ It works by finding a relationship between the input features and the probabilit
 
 ### Decision boundary
 
-This image shows how logistic regression divides data into two groups (Male and Female) using a decision boundary — the blue line.
+This image shows how logistic regression divides data into two groups (Male and Female) using a decision boundary â€” the blue line.
 
 Points on one side of the line are predicted as one class, and those on the other side as the opposite class; the line itself represents where the model is 50% unsure between the two.
 
 $$
-\text{when: } 
+\text{when: }
 \begin{cases}
 h(x) = 0 \\
 g(z) = 0.5 \\
@@ -383,7 +383,7 @@ $$
     THE FINAL THETA IS [[-1.31988582  0.0196853   0.01075302]]
 
     The minimum error found with 300k cycles and alpha = 0.001068 is J = 0.27582976320910635
-    And the final theta is: 
+    And the final theta is:
     [[-9.78506335  0.08377175  0.0775022 ]]
     ```
 
@@ -492,3 +492,4 @@ $$
 J(\theta) = -\frac{1}{m} \left[ \sum_{i=1}^{m} \sum_{k=1}^{K} y_k^{(i)} \log h_\theta(x^{(i)})_k + (1 - y_k^{(i)}) \log(1 - h_\theta(x^{(i)})_k) \right]
 + \frac{\lambda}{2m} \sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} (\theta_{ji}^{(l)})^2
 $$
+

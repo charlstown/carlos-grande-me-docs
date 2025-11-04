@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Space of flows
 description: none
 date: 2020-01-06
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/space-of-flows-portrait.jpeg
 
 # Space of flows
 
-![Cities without borders – The digital merges with the physical.](../../assets/images/references/castells-space-of-flows.jpg){ .image-caption }
+![Cities without borders â€“ The digital merges with the physical.](../../assets/images/references/castells-space-of-flows.jpg)
 
 I wanted to post one of my favorite concepts about future cities, the *space of flows* coined by Manuel Castells. Castells supports that there is a new form of space typical of the social practice that domains and shapes the structure of society, he called it the *space of flows*. For Castells this space is the new matter setting up how our societies are made, *space of flows* means that physical space stops being considered absolute, and blends with the digital dimension.
 

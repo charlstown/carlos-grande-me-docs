@@ -1,4 +1,4 @@
----
+﻿---
 short_title: The Business model design
 description: none
 date: 2020-11-16
@@ -45,7 +45,7 @@ If we want to estimate the number of traffic lights inside the road ring M-30 in
 *The distance between intersections = 100 m*
 *One intersection has 4 ligths*
 
-![How many traffics lights are in Madrid city? - Solution A](../../assets/images/notebooks/traffic-lights-madrid.png){ .image-caption }
+![How many traffics lights are in Madrid city? - Solution A](../../assets/images/notebooks/traffic-lights-madrid.png)
 
 
 ##### SOLUTION B
@@ -57,7 +57,7 @@ If we want to estimate the number of traffic lights inside the road another solu
 *One square = 8 traffic lights*
 *Madrid is around x wide by 1.5x high*
 
-![How many traffics lights are in Madrid city? - Solution B](../../assets/images/notebooks/traffic-lights-madrid-b.png){ .image-caption }
+![How many traffics lights are in Madrid city? - Solution B](../../assets/images/notebooks/traffic-lights-madrid-b.png)
 
 
 
@@ -127,7 +127,7 @@ This estimate suggests that Madrid likely requires around **26,000 mechanics to 
 
 ## The Business Model
 
-A great example of this relation between the product and the business model could be the coffee bean as a product. 
+A great example of this relation between the product and the business model could be the coffee bean as a product.
 
 Company A: serves coffee directly to consumers in a place where the coffee experience was about creating a sense of community. A lounge space with sofas and wifi where you feel so comfortable.
 Can you guess the name of this company A? yes, it's Starbucks.
@@ -179,7 +179,7 @@ Stay up to date with all the latest research from across Think with Google. Insi
 
 #### Google Find My Audience
 
-Find My Audience helps you understand who your most valuable customers are on YouTube — so you can discover new audiences and learn how to reach them individually with relevant messages.
+Find My Audience helps you understand who your most valuable customers are on YouTube â€” so you can discover new audiences and learn how to reach them individually with relevant messages.
 
 [:octicons-arrow-right-16: Google find my audience](https://www.thinkwithgoogle.com/feature/findmyaudience/)
 
@@ -191,7 +191,7 @@ Free tool to identify new potential markets, discover helpful operational inform
 
 #### Rising Retail Categories
 
-Use this interactive tool to understand fast-rising retail categories in Google Search, the locations where they’re growing, and the queries associated with them. The data will update daily to reflect changes in Search interests.
+Use this interactive tool to understand fast-rising retail categories in Google Search, the locations where theyâ€™re growing, and the queries associated with them. The data will update daily to reflect changes in Search interests.
 
 [:octicons-arrow-right-16: Trends category](https://www.thinkwithgoogle.com/feature/category-trends)
 
@@ -214,7 +214,7 @@ As Lean Startup declares, the golden rule is to validate the customer environmen
 
 2. **Map your stakeholders.** A significant way to map the stakeholders is by dividing them into two different groups, the inside, and the outside. Subsequently, you can draw them by their relations following the value proposition, the buyers, and the sellers. After generating this map you should ask yourself where is located your business model inside this map.
 
-	![Online privacy stakeholders](../../assets/images/notebooks/business-stakeholders.jpeg){ .image-caption }
+	![Online privacy stakeholders](../../assets/images/notebooks/business-stakeholders.jpeg)
 
 3. **Understand Your Key Stakeholders.** A simple way to summarize the level of backing you have from your stakeholders is to color-code them. For example, show advocates and supporters in green, blockers and critics in red, and those who are neutral in orange.
 
@@ -237,21 +237,21 @@ Customer segments are the community of customers or businesses that you are aimi
 	- **SAM:** serviceable available market
 	- **SOM:** serviceable obtainable market
 
-- **Define the problem or need solved with your business model:** Focus and describes how you solve your client’s need.
+- **Define the problem or need solved with your business model:** Focus and describes how you solve your clientâ€™s need.
 
 ### 2. Value propositions
 
-A value proposition is designed to convince a potential customer that your particular product or service will add more value or better solve a problem than your competition. It should answer the fundamental question of **“Why should I buy your product instead of your competitor’s product?”**
+A value proposition is designed to convince a potential customer that your particular product or service will add more value or better solve a problem than your competition. It should answer the fundamental question of **â€œWhy should I buy your product instead of your competitorâ€™s product?â€**
 
 - **Describe your product or service:** Describe and list your value proposition, focus on the problem you are solving.
 
 - **List the benefits that your idea provides to your client segment:** List all the advantages that your idea provide to the market you are serving to.
 
-- **Describe the reason why your potential client is choosing you:** Describe the reason and link it your client’s type.
+- **Describe the reason why your potential client is choosing you:** Describe the reason and link it your clientâ€™s type.
 
 ### 3. Customer relationships
 
-Customer relationships describes **the type of relationship a company establishes with it’s specific customer segments.** Customer relationships are driven by customer acquisition, customer retention, and boosting sales – in other words you need to get, keep, and grow your customer relationships.
+Customer relationships describes **the type of relationship a company establishes with itâ€™s specific customer segments.** Customer relationships are driven by customer acquisition, customer retention, and boosting sales â€“ in other words you need to get, keep, and grow your customer relationships.
 
 - **Capture:** List at least three the activities to gain clients
 
@@ -263,7 +263,7 @@ In this section, it would be helpful to estimate the **conversion rates** from t
 
 ### 4. Channels
 
-Channels are ways for you to reach your Customer Segments. And remember that in the initial stages it’s important not to think about scale but to **focus on learning**. With that in mind try to think which channels will give you enough access to your Customer Segments at the same time give you enough learning. Channels can be email, social, CPC ads, blogs, articles, trade shows, radio & TV, webinars etc. and BTW you don’t have to be on all of them, just where your Customer Segments are.
+Channels are ways for you to reach your Customer Segments. And remember that in the initial stages itâ€™s important not to think about scale but to **focus on learning**. With that in mind try to think which channels will give you enough access to your Customer Segments at the same time give you enough learning. Channels can be email, social, CPC ads, blogs, articles, trade shows, radio & TV, webinars etc. and BTW you donâ€™t have to be on all of them, just where your Customer Segments are.
 
 **Channels:** Describe 2-3 channels to provide your value proposition.
 
@@ -274,7 +274,7 @@ Channels are ways for you to reach your Customer Segments. And remember that in 
 Remember that one more channel implies one more cost too.
 
 ### 5. Revenue streams
-How you price your business will depend on the type of model it is, however, it’s quite common for startups to lower their cost, even offer it for free to gain traction, however, this can pose a few problems. The key being it actually delays/avoids validation. Getting people to sign up for something for free is a lot different than asking them to pay. There is also the idea of perceived value.
+How you price your business will depend on the type of model it is, however, itâ€™s quite common for startups to lower their cost, even offer it for free to gain traction, however, this can pose a few problems. The key being it actually delays/avoids validation. Getting people to sign up for something for free is a lot different than asking them to pay. There is also the idea of perceived value.
 
 - **Revenue model:** Describe your revenue model type like pay per use, license, renting, asset sale, advertising, subscription...
 
@@ -319,7 +319,7 @@ Ex: distribution, shipping, hosting provider, software development, marketing, c
 
 ### 9. Cost structure
 
-Here you should list all the operational costs for taking this business to market. How much will it cost to build your idea? What is your burn rate — your total monthly running costs? How much will it cost to interview your customer segment? How much do market research papers cost? etc. You can then use these costs and potential revenue streams to calculate a rough break-even point.
+Here you should list all the operational costs for taking this business to market. How much will it cost to build your idea? What is your burn rate â€” your total monthly running costs? How much will it cost to interview your customer segment? How much do market research papers cost? etc. You can then use these costs and potential revenue streams to calculate a rough break-even point.
 
 - **Key activities costs (internal):** App development, design, customer service, shiping etc.
 - **Key resources costs (internal):** Office space, warehouse, computers, licenses, designers, etc.

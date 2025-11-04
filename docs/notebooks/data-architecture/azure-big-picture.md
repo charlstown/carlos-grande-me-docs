@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Azure Big Picture
 description: none
 date: 2021-12-05
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/azure-big-picture-portrait.jpg
 
 # Azure Big Picture
 
-![Azure Big Picture - Soviet control room](https://carlosgrande.me/wp-content/uploads/2021/09/2109_AzureBigPicture.jpg){ .image-caption }
+![Azure Big Picture - Soviet control room](https://carlosgrande.me/wp-content/uploads/2021/09/2109_AzureBigPicture.jpg)
 
 I recently grabbed some notes about Azure services on a course from Walt Ritscher. I really think the contents of this course are great to understand the Azure big picture ecosystem.
 
@@ -15,7 +15,7 @@ I recently grabbed some notes about Azure services on a course from Walt Ritsche
 
 ## What is a cloud computing Model?
 
-According to the National Institute of Standards and Technologies (NIST), cloud computing is a model for enabling convenient, on-demand network access to a shared pool of configurable computing resources (networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. Being a cloud computing provider doesn’t mean just supplementing IT resources, it means providing strategic, core information technology.
+According to the National Institute of Standards and Technologies (NIST), cloud computing is a model for enabling convenient, on-demand network access to a shared pool of configurable computing resources (networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. Being a cloud computing provider doesnâ€™t mean just supplementing IT resources, it means providing strategic, core information technology.
 
 This cloud model is composed of five essential characteristics:
 - On-demand self-service
@@ -78,15 +78,15 @@ You can use the Azure WebJobs SDK with WebJobs to simplify many programming task
 
 | Technology              | Use Case                                                                                                                                                                                                 |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Azure Functions         | Azure functions are best suited for **smaller apps have events that can work independently of other websites**. An Azure Functions is in many ways similar to a WebJob, the main difference between them being that you don’t need to worry about the infrastructure at all. |
+| Azure Functions         | Azure functions are best suited for **smaller apps have events that can work independently of other websites**. An Azure Functions is in many ways similar to a WebJob, the main difference between them being that you donâ€™t need to worry about the infrastructure at all. |
 | Azure Durable Functions | Durable Functions is an extension of Azure Functions that lets you write stateful functions in a serverless compute environment.                                                                          |
 | Azure WebJobs           | If you have an App Service app for which you want to run code snippets, and you want to manage them together in the same DevOps environment, use WebJobs.                                                |
 
 ## Workflows
 
-Microsoft offers a few ‘no-code’ automation solutions within Azure/Microsoft 365. If we take a look at the moment popular ones: Logic Apps and Power Automate.
+Microsoft offers a few â€˜no-codeâ€™ automation solutions within Azure/Microsoft 365. If we take a look at the moment popular ones: Logic Apps and Power Automate.
 
-When we put the two next to each other, you will see that they look mostly alike. The ‘code’ blocks are often the same between Power Automate and Logic Apps. The only main visual difference between the two is the portal were you build them.
+When we put the two next to each other, you will see that they look mostly alike. The â€˜codeâ€™ blocks are often the same between Power Automate and Logic Apps. The only main visual difference between the two is the portal were you build them.
 
 ### Azure Logic Apps
 
@@ -107,13 +107,13 @@ Power Automate is a service that helps you create automated workflows between yo
 
 ### Blob storage
 
-Blob Storage is Microsoft Azure’s service for storing binary large objects or blobs which are typically composed of unstructured data such as text, images, and videos, along with their metadata. Blobs are stored in directory-like structures called “containers.”
+Blob Storage is Microsoft Azureâ€™s service for storing binary large objects or blobs which are typically composed of unstructured data such as text, images, and videos, along with their metadata. Blobs are stored in directory-like structures called â€œcontainers.â€
 
 **Blob Storage Categories**
 Although blob allows for storage of large binary objects in Azure, these are optimized for three different storage scenarios:
 - **Block blobs:** These are blobs that are intended to store discrete objects such as images, log files and more. Block blobs can store data up to ~5TB, or 50,000 blocks of up to 100MB each.
 - **Page blobs:** These are optimized for random read and write operations and can grow up to 8TB in size. Within the page blob category, Azure offers two types of storage: standard and premium. The latter is the most ideal for virtual machine (VM) storage disks (including the operating system disk).
-- **Append Blobs:** Optimized for append scenarios like log storage, append blogs are composed of several blocks of different sizes — up to a maximum of 4MB. Each append blob can hold up to 50,000 blocks, therefore allowing each append blob to grow up to 200GB.
+- **Append Blobs:** Optimized for append scenarios like log storage, append blogs are composed of several blocks of different sizes â€” up to a maximum of 4MB. Each append blob can hold up to 50,000 blocks, therefore allowing each append blob to grow up to 200GB.
 
 ### File storage
 
@@ -129,7 +129,7 @@ Azure Queue Storage is a service for storing large numbers of messages. You acce
 
 ### Disk storage
 
-Designed to be used with *Azure Virtual Machines and Azure VMware Solution*, Azure Disk Storage offers high-performance, durable block storage for your mission- and business-critical applications. Confidently migrate to Azure infrastructure with four disk storage options for the cloud—–Ultra Disk Storage, Premium SSD, Standard SSD, and Standard HDD—to optimize costs and performance for your workload. Get high performance with sub-millisecond latency for throughput and transaction-intensive workloads such as SAP HANA, SQL Server, and Oracle.
+Designed to be used with *Azure Virtual Machines and Azure VMware Solution*, Azure Disk Storage offers high-performance, durable block storage for your mission- and business-critical applications. Confidently migrate to Azure infrastructure with four disk storage options for the cloudâ€”â€“Ultra Disk Storage, Premium SSD, Standard SSD, and Standard HDDâ€”to optimize costs and performance for your workload. Get high performance with sub-millisecond latency for throughput and transaction-intensive workloads such as SAP HANA, SQL Server, and Oracle.
 
 ### Azure SQL Database
 
@@ -157,7 +157,7 @@ Azure Table storage is a service that stores non-relational structured data (als
 
 ### Azure Active Directory
 
-Azure Active Directory (Azure AD) is Microsoft’s cloud-based identity and access management service, which helps your employees sign in and access resources in:
+Azure Active Directory (Azure AD) is Microsoftâ€™s cloud-based identity and access management service, which helps your employees sign in and access resources in:
 - External resources, such as Microsoft 365, the Azure portal, and thousands of other SaaS applications.
 - Internal resources, such as apps on your corporate network and intranet, along with any cloud apps developed by your own organization. For more information about creating a tenant for your organization, see Quickstart: Create a new tenant in Azure Active Directory.
 
@@ -255,3 +255,4 @@ Microsoft Azure Virtual Desktop is a cloud-based virtual desktop and application
 - [Azure documentation](https://docs.microsoft.com/en-us/azure/?product=featured)
 - [Lern Azure](https://docs.microsoft.com/en-us/learn/browse/?products=azure&resource_type=learning%20path)
 - [More Notebooks like this here](https://carlosgrande.me/category/myworks/notebooks/)
+

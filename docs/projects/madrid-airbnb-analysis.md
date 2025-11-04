@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Airbnb growth analysis
 description: none
 date: 2020-01-06
@@ -52,11 +52,11 @@ After the analysis, you are able to understand the 180 thousand rows from the da
 
 <div class="gallery grid-1" markdown>
 
-![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-animation.gif){ .image-caption }
+![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-animation.gif)
 
-![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-digital-cartography.png){ .image-caption }
+![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-digital-cartography.png)
 
-![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-evolution-1518.png){ .image-caption }
+![Digital cartography. Madrid Airbnb growth between 2015-18.](../assets/images/projects/airbnb-evolution-1518.png)
 
 </div>
 

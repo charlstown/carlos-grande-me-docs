@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Death of distance
 description: none
 date: 2020-01-06
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/death-of-distance-portrait.jpeg
 
 # Death of distance
 
-![Distance disappears – Connections redefine geography.](../../assets/images/references/ratti-claudel-death-of-distance.jpg){ .image-caption }
+![Distance disappears â€“ Connections redefine geography.](../../assets/images/references/ratti-claudel-death-of-distance.jpg)
 
 I would like to post a fragment about the concept death of distance I found very interesting in one of my last reads, The City of Tomorrow written by Carlo Ratti and Matthew Claudel.
 

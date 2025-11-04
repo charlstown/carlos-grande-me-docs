@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Reinforcement learning basics
 description: none
 date: 2023-01-27
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/reinforcement-learning-basics-portrait.png
 
 # Reinforcement learning basics
 
-![Reinforcement learning basics](../../assets/images/notebooks/reinforcement-learning-portrait.png){ .image-caption }
+![Reinforcement learning basics](../../assets/images/notebooks/reinforcement-learning-portrait.png)
 
 I set out to write a post diving into the depths of the Explore-Exploit Dilemma and Multi-armed Bandit problem in reinforcement learning. I created a basic bandit machine model in Python to play with and better understand the basics. This post serves as a personal reminder of the journey, and a guide for others looking to navigate the maze of reinforcement learning methods.
 
@@ -59,7 +59,7 @@ class bandit_machine:
 
 The explore-exploit dilemma is a fundamental problem in reinforcement learning that refers to the trade-off between gathering information about the different options available to an agent and maximizing the immediate reward by exploiting the current best option. In simple terms, it is the decision of choosing between trying something new or sticking to what you know. This dilemma arises because there is a trade-off between exploration and exploitation: the more the agent explores, the less it exploits, and the less it explores, the more it exploits. Finding the right balance between exploration and exploitation is crucial to achieve the best overall performance in reinforcement learning.
 
-![Explore-exploit dilemma](../../assets/images/notebooks/reinforcement-learning-dilema.jpg){ .image-caption }
+![Explore-exploit dilemma](../../assets/images/notebooks/reinforcement-learning-dilema.jpg)
 
 > The Explore-exploit dilemma is the trade-off between gathering information and exploiting the best option in decision-making and reinforcement learning.
 
@@ -228,19 +228,19 @@ If the function (\(f(t)\)) is a decreasing function, it means that as the error 
 
 The decreasing functions:
 
-- Markov Inequality — the function decreases proportional to \(1/t\)
+- Markov Inequality â€” the function decreases proportional to \(1/t\)
 
 $$
 p(\bar{X}_n - E(X)  \geq t)  \le \frac{1}{t}
 $$
 
-- Chebyshev Inequality — the function decreases faster proportional to \(1/t^2\)
+- Chebyshev Inequality â€” the function decreases faster proportional to \(1/t^2\)
 
 $$
 p(\bar{X}_n - E(X)  \geq t)  \le \frac{1}{t^2}
 $$
 
-- Hoeffding's inequality — the function decreases faster than any polynomial proportional to \(e^{-2nt^2}\)
+- Hoeffding's inequality â€” the function decreases faster than any polynomial proportional to \(e^{-2nt^2}\)
 
 $$
 p(\bar{X}_n - E(X)  \geq t)  \le e^{-2nt^2}
@@ -331,3 +331,4 @@ In conclusion, the previous conversation covered several basic reinforcement lea
 - [Epsilon-Greedy Algorithm in Reinforcement Learning](https://www.geeksforgeeks.org/epsilon-greedy-algorithm-in-reinforcement-learning/)
 - [Artificial Intelligence: Reinforcement Learning in Python](https://www.udemy.com/course/artificial-intelligence-reinforcement-learning-in-python/)
 - [More Notebooks like this here](https://carlosgrande.me/category/myworks/notebooks/)
+

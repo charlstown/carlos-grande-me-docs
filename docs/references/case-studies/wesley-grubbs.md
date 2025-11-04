@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Wesley Grubbs
 description: none
 date: 2020-01-19
@@ -27,9 +27,9 @@ It never ceases to amaze me how frequent the importance of good design and esthe
 
 <div class="gallery grid-2 effect-zoom" markdown>
 
-![NYC daily complaint calls](../../assets/images/references/grubbs-nyc-calls-1.jpg){ .image-caption }
+![NYC daily complaint calls](../../assets/images/references/grubbs-nyc-calls-1.jpg)
 
-![NYC location complaint calls](../../assets/images/references/grubbs-nyc-calls-2.jpg){ .image-caption }
+![NYC location complaint calls](../../assets/images/references/grubbs-nyc-calls-2.jpg)
 
 </div>
 

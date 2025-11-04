@@ -1,4 +1,4 @@
----
+﻿---
 short_title: Cloud migration planning
 description: none
 date: 2021-08-25
@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/cloud-migration-planning-portrait.jpg
 
 # Cloud migration planning
 
-![Balancing risk and reward – Tennis match on a biplane, 1920s.](https://carlosgrande.me/wp-content/uploads/2021/08/BE001099.jpg){ .image-caption }
+![Balancing risk and reward â€“ Tennis match on a biplane, 1920s.](https://carlosgrande.me/wp-content/uploads/2021/08/BE001099.jpg)
 
 Migration Planning
 
@@ -98,3 +98,4 @@ When selecting a cloud provider, helps to focus on the main parameters making a 
 
 - [David Linthicum](https://www.linkedin.com/in/davidlinthicum/)
 - [More Notebooks like this here](https://carlosgrande.me/category/myworks/notebooks/)
+
