@@ -26,7 +26,7 @@
             "link": "./resources/templates/my-python-template",
             "title": "My Python template",
             "date": "2022-12-22",
-            "thumbnail": "assets/images/resources/data-mesh-portrait.png"
+            "thumbnail": "assets/images/thumbnails/template-python-portrait.png"
         },
         {
             "id": "my-data-product-thesis",

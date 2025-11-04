@@ -2,12 +2,12 @@
 short_title: My Python template
 description: none
 date: 2022-12-22
-thumbnail: assets/images/resources/data-mesh-portrait.png
+thumbnail: assets/images/thumbnails/template-python-portrait.png
 ---
 
 # My Python template
 
-![Cookiecutter Python template](../../assets/images/resources/template-python-portrait.png){ .image-width-24 }
+![](../../assets/images/resources/template-python-portrait.png){ .image-caption }
 
 Every time I have started a new Python project, I have spent a lot of time setting up the initial files like the README, Code of Conduct, licenses, and the base code itself to start with. Even having a template ready, the process of cloning it and starting to customize it has taken me a lot of time.
 
