@@ -1,6 +1,15 @@
 {
-    "version": "2025-11-02",
+    "version": "2025-11-04",
     "items": [
+        {
+            "id": "my-semantic-versioning-cheatsheet",
+            "src": "resources/cheatsheets/my-semantic-versioning-cheatsheet.md",
+            "category": "resources",
+            "link": "./resources/cheatsheets/my-semantic-versioning-cheatsheet",
+            "title": "Semantic versioning cheatsheet",
+            "date": "2025-11-03",
+            "thumbnail": "assets/images/thumbnails/semantic-versioning-portrait.png"
+        },
         {
             "id": "reinforcement-learning-basics",
             "src": "notebooks/data-science/reinforcement-learning-basics.md",
