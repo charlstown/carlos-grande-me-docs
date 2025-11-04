@@ -87,9 +87,11 @@ p:has(img.image-caption) {
   border: 0.1rem solid var(--md-default-fg-color--lightest);
   overflow: hidden;
   position: relative;
-  display: inline-flex;
+  display: flex; /* block-level for proper centering */
   flex-direction: column; /* To stack caption below the image */
   align-items: center; /* Center items horizontally */
+  width: fit-content; /* shrink to image width */
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -115,6 +117,13 @@ p:has(img.image-caption) {
 /* caption image */
 
 /* steps */
+/* Ensure lightbox anchors wrap as a centered block when containing images */
+.md-content a.glightbox {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* Visually hide empty captions but keep structure for a11y */
 .parent-caption .caption:empty {
   position: absolute !important;
