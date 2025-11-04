@@ -94,8 +94,9 @@ p:has(img.image-caption) {
   margin-right: auto;
 }
 
-.image-caption {
-  max-height: 500px!important;
+/* Apply max-height to any image wrapped by parent-caption */
+.parent-caption img {
+  max-height: 500px !important;
 }
 
 .caption {
@@ -114,6 +115,24 @@ p:has(img.image-caption) {
 /* caption image */
 
 /* steps */
+/* Visually hide empty captions but keep structure for a11y */
+.parent-caption .caption:empty {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Optional spacing and centering for wrapped images */
+.md-content .parent-caption {
+  margin: 1rem auto;
+}
 .steps ul {
   list-style-type: none;
   counter-reset: item;

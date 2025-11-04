@@ -7,7 +7,7 @@ thumbnail: assets/images/thumbnails/template-python-portrait.png
 
 # My Python template
 
-![](../../assets/images/resources/template-python-portrait.png){ .image-caption }
+![](../../assets/images/resources/template-python-portrait.png)
 
 Every time I have started a new Python project, I have spent a lot of time setting up the initial files like the README, Code of Conduct, licenses, and the base code itself to start with. Even having a template ready, the process of cloning it and starting to customize it has taken me a lot of time.
 
