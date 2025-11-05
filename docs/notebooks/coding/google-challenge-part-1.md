@@ -7,13 +7,13 @@ thumbnail: assets/images/thumbnails/google-challenge-part-1-portrait.jpg
 
 # Google challenge part 1
 
-![Playing with algorithms â€“ Beepleâ€™s Google Data Center 2079.](../../assets/images/notebooks/google-challenge.png)
+![Playing with algorithms, Beeple's Google Data Center 2079.](../../assets/images/notebooks/google-challenge.png)
 
 
-I've been recently working with my friend [Ãlvaro SimÃ³n Merino](https://alvarosimon.me/) doing some research in Google about coding. We got an unusual message on the google site background, with a message:
+I've been recently working with my friend [Álvaro Simón Merino](https://alvarosimon.me/) doing some research in Google about coding. We got an unusual message on the google site background, with a message:
 > You're speaking our language. Up for a challenge?
 
-At first, we thought it was fake, a virus, or something like that. Then we realize the site was official! We could not believe to see Google sending us a challenge to solve and we accepted it immediately! Clicking on â€œI want to playâ€ landed us on Googleâ€™s Foobar page...
+At first, we thought it was fake, a virus, or something like that. Then we realize the site was official! We could not believe to see Google sending us a challenge to solve and we accepted it immediately! Clicking on "I want to play" landed us on Google's Foobar page...
 
 
 ![Google Foobar](../../assets/images/notebooks/google-challenge-foo-bar.png)

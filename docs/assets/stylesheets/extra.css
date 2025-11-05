@@ -11,6 +11,13 @@
 
 /* Global CSS */
 
+.md-typeset .md-button.text-center {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+  max-width: 10rem;
+}
+
 .md-main article h1 {
   font-weight: 600!important;
   font-size: 3rem!important;
