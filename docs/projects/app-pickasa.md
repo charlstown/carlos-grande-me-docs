@@ -29,7 +29,7 @@ Easily add new homes to your list, each one adapts automatically to the active f
 
 ![](#)
 
-### Selecting features and weigths
+### Selecting features and weights
 
 Select which parameters matter most and adjust their weights to shape how your K-Pick score is calculated.
 
