@@ -1,5 +1,4 @@
 nav:
-    - Resources: index.md
     - My thesis: thesis
     - My cheat sheets: cheatsheets
     - My coding templates: templates
