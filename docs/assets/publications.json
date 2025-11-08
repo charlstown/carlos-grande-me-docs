@@ -1,5 +1,5 @@
 {
-    "version": "2025-11-04",
+    "version": "2025-11-09",
     "items": [
         {
             "id": "my-semantic-versioning-cheatsheet",
@@ -9,6 +9,15 @@
             "title": "Semantic versioning cheatsheet",
             "date": "2025-11-03",
             "thumbnail": "assets/images/thumbnails/semantic-versioning-portrait.png"
+        },
+        {
+            "id": "app-pickasa",
+            "src": "projects/app-pickasa.md",
+            "category": "projects",
+            "link": "./projects/app-pickasa",
+            "title": "PicKasa APP",
+            "date": "2025-07-23",
+            "thumbnail": "assets/images/thumbnails/project-app-pikasa.png"
         },
         {
             "id": "reinforcement-learning-basics",
