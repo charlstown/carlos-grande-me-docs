@@ -133,6 +133,8 @@ PicKasa just turns your subjective preferences into a clear, visual score so you
 
 PicKasa runs on a simple, serverless setup. The frontend, built with React and hosted on [Vercel](https://vercel.com/), handles the entire user interface. When you click Generate K-Pick, the browser sends the list of homes and weights to an AWS Lambda exposed through API Gateway. The Lambda processes the data, calculates the scores, and returns them instantly. All user data stays local, stored in the browser’s cache or cookies so there’s no database or login system involved.
 
+![Pickasa architecture diagram](../assets/images/projects/pickasa-architecture-diagram.png)
+
 ### 3.1 The Frontend
 
 PicKasa’s frontend is a **React (Vite)** single-page application deployed on **Vercel**. It follows a **configuration-driven architecture**, meaning the UI is generated from shared configuration objects rather than being hardcoded. This allows the interface to adapt to different feature priorities and form settings without requiring layout changes.
