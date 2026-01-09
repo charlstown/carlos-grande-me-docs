@@ -42,7 +42,7 @@ GitHub Flow is a lightweight branching model built around a single long-lived br
 | __main__         | —            | —           | Always releasable; represents the latest validated state of the product. |
 | __feature/*__    | main         | main        | Implements a change (feature, fix, refactor) in isolation via a PR.      |
 
-![Github flow branch model example](../../assets/images/resources/branching-model-git-flow.png)
+![Github flow branch model example](../../assets/images/resources/branching-model-github-flow.png)
 
 ### Trunk-Based Development
 
@@ -94,40 +94,7 @@ Git Flow is a branching model that separates work into multiple branches, with m
 | __release/*__ | develop      | main + develop     | Prepares a version for release: final fixes, versioning, QA.         |
 | __hotfix/*__     | main         | main + develop     | Fixes urgent production issues without waiting for regular releases. |
 
-```mermaid
-gitGraph
-    commit id: "Initial commit"
-
-    branch develop
-    commit id: "Start development"
-
-    %% Feature branch
-    branch feature/login
-    commit id: "Develop login"
-    checkout develop
-    commit id: "Prepare to merge feature"
-    checkout develop
-    merge feature/login id: "Merge login feature"
-
-    %% Release branch
-    branch release/1.0.0
-    commit id: "Stabilize release"
-    checkout main
-    commit id: "Production ready base"
-    checkout main
-    merge release/1.0.0 id: "Release 1.0.0"
-    checkout develop
-    merge release/1.0.0 id: "Sync develop"
-
-    %% Hotfix branch
-    branch hotfix/critical
-    checkout hotfix/critical
-    commit id: "Hotfix commit"
-    checkout main
-    merge hotfix/critical id: "Apply hotfix to main"
-    checkout develop
-    merge hotfix/critical id: "Sync hotfix to develop"
-```
+![Git flow branch model example](../../assets/images/resources/branching-model-git-flow.png)
 
 ### Release Flow (Microsoft)
 
