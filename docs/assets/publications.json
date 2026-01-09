@@ -1,6 +1,15 @@
 {
-    "version": "2025-11-09",
+    "version": "2026-01-09",
     "items": [
+        {
+            "id": "my-branch-model-cheatsheet",
+            "src": "resources/cheatsheets/my-branch-model-cheatsheet.md",
+            "category": "resources",
+            "link": "./resources/cheatsheets/my-branch-model-cheatsheet",
+            "title": "Branching model cheatsheet",
+            "date": "2025-12-21",
+            "thumbnail": "assets/images/thumbnails/branching-model-portrait.png"
+        },
         {
             "id": "my-semantic-versioning-cheatsheet",
             "src": "resources/cheatsheets/my-semantic-versioning-cheatsheet.md",
