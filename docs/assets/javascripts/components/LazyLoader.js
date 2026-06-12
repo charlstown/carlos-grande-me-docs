@@ -29,15 +29,23 @@ export class LazyLoader {
   loadNext() {
     if (this.loading || this.done) return;
     this.loading = true;
-    const nextItems = this.items.slice(this.offset, this.offset + this.batchSize);
-    if (nextItems.length) {
-      this.renderFn(nextItems);
-      this.offset += nextItems.length;
+
+    while (true) {
+      const nextItems = this.items.slice(this.offset, this.offset + this.batchSize);
+      if (nextItems.length) {
+        this.renderFn(nextItems);
+        this.offset += nextItems.length;
+      }
+
+      if (this.offset >= this.items.length) {
+        this.done = true;
+        this.destroy();
+        break;
+      }
+
+      if (!this._sentinel || this._sentinel.getBoundingClientRect().top > window.innerHeight + 100) break;
     }
-    if (this.offset >= this.items.length) {
-      this.done = true;
-      this.destroy();
-    }
+
     this.loading = false;
   }
 }
