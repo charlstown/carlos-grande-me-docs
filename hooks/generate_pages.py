@@ -1,4 +1,5 @@
 import os
+import hashlib
 from mkdocs.structure.files import Files, File
 from datetime import date
 import re
@@ -118,9 +119,21 @@ def write_dict_to_json(data, filename):
 
     serialized_data = serialize_obj(data)
 
-    # Write to JSON file
+    # Serialize to string and guard against rewriting identical content.
+    # Rewriting publications.json on every build (it lives under docs/) makes
+    # the mkdocs watcher detect a change and trigger another build -> infinite
+    # live-reload loop. Only write when the content actually changes.
+    new_content = json.dumps(serialized_data, indent=4, ensure_ascii=False)
+    new_hash = hashlib.md5(new_content.encode('utf-8')).hexdigest()
+
+    if os.path.exists(filename):
+        with open(filename, 'r', encoding='utf-8') as file:
+            existing_hash = hashlib.md5(file.read().encode('utf-8')).hexdigest()
+        if existing_hash == new_hash:
+            return
+
     with open(filename, 'w', encoding='utf-8') as file:
-        json.dump(serialized_data, file, indent=4, ensure_ascii=False)
+        file.write(new_content)
 
 def extract_fields_from_doc(doc, site):
     """Extract fields from the doc file
