@@ -2,14 +2,14 @@
 short_title: The 8 levels of AI note
 description: A practical roadmap of the 8 levels of AI-assisted development — identify where you are and what skill unlocks the next level.
 date: 2026-06-12
-thumbnail: assets/images/resources/the-8-levels-of-ai-development.png
+thumbnail: assets/images/thumbnails/the-8-levels-of-ai-development.png
 ---
 
 # The 8 levels of AI note
 
 Writing this post has been one of the most enjoyable things I've done lately — and that says it all. I've been at level 6 for a while now, multiplying agents in parallel, and every time someone asks me "where do I even start with this?" I realize there's no honest guide out there that maps the full journey. My end goal is to understand every flow that touches a product and turn them into skills or commands that let me direct without having to touch code line by line. This framework is the most honest roadmap I've found to get there. I hope you enjoy reading it as much as I enjoyed writing it.
 
-![The 8 levels of AI Development — maturity stack read bottom to top](../../assets/images/thumbnails/8-levels-of-ai-development-portrait.png){ .image-width-24 }
+![The 8 levels of AI Development — maturity stack read bottom to top](../../assets/images/resources/8-levels-of-ai-development-portrait.png){ .image-width-24 }
 
 ---
 
