@@ -6,7 +6,7 @@ def on_serve(server, config, builder):
     try:
         # Only add an explicit watch for overrides; rely on MkDocs defaults
         # to watch docs/ and theme.
-        server.watch("overrides/**/*", builder)
+        server.watch("overrides", builder)
     except Exception:
         pass
     return server
