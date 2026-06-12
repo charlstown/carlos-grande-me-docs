@@ -55,7 +55,13 @@ markdown_extensions:
   - abbr
   - admonition            # Block elements
   - pymdownx.details      # Collapsible call-outs
-  - pymdownx.superfences  # Nested elements
+  - pymdownx.superfences:  # Nested elements + Mermaid diagrams
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:      # Content tabs
+      alternate_style: true
   - pymdownx.mark         # Hihlighting text
   - attr_list             # To add buttons
   - md_in_html            # To add html in markdown (centred images)
