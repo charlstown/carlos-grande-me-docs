@@ -7,40 +7,45 @@ export class LazyLoader {
     this.offset = 0;
     this.loading = false;
     this.done = false;
-    this._onScroll = this._onScroll.bind(this);
+    this._sentinel = null;
+    this._observer = null;
   }
 
   init() {
+    this._sentinel = document.createElement('div');
+    this.container.after(this._sentinel);
+    this._observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) this.loadNext();
+    }, { rootMargin: '100px' });
+    this._observer.observe(this._sentinel);
     this.loadNext();
-    window.addEventListener('scroll', this._onScroll, { passive: true });
   }
 
   destroy() {
-    window.removeEventListener('scroll', this._onScroll);
+    if (this._observer) { this._observer.disconnect(); this._observer = null; }
+    if (this._sentinel) { this._sentinel.remove(); this._sentinel = null; }
   }
 
   loadNext() {
     if (this.loading || this.done) return;
     this.loading = true;
-    const nextItems = this.items.slice(this.offset, this.offset + this.batchSize);
-    if (nextItems.length) {
-      this.renderFn(nextItems);
-      this.offset += nextItems.length;
-    }
-    if (this.offset >= this.items.length) {
-      this.done = true;
-      this.destroy();
-    }
-    this.loading = false;
-  }
 
-  _onScroll() {
-    const scrollY = window.scrollY || window.pageYOffset;
-    const viewport = window.innerHeight;
-    const galleryRect = this.container.getBoundingClientRect();
-    const galleryBottom = galleryRect.bottom + scrollY;
-    if (scrollY + viewport + 100 >= galleryBottom) {
-      this.loadNext();
+    while (true) {
+      const nextItems = this.items.slice(this.offset, this.offset + this.batchSize);
+      if (nextItems.length) {
+        this.renderFn(nextItems);
+        this.offset += nextItems.length;
+      }
+
+      if (this.offset >= this.items.length) {
+        this.done = true;
+        this.destroy();
+        break;
+      }
+
+      if (!this._sentinel || this._sentinel.getBoundingClientRect().top > window.innerHeight + 100) break;
     }
+
+    this.loading = false;
   }
 }
