@@ -24,11 +24,11 @@ The Vitest + jsdom harness already exists (`vitest.config.js`, `tests/unit/readi
 
 ## Batch 5 — Playwright E2E suite
 
-- [ ] · @code-developer - Create `playwright.config.js` (ESM `export default`) configuring `testDir: './tests/e2e'`, a single `chromium` project, and `webServer: { command: 'mkdocs serve -a 127.0.0.1:8000', url: 'http://127.0.0.1:8000', reuseExistingServer: true, timeout: 120000 }` with `use.baseURL: 'http://127.0.0.1:8000'`. Guard: `npx playwright test --list` resolves the config without error after `npm install`.
+- [x] · @code-developer - Create `playwright.config.js` (ESM `export default`) configuring `testDir: './tests/e2e'`, a single `chromium` project, and `webServer: { command: 'mkdocs serve -a 127.0.0.1:8000', url: 'http://127.0.0.1:8000', reuseExistingServer: true, timeout: 120000 }` with `use.baseURL: 'http://127.0.0.1:8000'`. Guard: `npx playwright test --list` resolves the config without error after `npm install`.
 
-- [ ] · @code-developer - Create `tests/e2e/gallery.spec.js` using `@playwright/test`. Cover: (1) navigate to `/`, assert at least one `.gallery-home-item` is visible (gallery renders items); (2) click a filter button in `nav.filter-menu` (e.g. text `Projects`) and assert the visible `.gallery-home-item` elements all have `data-category="projects"`; (3) scroll to the bottom of the page and assert the count of `.gallery-home-item` increases versus the initial count (lazy loading triggers on scroll). Guard: file parses under `npx playwright test --list` and lists 3 tests.
+- [x] · @code-developer - Create `tests/e2e/gallery.spec.js` using `@playwright/test`. Cover: (1) navigate to `/`, assert at least one `.gallery-home-item` is visible (gallery renders items); (2) click a filter button in `nav.filter-menu` (e.g. text `Projects`) and assert the visible `.gallery-home-item` elements all have `data-category="projects"`; (3) scroll to the bottom of the page and assert the count of `.gallery-home-item` increases versus the initial count (lazy loading triggers on scroll). Guard: file parses under `npx playwright test --list` and lists 3 tests.
 
-- [ ] · @code-developer - Create `tests/e2e/reading-progress.spec.js` using `@playwright/test`. Cover: navigate to a known post page (e.g. `/projects/app-pickasa/`), assert `.reading-progress` exists and is attached to `body`, then scroll down and assert `.reading-progress__fill` `style.width` increases from its initial value. Guard: file parses under `npx playwright test --list` and lists 1 test.
+- [x] · @code-developer - Create `tests/e2e/reading-progress.spec.js` using `@playwright/test`. Cover: navigate to a known post page (e.g. `/projects/app-pickasa/`), assert `.reading-progress` exists and is attached to `body`, then scroll down and assert `.reading-progress__fill` `style.width` increases from its initial value. Guard: file parses under `npx playwright test --list` and lists 1 test.
 
 ## Batch 6 — CI workflows
 
