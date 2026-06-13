@@ -8,28 +8,45 @@ export class ReadingProgress {
     this._ticking = false;
   }
 
-  // Returns true only for real post pages (not category indexes).
+  // Returns true only for real post pages (not category or sub-category
+  // indexes). Works with MkDocs directory-style URLs (trailing slash or a
+  // trailing index.html).
   static isPostPage(pathname = location.pathname) {
-    // Normalize: lowercase and strip a trailing index.html.
-    let path = pathname.toLowerCase().replace(/index\.html$/, '');
+    // Normalize: lowercase and split into non-empty segments, discarding a
+    // trailing "index.html" so directory and index forms behave the same.
+    const path = pathname.toLowerCase();
+    const segments = path
+      .split('/')
+      .filter(Boolean)
+      .filter(seg => seg !== 'index.html');
 
-    const categories = ['/notebooks/', '/projects/', '/references/', '/resources/'];
-    const category = categories.find(cat => path.includes(cat));
-    if (!category) return false;
+    const categories = ['notebooks', 'projects', 'references', 'resources'];
+    const categoryIndex = segments.findIndex(seg => categories.includes(seg));
+    if (categoryIndex === -1) return false;
 
-    // Exclude category indexes: there must be a real post slug after the
-    // category segment. If the path ends exactly at the category (or at a
-    // subcategory directory without a post sub-path), it is not a post.
-    const afterCategory = path.slice(path.indexOf(category) + category.length);
-    // Drop a single trailing slash to inspect remaining segments.
-    const remainder = afterCategory.replace(/\/$/, '');
-    if (remainder === '') return false;
+    // Path depth check: a post owns at least one slug segment AFTER the
+    // category. Posts live either two segments deep (e.g.
+    // /projects/<slug>/) or three segments deep with a sub-category (e.g.
+    // /notebooks/<sub-category>/<slug>/). A category index such as
+    // /notebooks/ has 0 segments after the category and is not a post.
+    const segmentsAfterCategory = segments.length - (categoryIndex + 1);
+    if (segmentsAfterCategory < 1) return false;
 
-    // DOM reinforcement: only run when a document is available so the
-    // function stays unit-testable in jsdom.
+    // DOM reinforcement: authoritative guard, only run when a document is
+    // available so the function stays unit-testable in jsdom. When no DOM is
+    // mounted (explicit pathname in tests), skip it and rely on the
+    // path-segment logic above.
     if (typeof document !== 'undefined' && document) {
       const article = document.querySelector('article.md-content__inner');
       if (!article || !article.querySelector('h1')) return false;
+
+      // Listing/gallery pages render inside the same content node but are not
+      // posts. Reject them defensively if any known gallery/listing container
+      // is present.
+      const isListing = article.querySelector(
+        '#gallery, .gallery-home-item, .gallery-home-title'
+      );
+      if (isListing) return false;
     }
 
     return true;
