@@ -32,3 +32,8 @@ __pycache__/
 
 # Node / test tooling
 node_modules/
+
+# Playwright
+test-results/
+playwright-report/
+.playwright/

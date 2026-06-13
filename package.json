@@ -2,9 +2,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:build": "mkdocs build --strict",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.49.0",
     "jsdom": "^25.0.1",
     "vitest": "^2.1.8"
   }
