@@ -22,3 +22,12 @@
     </div>
 </footer>
 {% endblock %}
+
+
+<!-- Inject the publication date above the H1 on dated posts only -->
+{% block content %}
+{% if page.meta.date and not page.meta.template and not page.is_homepage %}
+{% include "partials/post-date.html" %}
+{% endif %}
+{{ super() }}
+{% endblock %}

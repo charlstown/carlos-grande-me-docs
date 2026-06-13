@@ -1,0 +1,35 @@
+name: Deploy dev to GitHub Pages
+# Build the site and publish it to the gh-pages branch on every push to dev.
+# This is a preview/staging deploy and is independent from the production
+# S3 deploy that runs on main (see deploy-docs.yml).
+on:
+  push:
+    branches: [dev]
+permissions:
+  contents: write
+jobs:
+  deploy:
+    name: Build + Deploy to gh-pages
+    runs-on: ubuntu-latest
+    environment:
+      name: preview
+      url: https://charlstown.github.io/carlos-grande-me-docs/
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Build and deploy to gh-pages
+        run: python -m mkdocs gh-deploy --force --remote-branch gh-pages

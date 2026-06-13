@@ -103,6 +103,8 @@ extra_css:
   - assets/stylesheets/gallery.css
   - https://unpkg.com/katex@0/dist/katex.min.css  # Katex Math
   - assets/stylesheets/my_katex.css
+  - assets/stylesheets/reading_progress.css  # Reading progress bar
+  - assets/stylesheets/post-date.css  # Post publication date
 
 # javascript
 extra_javascript:
@@ -112,6 +114,8 @@ extra_javascript:
   - assets/javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - path: assets/javascripts/reading_progress.js  # Reading progress bar (ESM)
+    type: module
 
 # Copyright message
 copyright: Copyright &copy; carlosgrande.me - 2025

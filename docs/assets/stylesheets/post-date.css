@@ -1,0 +1,19 @@
+/* Post publication date component.
+   Renders a small, grey publication date with an icon above the post title.
+   The grey tone is kept consistent with the breadcrumb/path color. */
+
+.md-post-date {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  margin: 0 0 0.6rem;
+}
+
+.md-post-date__icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}

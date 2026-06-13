@@ -31,6 +31,8 @@ Este documento describe el cómo técnico del sitio de documentación estático 
 | Parsing frontmatter | PyYAML | sin pin | Lectura de frontmatter en `generate_pages.py` |
 | Runtime build (CI) | Python | 3.9 (CI) | Versión fijada en `actions/setup-python` del workflow |
 | Math rendering | KaTeX | v0 (CDN unpkg) | Render de fórmulas vía `arithmatex` + KaTeX desde CDN |
+| Testing JS (dev) | Vitest + jsdom | vitest ^2.1.8 · jsdom ^25.0.1 | Tests unitarios de componentes JS del cliente (p. ej. `ReadingProgress`) en entorno jsdom |
+| Testing E2E (dev) | Playwright | @playwright/test ^1.49.0 | Tests end-to-end de galería y reading-progress en navegador real |
 
 > [!tip] Dependencias de runtime directas
 > `mkdocs` · `mkdocs-material` · `pymdown-extensions` · `mkdocs-markdownextradata-plugin` · `mkdocs-awesome-pages-plugin` · `mkdocs-glightbox` · `pyyaml`. Ninguna está pinneada en `requirements.txt`: el build resuelve siempre la última versión compatible (ver [[#📐 ADRs (Architecture Decision Records)|ADR-002]]).
@@ -87,10 +89,13 @@ Recorre las páginas de contenido en el evento `on_files` y emite `docs/assets/p
 Añade un watch explícito de `overrides/` durante `mkdocs serve` sin mutar internals del servidor para no romper el live reload.
 
 #### `overrides/` — Theme Material personalizado
-Plantillas que sobrescriben el theme base: `home.html` (galería), `about-me.html`, `main.html` y `partials/hero.html`, `partials/toc-item.html`.
+Plantillas que sobrescriben el theme base: `home.html` (galería), `about-me.html`, `main.html` (que además sobreescribe el bloque `content` para inyectar la fecha de publicación sobre el H1) y `partials/hero.html`, `partials/toc-item.html`, `partials/post-date.html` (componente de fecha de publicación, condicionado a `page.meta.date`).
 
 #### `docs/assets/javascripts/extra.js` — Render de la galería en cliente
 Anima y pinta las tarjetas de publicaciones en el home a partir de los datos de `publications.json`.
+
+#### `docs/assets/javascripts/components/ReadingProgress.js` — Barra de progreso de lectura
+Componente cliente (clase ESM con `mount/update/destroy` y guard `isPostPage`) que pinta una línea fina fija bajo el header midiendo el scroll sobre `article.md-content__inner`. Se inicializa desde `docs/assets/javascripts/reading_progress.js` (entry `type: module`, registrado en `extra_javascript`) y se estila en `docs/assets/stylesheets/reading_progress.css`. Solo se monta en páginas de post. La fecha de publicación, en cambio, se resuelve en build (Jinja) vía `overrides/partials/post-date.html` + `docs/assets/stylesheets/post-date.css`.
 
 #### `mkdocs.yml` — Configuración del sitio
 Define theme, paleta, extensiones Markdown, plugins, hooks, assets y variables globales (`extra:`).
@@ -99,9 +104,10 @@ Define theme, paleta, extensiones Markdown, plugins, hooks, assets y variables g
 
 | Operación interna | Método | Servicio externo | Notas |
 |-------------------|--------|------------------|-------|
-| Deploy del sitio | `aws s3 sync site/ s3://$S3_BUCKET --delete` | AWS S3 | Hosting estático; `--delete` purga ficheros obsoletos |
+| Deploy del sitio (prod) | `aws s3 sync site/ s3://$S3_BUCKET --delete` | AWS S3 | Hosting estático desde `main`; `--delete` purga ficheros obsoletos |
+| Deploy de preview (dev) | `mkdocs gh-deploy --force --remote-branch gh-pages` | GitHub Pages | Preview/staging desde `dev`; sirve desde la rama `gh-pages` / raíz (`/`) |
 | Credenciales de deploy | `configure-aws-credentials@v4` (OIDC) | AWS IAM (GitHub OIDC) | Asume rol `role/<AWS_ROLE_NAME>` sin claves estáticas |
-| Validación de enlaces | `lycheeverse/lychee-action@v1` | Hosts externos enlazados | Comprueba links en `docs/**/*.md` y `overrides/**/*.md` |
+| Validación de enlaces | `lycheeverse/lychee-action@v2` | Hosts externos enlazados | Comprueba links en `docs/**/*.md` y `overrides/**/*.md` |
 | Render de fórmulas | `<script>` CDN | unpkg.com (KaTeX v0) | CSS y JS de KaTeX cargados desde CDN en runtime de página |
 | Iconos/emojis | build-time | twemoji (Material) | Generados a SVG en build, sin llamada en runtime |
 
@@ -139,6 +145,9 @@ No hay librería de logging dedicada. La observabilidad se apoya en:
 | Build MkDocs | INFO/WARNING | stdout/stderr (capturable en `mkdocs_out.txt` / `mkdocs_err.txt`) |
 | Hooks Python | — | Sin logging propio; errores como excepciones |
 | CI Static Validation | GitHub Actions log | Resultado de tests + warnings de enlaces lychee |
+| CI Unit Tests (`unit-tests.yml`) | GitHub Actions log | Resultado de `npm test` (Vitest) en push/PR |
+| CI Build Smoke (`build-smoke.yml`) | GitHub Actions log | Salida de `mkdocs build --strict` en PR a `main` |
+| CI E2E (`e2e.yml`) | GitHub Actions log | Resultado de `npm run test:e2e` (Playwright) en release/milestone |
 | CI Deploy | GitHub Actions log | Salida de `aws s3 sync` |
 
 El verbosity se controla con flags nativos de MkDocs (`--verbose`).
@@ -149,16 +158,30 @@ El verbosity se controla con flags nativos de MkDocs (`--verbose`).
 
 | Módulo | Qué se testea | Mock/stub |
 |--------|---------------|-----------|
-| — | *No hay suite de tests en el repo* | — |
+| `ReadingProgress` (`tests/unit/reading-progress.test.js`) | `isPostPage` (exclusión de home/about/índices, detección de post real), `mount`/`update` (0% en posts cortos, clamp a 100%) | jsdom: `window.scrollY`, `window.innerHeight` y geometría del contenido |
+| `Gallery` (`tests/unit/gallery.test.js`) | Render de tarjetas de publicaciones a partir de `publications.json` | jsdom: DOM del home y datos de publicaciones |
+| `FilterMenu` (`tests/unit/filter-menu.test.js`) | Filtrado de publicaciones por categoría en la galería | jsdom: DOM del menú de filtros |
+| `LazyLoader` (`tests/unit/lazy-loader.test.js`) | Carga diferida de imágenes/recursos de la galería | jsdom: `IntersectionObserver` y nodos de imagen |
+
+### E2E Tests
+
+Suite end-to-end con Playwright que ejerce el sitio en un navegador real (Chromium) levantando un `mkdocs serve` como `webServer` (config en `playwright.config.js`). Se ejecuta con `npm run test:e2e` (→ `playwright test`):
+
+| Spec | Qué se testea |
+|------|---------------|
+| `tests/e2e/gallery.spec.js` | Render y comportamiento de la galería del home en navegador real |
+| `tests/e2e/reading-progress.spec.js` | Barra de progreso de lectura sobre una página de post real |
 
 ### Integration Tests
 
-El workflow `Static Validation` detecta tests (pytest o `npm test`) y los ejecuta si existen; hoy no hay ninguno, por lo que el paso reporta *"No recognizable tests found. Skipping."*. La verificación efectiva es: build correcto + validación de enlaces con lychee.
+Los unit tests corren ahora en su propio workflow dedicado `unit-tests.yml` (`on: [push, pull_request]`), no solo embebidos en `Static Validation`. El workflow `Static Validation` sigue detectando tests (pytest o `npm test`) y ejecutándolos si existen; la verificación se completa con build correcto + validación de enlaces con lychee. Los hooks Python (`generate_pages.py`) aún no tienen tests.
 
 ### Tools
 
-- **Framework**: ninguno configurado (*TBD* si se adopta pytest).
-- **Validación de enlaces**: `lycheeverse/lychee-action@v1` sobre `docs/**/*.md` y `overrides/**/*.md`.
+- **Framework unitario**: Vitest + jsdom para JS (config en `vitest.config.js`, script `npm run test`). El `include` está acotado a `tests/unit/**` y `exclude` los e2e, de modo que Vitest solo corre la suite unitaria. pytest para los hooks Python sigue *TBD*.
+- **Framework E2E**: Playwright (config en `playwright.config.js`, script `npm run test:e2e`) sobre Chromium, con `mkdocs serve` como `webServer`.
+- **Build estricto**: `npm run test:build` → `mkdocs build --strict`, que convierte los warnings de build en fallo.
+- **Validación de enlaces**: `lycheeverse/lychee-action@v2` sobre `docs/**/*.md` y `overrides/**/*.md`.
 - **Cobertura**: sin target definido.
 
 ## 🔌 Deployment
@@ -183,6 +206,18 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 python -m mkdocs build
 ```
+
+### Workflows de CI
+
+Además de `Static Validation` y `Build + Deploy`, el repo incluye tres workflows de testing:
+
+- `unit-tests.yml` — corre `npm test` (Vitest) en cada `push` y `pull_request`.
+- `build-smoke.yml` — corre `mkdocs build --strict` en `pull_request` contra `main`, fallando ante cualquier warning de build.
+- `e2e.yml` — corre `npm run test:e2e` (Playwright) en eventos de `release` (`published`) y `milestone` (`closed`).
+
+### Deploy de preview a GitHub Pages desde `dev`
+
+Independiente del deploy de producción a S3 (`main`), el workflow `deploy-dev-ghpages.yml` publica un preview/staging en GitHub Pages en cada `push` a `dev`. Ejecuta `mkdocs gh-deploy --force --remote-branch gh-pages`, que construye el sitio y lo empuja a la rama `gh-pages`. GitHub Pages sirve desde el origen rama `gh-pages` / raíz (`/`); esta configuración del origen es un paso manual de una sola vez en los ajustes del repo (Settings → Pages → branch `gh-pages`, carpeta `/`). El flag correcto es `--remote-branch gh-pages` (no `--branch`).
 
 ### Environment variables (secrets de GitHub Actions)
 
@@ -217,10 +252,14 @@ pyyaml
 Dev:
 
 ```
-# Sin dependencias de desarrollo declaradas en el repo.
+# package.json (devDependencies): vitest ^2.1.8, jsdom ^25.0.1,
+#   @playwright/test ^1.49.0
 # CI usa: actions/checkout@v4, actions/setup-python@v5 (py3.9),
-# aws-actions/configure-aws-credentials@v4, lycheeverse/lychee-action@v1
+# actions/setup-node@v4 (node 20),
+# aws-actions/configure-aws-credentials@v4, lycheeverse/lychee-action@v2
 ```
+
+Las actualizaciones de las propias GitHub Actions están automatizadas por Dependabot (`.github/dependabot.yml`): version updates semanales del ecosistema `github-actions`, con `target-branch: dev` y `commit-message.prefix: "[update]"`.
 
 ## 📐 ADRs (Architecture Decision Records)
 
@@ -252,6 +291,9 @@ Dev:
 - (+) Control total del bucket y del dominio.
 - (-) Requiere configurar el trust de OIDC en IAM fuera del repo.
 
+> [!note] Actualización
+> S3 sigue siendo el deploy de producción (desde `main`). Adicionalmente, la rama `dev` usa GitHub Pages como entorno de preview/staging vía `deploy-dev-ghpages.yml` (ver [[#🔌 Deployment]]); no reemplaza a S3 en producción.
+
 ### ADR-004: Deploy disparado por `workflow_run` encadenado
 
 **Decision**: `Build + Deploy` se ejecuta solo tras el éxito de `Static Validation` en push a `main`.
@@ -263,15 +305,15 @@ Dev:
 ## ⚠️ Known Limitations
 
 - Sin pin de versiones: builds no totalmente reproducibles (tradeoff de ADR-002).
-- Sin suite de tests automatizados; la validación se limita a build + comprobación de enlaces.
+- Cobertura de tests parcial: existe suite unitaria JS (Vitest) para componentes del cliente, pero los hooks Python (`generate_pages.py`) siguen sin tests; la validación de contenido se limita a build + comprobación de enlaces.
 - La validación de enlaces no bloquea (`fail: false`): se pueden publicar enlaces rotos como warnings.
-- Inconsistencia documentada entre el flujo de ramas (`contributing.md`/`CLAUDE.md` indican trabajar desde `develop`) y el CI, que solo valida y despliega desde `main`.
+- Inconsistencia documentada entre el flujo de ramas (`contributing.md`/`CLAUDE.md` indican trabajar desde `develop`) y el CI. Matiz: ya no es estrictamente cierto que el CI solo despliegue desde `main` — existe un deploy de preview a GitHub Pages desde `dev` (`deploy-dev-ghpages.yml`), aunque el deploy de producción a S3 sigue saliendo de `main`.
 - La capa CDN/dominio frente a S3 no está versionada en el repo.
 
 ## ❓ Discovery
 
 - [ ] ¿Conviene pinnear versiones (o usar un lockfile) para builds reproducibles, o se mantiene el modelo siempre-última?
-- [ ] ¿El deploy debe seguir saliendo de `main` o alinearse con el flujo `develop → main` de las guías?
+- [ ] ¿El deploy de producción debe seguir saliendo de `main` o alinearse con el flujo `develop → main` de las guías? (Ya existe un preview en GitHub Pages desde `dev`.)
 - [ ] ¿Hay CloudFront u otra CDN frente a S3 que deba documentarse aquí o en un infra-spec aparte?
 - [ ] ¿Se adopta pytest para testear los hooks (`generate_pages.py`), dado que `Static Validation` ya lo ejecutaría?
 - [ ] ¿La validación de enlaces debería pasar a bloqueante (`fail: true`) en algún momento?
