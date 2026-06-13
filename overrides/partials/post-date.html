@@ -1,0 +1,23 @@
+{#-
+  post-date.html
+
+  Renders the publication date of a post as a human-readable label
+  (e.g. "June 13, 2026") prefixed with a calendar icon.
+
+  Reads the date from `page.meta.date`, which may be either a
+  datetime.date object or a string. It is coerced to a "YYYY-MM-DD"
+  string, split into its parts, and the numeric month is mapped to its
+  English name.
+
+  This partial intentionally does NOT guard against a missing date;
+  the `{% if %}` check is applied by the caller (main.html).
+-#}
+{% set raw_date = page.meta.date | string %}
+{% set parts = raw_date.split('-') %}
+{% set months = ['January','February','March','April','May','June','July','August','September','October','November','December'] %}
+<div class="md-post-date">
+  <svg class="md-post-date__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/>
+  </svg>
+  <span>{{ months[parts[1] | int - 1] }} {{ parts[2] | int }}, {{ parts[0] }}</span>
+</div>
