@@ -2859,6 +2859,45 @@
       import { LazyLoader } from "./assets/javascripts/components/LazyLoader.js";
 
       const categories = ['All','Articles','Case studies','Projects','Resources','Notebooks'];
+      // Stable slugs for URL sync; 'All' has no slug (clean URL).
+      const CATEGORY_SLUGS = {
+        'Articles': 'articles',
+        'Case studies': 'case-studies',
+        'Projects': 'projects',
+        'Resources': 'resources',
+        'Notebooks': 'notebooks'
+      };
+      const SLUG_TO_CATEGORY = Object.fromEntries(
+        Object.entries(CATEGORY_SLUGS).map(([cat, slug]) => [slug, cat])
+      );
+
+      // Read the selected category from the ?category= query param.
+      // Falls back to 'All' when missing, empty, or an unknown slug.
+      function categoryFromUrl() {
+        const slug = new URLSearchParams(window.location.search).get('category');
+        if (!slug || !(slug in SLUG_TO_CATEGORY)) return 'All';
+        return SLUG_TO_CATEGORY[slug];
+      }
+
+      // Reflect the selected category in the ?category= query param.
+      // 'All' yields a clean URL (param removed); other categories use their slug.
+      // Skips pushState when the target matches the current URL, unless replacing.
+      function updateUrl(category, { replace = false } = {}) {
+        const url = new URL(window.location.href);
+        if (category === 'All') {
+          url.searchParams.delete('category');
+        } else {
+          url.searchParams.set('category', CATEGORY_SLUGS[category]);
+        }
+        // Avoid duplicate history entries when nothing changes (push mode only).
+        if (!replace && category === categoryFromUrl()) return;
+        if (replace) {
+          history.replaceState({ category }, '', url.toString());
+        } else {
+          history.pushState({ category }, '', url.toString());
+        }
+      }
+
       const gallery = new Gallery('#gallery-home', './assets/publications.json');
       let lazyLoader = null;
 
@@ -2891,13 +2930,31 @@
         lazyLoader.init();
       }
 
+      // Single entry point for applying a category filter to the gallery.
+      // Filters the gallery, restarts the lazy loader, and (optionally) syncs the URL.
+      function applyCategory(category, { updateHistory = true, replace = false } = {}) {
+        gallery.setFilter(category);
+        startLazyLoader();
+        if (updateHistory) updateUrl(category, { replace });
+      }
+
       gallery.init().then(() => {
         const counts = computeCounts(gallery.allItems);
-        new FilterMenu('#filterMenu', categories, (cat) => {
-          gallery.setFilter(cat);
-          startLazyLoader();
+        const filterMenu = new FilterMenu('#filterMenu', categories, (cat) => {
+          applyCategory(cat, { updateHistory: true });
         }, counts);
-        startLazyLoader();
+        const initial = categoryFromUrl();
+        filterMenu.setActiveSilent(initial);
+        applyCategory(initial, { updateHistory: true, replace: true });
+
+        // Sync FilterMenu and gallery when navigating back/forward.
+        // Read the previous category from history state (fallback to the URL)
+        // and reflect it without rewriting the history.
+        window.addEventListener('popstate', (event) => {
+          const category = event.state?.category ?? categoryFromUrl();
+          filterMenu.setActiveSilent(category);
+          applyCategory(category, { updateHistory: false });
+        });
       });
     </script>
   </section>
