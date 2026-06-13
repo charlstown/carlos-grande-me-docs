@@ -105,7 +105,7 @@ Define theme, paleta, extensiones Markdown, plugins, hooks, assets y variables g
 |-------------------|--------|------------------|-------|
 | Deploy del sitio | `aws s3 sync site/ s3://$S3_BUCKET --delete` | AWS S3 | Hosting estático; `--delete` purga ficheros obsoletos |
 | Credenciales de deploy | `configure-aws-credentials@v4` (OIDC) | AWS IAM (GitHub OIDC) | Asume rol `role/<AWS_ROLE_NAME>` sin claves estáticas |
-| Validación de enlaces | `lycheeverse/lychee-action@v1` | Hosts externos enlazados | Comprueba links en `docs/**/*.md` y `overrides/**/*.md` |
+| Validación de enlaces | `lycheeverse/lychee-action@v2` | Hosts externos enlazados | Comprueba links en `docs/**/*.md` y `overrides/**/*.md` |
 | Render de fórmulas | `<script>` CDN | unpkg.com (KaTeX v0) | CSS y JS de KaTeX cargados desde CDN en runtime de página |
 | Iconos/emojis | build-time | twemoji (Material) | Generados a SVG en build, sin llamada en runtime |
 
@@ -162,7 +162,7 @@ El workflow `Static Validation` detecta tests (pytest o `npm test`) y los ejecut
 ### Tools
 
 - **Framework**: Vitest + jsdom para JS (config en `vitest.config.js`, script `npm run test`). pytest para los hooks Python sigue *TBD*.
-- **Validación de enlaces**: `lycheeverse/lychee-action@v1` sobre `docs/**/*.md` y `overrides/**/*.md`.
+- **Validación de enlaces**: `lycheeverse/lychee-action@v2` sobre `docs/**/*.md` y `overrides/**/*.md`.
 - **Cobertura**: sin target definido.
 
 ## 🔌 Deployment
@@ -223,7 +223,7 @@ Dev:
 ```
 # package.json (devDependencies): vitest ^2.1.8, jsdom ^25.0.1
 # CI usa: actions/checkout@v4, actions/setup-python@v5 (py3.9),
-# aws-actions/configure-aws-credentials@v4, lycheeverse/lychee-action@v1
+# aws-actions/configure-aws-credentials@v4, lycheeverse/lychee-action@v2
 ```
 
 ## 📐 ADRs (Architecture Decision Records)
