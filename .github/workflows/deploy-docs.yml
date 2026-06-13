@@ -33,7 +33,7 @@ jobs:
             pip install -r requirements.txt
             python -m mkdocs build
       - name: Configure AWS credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           # The role ARN to assume via OpenID Connect (GitHub OIDC)
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}
