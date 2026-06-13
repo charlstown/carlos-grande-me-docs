@@ -31,6 +31,7 @@ Este documento describe el cómo técnico del sitio de documentación estático 
 | Parsing frontmatter | PyYAML | sin pin | Lectura de frontmatter en `generate_pages.py` |
 | Runtime build (CI) | Python | 3.9 (CI) | Versión fijada en `actions/setup-python` del workflow |
 | Math rendering | KaTeX | v0 (CDN unpkg) | Render de fórmulas vía `arithmatex` + KaTeX desde CDN |
+| Testing JS (dev) | Vitest + jsdom | vitest ^2.1.8 · jsdom ^25.0.1 | Tests unitarios de componentes JS del cliente (p. ej. `ReadingProgress`) en entorno jsdom |
 
 > [!tip] Dependencias de runtime directas
 > `mkdocs` · `mkdocs-material` · `pymdown-extensions` · `mkdocs-markdownextradata-plugin` · `mkdocs-awesome-pages-plugin` · `mkdocs-glightbox` · `pyyaml`. Ninguna está pinneada en `requirements.txt`: el build resuelve siempre la última versión compatible (ver [[#📐 ADRs (Architecture Decision Records)|ADR-002]]).
@@ -87,10 +88,13 @@ Recorre las páginas de contenido en el evento `on_files` y emite `docs/assets/p
 Añade un watch explícito de `overrides/` durante `mkdocs serve` sin mutar internals del servidor para no romper el live reload.
 
 #### `overrides/` — Theme Material personalizado
-Plantillas que sobrescriben el theme base: `home.html` (galería), `about-me.html`, `main.html` y `partials/hero.html`, `partials/toc-item.html`.
+Plantillas que sobrescriben el theme base: `home.html` (galería), `about-me.html`, `main.html` (que además sobreescribe el bloque `content` para inyectar la fecha de publicación sobre el H1) y `partials/hero.html`, `partials/toc-item.html`, `partials/post-date.html` (componente de fecha de publicación, condicionado a `page.meta.date`).
 
 #### `docs/assets/javascripts/extra.js` — Render de la galería en cliente
 Anima y pinta las tarjetas de publicaciones en el home a partir de los datos de `publications.json`.
+
+#### `docs/assets/javascripts/components/ReadingProgress.js` — Barra de progreso de lectura
+Componente cliente (clase ESM con `mount/update/destroy` y guard `isPostPage`) que pinta una línea fina fija bajo el header midiendo el scroll sobre `article.md-content__inner`. Se inicializa desde `docs/assets/javascripts/reading_progress.js` (entry `type: module`, registrado en `extra_javascript`) y se estila en `docs/assets/stylesheets/reading_progress.css`. Solo se monta en páginas de post. La fecha de publicación, en cambio, se resuelve en build (Jinja) vía `overrides/partials/post-date.html` + `docs/assets/stylesheets/post-date.css`.
 
 #### `mkdocs.yml` — Configuración del sitio
 Define theme, paleta, extensiones Markdown, plugins, hooks, assets y variables globales (`extra:`).
@@ -149,15 +153,15 @@ El verbosity se controla con flags nativos de MkDocs (`--verbose`).
 
 | Módulo | Qué se testea | Mock/stub |
 |--------|---------------|-----------|
-| — | *No hay suite de tests en el repo* | — |
+| `ReadingProgress` (`tests/unit/reading-progress.test.js`) | `isPostPage` (exclusión de home/about/índices, detección de post real), `mount`/`update` (0% en posts cortos, clamp a 100%) | jsdom: `window.scrollY`, `window.innerHeight` y geometría del contenido |
 
 ### Integration Tests
 
-El workflow `Static Validation` detecta tests (pytest o `npm test`) y los ejecuta si existen; hoy no hay ninguno, por lo que el paso reporta *"No recognizable tests found. Skipping."*. La verificación efectiva es: build correcto + validación de enlaces con lychee.
+El workflow `Static Validation` detecta tests (pytest o `npm test`) y los ejecuta si existen. Hoy existe una suite JS con Vitest (`npm run test` → `vitest run`) que el paso ejecuta; la verificación se completa con build correcto + validación de enlaces con lychee. Los hooks Python (`generate_pages.py`) aún no tienen tests.
 
 ### Tools
 
-- **Framework**: ninguno configurado (*TBD* si se adopta pytest).
+- **Framework**: Vitest + jsdom para JS (config en `vitest.config.js`, script `npm run test`). pytest para los hooks Python sigue *TBD*.
 - **Validación de enlaces**: `lycheeverse/lychee-action@v1` sobre `docs/**/*.md` y `overrides/**/*.md`.
 - **Cobertura**: sin target definido.
 
@@ -217,7 +221,7 @@ pyyaml
 Dev:
 
 ```
-# Sin dependencias de desarrollo declaradas en el repo.
+# package.json (devDependencies): vitest ^2.1.8, jsdom ^25.0.1
 # CI usa: actions/checkout@v4, actions/setup-python@v5 (py3.9),
 # aws-actions/configure-aws-credentials@v4, lycheeverse/lychee-action@v1
 ```
@@ -263,7 +267,7 @@ Dev:
 ## ⚠️ Known Limitations
 
 - Sin pin de versiones: builds no totalmente reproducibles (tradeoff de ADR-002).
-- Sin suite de tests automatizados; la validación se limita a build + comprobación de enlaces.
+- Cobertura de tests parcial: existe suite unitaria JS (Vitest) para componentes del cliente, pero los hooks Python (`generate_pages.py`) siguen sin tests; la validación de contenido se limita a build + comprobación de enlaces.
 - La validación de enlaces no bloquea (`fail: false`): se pueden publicar enlaces rotos como warnings.
 - Inconsistencia documentada entre el flujo de ramas (`contributing.md`/`CLAUDE.md` indican trabajar desde `develop`) y el CI, que solo valida y despliega desde `main`.
 - La capa CDN/dominio frente a S3 no está versionada en el repo.
