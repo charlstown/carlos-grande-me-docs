@@ -14,6 +14,6 @@ Cambio de configuración de CI de bajo riesgo: se bumpea el tag de la action vul
 
 ## Batch 3 — Sincronizar TechSpec
 
-- [ ] · @code-developer - Editar `specs/TechSpec.md` línea 108 (tabla *Integration Mapping*): reemplazar `lycheeverse/lychee-action@v1` por `lycheeverse/lychee-action@v2` en la fila "Validación de enlaces".
-- [ ] · @code-developer - Editar `specs/TechSpec.md` línea 165 (sección *Dependencies / Tools*): reemplazar `lycheeverse/lychee-action@v1` por `lycheeverse/lychee-action@v2` en la línea "Validación de enlaces".
-- [ ] · @code-developer - Editar `specs/TechSpec.md` línea 226 (bloque de comentario de versiones de CI): reemplazar `lycheeverse/lychee-action@v1` por `lycheeverse/lychee-action@v2`.
+- [x] · @code-developer - Editar `specs/TechSpec.md` línea 108 (tabla *Integration Mapping*): reemplazar `lycheeverse/lychee-action@v1` por `lycheeverse/lychee-action@v2` en la fila "Validación de enlaces".
+- [x] · @code-developer - Editar `specs/TechSpec.md` línea 165 (sección *Dependencies / Tools*): reemplazar `lycheeverse/lychee-action@v1` por `lycheeverse/lychee-action@v2` en la línea "Validación de enlaces".
+- [x] · @code-developer - Editar `specs/TechSpec.md` línea 226 (bloque de comentario de versiones de CI): reemplazar `lycheeverse/lychee-action@v1` por `lycheeverse/lychee-action@v2`.
