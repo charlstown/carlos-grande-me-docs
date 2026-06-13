@@ -80,3 +80,29 @@ describe('FilterMenu.setCounts', () => {
     expect(notebooksSup).toBeNull();
   });
 });
+
+describe('FilterMenu.setActiveSilent', () => {
+  it('moves the active class to the targeted button and removes it from All', () => {
+    const menu = new FilterMenu('#filterMenu', CATEGORIES, () => {});
+    menu.setActiveSilent('Projects');
+    expect(buttonByText('All').classList.contains('active')).toBe(false);
+    expect(buttonByText('Projects').classList.contains('active')).toBe(true);
+  });
+
+  it('does not invoke the onChange callback', () => {
+    const onChange = vi.fn();
+    const menu = new FilterMenu('#filterMenu', CATEGORIES, onChange);
+    menu.setActiveSilent('Projects');
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it('does not change the active button or throw for a category not in categories', () => {
+    const onChange = vi.fn();
+    const menu = new FilterMenu('#filterMenu', CATEGORIES, onChange);
+    expect(() => menu.setActiveSilent('Unknown')).not.toThrow();
+    expect(buttonByText('All').classList.contains('active')).toBe(true);
+    expect(buttonByText('Projects').classList.contains('active')).toBe(false);
+    expect(buttonByText('Notebooks').classList.contains('active')).toBe(false);
+    expect(onChange).not.toHaveBeenCalled();
+  });
+});
