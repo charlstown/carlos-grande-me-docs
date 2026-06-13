@@ -1,6 +1,15 @@
 {
-    "version": "2026-01-09",
+    "version": "2026-06-13",
     "items": [
+        {
+            "id": "my-8-levels-of-ai-development",
+            "src": "resources/cheatsheets/my-8-levels-of-ai-development.md",
+            "category": "resources",
+            "link": "./resources/cheatsheets/my-8-levels-of-ai-development",
+            "title": "The 8 levels of AI note",
+            "date": "2026-06-12",
+            "thumbnail": "assets/images/thumbnails/the-8-levels-of-ai-development.png"
+        },
         {
             "id": "my-branch-model-cheatsheet",
             "src": "resources/cheatsheets/my-branch-model-cheatsheet.md",

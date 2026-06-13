@@ -81,7 +81,7 @@ flowchart TD
 ```
 
 #### `hooks/generate_pages.py` — Generador del índice de publicaciones
-Recorre las páginas de contenido en el evento `on_files` y emite `docs/assets/publications.json` con id, src, categoría, link, título, fecha y thumbnail, ordenado por fecha descendente.
+Recorre las páginas de contenido en el evento `on_files` y emite `docs/assets/publications.json` con id, src, categoría, link, título, fecha y thumbnail, ordenado por fecha descendente. La escritura está protegida por un guard de hash MD5: solo sobreescribe el fichero si el contenido nuevo difiere del existente, evitando que el watcher de MkDocs detecte un cambio espurio y dispare un bucle infinito de live-reload.
 
 #### `hooks/ignore_file_autoreload.py` — Watcher de overrides en serve
 Añade un watch explícito de `overrides/` durante `mkdocs serve` sin mutar internals del servidor para no romper el live reload.
