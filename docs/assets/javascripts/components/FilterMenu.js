@@ -24,6 +24,12 @@ export class FilterMenu {
 		}
 	}
 
+	setActiveSilent(category) {
+		if (!this.categories.includes(category)) return;
+		this.active = category;
+		this.render();
+	}
+
 	render() {
 		if (!this.container) return;
 		this.container.innerHTML = '';
