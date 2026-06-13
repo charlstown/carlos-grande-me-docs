@@ -29,3 +29,6 @@ __pycache__/
 
 # Git worktrees
 .worktrees/
+
+# Node / test tooling
+node_modules/
