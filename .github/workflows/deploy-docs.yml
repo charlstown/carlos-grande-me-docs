@@ -22,7 +22,7 @@ jobs:
     steps:
       # checkout this repo
       - name: Checkout repo # Name of the step
-        uses: actions/checkout@v4 # Action to run
+        uses: actions/checkout@v6 # Action to run
       - name: Set up Python # Name of the step
         uses: actions/setup-python@v5 # Action to run
         with: # Inputs for the action
