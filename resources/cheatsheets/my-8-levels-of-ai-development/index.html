@@ -1,0 +1,3897 @@
+<!-- Elements added to main will be displayed on all pages --><!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A practical roadmap of the 8 levels of AI-assisted development — identify where you are and what skill unlocks the next level.">
+      
+      
+        <meta name="author" content="Charlstown">
+      
+      
+      
+        <link rel="prev" href="../../thesis/my-data-fabric-thesis/">
+      
+      
+        <link rel="next" href="../my-branch-model-cheatsheet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>The 8 levels of AI note - carlosgrande.me</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/output_code.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/gallery.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/my_katex.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/reading_progress.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/post-date.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-8-levels-of-ai-note" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="carlosgrande.me" class="md-header__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            carlosgrande.me
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The 8 levels of AI note
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../references/articles/death-of-distance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  References
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/app-pickasa/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../thesis/my-data-mesh-thesis/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../notebooks/coding/google-challenge-part-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Notebooks
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about-me/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="carlosgrande.me" class="md-nav__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    carlosgrande.me
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/charlstown/carlos-grande-me" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    References
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/death-of-distance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Death of distance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/space-of-flows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Space of flows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/the-chinese-room/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The chinese room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/ubiquitous-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubiquitous computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/whole-brain-emulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whole brain emulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/3000000-kms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    300.000 Km/s studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/ben-willers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ben Willers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/eric-fischer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eric Fischer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/giorgia-lupi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giorgia Lupi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/moritz-stefaner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moritz Stefaner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/nicholas-felton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nicholas Felton
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/refik-anadol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Refik Anadol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/wesley-grubbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wesley Grubbs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/app-pickasa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PicKasa App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-airbnb-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Madrid Airbnb analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-invisible/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Madrid invisible
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/my-rubiks-cube-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My rubiks cube model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My thesis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    My thesis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thesis/my-data-mesh-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Mesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thesis/my-data-product-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Product
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thesis/my-data-fabric-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data fabric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My cheat sheets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    My cheat sheets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The 8 levels of AI note
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The 8 levels of AI note
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+    <a href="#1-where-this-framework-comes-from" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. Where this framework comes from
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-the-four-phases" class="md-nav__link">
+      <span class="md-ellipsis">
+        2. The four phases
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-the-8-levels" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. The 8 levels
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="3. The 8 levels">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#31-level-1-copy-paste-ai" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.1 Level 1 — Copy-Paste AI
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#32-level-2-chat-assistant" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.2 Level 2 — Chat Assistant
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#33-level-3-agent-mode" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.3 Level 3 — Agent Mode
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#34-level-4-cli-first" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.4 Level 4 — CLI First
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#35-level-5-subagents-the-big-break" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.5 Level 5 — Subagents The big break
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#36-level-6-multiagents" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.6 Level 6 — Multiagents
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#37-level-7-orchestrator" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.7 Level 7 — Orchestrator
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#38-level-8-living-spec" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.8 Level 8 — Living Spec
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#4-key-concepts" class="md-nav__link">
+      <span class="md-ellipsis">
+        4. Key concepts
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="4. Key concepts">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#41-vibe-coding-vs-spec-driven-development" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.1 Vibe Coding vs. Spec-Driven Development
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#42-the-driver-orchestrator-break" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.2 The driver → orchestrator break
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#43-afk-vs-hitl" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.3 AFK vs. HITL
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#44-living-spec" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.4 Living Spec
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#5-what-level-am-i-at" class="md-nav__link">
+      <span class="md-ellipsis">
+        5. What level am I at?
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#6-summary-table" class="md-nav__link">
+      <span class="md-ellipsis">
+        6. Summary table
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#references" class="md-nav__link">
+      <span class="md-ellipsis">
+        References
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#further-reading" class="md-nav__link">
+      <span class="md-ellipsis">
+        Further reading
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-branch-model-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branching model cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-business-model-canvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business model canvas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-docker-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-git-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-letter-cases-reminder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Letter cases reminder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-linux-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-python-3-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python 3 cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-python-project-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python project cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-r-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-semantic-versioning-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Versioning cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-sql-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My coding templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    My coding templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/my-python-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Python template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My favorite tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    My favorite tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/my-favorite-screen-splitter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen splitter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notebooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/google-challenge-part-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google challenge part 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/python-design-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python design patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/coding/python-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data science
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data science
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/dimensionality-reduction-using-pca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensionality reduction using PCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/machine-learning-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine learning basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/reinforcement-learning-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reinforcement learning basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/sample-size-determination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample size determination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-science/text-mining-sentiment-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text mining sentiment analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3">
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-architecture/azure-big-picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Big Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/data-architecture/cloud-migration-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud migration planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4">
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/business/business-model-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Business model design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/business/team-topologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team topologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-me/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+    <a href="#1-where-this-framework-comes-from" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. Where this framework comes from
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#2-the-four-phases" class="md-nav__link">
+      <span class="md-ellipsis">
+        2. The four phases
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#3-the-8-levels" class="md-nav__link">
+      <span class="md-ellipsis">
+        3. The 8 levels
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="3. The 8 levels">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#31-level-1-copy-paste-ai" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.1 Level 1 — Copy-Paste AI
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#32-level-2-chat-assistant" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.2 Level 2 — Chat Assistant
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#33-level-3-agent-mode" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.3 Level 3 — Agent Mode
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#34-level-4-cli-first" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.4 Level 4 — CLI First
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#35-level-5-subagents-the-big-break" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.5 Level 5 — Subagents The big break
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#36-level-6-multiagents" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.6 Level 6 — Multiagents
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#37-level-7-orchestrator" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.7 Level 7 — Orchestrator
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#38-level-8-living-spec" class="md-nav__link">
+      <span class="md-ellipsis">
+        3.8 Level 8 — Living Spec
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#4-key-concepts" class="md-nav__link">
+      <span class="md-ellipsis">
+        4. Key concepts
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="4. Key concepts">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#41-vibe-coding-vs-spec-driven-development" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.1 Vibe Coding vs. Spec-Driven Development
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#42-the-driver-orchestrator-break" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.2 The driver → orchestrator break
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#43-afk-vs-hitl" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.3 AFK vs. HITL
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#44-living-spec" class="md-nav__link">
+      <span class="md-ellipsis">
+        4.4 Living Spec
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#5-what-level-am-i-at" class="md-nav__link">
+      <span class="md-ellipsis">
+        5. What level am I at?
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#6-summary-table" class="md-nav__link">
+      <span class="md-ellipsis">
+        6. Summary table
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#references" class="md-nav__link">
+      <span class="md-ellipsis">
+        References
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#further-reading" class="md-nav__link">
+      <span class="md-ellipsis">
+        Further reading
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../thesis/my-data-mesh-thesis/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Resources
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    My cheat sheets
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+<div class="md-post-date">
+  <svg class="md-post-date__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"></path>
+  </svg>
+  <span>June 12, 2026</span>
+</div>
+
+
+                  
+
+
+  
+  
+
+
+<h1 id="the-8-levels-of-ai-note">The 8 levels of AI note</h1>
+<p>Writing this post has been one of the most enjoyable things I've done lately — and that says it all. I've been at level 6 for a while now, multiplying agents in parallel, and every time someone asks me "where do I even start with this?" I realize there's no honest guide out there that maps the full journey. My end goal is to understand every flow that touches a product and turn them into skills or commands that let me direct without having to touch code line by line. This framework is the most honest roadmap I've found to get there. I hope you enjoy reading it as much as I enjoyed writing it.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../assets/images/resources/8-levels-of-ai-development-portrait.png" data-desc-position="bottom"><img alt="The 8 levels of AI Development — maturity stack read bottom to top" class="image-width-24" src="../../../assets/images/resources/8-levels-of-ai-development-portrait.png"></a></p>
+<hr>
+<h2 id="1-where-this-framework-comes-from">1. Where this framework comes from</h2>
+<p>The 8-level framework was popularized by <strong>Steve Yegge</strong> — veteran of Google and Amazon, currently at Kilo Code — through an interview in The Pragmatic Engineer (March 2026) and expanded in detail at Augment Code. His original version describes eight stages ranging from "no AI" to "custom orchestrator", measuring each level by how much trust you place in the agent and how much control you hand over.</p>
+<p>What you see in this post's thumbnail is a curated version. I've remapped the names to better reflect what actually happens in practice (the phase jumps, the real milestones, the ceilings), and added the concept of <strong>Living Spec</strong> to describe level 8 — because it feels more precise than "Gas Town", the internal name Yegge gave to his own orchestration project. They describe the same thing: a system where the dev defines intent and the agent infrastructure self-manages.</p>
+<div class="admonition quote">
+<p>Yegge's framework isn't a seniority ranking. It's a roadmap: each level tells you exactly which tool or workflow to adopt to reach the next one.</p>
+</div>
+<hr>
+<h2 id="2-the-four-phases">2. The four phases</h2>
+<p>Before going level by level, it helps to see the phase structure. This isn't cosmetic — phases mark qualitative shifts in how you work:</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Levels</th>
+<th>Name</th>
+<th>What changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>1 – 2</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 13h-4c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2H4l-2 5v2c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-2M6 20c-.89 0-1.34-1.08-.71-1.71S7 18.11 7 19c0 .55-.45 1-1 1m4 0c-.89 0-1.34-1.08-.71-1.71S11 18.11 11 19c0 .55-.45 1-1 1m4 0c-.89 0-1.34-1.08-.71-1.71S15 18.11 15 19c0 .55-.45 1-1 1m4 0c-.89 0-1.34-1.08-.71-1.71S19 18.11 19 19c0 .55-.45 1-1 1m0-10V3H6v7H3v2h18v-2M8 5h8v1H8m0 1h6v1H8"></path></svg></span> Vibe Coding</td>
+<td>AI assists, you write every line</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>3 – 4</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4v-1.91L12.09 18H6v-2h8.09l2-2H6v-2h12.09L20 10.09V8l-6-6zm7 1.5L18.5 9H13zm7.15 9.5a.55.55 0 0 0-.4.16l-1.02 1.02 2.09 2.08 1.02-1.01c.21-.22.21-.58 0-.79l-1.3-1.3a.54.54 0 0 0-.39-.16m-2.01 1.77L12 20.92V23h2.08l6.15-6.15z"></path></svg></span> Spec-Driven Development</td>
+<td>You delegate whole files; the spec governs</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>5 – 6</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"></path></svg></span> Agentic Loops</td>
+<td>You multiplex agents; loops self-iterate</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>7 – 8</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 18v2h4v-2zm0-4v2h10v-2zm6 4v2h4v-2zm6-4v2h4v-2zm0 4v2h4v-2zM2 22V8l5 4V8l5 4V8l5 4 1-10h3l1 10v10z"></path></svg></span> Agentic Orchestrators</td>
+<td>You direct infrastructure, not code</td>
+</tr>
+</tbody>
+</table>
+<p>The most disruptive jump is <strong>Phase B to Phase C</strong> — from driver to orchestrator. More on this in the key concepts section.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Phase A\nVibe Coding\n1–2"] --&gt; B["Phase B\nSpec-Driven Dev\n3–4"]
+    B --&gt;|"⚡ the big break"| C["Phase C\nAgentic Loops\n5–6"]
+    C --&gt; D["Phase D\nOrchestrators\n7–8"]</code></pre>
+<hr>
+<h2 id="3-the-8-levels">3. The 8 levels</h2>
+<h3 id="31-level-1-copy-paste-ai">3.1 Level 1 — Copy-Paste AI</h3>
+<p>The IDE suggests the next line. You press Tab or Esc. That simple — and that limiting.</p>
+<p>The dev accepts or rejects suggestions one by one, without leaving the writing flow. The real milestone at this level is stopping to ignore suggestions and starting to integrate them naturally, without breaking your train of thought. The ceiling comes when decision fatigue builds up: accepting or rejecting a hundred times a day wears you down.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47"></path></svg></span> <strong>Tools:</strong> GitHub Copilot (autocomplete), Tabnine, any IDE with inline suggestions.</p>
+<h3 id="32-level-2-chat-assistant">3.2 Level 2 — Chat Assistant</h3>
+<p>The dev opens a side panel (ChatGPT, Claude.ai, Copilot Chat) and generates snippets through conversation. Context doesn't live in the repository — it only exists in the chat window.</p>
+<p>The big shift here is a mindset change: instead of searching Stack Overflow, you ask directly. The ceiling shows up when copy-pasting between the chat and the editor starts costing more than it's worth. Every time you close the conversation, context disappears.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47"></path></svg></span> <strong>Tools:</strong> ChatGPT, Claude.ai, GitHub Copilot Chat.</p>
+<h3 id="33-level-3-agent-mode">3.3 Level 3 — Agent Mode</h3>
+<p>The agent no longer generates snippets for you to paste — it edits multiple files directly within a conversation. A critical skill emerges here: <strong>the agent asks before it builds</strong>.</p>
+<p>Instead of guessing scope and generating code you'll have to undo, a good agent at this level asks structured questions at the start of each task. That moment of "wait, tell me more before I act" is the real milestone of level 3. The ceiling arrives with monorepos: without a shared spec, the agent gets lost in dependencies.</p>
+<div class="admonition tip">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.1 1 4.1 2.8 5.5 0 .6-.4 2.2-2.8 4.5 0 0 3.5 0 6.5-2.5 1.1.3 2.3.5 3.5.5 5.5 0 10-3.6 10-8s-4.5-8-10-8m1 12h-2v-2h2zm1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5s.2-.5.2-.7c0-.3-.1-.5-.3-.7s-.5-.3-.8-.3-.5.1-.7.2q-.3.15-.3.6h-2c.1-.7.4-1.3.9-1.7s1.2-.5 2.1-.5 1.7.2 2.2.6.8 1 .8 1.7q.15.6-.3 1.2"></path></svg></span> <strong><code>AskUserQuestion</code></strong> is the tool that makes this real. In Claude Code, it lets the agent pause mid-task and surface structured, specific questions before acting — stopping the guessing loop before it starts.</p>
+</div>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47"></path></svg></span> <strong>Tools:</strong> Cursor Agent, Windsurf Cascade, GitHub Copilot Agent Mode.</p>
+<h3 id="34-level-4-cli-first">3.4 Level 4 — CLI First</h3>
+<p>The dev leaves the IDE behind as the primary environment. The agent runs from the terminal, opens branches, makes commits, and creates PRs. The dev no longer coordinates diffs — they coordinate direction.</p>
+<p>The milestone here is delegating a complete task from the terminal and receiving a reviewable PR at the end. The skill that unlocks it is knowing how to frame tasks with enough context so the agent doesn't need to ask at every step. The ceiling: commit history starts to matter, and Git hygiene becomes a real problem.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47"></path></svg></span> <strong>Tools:</strong> Claude Code, Aider, GitHub Copilot CLI.</p>
+<h3 id="35-level-5-subagents-the-big-break">3.5 Level 5 — Subagents <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14z"></path></svg></span> The big break</h3>
+<p>This is where the break happens. The dev stops being a <strong>driver</strong> (one agent, one task, you at the wheel) and becomes an <strong>orchestrator</strong> (a lead agent that plans and delegates to specialized subagents).</p>
+<p>The pattern that emerges: Plan → Spawn → Monitor → Verify → Integrate → Retro. A lead agent breaks down the work, assigns it to subagents running in waves, and each wave ends with verification. The milestone is delegating work in verifiable waves — meaning each wave produces something you can review before launching the next.</p>
+<p>This level is the most disruptive in the framework because it fundamentally changes your role. You're no longer watching every file. The ceiling shows up when you have to coordinate and review what several agents produce and you don't yet have systems to do it well.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47"></path></svg></span> <strong>Tools:</strong> Claude Code (subagent pattern), custom orchestration scripts.</p>
+<h3 id="36-level-6-multiagents">3.6 Level 6 — Multiagents</h3>
+<p>2 to 5 specialized agents working in parallel: one builds, one reviews, one tests. Each has its own branch. Verifiability — automated tests, CI — is what makes the parallelism possible without chaos.</p>
+<p>The milestone is <strong>concurrent work without stepping on branches</strong>. The skill that unlocks it isn't technical — it's design: decomposing a task so agents don't collide requires thinking in interfaces and contracts before launching any agent. The ceiling: coordination is still manual and ad-hoc. You're still the bottleneck.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47"></path></svg></span> <strong>Tools:</strong> Claude Code with Git worktrees, tmux sessions, swarms.</p>
+<h3 id="37-level-7-orchestrator">3.7 Level 7 — Orchestrator</h3>
+<p>The dev no longer manages agents individually. They design the <strong>factory</strong>: a shared task queue that prevents duplicate work, a coordinator that assigns work by availability, and checkpointing to resume, roll back, and audit each agent.</p>
+<p>The milestone is having these three primitives working: checkpointing, resume, and rollback. Without them, at the scale of 10+ agents, failures pile up with no recovery path. The ceiling: when the fleet exceeds the capacity for human review.</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.78 15.3 6 6 2.11-2.16-6-6zm3.72-5.2c-.39 0-.81-.05-1.14-.19L4.97 21.25l-2.11-2.11 7.41-7.4L8.5 9.96l-.72.7-1.45-1.41v2.86l-.7.7-3.52-3.56.7-.7h2.81l-1.4-1.41 3.56-3.56a2.976 2.976 0 0 1 4.22 0L9.89 5.74l1.41 1.4-.71.71 1.79 1.78 1.82-1.88c-.14-.33-.2-.75-.2-1.12a3.49 3.49 0 0 1 3.5-3.52c.59 0 1.11.14 1.58.42L16.41 6.2l1.5 1.5 2.67-2.67c.28.47.42.97.42 1.6 0 1.92-1.55 3.47-3.5 3.47"></path></svg></span> <strong>Tools:</strong> Gas Town (Yegge), custom orchestrators, platforms like Kilo Code.</p>
+<h3 id="38-level-8-living-spec">3.8 Level 8 — Living Spec</h3>
+<p>The orchestrator taken to the extreme: 20-30 agents in parallel working against a <strong>living spec</strong> — a live specification that agents read, update, and use as shared memory. The dev only defines intent. The system self-manages.</p>
+<div class="admonition note">
+<p class="admonition-title">Still evolving</p>
+<p>I won't go into detail here because it's active research territory (Yegge's Gas Town is the most public example), operational costs are significant, and the problems of governance, traceability, and auditing don't have clear answers yet. It's the field's vision, not the destination for most.</p>
+</div>
+<hr>
+<h2 id="4-key-concepts">4. Key concepts</h2>
+<h3 id="41-vibe-coding-vs-spec-driven-development">4.1 Vibe Coding vs. Spec-Driven Development</h3>
+<p><strong>Vibe coding</strong> (coined by Andrej Karpathy in February 2025) describes the flow of levels 1-2: you describe what you want, the AI generates code, you iterate. Fast for prototypes. Brittle at scale.</p>
+<p><strong>Spec-Driven Development (SDD)</strong> is the mindset shift that happens at levels 3-4. Instead of iterating on the agent's output, you define first: goal, scope, interfaces, acceptance tests. The spec is the contract. The agent executes against that contract.</p>
+<p>The practical difference: with vibe coding you spend 80% of your time reviewing and correcting. With SDD you spend 80% of your time defining and verifying — which is exactly where human judgment belongs.</p>
+<h3 id="42-the-driver-orchestrator-break">4.2 The driver → orchestrator break</h3>
+<p>The jump from level 4 to level 5 is the hardest conceptually because it's not an incremental improvement — it's a role change.</p>
+<p><strong>As a driver</strong> (levels 1-4), you have one agent, one task, you at the wheel. You see every diff. The agent works for you synchronously.</p>
+<p><strong>As an orchestrator</strong> (levels 5+), you have a lead agent working for you while several subagents work for it. You stop seeing every diff. You see wave results. Your job is to define the plan, set verification criteria, and review checkpoints.</p>
+<p>The cycle that emerges: <strong>Plan → Spawn → Monitor → Verify → Integrate → Retro</strong>. Each wave is a unit of work that ends with verification before the next one begins.</p>
+<pre class="mermaid"><code>flowchart LR
+    Plan --&gt; Spawn --&gt; Monitor --&gt; Verify --&gt; Integrate --&gt; Retro
+    Retro --&gt;|next wave| Plan</code></pre>
+<h3 id="43-afk-vs-hitl">4.3 AFK vs. HITL</h3>
+<p><strong>HITL (Human In The Loop)</strong> means the human is in the active loop — reviewing, correcting, giving feedback in real time.</p>
+<p><strong>AFK (Away From Keyboard)</strong> means the agent works autonomously while the dev does something else — or simply isn't there.</p>
+<p>The most useful synthesis I've found: <strong>HITL at the edges, AFK in the middle</strong>. The dev defines the spec at the start (HITL) and reviews the PR at the end (HITL). In between, the agent ships. This becomes viable from level 5 onward, when you have automated verification (tests, CI) acting as a safety net during AFK time.</p>
+<pre class="mermaid"><code>flowchart LR
+    H1["🧑 HITL\nDefine spec"] --&gt; AFK["🤖 AFK\nAgent ships"] --&gt; H2["🧑 HITL\nReview PR"]</code></pre>
+<p>At lower levels, AFK is risky because there's no net. At higher levels, AFK is the point.</p>
+<h3 id="44-living-spec">4.4 Living Spec</h3>
+<p>A <strong>living spec</strong> is a specification that agents don't just read — they also update. It acts as shared external memory across agents and sessions.</p>
+<p>In practice it can be a structured Markdown file, a system like "Beads" (the issue tracker Yegge integrated into Gas Town), or any state store accessible to all agents in the system.</p>
+<p>The concept solves one of the most common ceilings at level 6: spec drift — when different agents working in parallel fall out of alignment because each carries its own mental model of the system's state.</p>
+<hr>
+<h2 id="5-what-level-am-i-at">5. What level am I at?</h2>
+<p>Answer these questions. Each "yes" scores a point.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Phase A — Vibe Coding</label><label for="__tabbed_1_2">Phase B — Spec-Driven Dev</label><label for="__tabbed_1_3">Phase C — Agentic Loops</label><label for="__tabbed_1_4">Phase D — Agentic Orchestrators</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Yes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Do you use autocomplete (Tab/Esc) regularly?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Do you generate snippets with a chat assistant without leaving your main task?</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="admonition tip">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m5.6-4c-.8-2.3-3-4-5.6-4-3.3 0-6 2.7-6 6s2.7 6 6 6c2.6 0 4.8-1.7 5.6-4H16v4h4v-4h3v-4z"></path></svg></span> <strong>Key skill:</strong> mastering the <code>AskUserQuestion</code> tool. A good agent stops guessing and asks structured clarifying questions before acting — that's what unlocks phases 3 and 4.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Yes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Does the agent edit multiple files in a single conversation?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Do you give the agent structured context before asking it to build?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Do you delegate complete tasks from the terminal and receive a PR at the end?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Does the agent open branches and make commits on its own?</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<div class="admonition tip">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2m5.6-4c-.8-2.3-3-4-5.6-4-3.3 0-6 2.7-6 6s2.7 6 6 6c2.6 0 4.8-1.7 5.6-4H16v4h4v-4h3v-4z"></path></svg></span> <strong>Key skill:</strong> defining specialized roles and designing for parallelization. Agents need clear, non-overlapping responsibilities and isolated branches — without that, concurrent work creates conflicts instead of speed.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Yes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>Do you have a lead agent that plans and delegates to subagents?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Do you verify each wave before launching the next?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Are 2-5 specialized agents running in parallel on separate branches?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Do you have automated CI acting as a safety net for AFK work?</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Yes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>Do you have a shared task queue that prevents duplicate work across agents?</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Do you have checkpointing — can you resume or roll back a failed agent?</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<details class="note">
+<summary>Results</summary>
+<table>
+<thead>
+<tr>
+<th>Score</th>
+<th>Estimated level</th>
+<th>Next step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 – 2</td>
+<td>Levels 1 – 2</td>
+<td>Integrate a chat assistant into your daily flow; practice generating snippets without switching context</td>
+</tr>
+<tr>
+<td>3 – 4</td>
+<td>Levels 3 – 4</td>
+<td>Adopt a CLI agent; learn to write specs before asking for code</td>
+</tr>
+<tr>
+<td>5 – 6</td>
+<td>Level 5</td>
+<td>Try the lead + subagents pattern on a well-scoped task</td>
+</tr>
+<tr>
+<td>7 – 8</td>
+<td>Level 6</td>
+<td>Add CI and tests as a safety net; design so agents don't collide</td>
+</tr>
+<tr>
+<td>9 – 10</td>
+<td>Level 7</td>
+<td>Implement task queue and checkpointing</td>
+</tr>
+<tr>
+<td>11 – 12</td>
+<td>Level 8</td>
+<td>Governance, traceability, and costs are your next problem</td>
+</tr>
+</tbody>
+</table>
+</details>
+<hr>
+<h2 id="6-summary-table">6. Summary table</h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>What the dev delegates</th>
+<th>Tools</th>
+<th>Milestone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Copy-Paste AI</td>
+<td>Inline suggestions</td>
+<td>Copilot, Tabnine</td>
+<td>Accept without leaving the flow</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Chat Assistant</td>
+<td>Snippet generation</td>
+<td>ChatGPT, Claude.ai</td>
+<td>Generate without switching tasks</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Agent Mode</td>
+<td>Multi-file editing</td>
+<td>Cursor, Windsurf, Copilot Agent</td>
+<td>Agent asks before building</td>
+</tr>
+<tr>
+<td>4</td>
+<td>CLI First</td>
+<td>Complete tasks (branch → PR)</td>
+<td>Claude Code, Aider</td>
+<td>Delegate tasks from terminal</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Subagents</td>
+<td>Verifiable waves of work</td>
+<td>Claude Code subagent pattern</td>
+<td>Lead + subagents; Plan→Spawn→Verify</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Multiagents</td>
+<td>Concurrent multi-branch work</td>
+<td>Claude Code + Git worktrees</td>
+<td>Parallel without branch conflicts</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Orchestrator</td>
+<td>Agent fleet management</td>
+<td>Gas Town, Kilo Code</td>
+<td>Checkpointing, resume, rollback</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Living Spec</td>
+<td>Intent</td>
+<td>Custom orchestrators</td>
+<td>Self-managed system</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="references">References</h2>
+<p>Augment Code. (2026). <em>Steve Yegge's 8 levels of AI development: Where's your team?</em> Augment Code. <a href="https://www.augmentcode.com/guides/steve-yegge-8-levels-ai-assisted-development">https://www.augmentcode.com/guides/steve-yegge-8-levels-ai-assisted-development</a></p>
+<p>Huntley, G. (2025, July). <em>How to Ralph Wiggum</em> [GitHub repository]. <a href="https://github.com/ghuntley/how-to-ralph-wiggum">https://github.com/ghuntley/how-to-ralph-wiggum</a></p>
+<p>Karpathy, A. (2025, February 2). <em>Vibe coding</em> [Social media post]. X. <a href="https://x.com/karpathy">https://x.com/karpathy</a></p>
+<p>Nuri, M. (2026). <em>The missing levels of AI-assisted development: From agent chaos to orchestration</em>. Marc Nuri. <a href="https://blog.marcnuri.com/missing-levels-ai-assisted-development">https://blog.marcnuri.com/missing-levels-ai-assisted-development</a></p>
+<p>Orosz, G. (2026, March 11). <em>From IDEs to AI agents with Steve Yegge</em>. The Pragmatic Engineer. <a href="https://newsletter.pragmaticengineer.com/p/from-ides-to-ai-agents-with-steve">https://newsletter.pragmaticengineer.com/p/from-ides-to-ai-agents-with-steve</a></p>
+<p>Ralph Wiggum. (2026). <em>Ralph Wiggum: Viral agentic coding loop, simplified</em>. <a href="https://ralph-wiggum.ai/">https://ralph-wiggum.ai/</a></p>
+<p>Yegge, S. (2026, January). <em>The future of coding agents</em>. Medium. <a href="https://steve-yegge.medium.com/the-future-of-coding-agents-e9451a84207c">https://steve-yegge.medium.com/the-future-of-coding-agents-e9451a84207c</a></p>
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li><a href="https://www.augmentcode.com/guides/steve-yegge-8-levels-ai-assisted-development">Steve Yegge's 8 Levels — Augment Code guide</a> — The full framework with scoring and phase transition guide.</li>
+<li><a href="https://blog.marcnuri.com/missing-levels-ai-assisted-development">The Missing Levels — Marc Nuri</a> — Extends the framework with 5 sub-levels between 7 and 8.</li>
+<li><a href="https://steve-yegge.medium.com/the-future-of-coding-agents-e9451a84207c">The Future of Coding Agents — Steve Yegge</a> — Yegge himself on why agent colonies win.</li>
+<li><a href="https://alexop.dev/posts/how-to-do-afk-coding/">How to do AFK Coding — alexop.dev</a> — Practical implementation of the HITL at the edges + AFK in the middle pattern.</li>
+<li><a href="https://awesomeclaude.ai/ralph-wiggum">Awesome Claude — Ralph Wiggum loop</a> — Geoffrey Huntley's technique for autonomous loops with Claude Code.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright © carlosgrande.me - 2025
+                </div>
+                
+            </div>
+            
+            
+<div class="md-social">
+  
+</div>
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.path", "navigation.tracking", "navigation.tabs", "navigation.tabs", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/javascripts/extra.js"></script>
+      
+        <script src="../../../assets/javascripts/image_caption.js"></script>
+      
+        <script src="../../../assets/javascripts/output_code.js"></script>
+      
+        <script src="../../../assets/javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../assets/javascripts/reading_progress.js" type="module"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": false, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

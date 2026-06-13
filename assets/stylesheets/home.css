@@ -24,16 +24,16 @@
     .tx-hero {
         display: flex;
         align-items: center;
-        justify-content: center;
+        /* left-align horizontally on large screens */
+        justify-content: flex-start;
     }
 
     .tx-hero__content {
         max-width: 22rem;
-        margin-top: 3.5rem;
-        margin-bottom: 3.5rem;
-        margin-left: 1.0rem;
-        margin-right: 4.0rem;
+        /* place a comfortable gap from the left edge */
+        margin: 0 0 0 4rem;
         align-items: center;
+        padding: 1rem;
     }
 }
 
@@ -111,17 +111,6 @@
     margin-bottom: 30px;
 }
 
-.md-footer-meta__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 1.0rem;
-}
-
-.md-footer-social {
-    padding-top: 20px;
-}
-
 .gluon-numbers {
     background: #ffffff;
     padding: 25px;
@@ -129,6 +118,12 @@
 
 
 /* CLEAN CSS BELOW */
+
+/* --- custom md content --- */
+.md-main__inner {
+    margin-top: 0!important;
+}  
+
 /* --- General attributes --- */
 h1 {
     font-size:1.3rem;
@@ -264,37 +259,83 @@ md-container a:hover {
 }
 
 /* --- Hero attributes --- */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* usa toda la altura del hero */
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
 .hero-section {
-    height: auto;   
-    background: linear-gradient(to bottom, var(--md-primary-fg-color), var(--md-primary-fg-color--dark) 99%);
-    position: relative;
-    height: 40vh;
+  position: relative;
+  height: 40vh; /* mantiene tu altura actual */
+  background: linear-gradient(
+    to bottom,
+    var(--md-primary-fg-color),
+    var(--md-primary-fg-color--dark) 99%
+  );
+  overflow: hidden;
 }
 
 .tx-hero {
-    margin: 32px 2.8rem;
+    /* position the hero overlay and vertically center content; align left horizontally */
     color: var(--md-primary-bg-color);
     height: 40vh;
-    width: auto;
+    width: 100%;
     position: absolute;
-    top: auto;
-    left: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .tx-hero h1 {
-    margin-bottom: 1rem;
-    color: currentColor;
-    font-size: 2rem;
-    font-weight: 600;
+  margin-bottom: 1rem;
+  color: currentColor;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .tx-hero p {
-    color: white;
+  color: white;
+  margin: 0;
 }
 
 .tx-hero__content {
-    padding-bottom: 3rem;
-    max-width: 32rem;
+        max-width: 32rem;
+        width: 100%;
+        margin-left: 4rem;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .tx-hero__content {
+        max-width: 100vw;
+        width: 100vw;
+        margin-left: 0;
+        padding: 1.2rem 1rem 1.2rem 1rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .tx-hero h1, .tx-hero p {
+        word-break: break-word;
+        white-space: normal;
+        text-align: center;
+    }
 }
 
 .tx-hero .md-button {
@@ -473,62 +514,4 @@ md-container a:hover {
     color: var(--my-font-color--light);
     font-weight: 100;
     padding-bottom: 1rem;
-}
-
-/* --- Footer attributes --- */
-.footer {
-    background-color: var(--md-footer-bg-color);
-    text-align: left;
-    position: relative;
-}
-
-.footer-meta {
-    padding: 2rem;
-    color: var(--md-footer-fg-color);
-    min-width: 60%;
-}
-
-.footer h2 {
-    margin-bottom: 10px;
-    color: white;
-}
-
-.content-column {
-    flex: 1;
-    padding: 1rem;
-}
-
-.footer a {
-    color: var(--md-accent-bg-color--light);
-}
-
-.footer a:hover {
-    color: var(--md-primary-fg-color);
-}
-
-.footer__main {
-    margin-top: 0px;
-}
-
-.footer__main a {
-    margin-top: 0.3rem;
-    width: fit-content;
-    display: block;
-}
-
-.footer__main a:hover {
-    margin-top: 0.3rem;
-}
-
-.footer__base {
-    padding-top: 2rem;
-}
-
-.footer__base a {
-    display: inline;
-}
-
-.footer__base p {
-    text-align: center;
-    font-weight: 500;
 }

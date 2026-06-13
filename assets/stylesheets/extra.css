@@ -6,9 +6,17 @@
 
 [data-md-color-scheme="slate"] {
   --md-main-title:#cfcfcf;
+  --md-default-bg-color:#0d1117;
 }
 
 /* Global CSS */
+
+.md-typeset .md-button.text-center {
+  display: block;
+  margin: 1em auto;
+  text-align: center;
+  max-width: 10rem;
+}
 
 .md-main article h1 {
   font-weight: 600!important;
@@ -71,14 +79,33 @@ p:has(.bottom) {
 }
 
 /* caption image */
+p > img.image-caption {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+p:has(img.image-caption) {
+  text-align: center;
+}
+
 .parent-caption {
   border-radius: 1rem;
   border: 0.1rem solid var(--md-default-fg-color--lightest);
   overflow: hidden;
   position: relative;
-  display: inline-flex;
+  display: flex; /* block-level for proper centering */
   flex-direction: column; /* To stack caption below the image */
   align-items: center; /* Center items horizontally */
+  width: fit-content; /* shrink to image width */
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Apply max-height to any image wrapped by parent-caption */
+.parent-caption img {
+  max-height: 500px !important;
 }
 
 .caption {
@@ -97,6 +124,31 @@ p:has(.bottom) {
 /* caption image */
 
 /* steps */
+/* Ensure lightbox anchors wrap as a centered block when containing images */
+.md-content a.glightbox {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Visually hide empty captions but keep structure for a11y */
+.parent-caption .caption:empty {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Optional spacing and centering for wrapped images */
+.md-content .parent-caption {
+  margin: 1rem auto;
+}
 .steps ul {
   list-style-type: none;
   counter-reset: item;
