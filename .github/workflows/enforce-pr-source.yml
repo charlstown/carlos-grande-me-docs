@@ -1,0 +1,26 @@
+name: Enforce PR source branch
+
+# Ensures pull requests targeting `main` can only originate from `dev`
+# or from a `hotfix/*` branch. Any other source branch fails this check,
+# which is marked as required in the `main` ruleset.
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-source:
+    name: Validate source branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check that the PR comes from an allowed branch
+        run: |
+          HEAD="${{ github.head_ref }}"
+          echo "PR source branch: $HEAD"
+          if [ "$HEAD" = "dev" ] || [[ "$HEAD" == hotfix/* ]]; then
+            echo "✅ Allowed source branch: $HEAD"
+          else
+            echo "::error::PRs into 'main' are only allowed from 'dev' or 'hotfix/*'. This PR comes from '$HEAD'."
+            exit 1
+          fi
