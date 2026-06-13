@@ -10,7 +10,7 @@ Cambio de configuración de CI de bajo riesgo: se bumpea el tag de la action vul
 
 ## Batch 2 — Dependabot para GitHub Actions
 
-- [ ] · @code-developer - Crear `.github/dependabot.yml` con `version: 2` y una entrada en `updates` para `package-ecosystem: "github-actions"`, `directory: "/"`, `schedule.interval: "weekly"` y `target-branch: "dev"` (la base de desarrollo del repo). Añadir `commit-message.prefix: "[update]"` para alinear con la convención de commits del repo (`[action] description`). Esto habilita PRs automáticos de bumps de actions (checkout, configure-aws-credentials, lychee-action) sin revisar alertas a mano.
+- [x] · @code-developer - Crear `.github/dependabot.yml` con `version: 2` y una entrada en `updates` para `package-ecosystem: "github-actions"`, `directory: "/"`, `schedule.interval: "weekly"` y `target-branch: "dev"` (la base de desarrollo del repo). Añadir `commit-message.prefix: "[update]"` para alinear con la convención de commits del repo (`[action] description`). Esto habilita PRs automáticos de bumps de actions (checkout, configure-aws-credentials, lychee-action) sin revisar alertas a mano.
 
 ## Batch 3 — Sincronizar TechSpec
 
