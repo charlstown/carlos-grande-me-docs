@@ -22,9 +22,9 @@ jobs:
     steps:
       # checkout this repo
       - name: Checkout repo # Name of the step
-        uses: actions/checkout@v4 # Action to run
+        uses: actions/checkout@v6 # Action to run
       - name: Set up Python # Name of the step
-        uses: actions/setup-python@v5 # Action to run
+        uses: actions/setup-python@v6 # Action to run
         with: # Inputs for the action
           python-version: 3.9 # Version of Python to use
       - name: Install dependencies # Name of the step
@@ -33,7 +33,7 @@ jobs:
             pip install -r requirements.txt
             python -m mkdocs build
       - name: Configure AWS credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           # The role ARN to assume via OpenID Connect (GitHub OIDC)
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}
