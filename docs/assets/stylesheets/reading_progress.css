@@ -10,7 +10,7 @@
   top: var(--md-header-height, 2.4rem); /* sits flush against the bottom edge of the sticky Material .md-header */
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 3px;
   z-index: 6;
   pointer-events: none;
   background: transparent;
