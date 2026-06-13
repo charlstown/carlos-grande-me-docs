@@ -40,10 +40,10 @@ The Vitest + jsdom harness already exists (`vitest.config.js`, `tests/unit/readi
 
 ## Write Tests
 
-- [ ] · @test-developer - Confirm the three new unit-test files (`tests/unit/gallery.test.js`, `tests/unit/filter-menu.test.js`, `tests/unit/lazy-loader.test.js`) coexist with `tests/unit/reading-progress.test.js` in a single Vitest run with no duplicated `ReadingProgress` coverage. Run `npm test`. Guard: all four files are discovered and pass in one invocation; total run time is under 30 seconds.
+- [x] · @test-developer - Confirm the three new unit-test files (`tests/unit/gallery.test.js`, `tests/unit/filter-menu.test.js`, `tests/unit/lazy-loader.test.js`) coexist with `tests/unit/reading-progress.test.js` in a single Vitest run with no duplicated `ReadingProgress` coverage. Run `npm test`. Guard: all four files are discovered and pass in one invocation; total run time is under 30 seconds.
 
 ## Run Tests
 
-- [ ] · @tester - Run `npm test` and confirm it covers the unit-test acceptance criteria (Gallery, FilterMenu, LazyLoader, ReadingProgress) and completes in under 30 seconds. Guard: exit code 0 and reported duration below 30 s.
+- [x] · @tester - Run `npm test` and confirm it covers the unit-test acceptance criteria (Gallery, FilterMenu, LazyLoader, ReadingProgress) and completes in under 30 seconds. Guard: exit code 0 and reported duration below 30 s.
 
-- [ ] · @tester - Run `npm run test:build` and confirm `mkdocs build --strict` exits with code 0 (no broken links, no build warnings/errors), satisfying the build-smoke acceptance criterion. Guard: command exits 0.
+- [x] · @tester - Run `npm run test:build` and confirm `mkdocs build --strict` exits with code 0 (no broken links, no build warnings/errors), satisfying the build-smoke acceptance criterion. Guard: command exits 0.
