@@ -32,11 +32,11 @@ The Vitest + jsdom harness already exists (`vitest.config.js`, `tests/unit/readi
 
 ## Batch 6 — CI workflows
 
-- [ ] · @code-developer - Create `.github/workflows/unit-tests.yml` named `Unit Tests`, triggered `on: [push, pull_request]`, running on `ubuntu-latest`: checkout, `actions/setup-node@v4` with `node-version: 20`, `npm ci`, then `npm test`. Guard: file is valid YAML (`python -c "import yaml,sys; yaml.safe_load(open('.github/workflows/unit-tests.yml'))"` exits 0) and the job's final step runs `npm test`.
+- [x] · @code-developer - Create `.github/workflows/unit-tests.yml` named `Unit Tests`, triggered `on: [push, pull_request]`, running on `ubuntu-latest`: checkout, `actions/setup-node@v4` with `node-version: 20`, `npm ci`, then `npm test`. Guard: file is valid YAML (`python -c "import yaml,sys; yaml.safe_load(open('.github/workflows/unit-tests.yml'))"` exits 0) and the job's final step runs `npm test`.
 
-- [ ] · @code-developer - Create `.github/workflows/build-smoke.yml` named `Build Smoke Test`, triggered `on: pull_request: branches: ["main"]`, running on `ubuntu-latest`: checkout, `actions/setup-python@v5` with `python-version: '3.9'`, `pip install -r requirements.txt`, then `mkdocs build --strict`. Guard: valid YAML; trigger block restricts to PRs targeting `main`; final step is `mkdocs build --strict`.
+- [x] · @code-developer - Create `.github/workflows/build-smoke.yml` named `Build Smoke Test`, triggered `on: pull_request: branches: ["main"]`, running on `ubuntu-latest`: checkout, `actions/setup-python@v5` with `python-version: '3.9'`, `pip install -r requirements.txt`, then `mkdocs build --strict`. Guard: valid YAML; trigger block restricts to PRs targeting `main`; final step is `mkdocs build --strict`.
 
-- [ ] · @code-developer - Create `.github/workflows/e2e.yml` named `E2E Tests`, triggered only `on: release: types: [published]` and `on: milestone: types: [closed]` (no push/PR trigger), running on `ubuntu-latest`: checkout, `setup-node@v4` (node 20) + `npm ci` + `npx playwright install --with-deps chromium`, `setup-python@v5` (3.9) + `pip install -r requirements.txt`, then `npm run test:e2e`. Guard: valid YAML; no `push` or `pull_request` keys present under `on`; final step is `npm run test:e2e`.
+- [x] · @code-developer - Create `.github/workflows/e2e.yml` named `E2E Tests`, triggered only `on: release: types: [published]` and `on: milestone: types: [closed]` (no push/PR trigger), running on `ubuntu-latest`: checkout, `setup-node@v4` (node 20) + `npm ci` + `npx playwright install --with-deps chromium`, `setup-python@v5` (3.9) + `pip install -r requirements.txt`, then `npm run test:e2e`. Guard: valid YAML; no `push` or `pull_request` keys present under `on`; final step is `npm run test:e2e`.
 
 ## Write Tests
 
