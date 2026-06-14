@@ -30,10 +30,18 @@ function mockLocalStorage() {
 function mockLocationAssign() {
   const original = window.location;
   const assign = vi.fn();
+  // href/pathname simulate a page distinct from the toggle targets so the
+  // component's self-navigation guard (target.pathname === location.pathname)
+  // does not bail during the normal navigation tests.
   Object.defineProperty(window, 'location', {
     configurable: true,
     writable: true,
-    value: { assign, origin: 'http://localhost' },
+    value: {
+      assign,
+      origin: 'http://localhost',
+      href: 'http://localhost/start/',
+      pathname: '/start/',
+    },
   });
   return {
     assign,

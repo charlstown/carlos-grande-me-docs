@@ -48,12 +48,23 @@ export function applyLanguageRedirect({
 
   if (desired !== 'es') return;
 
-  // Validate that the target URL belongs to the same origin before navigating,
-  // guarding against open-redirect if the attribute value were tampered with.
+  // Resolve the target against the document URL (location.href, not origin) so
+  // relative values like "./" map to the actual page they point at.
+  let target;
   try {
-    const parsed = new URL(esUrl, location.origin);
-    if (parsed.origin !== location.origin) return;
+    target = new URL(esUrl, location.href);
   } catch { return; }
+
+  // Validate same origin before navigating, guarding against open-redirect if
+  // the attribute value were tampered with.
+  if (target.origin !== location.origin) return;
+
+  // Self-redirect guard: i18n fallback pages for posts without a real Spanish
+  // translation are served under /es/ but keep data-lang-current="en" (the
+  // source file locale) and data-lang-es-url="./" (pointing at themselves).
+  // Without this check the redirect would replace the page with itself in an
+  // infinite loop. Bail when the target resolves to the current page.
+  if (target.pathname === location.pathname) return;
 
   // Use replace (not assign) so the default-language URL does not pollute the
   // browser history and the back button still works as expected.

@@ -109,12 +109,21 @@ export class LanguageToggle {
     // On a post page, navigate to the target URL.
     if (!targetUrl) return;
 
-    // Validate that the target URL belongs to the same origin before navigating,
-    // guarding against open-redirect if the attribute value were tampered with.
+    // Resolve against the document URL (location.href, not origin) so relative
+    // values like "./" map to the actual page they point at.
+    let resolved;
     try {
-      const parsed = new URL(targetUrl, location.origin);
-      if (parsed.origin !== location.origin) return;
+      resolved = new URL(targetUrl, location.href);
     } catch { return; }
+
+    // Validate same origin before navigating, guarding against open-redirect if
+    // the attribute value were tampered with.
+    if (resolved.origin !== location.origin) return;
+
+    // Self-navigation guard: on i18n fallback pages served under /es/ for posts
+    // without a real translation, the target URL can resolve to the current
+    // page. Bail instead of reloading the same page.
+    if (resolved.pathname === location.pathname) return;
 
     location.assign(targetUrl);
   }

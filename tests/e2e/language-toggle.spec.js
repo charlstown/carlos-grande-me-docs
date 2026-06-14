@@ -7,6 +7,12 @@ const ES_URL = '/es/resources/cheatsheets/my-8-levels-of-ai-development/';
 // Home page URL.
 const HOME_URL = '/';
 
+// A post WITHOUT a real Spanish translation. The i18n plugin (fallback_to_default)
+// still builds an /es/ version serving the English content, whose toggle keeps
+// data-lang-current="en" and data-lang-es-url="./" (itself).
+const UNTRANSLATED_EN_URL = '/resources/cheatsheets/my-branch-model-cheatsheet/';
+const UNTRANSLATED_ES_URL = '/es/resources/cheatsheets/my-branch-model-cheatsheet/';
+
 // The pilot post id used to verify gallery deduplication.
 const PILOT_POST_ID = 'my-8-levels-of-ai-development';
 
@@ -102,6 +108,53 @@ test('a stored ES preference redirects the EN pilot URL to the ES version', asyn
 
   // applyLanguageRedirect uses location.replace(esUrl) to land on the ES version.
   await expect(page).toHaveURL(/\/es\//);
+});
+
+// ---------------------------------------------------------------------------
+// 3b. Self-redirect guard: a post without a real ES translation must NOT enter
+//     an infinite redirect loop. With preferred-lang='es', opening the EN URL
+//     redirects once to the /es/ fallback and then stops there (the fallback's
+//     es URL points to itself, so the self-redirect guard bails).
+// ---------------------------------------------------------------------------
+
+test('untranslated post does not loop: redirects once to the /es/ fallback and stays', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'webdriver', {
+      configurable: true,
+      get: () => false,
+    });
+  });
+
+  await page.addInitScript(
+    ([key, value]) => {
+      try {
+        localStorage.setItem(key, value);
+      } catch {
+        // Ignore: assertion below will surface storage failures.
+      }
+    },
+    [STORAGE_KEY, 'es'],
+  );
+
+  // Count document navigations to the fallback URL to prove there is no loop.
+  let fallbackHits = 0;
+  page.on('framenavigated', frame => {
+    if (frame === page.mainFrame() && frame.url().includes(UNTRANSLATED_ES_URL)) {
+      fallbackHits += 1;
+    }
+  });
+
+  await page.goto(UNTRANSLATED_EN_URL);
+
+  // Single hop to the /es/ fallback, then it settles (no further redirects).
+  await expect(page).toHaveURL(new RegExp(UNTRANSLATED_ES_URL.replace(/\//g, '\\/')));
+
+  // Reloading the settled fallback page must not bounce again.
+  await page.reload();
+  await expect(page).toHaveURL(new RegExp(UNTRANSLATED_ES_URL.replace(/\//g, '\\/')));
+
+  // The fallback was entered a bounded number of times (no infinite loop).
+  expect(fallbackHits).toBeLessThanOrEqual(3);
 });
 
 // ---------------------------------------------------------------------------

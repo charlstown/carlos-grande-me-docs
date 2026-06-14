@@ -27,13 +27,21 @@ function mockLocalStorage() {
  * non-configurable, so we redefine the whole `location` property instead.
  * Returns the spy and a restore() to put the original location back.
  */
-function mockLocationReplace() {
+function mockLocationReplace(pathname = '/resources/post-en/') {
   const original = window.location;
   const replace = vi.fn();
+  // href/pathname simulate the current English page. They differ from the
+  // Spanish target by default so the self-redirect guard does not bail; pass a
+  // matching pathname to exercise that guard.
   Object.defineProperty(window, 'location', {
     configurable: true,
     writable: true,
-    value: { replace, origin: 'http://localhost' },
+    value: {
+      replace,
+      origin: 'http://localhost',
+      href: `http://localhost${pathname}`,
+      pathname,
+    },
   });
   return {
     replace,
@@ -217,6 +225,22 @@ describe('applyLanguageRedirect — redirect cases', () => {
     applyLanguageRedirect();
 
     // Assert
+    expect(locationMock.replace).not.toHaveBeenCalled();
+  });
+
+  it('does not redirect on an i18n fallback page whose es URL points to itself', () => {
+    // Arrange: a post without a real translation is served under /es/ but keeps
+    // data-lang-current="en" (source file locale) and data-lang-es-url="./"
+    // (itself). Without the self-redirect guard this would loop forever.
+    locationMock.restore();
+    locationMock = mockLocationReplace('/es/resources/post/');
+    mountToggleButton({ current: 'en', esUrl: './' });
+    localStorage.setItem('preferred-lang', 'es');
+
+    // Act
+    applyLanguageRedirect();
+
+    // Assert: the target resolves to the current page, so no redirect happens.
     expect(locationMock.replace).not.toHaveBeenCalled();
   });
 
