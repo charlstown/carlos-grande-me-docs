@@ -28,9 +28,6 @@
 {% block content %}
 {% if page.meta.date and not page.meta.template and not page.is_homepage %}
 {% include "partials/post-date.html" %}
-{% if page.file.alternates is defined and 'en' in page.file.alternates and 'es' in page.file.alternates and page.file.alternates['es'].locale == 'es' %}
-{% include "partials/language-toggle.html" %}
-{% endif %}
 {% endif %}
 {{ super() }}
 {% endblock %}
