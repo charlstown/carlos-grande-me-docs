@@ -129,6 +129,8 @@ extra_javascript:
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
   - path: assets/javascripts/reading_progress.js  # Reading progress bar (ESM)
     type: module
+  - path: assets/javascripts/language_toggle.js  # ES/EN post content toggle (ESM)
+    type: module
 
 # Copyright message
 copyright: Copyright &copy; carlosgrande.me - 2025
