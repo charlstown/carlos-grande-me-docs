@@ -1,37 +1,24 @@
-/* Language toggle component.
-   Renders a small, inline ES/EN switch in the upper content area, aligned
-   with the post date / TOC. Background-free button that adopts the theme's
-   teal accent on hover. Icon uses `fill: currentColor` so it respects both
-   the default (light) and slate (dark) color schemes. */
+/* Language toggle — header button.
+   The button element carries both .md-lang-toggle and .md-header__button,
+   so Material's base layout (size, padding, cursor) is inherited.
+   Only icon colour and focus/hover feedback are defined here.
+   Works with both the default (light) and slate (dark) colour schemes. */
 
+/* Reset any browser button defaults not already covered by .md-header__button */
 .md-lang-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
   color: var(--md-default-fg-color--light);
-  font-size: 0.7rem;
-  line-height: 1;
   transition: color 125ms;
 }
 
-.md-lang-toggle:hover {
+.md-lang-toggle:hover,
+.md-lang-toggle:focus-visible {
   color: var(--md-accent-fg-color);
+  outline: none;
 }
 
 .md-lang-toggle__icon {
   width: 20px;
   height: 20px;
   fill: currentColor;
-  flex-shrink: 0;
-}
-
-.md-lang-toggle__label {
-  font-family: var(--md-text-font-family, _);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  display: block;
 }
