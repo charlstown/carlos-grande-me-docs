@@ -9,6 +9,19 @@ import json
 # Global Vars
 output_path = "docs/assets/publications.json"
 
+# Non-default locales used for translated content. Keep this aligned with the
+# language toggle / i18n configuration in mkdocs.yml. Translated pages use the
+# locale-suffixed filename pattern `<slug>.<locale>.md` and are rendered under a
+# `<locale>/` path. The list is the single source of truth so adding a new
+# locale only requires extending this tuple.
+NON_DEFAULT_LOCALES = ('es',)
+
+# Regex matching a non-default locale suffix on a source filename, e.g.
+# `my-post.es.md`. Built from NON_DEFAULT_LOCALES so it stays in sync.
+_TRANSLATION_SUFFIX_RE = re.compile(
+    r'\.(' + '|'.join(re.escape(loc) for loc in NON_DEFAULT_LOCALES) + r')\.md$'
+)
+
 # Code
 def get_link(doc_file: File, site_name: str) -> str:
     """Generates the final link of each page.
@@ -47,6 +60,27 @@ def is_index(doc: File) -> bool:
         return True
     else:
         return False
+
+def is_translation(doc: File) -> bool:
+    """Check if the doc file is a non-default locale translation.
+
+    Detection is robust and independent of hook/plugin ordering: it matches a
+    translated page either by its source filename suffix (e.g. `post.es.md`)
+    using `src_uri`/`src_path`, or by a destination path that lives under a
+    non-default locale folder (e.g. `es/...`).
+
+    :param doc: documentation markdown file
+    :return: true if the doc file is a non-default locale translation
+    """
+    src = getattr(doc, 'src_uri', None) or getattr(doc, 'src_path', '') or ''
+    if _TRANSLATION_SUFFIX_RE.search(src.replace('\\', '/')):
+        return True
+
+    dest = (getattr(doc, 'dest_uri', '') or '').replace('\\', '/')
+    if any(dest.startswith(f'{loc}/') for loc in NON_DEFAULT_LOCALES):
+        return True
+
+    return False
 
 def get_category(doc: File) -> str:
     """Extracts the main category of each page.
@@ -197,8 +231,8 @@ def on_files(files: Files, config):
     # Get parameters
     for doc in md_docs:
 
-        # filter folders
-        if not is_folder(doc) or is_index(doc):
+        # filter folders, index pages and non-default locale translations
+        if not is_folder(doc) or is_index(doc) or is_translation(doc):
             continue
 
         # Create element
