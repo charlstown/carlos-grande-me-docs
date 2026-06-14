@@ -29,6 +29,9 @@ export function applyLanguageRedirect({
   // No toggle on this page -> only one language exists, nothing to redirect.
   if (button === null) return;
 
+  // The home page never redirects: the toggle there only stores a preference.
+  if (button.getAttribute('data-is-home') === 'true') return;
+
   const current = button.getAttribute('data-lang-current');
 
   // We only redirect away from the English default; any other state (already

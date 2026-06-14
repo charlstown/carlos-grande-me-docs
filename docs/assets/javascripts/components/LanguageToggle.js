@@ -59,9 +59,39 @@ export class LanguageToggle {
       es: this.button.getAttribute('data-lang-es-url'),
     };
     this.current = this.button.getAttribute('data-lang-current');
+    this.isHome = this.button.getAttribute('data-is-home') === 'true';
+
+    // Adjust the button's visual state to the cached preference so that even
+    // before the first click the label reflects what language you will switch to.
+    const stored = LanguageToggle.getStoredPreference(this.storageKey);
+    const preferred = LanguageToggle.resolveDefault({
+      stored,
+      navLang: (typeof navigator !== 'undefined' && navigator.language) || undefined,
+    });
+    if (preferred !== this.current) {
+      // The user's preference differs from the page locale: show the page locale
+      // as the switch target (i.e. they are "on" the wrong language for them, so
+      // the button label should invite them to switch to their preference — but
+      // since the button always shows where you CAN go, we just keep current as-is
+      // and let the redirect handle auto-navigation on posts).
+      this.current = preferred;
+    }
+    this._updateLabel(this.current === 'es' ? 'en' : 'es');
 
     this._onClick = this._handleClick.bind(this);
     this.button.addEventListener('click', this._onClick);
+  }
+
+  // Updates the visible label on the button to show the given target locale.
+  _updateLabel(targetLocale) {
+    if (!this.button) return;
+    let label = this.button.querySelector('.md-lang-toggle__label');
+    if (!label) {
+      label = document.createElement('span');
+      label.className = 'md-lang-toggle__label';
+      this.button.appendChild(label);
+    }
+    label.textContent = targetLocale.toUpperCase();
   }
 
   _handleClick(event) {
@@ -70,15 +100,25 @@ export class LanguageToggle {
     // The target locale is the opposite of the current one.
     const target = this.current === 'es' ? 'en' : 'es';
     const targetUrl = this.urls[target];
-    if (!targetUrl) return;
 
     // Persist the choice globally so other pages can honor it.
     try {
       localStorage.setItem(this.storageKey, target);
     } catch {
-      // Ignore: navigation still proceeds without a stored preference.
+      // Ignore: storage may still work; navigation proceeds without it.
     }
 
+    if (this.isHome) {
+      // On the home page there is no alternate URL to navigate to. Only update
+      // the stored preference and flip the button label so the user sees the
+      // new toggle target immediately.
+      this.current = target;
+      this._updateLabel(this.current === 'es' ? 'en' : 'es');
+      return;
+    }
+
+    // On a post page, navigate to the target URL.
+    if (!targetUrl) return;
     location.assign(targetUrl);
   }
 
