@@ -48,16 +48,31 @@ function mockLocationAssign() {
 }
 
 /**
- * Mounts a `.md-lang-toggle` button with the data-attributes the component
- * reads on mount(). Returns the button element.
+ * Creates and appends a header toggle button with the data-attributes the
+ * component reads on mount(). Mirrors the real button rendered by the MkDocs
+ * Material override (class `md-lang-toggle md-header__button`).
+ *
+ * @param {object} opts
+ * @param {string} [opts.current='en']   - Value for data-lang-current.
+ * @param {string} [opts.enUrl]          - Value for data-lang-en-url.
+ * @param {string} [opts.esUrl]          - Value for data-lang-es-url.
+ * @param {string} [opts.isHome='false'] - Value for data-is-home.
+ * @returns {HTMLButtonElement}
  */
-function mountToggleButton({ current = 'es', enUrl = '/en/post/', esUrl = '/es/post/' } = {}) {
-  document.body.innerHTML =
-    `<button class="md-lang-toggle" ` +
-    `data-lang-current="${current}" ` +
-    `data-lang-en-url="${enUrl}" ` +
-    `data-lang-es-url="${esUrl}"></button>`;
-  return document.querySelector('.md-lang-toggle');
+function mountToggleButton({
+  current = 'en',
+  enUrl = '/resources/post/',
+  esUrl = '/es/resources/post/',
+  isHome = 'false',
+} = {}) {
+  const btn = document.createElement('button');
+  btn.className = 'md-lang-toggle md-header__button';
+  btn.dataset.langCurrent = current;
+  btn.dataset.langEnUrl = enUrl;
+  btn.dataset.langEsUrl = esUrl;
+  btn.dataset.isHome = isHome;
+  document.body.appendChild(btn);
+  return btn;
 }
 
 beforeEach(() => {
@@ -69,11 +84,19 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
+// ---------------------------------------------------------------------------
+// Exports
+// ---------------------------------------------------------------------------
+
 describe('LanguageToggle exports', () => {
   it('exposes the same class as default and named export', () => {
     expect(LanguageToggle).toBe(NamedLanguageToggle);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Static helpers
+// ---------------------------------------------------------------------------
 
 describe('LanguageToggle.normalizeLocale', () => {
   it("returns 'es' for plain 'es'", () => {
@@ -156,20 +179,24 @@ describe('LanguageToggle.resolveDefault', () => {
   });
 });
 
-describe('LanguageToggle.mount', () => {
-  let location;
+// ---------------------------------------------------------------------------
+// mount() and _onClick() — header button
+// ---------------------------------------------------------------------------
+
+describe('LanguageToggle.mount — header button', () => {
+  let loc;
 
   beforeEach(() => {
     mockLocalStorage();
-    location = mockLocationAssign();
+    loc = mockLocationAssign();
   });
 
   afterEach(() => {
-    location.restore();
+    loc.restore();
   });
 
-  it('registers a click handler when the toggle button is present', () => {
-    const button = mountToggleButton({ current: 'es' });
+  it('registers a click handler when the header button is present', () => {
+    const button = mountToggleButton({ current: 'en', isHome: 'false' });
     const addSpy = vi.spyOn(button, 'addEventListener');
 
     const toggle = new LanguageToggle();
@@ -180,34 +207,138 @@ describe('LanguageToggle.mount', () => {
     toggle.destroy();
   });
 
-  it('stores the opposite locale on click (es -> en)', () => {
-    const button = mountToggleButton({ current: 'es' });
-
-    const toggle = new LanguageToggle();
-    toggle.mount();
-    button.click();
-
-    expect(localStorage.setItem).toHaveBeenCalledWith('preferred-lang', 'en');
-    expect(location.assign).toHaveBeenCalledWith('/en/post/');
-    toggle.destroy();
-  });
-
-  it('stores the opposite locale on click (en -> es)', () => {
-    const button = mountToggleButton({ current: 'en' });
-
-    const toggle = new LanguageToggle();
-    toggle.mount();
-    button.click();
-
-    expect(localStorage.setItem).toHaveBeenCalledWith('preferred-lang', 'es');
-    expect(location.assign).toHaveBeenCalledWith('/es/post/');
-    toggle.destroy();
-  });
-
   it('does nothing and does not throw when no toggle button is present', () => {
     const toggle = new LanguageToggle();
     expect(() => toggle.mount()).not.toThrow();
     expect(toggle.button).toBeNull();
     expect(toggle._onClick).toBeNull();
+  });
+
+  // --- Post page (data-is-home="false") ---
+
+  it('post: click persists the target locale and navigates (en -> es)', () => {
+    // No stored preference: navigator defaults to 'en' in jsdom, so
+    // this.current stays 'en' after mount. Click target becomes 'es'.
+    mountToggleButton({
+      current: 'en',
+      enUrl: '/resources/post/',
+      esUrl: '/es/resources/post/',
+      isHome: 'false',
+    });
+
+    const toggle = new LanguageToggle();
+    toggle.mount();
+    toggle.button.click();
+
+    expect(localStorage.setItem).toHaveBeenCalledWith('preferred-lang', 'es');
+    expect(loc.assign).toHaveBeenCalledWith('/es/resources/post/');
+    toggle.destroy();
+  });
+
+  it('post: click persists the target locale and navigates (es -> en)', () => {
+    // Seed localStorage so the component sees 'es' as stored preference.
+    // After mount, this.current = 'es'; click target = 'en'.
+    localStorage.setItem('preferred-lang', 'es');
+
+    mountToggleButton({
+      current: 'en',
+      enUrl: '/resources/post/',
+      esUrl: '/es/resources/post/',
+      isHome: 'false',
+    });
+
+    const toggle = new LanguageToggle();
+    toggle.mount();
+    toggle.button.click();
+
+    expect(localStorage.setItem).toHaveBeenLastCalledWith('preferred-lang', 'en');
+    expect(loc.assign).toHaveBeenCalledWith('/resources/post/');
+    toggle.destroy();
+  });
+
+  // --- Home page (data-is-home="true") ---
+
+  it('home: click persists the target locale but does NOT navigate', () => {
+    // No stored preference: navigator defaults to 'en' in jsdom.
+    // this.current = 'en' after mount. Click target = 'es'. No navigation.
+    mountToggleButton({
+      current: 'en',
+      enUrl: '/resources/post/',
+      esUrl: '/es/resources/post/',
+      isHome: 'true',
+    });
+
+    const toggle = new LanguageToggle();
+    toggle.mount();
+    toggle.button.click();
+
+    expect(localStorage.setItem).toHaveBeenCalledWith('preferred-lang', 'es');
+    expect(loc.assign).not.toHaveBeenCalled();
+    toggle.destroy();
+  });
+
+  it('home: repeated clicks toggle the stored preference without navigating', () => {
+    // Start with stored preference 'es' so initial current = 'es'.
+    // First click: es -> en. Second click: en -> es.
+    localStorage.setItem('preferred-lang', 'es');
+
+    mountToggleButton({
+      current: 'en',
+      enUrl: '/resources/post/',
+      esUrl: '/es/resources/post/',
+      isHome: 'true',
+    });
+
+    const toggle = new LanguageToggle();
+    toggle.mount();
+
+    toggle.button.click(); // es -> en
+    expect(localStorage.setItem).toHaveBeenLastCalledWith('preferred-lang', 'en');
+
+    toggle.button.click(); // en -> es
+    expect(localStorage.setItem).toHaveBeenLastCalledWith('preferred-lang', 'es');
+
+    expect(loc.assign).not.toHaveBeenCalled();
+    toggle.destroy();
+  });
+
+  // --- Mount reflects cached preference ---
+
+  it("home: mount with cached 'es' preference sets this.current to 'es'", () => {
+    // Seed localStorage before mount so the component reads 'es' during mount().
+    // data-lang-current='en' differs from preferred 'es', so mount adjusts
+    // this.current to 'es'.
+    localStorage.setItem('preferred-lang', 'es');
+
+    mountToggleButton({
+      current: 'en',
+      enUrl: '/resources/post/',
+      esUrl: '/es/resources/post/',
+      isHome: 'true',
+    });
+
+    const toggle = new LanguageToggle();
+    toggle.mount();
+
+    expect(toggle.current).toBe('es');
+    toggle.destroy();
+  });
+
+  it("post: mount with cached 'es' preference sets this.current to 'es'", () => {
+    // Same preference logic applies on post pages.
+    localStorage.setItem('preferred-lang', 'es');
+
+    mountToggleButton({
+      current: 'en',
+      enUrl: '/resources/post/',
+      esUrl: '/es/resources/post/',
+      isHome: 'false',
+    });
+
+    const toggle = new LanguageToggle();
+    toggle.mount();
+
+    expect(toggle.current).toBe('es');
+    toggle.destroy();
   });
 });

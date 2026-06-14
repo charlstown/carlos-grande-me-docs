@@ -66,34 +66,44 @@ function setNavigator(prop, value) {
 
 /**
  * Mounts a `.md-lang-toggle` button with the data-attributes the redirect reads.
+ * Mirrors the exact shape described in the feature spec.
  */
-function mountToggleButton({ current = 'en', esUrl = '/es/post/' } = {}) {
-  const esAttr = esUrl === null ? '' : `data-lang-es-url="${esUrl}" `;
-  document.body.innerHTML =
-    `<button class="md-lang-toggle" ` +
-    `data-lang-current="${current}" ` +
-    esAttr +
-    `></button>`;
-  return document.querySelector('.md-lang-toggle');
+function mountToggleButton({
+  current = 'en',
+  esUrl = '/es/resources/post/',
+  isHome = 'false',
+} = {}) {
+  const btn = document.createElement('button');
+  btn.className = 'md-lang-toggle';
+  btn.dataset.langCurrent = current;
+  btn.dataset.langEsUrl = esUrl;
+  btn.dataset.isHome = isHome;
+  document.body.appendChild(btn);
+  return btn;
 }
 
-let location;
+let locationMock;
 
 beforeEach(() => {
   document.body.innerHTML = '';
   mockLocalStorage();
-  location = mockLocationReplace();
-  // Default to a normal, non-bot browser environment.
+  locationMock = mockLocationReplace();
+  // Default to a normal, non-bot browser environment with a neutral language.
   setNavigator('webdriver', false);
   setNavigator('userAgent', 'Mozilla/5.0 (Test; rv:1.0) Gecko/20100101 Firefox/1.0');
+  setNavigator('language', 'en-US');
 });
 
 afterEach(() => {
   document.body.innerHTML = '';
-  location.restore();
+  locationMock.restore();
   while (navRestores.length) navRestores.pop()();
   vi.restoreAllMocks();
 });
+
+// ---------------------------------------------------------------------------
+// Export contract
+// ---------------------------------------------------------------------------
 
 describe('LanguageRedirect exports', () => {
   it('exposes the same function as default and named export', () => {
@@ -101,112 +111,183 @@ describe('LanguageRedirect exports', () => {
   });
 });
 
+// ---------------------------------------------------------------------------
+// 1. No redirect when data-is-home="true"
+// ---------------------------------------------------------------------------
+
+describe('applyLanguageRedirect — home page guard', () => {
+  it('does not redirect on the home page even when stored preference is es', () => {
+    // Arrange: home page button (data-is-home="true") with es preference stored.
+    mountToggleButton({ current: 'en', esUrl: '/es/resources/post/', isHome: 'true' });
+    localStorage.setItem('preferred-lang', 'es');
+
+    // Act
+    applyLanguageRedirect();
+
+    // Assert: home page must never redirect regardless of preference.
+    expect(locationMock.replace).not.toHaveBeenCalled();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// 2. No redirect when the toggle button is absent
+// ---------------------------------------------------------------------------
+
 describe('applyLanguageRedirect — no toggle button', () => {
   it('does not redirect when the toggle button is absent', () => {
+    // Arrange: no button in the DOM; simulate es preference to ensure guard fires.
     setNavigator('language', 'es-ES');
     localStorage.setItem('preferred-lang', 'es');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).not.toHaveBeenCalled();
+    // Assert
+    expect(locationMock.replace).not.toHaveBeenCalled();
   });
 });
+
+// ---------------------------------------------------------------------------
+// 3 & 4. No redirect when desired language is 'en'
+// ---------------------------------------------------------------------------
 
 describe('applyLanguageRedirect — desired language is en', () => {
   it('does not redirect when stored preference is en', () => {
-    mountToggleButton({ current: 'en', esUrl: '/es/post/' });
-    setNavigator('language', 'en-US');
+    // Arrange: stored='en', navigator also 'en-US' (set in beforeEach).
+    mountToggleButton({ current: 'en', esUrl: '/es/resources/post/' });
     localStorage.setItem('preferred-lang', 'en');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).not.toHaveBeenCalled();
+    // Assert
+    expect(locationMock.replace).not.toHaveBeenCalled();
   });
 
   it('does not redirect when navigator language resolves to en and nothing is stored', () => {
-    mountToggleButton({ current: 'en', esUrl: '/es/post/' });
+    // Arrange: navigator='fr-FR' (not es-*), no stored preference -> resolves to 'en'.
+    mountToggleButton({ current: 'en', esUrl: '/es/resources/post/' });
     setNavigator('language', 'fr-FR');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).not.toHaveBeenCalled();
+    // Assert
+    expect(locationMock.replace).not.toHaveBeenCalled();
   });
 });
 
+// ---------------------------------------------------------------------------
+// 5. Redirect cases
+// ---------------------------------------------------------------------------
+
 describe('applyLanguageRedirect — redirect cases', () => {
-  it('redirects to data-lang-es-url when stored is es and current is en', () => {
-    mountToggleButton({ current: 'en', esUrl: '/es/post/' });
-    setNavigator('language', 'en-US');
+  it('redirects to data-lang-es-url when stored is es and current page is en', () => {
+    // Arrange: post page, stored='es', current='en'.
+    mountToggleButton({ current: 'en', esUrl: '/es/resources/post/' });
     localStorage.setItem('preferred-lang', 'es');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).toHaveBeenCalledTimes(1);
-    expect(location.replace).toHaveBeenCalledWith('/es/post/');
+    // Assert: must navigate to the Spanish URL.
+    expect(locationMock.replace).toHaveBeenCalledTimes(1);
+    expect(locationMock.replace).toHaveBeenCalledWith('/es/resources/post/');
   });
 
   it('redirects when there is no stored preference but navigator.language is es-ES', () => {
-    mountToggleButton({ current: 'en', esUrl: '/es/post/' });
+    // Arrange: no stored preference; browser language is Spanish.
+    mountToggleButton({ current: 'en', esUrl: '/es/resources/post/' });
     setNavigator('language', 'es-ES');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).toHaveBeenCalledWith('/es/post/');
+    // Assert
+    expect(locationMock.replace).toHaveBeenCalledWith('/es/resources/post/');
   });
 
-  it('does not redirect when current is already es', () => {
-    mountToggleButton({ current: 'es', esUrl: '/es/post/' });
+  it('does not redirect when current page is already es', () => {
+    // Arrange: the page is already in Spanish — nothing to do.
+    mountToggleButton({ current: 'es', esUrl: '/es/resources/post/' });
     setNavigator('language', 'es-ES');
     localStorage.setItem('preferred-lang', 'es');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).not.toHaveBeenCalled();
+    // Assert
+    expect(locationMock.replace).not.toHaveBeenCalled();
   });
 
   it('does not redirect when data-lang-es-url is missing', () => {
-    mountToggleButton({ current: 'en', esUrl: null });
+    // Arrange: toggle present but no Spanish URL available.
+    const btn = document.createElement('button');
+    btn.className = 'md-lang-toggle';
+    btn.dataset.langCurrent = 'en';
+    btn.dataset.isHome = 'false';
+    // Intentionally omit data-lang-es-url.
+    document.body.appendChild(btn);
     setNavigator('language', 'es-ES');
     localStorage.setItem('preferred-lang', 'es');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).not.toHaveBeenCalled();
+    // Assert
+    expect(locationMock.replace).not.toHaveBeenCalled();
   });
 });
 
+// ---------------------------------------------------------------------------
+// 6. Stored preference wins over navigator language
+// ---------------------------------------------------------------------------
+
 describe('applyLanguageRedirect — precedence', () => {
-  it('stored en wins over navigator es (no redirect)', () => {
-    mountToggleButton({ current: 'en', esUrl: '/es/post/' });
+  it('stored en wins over navigator es-ES (no redirect)', () => {
+    // Arrange: navigator says es-ES but stored says 'en' — stored must win.
+    mountToggleButton({ current: 'en', esUrl: '/es/resources/post/' });
     setNavigator('language', 'es-ES');
     localStorage.setItem('preferred-lang', 'en');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).not.toHaveBeenCalled();
+    // Assert: no redirect because the explicit stored preference is 'en'.
+    expect(locationMock.replace).not.toHaveBeenCalled();
   });
 });
 
+// ---------------------------------------------------------------------------
+// 7 & 8. Crawler guards
+// ---------------------------------------------------------------------------
+
 describe('applyLanguageRedirect — crawler guard', () => {
   it('does not redirect when navigator.webdriver is true', () => {
-    mountToggleButton({ current: 'en', esUrl: '/es/post/' });
+    // Arrange: headless browser detected via navigator.webdriver.
+    mountToggleButton({ current: 'en', esUrl: '/es/resources/post/' });
     setNavigator('language', 'es-ES');
     setNavigator('webdriver', true);
     localStorage.setItem('preferred-lang', 'es');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).not.toHaveBeenCalled();
+    // Assert: automated agents must never be redirected.
+    expect(locationMock.replace).not.toHaveBeenCalled();
   });
 
   it('does not redirect when the user-agent looks like a bot', () => {
-    mountToggleButton({ current: 'en', esUrl: '/es/post/' });
+    // Arrange: user-agent string identifies the client as Googlebot.
+    mountToggleButton({ current: 'en', esUrl: '/es/resources/post/' });
     setNavigator('language', 'es-ES');
-    setNavigator('userAgent', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)');
+    setNavigator('userAgent', 'Googlebot/2.1');
     localStorage.setItem('preferred-lang', 'es');
 
+    // Act
     applyLanguageRedirect();
 
-    expect(location.replace).not.toHaveBeenCalled();
+    // Assert: bot user-agents must never be redirected.
+    expect(locationMock.replace).not.toHaveBeenCalled();
   });
 });
