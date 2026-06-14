@@ -61,21 +61,10 @@ export class LanguageToggle {
     this.current = this.button.getAttribute('data-lang-current');
     this.isHome = this.button.getAttribute('data-is-home') === 'true';
 
-    // Adjust the button's visual state to the cached preference so that even
-    // before the first click the label reflects what language you will switch to.
-    const stored = LanguageToggle.getStoredPreference(this.storageKey);
-    const preferred = LanguageToggle.resolveDefault({
-      stored,
-      navLang: (typeof navigator !== 'undefined' && navigator.language) || undefined,
-    });
-    if (preferred !== this.current) {
-      // The user's preference differs from the page locale: show the page locale
-      // as the switch target (i.e. they are "on" the wrong language for them, so
-      // the button label should invite them to switch to their preference — but
-      // since the button always shows where you CAN go, we just keep current as-is
-      // and let the redirect handle auto-navigation on posts).
-      this.current = preferred;
-    }
+    // The button label always shows the locale the user can switch to (the
+    // opposite of the current page locale). this.current is set once from
+    // data-lang-current and never mutated here, so _handleClick always computes
+    // the target relative to the actual page locale rather than the stored pref.
     this._updateLabel(this.current === 'es' ? 'en' : 'es');
 
     this._onClick = this._handleClick.bind(this);
@@ -119,6 +108,14 @@ export class LanguageToggle {
 
     // On a post page, navigate to the target URL.
     if (!targetUrl) return;
+
+    // Validate that the target URL belongs to the same origin before navigating,
+    // guarding against open-redirect if the attribute value were tampered with.
+    try {
+      const parsed = new URL(targetUrl, location.origin);
+      if (parsed.origin !== location.origin) return;
+    } catch { return; }
+
     location.assign(targetUrl);
   }
 

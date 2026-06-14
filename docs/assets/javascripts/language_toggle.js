@@ -25,7 +25,7 @@ function init() {
 // The components guard against irrelevant pages internally, so it is safe to
 // run once the DOM is ready regardless of the current route.
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', init, { once: true });
 } else {
   init();
 }

@@ -33,7 +33,7 @@ function mockLocationAssign() {
   Object.defineProperty(window, 'location', {
     configurable: true,
     writable: true,
-    value: { assign },
+    value: { assign, origin: 'http://localhost' },
   });
   return {
     assign,
@@ -236,12 +236,9 @@ describe('LanguageToggle.mount — header button', () => {
   });
 
   it('post: click persists the target locale and navigates (es -> en)', () => {
-    // Seed localStorage so the component sees 'es' as stored preference.
-    // After mount, this.current = 'es'; click target = 'en'.
-    localStorage.setItem('preferred-lang', 'es');
-
+    // Mount on the ES page; this.current = 'es' (page locale). Click target = 'en'.
     mountToggleButton({
-      current: 'en',
+      current: 'es',
       enUrl: '/resources/post/',
       esUrl: '/es/resources/post/',
       isHome: 'false',
@@ -278,10 +275,7 @@ describe('LanguageToggle.mount — header button', () => {
   });
 
   it('home: repeated clicks toggle the stored preference without navigating', () => {
-    // Start with stored preference 'es' so initial current = 'es'.
-    // First click: es -> en. Second click: en -> es.
-    localStorage.setItem('preferred-lang', 'es');
-
+    // this.current starts as page locale 'en'. First click: en -> es. Second click: es -> en.
     mountToggleButton({
       current: 'en',
       enUrl: '/resources/post/',
@@ -292,11 +286,11 @@ describe('LanguageToggle.mount — header button', () => {
     const toggle = new LanguageToggle();
     toggle.mount();
 
-    toggle.button.click(); // es -> en
-    expect(localStorage.setItem).toHaveBeenLastCalledWith('preferred-lang', 'en');
-
     toggle.button.click(); // en -> es
     expect(localStorage.setItem).toHaveBeenLastCalledWith('preferred-lang', 'es');
+
+    toggle.button.click(); // es -> en
+    expect(localStorage.setItem).toHaveBeenLastCalledWith('preferred-lang', 'en');
 
     expect(loc.assign).not.toHaveBeenCalled();
     toggle.destroy();
@@ -304,10 +298,9 @@ describe('LanguageToggle.mount — header button', () => {
 
   // --- Mount reflects cached preference ---
 
-  it("home: mount with cached 'es' preference sets this.current to 'es'", () => {
-    // Seed localStorage before mount so the component reads 'es' during mount().
-    // data-lang-current='en' differs from preferred 'es', so mount adjusts
-    // this.current to 'es'.
+  it("home: mount always sets this.current to the page locale, ignoring cached preference", () => {
+    // Seed localStorage with 'es' before mount. this.current must stay 'en'
+    // (the page locale from data-lang-current) regardless of stored preference.
     localStorage.setItem('preferred-lang', 'es');
 
     mountToggleButton({
@@ -320,12 +313,12 @@ describe('LanguageToggle.mount — header button', () => {
     const toggle = new LanguageToggle();
     toggle.mount();
 
-    expect(toggle.current).toBe('es');
+    expect(toggle.current).toBe('en');
     toggle.destroy();
   });
 
-  it("post: mount with cached 'es' preference sets this.current to 'es'", () => {
-    // Same preference logic applies on post pages.
+  it("post: mount always sets this.current to the page locale, ignoring cached preference", () => {
+    // Same behaviour on post pages: stored preference must not override the page locale.
     localStorage.setItem('preferred-lang', 'es');
 
     mountToggleButton({
@@ -338,7 +331,7 @@ describe('LanguageToggle.mount — header button', () => {
     const toggle = new LanguageToggle();
     toggle.mount();
 
-    expect(toggle.current).toBe('es');
+    expect(toggle.current).toBe('en');
     toggle.destroy();
   });
 });

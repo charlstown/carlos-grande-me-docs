@@ -48,6 +48,13 @@ export function applyLanguageRedirect({
 
   if (desired !== 'es') return;
 
+  // Validate that the target URL belongs to the same origin before navigating,
+  // guarding against open-redirect if the attribute value were tampered with.
+  try {
+    const parsed = new URL(esUrl, location.origin);
+    if (parsed.origin !== location.origin) return;
+  } catch { return; }
+
   // Use replace (not assign) so the default-language URL does not pollute the
   // browser history and the back button still works as expected.
   location.replace(esUrl);

@@ -33,7 +33,7 @@ function mockLocationReplace() {
   Object.defineProperty(window, 'location', {
     configurable: true,
     writable: true,
-    value: { replace },
+    value: { replace, origin: 'http://localhost' },
   });
   return {
     replace,
