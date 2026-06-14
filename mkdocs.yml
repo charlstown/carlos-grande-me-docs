@@ -118,6 +118,7 @@ extra_css:
   - assets/stylesheets/my_katex.css
   - assets/stylesheets/reading_progress.css  # Reading progress bar
   - assets/stylesheets/post-date.css  # Post publication date
+  - assets/stylesheets/language-toggle.css  # Post language toggle
 
 # javascript
 extra_javascript:
