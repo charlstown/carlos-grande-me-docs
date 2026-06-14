@@ -22,7 +22,10 @@
 {% endif %}
 <header class="{{ class }}" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
-    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+    {#- Logo links to the true site root (base_url), not the locale-relative
+        nav.homepage.url which mkdocs-static-i18n rewrites to /es/ on Spanish
+        pages. This keeps "home" pointing at / from every page and locale. -#}
+    <a href="{{ base_url | d('.', true) }}/" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
       {% include "partials/logo.html" %}
     </a>
     <label class="md-header__button md-icon" for="__drawer">

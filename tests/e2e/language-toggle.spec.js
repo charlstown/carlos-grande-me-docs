@@ -1,217 +1,91 @@
 import { test, expect } from '@playwright/test';
 
-// Pilot bilingual post: English version lives at the root URL, Spanish under /es/.
+// Pilot bilingual post: English at the root URL, Spanish under /es/.
 const EN_URL = '/resources/cheatsheets/my-8-levels-of-ai-development/';
 const ES_URL = '/es/resources/cheatsheets/my-8-levels-of-ai-development/';
 
-// Home page URL.
+// A post WITHOUT a Spanish translation. The i18n plugin still builds an /es/
+// fallback serving English content, but the toggle must not appear on it.
+const UNTRANSLATED_URL = '/resources/cheatsheets/my-branch-model-cheatsheet/';
+
 const HOME_URL = '/';
-
-// A post WITHOUT a real Spanish translation. The i18n plugin (fallback_to_default)
-// still builds an /es/ version serving the English content, whose toggle keeps
-// data-lang-current="en" and data-lang-es-url="./" (itself).
-const UNTRANSLATED_EN_URL = '/resources/cheatsheets/my-branch-model-cheatsheet/';
-const UNTRANSLATED_ES_URL = '/es/resources/cheatsheets/my-branch-model-cheatsheet/';
-
-// The pilot post id used to verify gallery deduplication.
 const PILOT_POST_ID = 'my-8-levels-of-ai-development';
 
-const STORAGE_KEY = 'preferred-lang';
-
 // ---------------------------------------------------------------------------
-// 1. Toggle button is present in the header on relevant pages
+// 1. The language link appears ONLY on posts with a real translation.
 // ---------------------------------------------------------------------------
 
-test('toggle button is in the header on the home page', async ({ page }) => {
-  await page.goto(HOME_URL);
-
-  // The button must be attached inside the Material header element.
-  const header = page.locator('header.md-header');
-  const toggle = header.locator('.md-lang-toggle');
-  await expect(toggle).toBeAttached();
-});
-
-test('toggle button is in the header on the EN pilot post', async ({ page }) => {
+test('translated EN post shows the language link pointing to the ES version', async ({ page }) => {
   await page.goto(EN_URL);
 
-  const header = page.locator('header.md-header');
-  const toggle = header.locator('.md-lang-toggle');
+  const toggle = page.locator('header.md-header .md-lang-toggle');
   await expect(toggle).toBeAttached();
+
+  // The link points at the Spanish version of the same post.
+  await expect(toggle).toHaveAttribute('href', /\/es\/resources\/cheatsheets\/my-8-levels-of-ai-development\//);
 });
 
-test('toggle button is in the header on the ES pilot post', async ({ page }) => {
+test('translated ES post shows the language link pointing back to the EN version', async ({ page }) => {
   await page.goto(ES_URL);
 
-  const header = page.locator('header.md-header');
-  const toggle = header.locator('.md-lang-toggle');
-  await expect(toggle).toBeAttached();
-});
-
-// ---------------------------------------------------------------------------
-// 2. Clicking the toggle on the EN post navigates to /es/... and persists
-//    the preferred-lang preference in localStorage.
-// ---------------------------------------------------------------------------
-
-test('clicking the toggle on the EN post navigates to the ES URL and persists the preference', async ({ page }) => {
-  await page.goto(EN_URL);
-
-  const toggle = page.locator('.md-lang-toggle');
+  const toggle = page.locator('header.md-header .md-lang-toggle');
   await expect(toggle).toBeAttached();
 
-  await toggle.click();
-
-  // The click handler calls location.assign(esUrl); the ES version lives under /es/.
-  await expect(page).toHaveURL(/\/es\//);
-
-  // The choice must be persisted globally so other pages can honour it.
-  const stored = await page.evaluate(
-    key => localStorage.getItem(key),
-    STORAGE_KEY,
-  );
-  expect(stored).toBe('es');
+  // The link points back at the English version, without an /es/ prefix.
+  const href = await toggle.getAttribute('href');
+  expect(href).toContain('/resources/cheatsheets/my-8-levels-of-ai-development/');
+  expect(href).not.toContain('/es/');
 });
 
-// ---------------------------------------------------------------------------
-// 3. Site-wide redirect: with preferred-lang='es' seeded, opening the EN
-//    pilot URL redirects to the ES version.
-//
-//    Strategy: LanguageRedirect.js skips automated agents by checking
-//    `navigator.webdriver === true`, which Playwright sets by default.
-//    Override it with addInitScript (runs before any page script) so the
-//    redirect path executes as it would for a real visitor.
-// ---------------------------------------------------------------------------
+test('untranslated post does NOT show the language link', async ({ page }) => {
+  await page.goto(UNTRANSLATED_URL);
 
-test('a stored ES preference redirects the EN pilot URL to the ES version', async ({ page }) => {
-  // applyLanguageRedirect bails out when navigator.webdriver is true (crawler
-  // guard). Override it before any page script runs so the real redirect path
-  // is exercised the way a human visitor would experience it.
-  await page.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', {
-      configurable: true,
-      get: () => false,
-    });
-  });
-
-  // Seed the stored preference before navigating so the redirect reads it on load.
-  await page.addInitScript(
-    ([key, value]) => {
-      try {
-        localStorage.setItem(key, value);
-      } catch {
-        // Ignore: storage may be unavailable; the assertion below will surface it.
-      }
-    },
-    [STORAGE_KEY, 'es'],
-  );
-
-  await page.goto(EN_URL);
-
-  // applyLanguageRedirect uses location.replace(esUrl) to land on the ES version.
-  await expect(page).toHaveURL(/\/es\//);
+  // The guard hides the toggle on fallback pages without a real translation.
+  await expect(page.locator('.md-lang-toggle')).toHaveCount(0);
 });
 
-// ---------------------------------------------------------------------------
-// 3b. Self-redirect guard: a post without a real ES translation must NOT enter
-//     an infinite redirect loop. With preferred-lang='es', opening the EN URL
-//     redirects once to the /es/ fallback and then stops there (the fallback's
-//     es URL points to itself, so the self-redirect guard bails).
-// ---------------------------------------------------------------------------
-
-test('untranslated post does not loop: redirects once to the /es/ fallback and stays', async ({ page }) => {
-  await page.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', {
-      configurable: true,
-      get: () => false,
-    });
-  });
-
-  await page.addInitScript(
-    ([key, value]) => {
-      try {
-        localStorage.setItem(key, value);
-      } catch {
-        // Ignore: assertion below will surface storage failures.
-      }
-    },
-    [STORAGE_KEY, 'es'],
-  );
-
-  // Count document navigations to the fallback URL to prove there is no loop.
-  let fallbackHits = 0;
-  page.on('framenavigated', frame => {
-    if (frame === page.mainFrame() && frame.url().includes(UNTRANSLATED_ES_URL)) {
-      fallbackHits += 1;
-    }
-  });
-
-  await page.goto(UNTRANSLATED_EN_URL);
-
-  // Single hop to the /es/ fallback, then it settles (no further redirects).
-  await expect(page).toHaveURL(new RegExp(UNTRANSLATED_ES_URL.replace(/\//g, '\\/')));
-
-  // Reloading the settled fallback page must not bounce again.
-  await page.reload();
-  await expect(page).toHaveURL(new RegExp(UNTRANSLATED_ES_URL.replace(/\//g, '\\/')));
-
-  // The fallback was entered a bounded number of times (no infinite loop).
-  expect(fallbackHits).toBeLessThanOrEqual(3);
-});
-
-// ---------------------------------------------------------------------------
-// 4. Home does NOT redirect: with preferred-lang='es' seeded, opening the
-//    home page must stay at '/' and continue showing all posts.
-//
-//    LanguageRedirect.js exits early when data-is-home='true', so the home
-//    page is never redirected regardless of the stored preference.
-// ---------------------------------------------------------------------------
-
-test('home page does not redirect even with a stored ES preference', async ({ page }) => {
-  // Override webdriver flag so the crawler guard does not short-circuit the
-  // redirect logic before it reaches the is-home check.
-  await page.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', {
-      configurable: true,
-      get: () => false,
-    });
-  });
-
-  await page.addInitScript(
-    ([key, value]) => {
-      try {
-        localStorage.setItem(key, value);
-      } catch {
-        // Ignore: assertion below will surface storage failures.
-      }
-    },
-    [STORAGE_KEY, 'es'],
-  );
-
+test('home page does NOT show the language link', async ({ page }) => {
   await page.goto(HOME_URL);
 
-  // The home must stay at '/' — no redirect to /es/.
-  await expect(page).toHaveURL('/');
-
-  // The gallery must still render cards (home page shows all posts).
-  const gallery = page.locator('#gallery-home');
-  await expect(gallery).toBeAttached();
+  await expect(page.locator('.md-lang-toggle')).toHaveCount(0);
 });
 
 // ---------------------------------------------------------------------------
-// 5. Gallery deduplication: the home gallery renders the pilot post exactly
+// 2. Clicking the link navigates between the two language versions.
+// ---------------------------------------------------------------------------
+
+test('clicking the link on the EN post navigates to the ES version', async ({ page }) => {
+  await page.goto(EN_URL);
+
+  await page.locator('.md-lang-toggle').click();
+
+  await expect(page).toHaveURL(/\/es\/resources\/cheatsheets\/my-8-levels-of-ai-development\//);
+});
+
+// ---------------------------------------------------------------------------
+// 3. The logo always links to the site root '/', never the /es/ home.
+// ---------------------------------------------------------------------------
+
+test('logo on an ES post links to the site root, not the /es/ home', async ({ page }) => {
+  await page.goto(ES_URL);
+
+  // Click the header logo and assert we land on the canonical root home.
+  await page.locator('header.md-header a.md-logo').click();
+
+  await expect(page).toHaveURL(new RegExp(`^https?://[^/]+${HOME_URL}$`));
+});
+
+// ---------------------------------------------------------------------------
+// 4. Gallery deduplication: the home gallery renders the pilot post exactly
 //    once — no duplicate card for the ES translation.
-//
-//    The generate_pages.py hook excludes '.es.md' files from publications.json,
-//    so the gallery should have a single card for the pilot post id.
 // ---------------------------------------------------------------------------
 
 test('home gallery shows the pilot post exactly once (no ES duplicate)', async ({ page }) => {
   await page.goto(HOME_URL);
 
-  // Wait for the gallery to render at least one card before counting.
   const gallery = page.locator('#gallery-home');
   await expect(gallery.locator('.gallery-home-item')).not.toHaveCount(0);
 
-  // Collect the href values of all gallery card links and filter for the pilot.
   const hrefs = await gallery.locator('a[href]').evaluateAll(
     (anchors, id) => anchors
       .map(a => a.getAttribute('href') || '')
@@ -219,7 +93,5 @@ test('home gallery shows the pilot post exactly once (no ES duplicate)', async (
     PILOT_POST_ID,
   );
 
-  // Exactly one card must point to the pilot post; zero would mean it is
-  // missing, more than one means the ES translation leaked into the index.
   expect(hrefs).toHaveLength(1);
 });
