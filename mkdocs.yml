@@ -79,6 +79,19 @@ hooks:
 # Plugins
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: false
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: es
+          name: Español
+          build: true
   - markdownextradata
   - awesome-pages
   - glightbox:
