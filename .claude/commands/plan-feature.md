@@ -24,9 +24,9 @@ Lee el requirements con atención. Evalúa si hay ambigüedades o información f
 |-------------|------------------------------|------------------------------|
 | Comportamiento no especificado ante un caso de borde relevante | "¿Qué pasa si el usuario guarda sin cambios?" | "¿Qué pasa si hay 0 registros?" (el planner puede inferirlo) |
 | Decisión técnica con dos opciones igualmente válidas y consecuencias distintas | "¿Gestionamos el estado en el componente padre o en un contexto?" | "¿Usamos `useState` o `useReducer`?" (el planner elige) |
-| Alcance ambiguo que podría doblar el tamaño de la feature | "¿El fix aplica solo al entry-sheet o también a TipoCobroEditor?" | Detalles de estilo no especificados (el planner lee css-spec) |
+| Alcance ambiguo que podría doblar el tamaño de la feature | "¿El cambio aplica solo a la galería o también al filtro de notebooks?" | Detalles de estilo no especificados (el planner lee los patrones de `docs/assets/css/`) |
 
-**Criterio**: si el planner puede resolverlo leyendo el código, la css-spec o los patrones existentes → **no es un gap, no preguntes**.
+**Criterio**: si el planner puede resolverlo leyendo el código o los patrones existentes (`docs/assets/`, `overrides/`, posts de la misma categoría) → **no es un gap, no preguntes**.
 
 Si detectas **0 gaps críticos**, salta directamente al Paso 4.
 

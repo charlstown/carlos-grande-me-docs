@@ -110,17 +110,17 @@ Guarda como **HALLAZGOS_CODIGO**: archivos implicados, causa probable, commits r
 #### B2a. Verificar el servidor de desarrollo
 
 ```powershell
-$conn = Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue
-if ($conn) { Write-Host "Puerto 3000 activo" } else { Write-Host "Puerto 3000 libre" }
+$conn = Get-NetTCPConnection -LocalPort 8000 -ErrorAction SilentlyContinue
+if ($conn) { Write-Host "Puerto 8000 activo" } else { Write-Host "Puerto 8000 libre" }
 ```
 
-Si no está activo, lanza el servidor en background: `npm run dev`. Espera ~10 s.
+Si no está activo, lanza el servidor en background: `mkdocs serve`. Espera ~10 s.
 
 #### B2b. Abrir el navegador
 
 1. `mcp__chrome-devtools__list_pages` — obtén páginas abiertas.
-2. Si ninguna apunta a localhost: `mcp__chrome-devtools__new_page`.
-3. `mcp__chrome-devtools__navigate_page` → `http://localhost:3000{ruta}`.
+2. Si ninguna apunta a `127.0.0.1:8000`: `mcp__chrome-devtools__new_page`.
+3. `mcp__chrome-devtools__navigate_page` → `http://127.0.0.1:8000{ruta}`.
 
 #### B2c. Reproducir e intentar el fallo
 

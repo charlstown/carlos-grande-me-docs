@@ -130,7 +130,7 @@ Para cada plan en orden, ejecuta el **Bucle de tareas** (Paso 4) hasta completar
 Divide los planes en lotes de 2. Para cada lote:
 
 1. **Lanza 2 agentes en background** con `run_in_background: true` — uno por plan:
-   - `subagent_type`: `implementation-agent`
+   - `subagent_type`: `code-developer`
    - `description`: `"Plan {slug}: ejecutar todas las tareas"`
    - `prompt`: el **Prompt de Worker** (ver abajo)
 
@@ -155,7 +155,7 @@ Rama: {rama}
 1. Lee el plan.md con Read tool.
 2. Extrae todas las líneas `- [ ]` (tareas pendientes).
 3. Para cada tarea, en orden:
-   a. Dispara un subagente (Agent tool) con el tipo indicado por @etiqueta o `general-purpose`.
+   a. Dispara un subagente (Agent tool) con el tipo indicado por @etiqueta o `code-developer` por defecto.
    b. El subagente debe trabajar en el directorio: {worktree_path}
    c. El prompt al subagente incluye: tarea, batch, extracto del plan, y directorio de trabajo.
    d. Si el subagente responde COMPLETADA → edita plan.md: `- [ ]` → `- [x]`.
@@ -218,7 +218,7 @@ Al terminar, indica en tu respuesta final:
 #### 4b. Disparar el subagente (primer intento)
 
 Invoca con `Agent`:
-- `subagent_type`: agente detectado por `@etiqueta` o `general-purpose`
+- `subagent_type`: agente detectado por `@etiqueta` o `code-developer` por defecto
 - `description`: texto corto ≤ 60 caracteres
 - `prompt`: el prompt de 4a
 
@@ -273,8 +273,8 @@ Intenta resolver el bloqueo o encontrar una vía alternativa.
 #### 5a. Limpieza de puertos de desarrollo
 
 ```powershell
-# Windows
-foreach ($port in @(3000, 3001, 4000, 4321, 5173, 8080)) {
+# Windows — mkdocs serve usa el puerto 8000 por defecto
+foreach ($port in @(8000)) {
   $conn = Get-NetTCPConnection -LocalPort $port -ErrorAction SilentlyContinue
   if ($conn) { Stop-Process -Id $conn.OwningProcess -Force -ErrorAction SilentlyContinue }
 }
@@ -284,12 +284,14 @@ foreach ($port in @(3000, 3001, 4000, 4321, 5173, 8080)) {
 
 **Si el plan está 100% completado** (todas las tareas en `[x]`):
 
-1. Push desde el worktree:
+1. **Revisión de código** (solo si el plan tocó código JS o ficheros del theme en `overrides/` o `docs/assets/`; omitir para planes de solo contenido Markdown): lanza el subagente `code-reviewer` con el `worktree_path` como contexto. Si reporta issues **críticos**, intenta corregirlos con un subagente `code-developer` antes de continuar; si no se pueden resolver, anótalo en el resumen final y continúa.
+
+2. Push desde el worktree:
    ```bash
    cd {worktree_path} && git push -u origin {rama}
    ```
 
-2. Crear PR contra `dev`:
+3. Crear PR contra `dev`:
    ```bash
    gh pr create --base dev --title "{tipo}: {título limpio del plan}" --body "$(cat <<'EOF'
    ## Cambios
@@ -303,15 +305,15 @@ foreach ($port in @(3000, 3001, 4000, 4321, 5173, 8080)) {
    )"
    ```
 
-3. Mostrar la URL de la PR al usuario.
+4. Mostrar la URL de la PR al usuario.
 
-4. Cerrar issue vinculado (si `requirements.md` contiene `> GitHub: #{número}`):
+5. Cerrar issue vinculado (si `requirements.md` contiene `> GitHub: #{número}`):
    ```bash
    gh issue comment {número} --body "Implementado en la PR {url}. Cerrando."
    gh issue close {número}
    ```
 
-5. **Eliminar el worktree** (desde el repo principal):
+6. **Eliminar el worktree** (desde el repo principal):
    ```bash
    git worktree remove {worktree_path} --force
    ```

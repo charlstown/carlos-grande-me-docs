@@ -1,5 +1,5 @@
 ---
-description: Limpia las carpetas de features/fixes con plan.md completado. Para cada carpeta, audita y alinea los specs raíz (ProductSpec, TechSpec, css-spec, ui-spec, infra-spec, security-spec, roadmap) con los cambios introducidos, actualiza los que estén desfasados, cierra el issue de GitHub asociado (con comentario y enlace a la rama) y borra la carpeta. Termina con un commit chore y push a dev. Trigger cuando el usuario diga "cleanup", "limpia las carpetas", "limpia los specs", "alinea los specs" o invoque /clean-issues.
+description: Limpia las carpetas de features/fixes con plan.md completado. Para cada carpeta, audita y alinea los specs raíz (ProductSpec, TechSpec) con los cambios introducidos, actualiza los que estén desfasados, cierra el issue de GitHub asociado (con comentario y enlace a la rama) y borra la carpeta. Termina con un commit chore y push a dev. Trigger cuando el usuario diga "cleanup", "limpia las carpetas", "limpia los specs", "alinea los specs" o invoque /clean-issues.
 ---
 
 ## Instrucciones
@@ -62,13 +62,8 @@ Lee los siguientes specs raíz con `Read`:
 
 | Archivo | Auditar cuando… |
 |---------|-----------------|
-| `specs/product-spec.md` | El plan añadió funcionalidad visible al usuario (feat) |
-| `specs/TechSpec.md` | El plan cambió stack, patrones técnicos, dependencias o arquitectura |
-| `specs/css-spec.md` | El plan modificó estilos, componentes UI o tokens visuales |
-| `specs/ui-spec.md` | El plan añadió o cambió pantallas, interacciones o flujos |
-| `specs/infra-spec.md` | El plan tocó vercel.json, env vars, build scripts o integraciones |
-| `specs/security-spec.md` | El plan modificó auth, validaciones, proxies o permisos |
-| `specs/roadmap.md` | Cualquier plan completado (marcar ítems entregados) |
+| `specs/ProductSpec.md` | El plan añadió o cambió contenido, secciones o funcionalidad visible del sitio |
+| `specs/TechSpec.md` | El plan cambió stack, build, plugins de MkDocs, JS del theme, dependencias o estructura |
 
 Para cada spec relevante, lanza un subagente `general-purpose` con el siguiente prompt:
 
@@ -118,7 +113,7 @@ Recopila los resultados. Si el subagente responde "ALINEADO", márcalo y pasa al
 
 ### Paso 4 — Actualizar specs desalineados
 
-Para cada spec donde el subagente detectó desalineaciones, lanza un subagente `implementation-agent` con:
+Para cada spec donde el subagente detectó desalineaciones, lanza un subagente `code-developer` con:
 
 ```
 Actualiza el spec {ruta_spec} para alinearlo con los cambios introducidos por el plan completado.
@@ -252,7 +247,7 @@ Carpetas eliminadas:
 
 Specs actualizados:
 - specs/TechSpec.md
-- specs/infra-spec.md
+- specs/ProductSpec.md
 
 Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 '@

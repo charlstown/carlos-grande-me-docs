@@ -1,10 +1,15 @@
 ---
-description: Reviews the current post, commits pending changes, pushes the branch, and opens a PR against main. Run after /new-post has written the content. Trigger when the user says "post it", "publish", "make the PR", "push and PR", "publica el post", or invokes /post.
+description: Reviews the current post, commits pending changes, pushes the branch, and opens a PR against dev. Run after /new-post has written the content. Trigger when the user says "post it", "publish", "make the PR", "push and PR", "publica el post", or invokes /post.
 ---
 
 # post
 
-Reviews the current post for quality, commits, pushes, and opens a PR against `main`.
+Reviews the current post for quality, commits, pushes, and opens a PR against `dev`.
+
+> **Branching model**: feature branches merge into `dev` (preview deploy to GitHub Pages).
+> `dev` is later promoted to `main` (production deploy to S3) via a separate PR.
+> A PR from a `feature/*` branch directly into `main` is rejected by the
+> `enforce-pr-source` workflow — always target `dev`.
 
 ---
 
@@ -26,7 +31,7 @@ From the output:
 - Save any uncommitted changed files
 - Save the list of commits ahead of `main`
 
-If the current branch is `main` or `develop`, stop and tell the user:
+If the current branch is `main` or `dev`, stop and tell the user:
 > "You're on `{branch}`. Switch to a `feature/post-*` branch first."
 
 ---
@@ -128,7 +133,7 @@ Then run:
 
 ```bash
 gh pr create \
-  --base main \
+  --base dev \
   --title "[feature] {short_title}" \
   --body "$(cat <<'EOF'
 ## Summary
