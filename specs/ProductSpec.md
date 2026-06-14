@@ -12,7 +12,7 @@ date: 2026-06-13
 > | **Status** | 🟡 Draft |
 > | **Owner** | Carlos Grande (@Charlstown) |
 > | **Created** | 2026-06-13 |
-> | **Updated** | 2026-06-13 |
+> | **Updated** | 2026-06-14 |
 > | **Version** | v0.1 |
 
 ---
@@ -110,6 +110,7 @@ Cada categoría es una carpeta bajo `docs/` y determina el agrupado en la galer�
 ### Explorar el sitio (lector)
 
 - **Home / Galería** — Lista visual de publicaciones ordenadas por fecha, con thumbnail, título y categoría.
+- **Filtro de categorías** — La galería se filtra por categoría (`All`, `Articles`, `Case studies`, `Projects`, `Resources`, `Notebooks`); la categoría activa se refleja en la URL (`?category=<slug>`), de modo que un enlace filtrado es compartible y restaura el filtro al abrirlo (los botones atrás/adelante del navegador respetan el estado).
 - **Navegación por pestañas** — Acceso por categoría vía `navigation.tabs` del theme.
 - **Búsqueda** — Buscador integrado del theme (`search.suggest`, `search.highlight`).
 - **About me** — Página personal del autor (`overrides/about-me.html`).
@@ -205,7 +206,7 @@ Estado actual del contenido: **12** notebooks · **4** projects · **13** refere
 
 ## 🔮 Future
 
-- **Filtros y tags en la galería** — Permitir filtrar publicaciones por categoría o etiqueta más allá del orden por fecha.
+- **Tags en la galería** — Permitir filtrar publicaciones por etiqueta, más allá del filtro por categoría ya disponible (con deep linking compartible vía `?category=<slug>`).
 - **Feed RSS / sitemap enriquecido** — Aprovechar `publications.json` para exponer un feed de novedades.
 - **Métricas de lectura** — Analítica ligera respetuosa con la privacidad sobre qué contenido se consume.
 - **Plantillas de contenido por categoría** — Scaffolding asistido (vía skill `new-post`) consolidado para cada tipo de publicación.

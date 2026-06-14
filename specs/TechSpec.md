@@ -10,7 +10,7 @@ date: 2026-06-13
 > | **Status** | 🟡 Draft |
 > | **Owner** | Carlos Grande (@Charlstown) |
 > | **Created** | 2026-06-13 |
-> | **Updated** | 2026-06-13 |
+> | **Updated** | 2026-06-14 |
 > | **Version** | v0.1 |
 > | **ProductSpec** | [[ProductSpec]] |
 
@@ -89,7 +89,7 @@ Recorre las páginas de contenido en el evento `on_files` y emite `docs/assets/p
 Añade un watch explícito de `overrides/` durante `mkdocs serve` sin mutar internals del servidor para no romper el live reload.
 
 #### `overrides/` — Theme Material personalizado
-Plantillas que sobrescriben el theme base: `home.html` (galería), `about-me.html`, `main.html` (que además sobreescribe el bloque `content` para inyectar la fecha de publicación sobre el H1) y `partials/hero.html`, `partials/toc-item.html`, `partials/post-date.html` (componente de fecha de publicación, condicionado a `page.meta.date`).
+Plantillas que sobrescriben el theme base: `home.html` (galería; su script inline también sincroniza el filtro de categorías con la URL —mapeo categoría↔slug, `pushState`/`replaceState`, restauración desde `?category=<slug>` y manejo de `popstate`—), `about-me.html`, `main.html` (que además sobreescribe el bloque `content` para inyectar la fecha de publicación sobre el H1) y `partials/hero.html`, `partials/toc-item.html`, `partials/post-date.html` (componente de fecha de publicación, condicionado a `page.meta.date`).
 
 #### `docs/assets/javascripts/extra.js` — Render de la galería en cliente
 Anima y pinta las tarjetas de publicaciones en el home a partir de los datos de `publications.json`.
@@ -160,7 +160,7 @@ El verbosity se controla con flags nativos de MkDocs (`--verbose`).
 |--------|---------------|-----------|
 | `ReadingProgress` (`tests/unit/reading-progress.test.js`) | `isPostPage` (exclusión de home/about/índices, detección de post real), `mount`/`update` (0% en posts cortos, clamp a 100%) | jsdom: `window.scrollY`, `window.innerHeight` y geometría del contenido |
 | `Gallery` (`tests/unit/gallery.test.js`) | Render de tarjetas de publicaciones a partir de `publications.json` | jsdom: DOM del home y datos de publicaciones |
-| `FilterMenu` (`tests/unit/filter-menu.test.js`) | Filtrado de publicaciones por categoría en la galería | jsdom: DOM del menú de filtros |
+| `FilterMenu` (`tests/unit/filter-menu.test.js`) | Filtrado de publicaciones por categoría en la galería y `setActiveSilent` (fija el botón activo sin disparar `onChange`, usado por la sincronización con la URL) | jsdom: DOM del menú de filtros |
 | `LazyLoader` (`tests/unit/lazy-loader.test.js`) | Carga diferida de imágenes/recursos de la galería | jsdom: `IntersectionObserver` y nodos de imagen |
 
 ### E2E Tests
@@ -170,6 +170,7 @@ Suite end-to-end con Playwright que ejerce el sitio en un navegador real (Chromi
 | Spec | Qué se testea |
 |------|---------------|
 | `tests/e2e/gallery.spec.js` | Render y comportamiento de la galería del home en navegador real |
+| `tests/e2e/home-category-url.spec.js` | Sincronización del filtro de categorías con la URL: deep linking `?category=<slug>`, URL limpia para `All`, caída segura ante slug inválido, `popstate` (atrás/adelante) y sincronía del botón activo |
 | `tests/e2e/reading-progress.spec.js` | Barra de progreso de lectura sobre una página de post real |
 
 ### Integration Tests
