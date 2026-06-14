@@ -156,7 +156,7 @@ test('home gallery shows the pilot post exactly once (no ES duplicate)', async (
 
   // Wait for the gallery to render at least one card before counting.
   const gallery = page.locator('#gallery-home');
-  await expect(gallery.locator('.card')).not.toHaveCount(0);
+  await expect(gallery.locator('.gallery-home-item')).not.toHaveCount(0);
 
   // Collect the href values of all gallery card links and filter for the pilot.
   const hrefs = await gallery.locator('a[href]').evaluateAll(
