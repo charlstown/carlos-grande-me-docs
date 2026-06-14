@@ -6,7 +6,7 @@
 
 /* Reset any browser button defaults not already covered by .md-header__button */
 .md-lang-toggle {
-  color: var(--md-default-fg-color--light);
+  color: var(--md-primary-bg-color);
   transition: color 125ms;
 }
 
