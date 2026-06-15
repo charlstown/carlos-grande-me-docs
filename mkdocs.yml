@@ -12,6 +12,8 @@ theme:
     - 404.html
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.svg
+  icon:
+    alternate: custom/language-toggle  # Custom icon for the i18n language selector
   font:
     text: Roboto
     code: Roboto Mono
