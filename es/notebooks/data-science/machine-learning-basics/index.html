@@ -1,0 +1,3940 @@
+<!-- Elements added to main will be displayed on all pages --><!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="none">
+      
+      
+        <meta name="author" content="Charlstown">
+      
+      
+      
+        <link rel="prev" href="../dimensionality-reduction-using-pca/">
+      
+      
+        <link rel="next" href="../reinforcement-learning-basics/">
+      
+      
+        
+          <link rel="alternate" href="../../../../notebooks/data-science/machine-learning-basics/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Machine learning basics - carlosgrande.me</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/output_code.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/gallery.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/my_katex.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/reading_progress.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/post-date.css">
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/language-toggle.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#machine-learning-basics" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../../" title="carlosgrande.me" class="md-header__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            carlosgrande.me
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Machine learning basics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="teal" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="teal" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+  
+  
+    
+      
+    
+  
+    
+  
+  
+    
+    <a class="md-lang-toggle md-header__button" href="../../../../notebooks/data-science/machine-learning-basics/" hreflang="en" title="English" aria-label="Seleccionar idioma: English">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -5.0 110.0 110.0" aria-hidden="true">
+ <path d="m40.141 39.816v-3.1328h-23.449c-3.6797 0-6.6836 3.0039-6.6836 6.6836v25.906c0 3.6836 3.0039 6.6836 6.6836 6.6836h6.1484l0.023437 14.043 11.73-14.043h15.254c3.6836 0 6.6836-3.0039 6.6836-6.6836v-19.441h-6.3711c-5.5195 0-10.016-4.4961-10.016-10.016zm3.8047 30.012c-0.23047 0.10938-0.47266 0.16016-0.71094 0.16016-0.625 0-1.2227-0.35156-1.5078-0.95312l-2.8359-6h-11.246l-2.8359 6c-0.39453 0.83203-1.3867 1.1875-2.2188 0.79688-0.83203-0.39453-1.1875-1.3867-0.79688-2.2188l9.9688-21.09c0.27344-0.58203 0.86328-0.95313 1.5078-0.95313s1.2305 0.37109 1.5078 0.95313l9.9648 21.09c0.39453 0.83203 0.035156 1.8242-0.79688 2.2188zm-10.676-18.695 4.0469 8.5664h-8.0938zm50.043-41.133h-33.152c-3.6836 0-6.6836 3.0039-6.6836 6.6836v23.133c0 3.6836 3.0039 6.6836 6.6836 6.6836h15.254l11.73 14.043 0.023438-14.043h6.1484c3.6797 0 6.6836-3.0039 6.6836-6.6836v-23.133c0-3.6797-3.0039-6.6836-6.6836-6.6836zm-5.6289 10.258h-4.4023c-0.29297 2.8359-1.7344 5.9688-4.2227 9.1641-0.25391 0.32422-0.51562 0.64844-0.78906 0.97266 1.9375 2.2305 4.3789 4.2461 7.3164 6.0352 0.78516 0.47656 1.0352 1.5039 0.55859 2.2891-0.47656 0.78516-1.5039 1.0352-2.2891 0.55859-3.1133-1.8945-5.7344-4.0352-7.8516-6.4141-2.2695 2.2734-4.9883 4.4961-8.0312 6.5586-0.28516 0.19141-0.60938 0.28516-0.92969 0.28516-0.53516 0-1.0586-0.25781-1.3828-0.73047-0.51562-0.76172-0.31641-1.7969 0.44531-2.3164 3.0391-2.0547 5.6797-4.2461 7.8203-6.4375-1.2461-1.8047-2.2383-3.7266-2.9688-5.7578-0.30859-0.86719 0.13672-1.8203 1.0039-2.1328 0.86719-0.3125 1.8203 0.13672 2.1328 1.0039 0.53906 1.5 1.2461 2.9375 2.1211 4.3047 2.0938-2.6211 3.3945-5.1641 3.7148-7.3906h-14.141c-0.92187 0-1.668-0.74609-1.668-1.6641 0-0.92188 0.74609-1.6641 1.6641-1.6641h21.898c0.92188 0 1.6641 0.74609 1.6641 1.6641 0 0.92187-0.74609 1.6641-1.6641 1.6641z" fill-rule="evenodd"></path></svg>
+      <span class="md-lang-toggle__label">EN</span>
+    </a>
+  
+
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/charlstown/carlos-grande-me" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../references/articles/death-of-distance/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  References
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/app-pickasa/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../resources/thesis/my-data-mesh-thesis/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../coding/google-challenge-part-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Notebooks
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about-me/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About me
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="carlosgrande.me" class="md-nav__button md-logo" aria-label="carlosgrande.me" data-md-component="logo">
+      
+  <img src="../../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    carlosgrande.me
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/charlstown/carlos-grande-me" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    References
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    References
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/death-of-distance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Death of distance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/space-of-flows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Space of flows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/the-chinese-room/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The chinese room
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/ubiquitous-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubiquitous computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/articles/whole-brain-emulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Whole brain emulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case studies
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case studies
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/3000000-kms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    300.000 Km/s studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/ben-willers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ben Willers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/eric-fischer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eric Fischer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/giorgia-lupi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giorgia Lupi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/moritz-stefaner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moritz Stefaner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/nicholas-felton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nicholas Felton
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/refik-anadol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Refik Anadol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/case-studies/wesley-grubbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wesley Grubbs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/app-pickasa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PicKasa App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-airbnb-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Madrid Airbnb analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/madrid-invisible/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Madrid invisible
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/my-rubiks-cube-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My rubiks cube model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My thesis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    My thesis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/thesis/my-data-mesh-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Mesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/thesis/my-data-product-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Product
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/thesis/my-data-fabric-thesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data fabric
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My cheat sheets
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    My cheat sheets
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-8-levels-of-ai-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los 8 niveles de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-branch-model-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branching model cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-business-model-canvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business model canvas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-docker-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-git-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-letter-cases-reminder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Letter cases reminder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-linux-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-python-3-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python 3 cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-python-project-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python project cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-r-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-semantic-versioning-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semantic Versioning cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cheatsheets/my-sql-cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL cheatsheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My coding templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    My coding templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/templates/my-python-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Python template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My favorite tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    My favorite tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/tools/my-favorite-screen-splitter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screen splitter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notebooks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding/google-challenge-part-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google challenge part 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding/python-design-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python design patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding/python-generators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python generators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data science
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data science
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dimensionality-reduction-using-pca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dimensionality reduction using PCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine learning basics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine learning basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+    <a href="#1-linear-regression-with-multiple-variables" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. Linear Regression with Multiple Variables
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="1. Linear Regression with Multiple Variables">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#table-data-example" class="md-nav__link">
+      <span class="md-ellipsis">
+        Table data example
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#equations" class="md-nav__link">
+      <span class="md-ellipsis">
+        Equations
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#example" class="md-nav__link">
+      <span class="md-ellipsis">
+        Example
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#02-logistic-regression-classification" class="md-nav__link">
+      <span class="md-ellipsis">
+        02. Logistic Regression Classification
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="02. Logistic Regression Classification">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#table-data-example_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Table data example
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#equations_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Equations
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#decision-boundary" class="md-nav__link">
+      <span class="md-ellipsis">
+        Decision boundary
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#example_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Example
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#03-neural-networks" class="md-nav__link">
+      <span class="md-ellipsis">
+        03. Neural Networks
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="03. Neural Networks">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#equations_2" class="md-nav__link">
+      <span class="md-ellipsis">
+        Equations
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="Equations">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#forward-propagation" class="md-nav__link">
+      <span class="md-ellipsis">
+        Forward propagation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#cost-function" class="md-nav__link">
+      <span class="md-ellipsis">
+        Cost function
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reinforcement-learning-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reinforcement learning basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample-size-determination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sample size determination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-mining-sentiment-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text mining sentiment analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3">
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-architecture/azure-big-picture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure Big Picture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-architecture/cloud-migration-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud migration planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4">
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Business
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../business/business-model-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Business model design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../business/team-topologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Team topologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-me/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+    <a href="#1-linear-regression-with-multiple-variables" class="md-nav__link">
+      <span class="md-ellipsis">
+        1. Linear Regression with Multiple Variables
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="1. Linear Regression with Multiple Variables">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#table-data-example" class="md-nav__link">
+      <span class="md-ellipsis">
+        Table data example
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#equations" class="md-nav__link">
+      <span class="md-ellipsis">
+        Equations
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#example" class="md-nav__link">
+      <span class="md-ellipsis">
+        Example
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#02-logistic-regression-classification" class="md-nav__link">
+      <span class="md-ellipsis">
+        02. Logistic Regression Classification
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="02. Logistic Regression Classification">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#table-data-example_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Table data example
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#equations_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Equations
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#decision-boundary" class="md-nav__link">
+      <span class="md-ellipsis">
+        Decision boundary
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#example_1" class="md-nav__link">
+      <span class="md-ellipsis">
+        Example
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+        <li class="md-nav__item">
+    <a href="#03-neural-networks" class="md-nav__link">
+      <span class="md-ellipsis">
+        03. Neural Networks
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="03. Neural Networks">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#equations_2" class="md-nav__link">
+      <span class="md-ellipsis">
+        Equations
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+      <nav class="md-nav" aria-label="Equations">
+        <ul class="md-nav__list">
+          
+          
+            <li class="md-nav__item">
+    <a href="#forward-propagation" class="md-nav__link">
+      <span class="md-ellipsis">
+        Forward propagation
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+          
+            <li class="md-nav__item">
+    <a href="#cost-function" class="md-nav__link">
+      <span class="md-ellipsis">
+        Cost function
+      </span>
+    </a>
+  
+    <!-- Table of contents list -->
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+          
+          
+        </ul>
+      </nav>
+    
+  </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegación">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../coding/google-challenge-part-1/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../dimensionality-reduction-using-pca/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Data science
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+<div class="md-post-date">
+  <svg class="md-post-date__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"></path>
+  </svg>
+  <span>January 6, 2020</span>
+</div>
+
+
+                  
+
+
+  
+  
+
+
+<h1 id="machine-learning-basics">Machine learning basics</h1>
+<h2 id="1-linear-regression-with-multiple-variables">1. Linear Regression with Multiple Variables</h2>
+<h3 id="table-data-example">Table data example</h3>
+<p>A multifeature variable is a variable that stores several related characteristics about one item or subject, instead of just a single value. Like the example in this table:</p>
+<table>
+<thead>
+<tr>
+<th>Size(feet<sup>2</sup>)</th>
+<th>N bedrooms</th>
+<th>N floors</th>
+<th>Age</th>
+<th>Price (1K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>x<sub>1</sub></strong></td>
+<td><strong>X<sub>2</sub></strong></td>
+<td><strong>X<sub>3</sub></strong></td>
+<td><strong>X<sub>4</sub></strong></td>
+<td><strong>y</strong></td>
+</tr>
+<tr>
+<td>2104</td>
+<td>5</td>
+<td>1</td>
+<td>45</td>
+<td>460</td>
+</tr>
+<tr>
+<td>1416</td>
+<td>3</td>
+<td>2</td>
+<td>40</td>
+<td>232</td>
+</tr>
+<tr>
+<td>1534</td>
+<td>3</td>
+<td>2</td>
+<td>30</td>
+<td>315</td>
+</tr>
+<tr>
+<td>852</td>
+<td>2</td>
+<td>1</td>
+<td>36</td>
+<td>178</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Naming Convention</p>
+<p>When defining your feature matrix <strong>X</strong>:</p>
+<ul>
+<li>Always include a <strong>bias term</strong>:
+  <code>Xâ‚€ = 1</code> for all rows.</li>
+<li><strong>Xâ‚ â€¦ Xâ‚™</strong> â†’ feature columns (n variables)</li>
+<li><strong>m</strong> â†’ number of training examples (rows)</li>
+<li><strong>X<sub>1</sub><sup>1</sup> â€¦ X<sub>1</sub><sup>m</sup></strong> â†’ feature values per example</li>
+</ul>
+</div>
+<h3 id="equations">Equations</h3>
+<ul>
+<li>Linear hypothesis</li>
+</ul>
+<p>$$
+  h_\theta(x) = \theta^T x = \theta_0 x_0 + \theta_1 x_1 + \theta_2 x_2 + \cdots + \theta_n x_n
+  $$</p>
+<ul>
+<li>Quadratic hypothesis (example of adding polynomial terms)</li>
+</ul>
+<p>$$
+  h_\theta(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_1^2 + \theta_4 x_2^2 + \theta_5 x_1 x_2 + \cdots
+  $$</p>
+<ul>
+<li>Cost function (least squares)</li>
+</ul>
+<p>$$
+  J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} \bigl(h_\theta(x^{(i)}) - y^{(i)}\bigr)^2
+  $$</p>
+<ul>
+<li>Gradient descent update</li>
+</ul>
+<p>$$
+  \theta_j := \theta_j - \alpha\, \frac{1}{m} \sum_{i=1}^{m} \bigl(h_\theta(x^{(i)}) - y^{(i)}\bigr)\, x^{(i)}_j \quad \text{for } j=0,\dots,n
+  $$</p>
+<h3 id="example">Example</h3>
+<ol>
+<li>
+<p><strong>Graphing the data</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_columns</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1">#Load data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">'_data/ex1data1.txt'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">])</span>
+
+<span class="c1">#Plot data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Data points'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'X axis'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Y axis'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1">#variables calculation</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">vector_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">vector_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../../assets/images/notebooks/machine-learning-data-points.png" data-desc-position="bottom"><img alt="Machine learning data points" src="../../../../assets/images/notebooks/machine-learning-data-points.png"></a></p>
+</li>
+<li>
+<p><strong>Initial cost function calculation</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Cost function calculation</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">costfunc</span><span class="p">(</span><span class="n">vec_x</span><span class="p">,</span> <span class="n">vec_y</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">hypothesis</span> <span class="o">=</span> <span class="n">vec_x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="p">(</span><span class="n">hypothesis</span><span class="o">-</span><span class="n">vec_y</span><span class="p">)</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cost</span><span class="p">,</span> <span class="n">error</span>
+
+<span class="c1">#output</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">costfunc</span><span class="p">(</span><span class="n">vector_x</span><span class="p">,</span><span class="n">vector_y</span> <span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The initial cost for theta </span><span class="si">{}</span><span class="s1"> is J = </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">The initial cost for theta [0 0] is J = 32.072733877455676</span>
+</code></pre></div>
+<p>The cost value of 32.07 shows that the modelâ€™s predictions are still quite far from the actual data points.</p>
+<p>This high error indicates that the initial parameters (Î¸ = [0, 0]) need to be adjusted through training to better fit the data.</p>
+</li>
+<li>
+<p><strong>Gradient descent calculation</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Number of iterations</span>
+<span class="n">cycles</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="c1">#Gradient descent</span>
+<span class="n">cost_h</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cycles</span><span class="p">):</span>
+    <span class="n">costf</span> <span class="o">=</span> <span class="n">costfunc</span><span class="p">(</span><span class="n">vector_x</span><span class="p">,</span> <span class="n">vector_y</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">costf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">cost_h</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">costf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">theta_0</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="n">theta_1</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">error</span><span class="o">*</span><span class="n">vector_x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">theta_1</span><span class="p">])</span>
+
+<span class="n">y_sol</span> <span class="o">=</span> <span class="p">[</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">]</span>
+
+<span class="c1">#Plot cost function</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Cost Function graph with Alpha = </span><span class="si">{}</span><span class="s1"> doing </span><span class="si">{}</span><span class="s1"> loops'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">cycles</span><span class="p">))</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">cycles</span><span class="p">)),</span> <span class="n">cost_h</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Number of Loops'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Error'</span><span class="p">)</span>
+
+<span class="c1">#Plot Line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y_sol</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">'red'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The final error is </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cost</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'THE FINAL THETA IS </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">Cost Function graph with Alpha = 0.01 doing 200 loops</span>
+</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../../assets/images/notebooks/machine-learning-cost-function.png" data-desc-position="bottom"><img alt="Cost Function graph with Alpha" src="../../../../assets/images/notebooks/machine-learning-cost-function.png"></a></p>
+<div class="highlight"><pre><span></span><code><span class="go">The final error is 5.1786804785845755</span>
+
+<span class="go">THE FINAL THETA IS [-1.12450181  0.9146286 ]</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="02-logistic-regression-classification">02. Logistic Regression Classification</h2>
+<p>Logistic Regression Classification is a method used to predict whether something belongs to one of two categories (like yes/no or 0/1).</p>
+<p>It works by finding a relationship between the input features and the probability of an outcome using a special â€œS-shapedâ€ curve called the sigmoid function.</p>
+<h3 id="table-data-example_1">Table data example</h3>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>y</th>
+<th>x1</th>
+<th>x2</th>
+<th>x3</th>
+<th>...</th>
+<th>x29</th>
+<th>x30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NÂº 1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>...</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>NÂº 2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>...</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>NÂº 3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>...</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>NÂº 599</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>...</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>NÂº 600</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="equations_1">Equations</h3>
+<ul>
+<li>
+<p>Sigmoid hypothesis</p>
+<div class="arithmatex">\[
+h_\theta(x) = g(\theta^T x) = \frac{1}{1 + e^{-\theta^T x}} \\
+h_\theta(x) = P(y = 1 \mid x; \theta)
+\]</div>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../../assets/images/notebooks/machine-learning-sigmoid-function.png" data-desc-position="bottom"><img alt="Basic Sigmoid function" src="../../../../assets/images/notebooks/machine-learning-sigmoid-function.png"></a></p>
+<div class="arithmatex">\[
+g(z) \ge 0.5 \quad \text{when} \quad z(x) \ge 0
+\]</div>
+</li>
+<li>
+<p>Non-linear decision boundaries</p>
+<div class="arithmatex">\[
+h_\theta(x) = g(\theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_1^2 + \theta_4 x_2^2)
+\]</div>
+</li>
+<li>
+<p>Cost function</p>
+<div class="arithmatex">\[
+\text{cost}(h_\theta(x), y) =
+\begin{cases}
+-\log(h_\theta(x)), &amp; \text{if } y = 1 \\
+-\log(1 - h_\theta(x)), &amp; \text{if } y = 0
+\end{cases}
+\]</div>
+<div class="arithmatex">\[
+\text{cost}(h_\theta(x), y) = -y \log(h_\theta(x)) - (1 - y) \log(1 - h_\theta(x))
+\]</div>
+<div class="arithmatex">\[
+J(\theta) = \frac{1}{m} \sum_{i=1}^{m} \text{Cost}(h_\theta(x^{(i)}), y^{(i)})
+\]</div>
+<div class="arithmatex">\[
+J(\theta) = -\frac{1}{m} \left[ \sum_{i=1}^{m} y^{(i)} \log(h_\theta(x^{(i)})) + (1 - y^{(i)}) \log(1 - h_\theta(x^{(i)})) \right]
+\]</div>
+</li>
+<li>
+<p>Gradient descent</p>
+<p>Gradient formula:</p>
+<div class="arithmatex">\[
+\frac{\delta J(\theta)}{\delta \theta_j} = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right) x_j^{(i)}
+\]</div>
+<p>Gradient descent:</p>
+<div class="arithmatex">\[
+\min_{\theta} J(\theta)
+\]</div>
+<div class="arithmatex">\[
+\text{Repeat} \left\{ \theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right) x_j^{(i)} \right\}
+\]</div>
+</li>
+</ul>
+<h3 id="decision-boundary">Decision boundary</h3>
+<p>This image shows how logistic regression divides data into two groups (Male and Female) using a decision boundary â€” the blue line.</p>
+<p>Points on one side of the line are predicted as one class, and those on the other side as the opposite class; the line itself represents where the model is 50% unsure between the two.</p>
+<div class="arithmatex">\[
+\text{when: }
+\begin{cases}
+h(x) = 0 \\
+g(z) = 0.5 \\
+h(x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 = 0
+\end{cases}
+\]</div>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../../assets/images/notebooks/machine-learning-decision-boundary.png" data-desc-position="bottom"><img alt="Decission boundary" src="../../../../assets/images/notebooks/machine-learning-decision-boundary.png"></a></p>
+<h3 id="example_1">Example</h3>
+<ol>
+<li>
+<p>Graphing data</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_columns</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="c1"># =============================================================================</span>
+<span class="c1"># =========================== INSERT YOUR CODE BELOW ===========================</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1">#Load data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">'_data\ex2data1.txt'</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'x1'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">])</span>
+<span class="n">datay0</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">datay1</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1">#Printed data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1">#Plot data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">datay0</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">datay0</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">'x'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">'Not Admitted'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">datay1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">datay1</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Admitted'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Second Exam'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'First exam'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Y axis'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">        x         x1  y</span>
+<span class="go">0  34.623660  78.024693  0</span>
+<span class="go">1  30.286711  43.894998  0</span>
+<span class="go">2  35.847409  72.902198  0</span>
+<span class="go">3  60.182599  86.308552  1</span>
+<span class="go">4  79.032736  75.344376  1</span>
+</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../../assets/images/notebooks/machine-learning-logistic-example.png" data-desc-position="bottom"><img alt="Labeled data plot" src="../../../../assets/images/notebooks/machine-learning-logistic-example.png"></a></p>
+</li>
+<li>
+<p>Initial cost function calculation</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mt</span>
+
+<span class="c1">#variables calculation</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">vector_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">x1</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">vector_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">)[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1">#Cost function calculation</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sigmoid</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="n">sigmoid</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">mt</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">costfunc</span><span class="p">(</span><span class="n">vec_x</span><span class="p">,</span> <span class="n">vec_y</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">hx</span> <span class="o">=</span> <span class="n">vec_x</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">gx</span> <span class="o">=</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">hx</span><span class="p">)</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">vec_y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">gx</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">vec_y</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">gx</span><span class="p">)</span>
+    <span class="n">fcost</span> <span class="o">=</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fcost</span><span class="p">,</span> <span class="n">gx</span>
+
+<span class="c1">#output</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">costfunc</span><span class="p">(</span><span class="n">vector_x</span><span class="p">,</span><span class="n">vector_y</span> <span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The initial cost for theta </span><span class="si">{}</span><span class="s1"> is J = </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">The initial cost for theta [[0. 0. 0.]] is J = 0.6931471805599453</span>
+</code></pre></div>
+</li>
+<li>
+<p>Gradient Descent</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Number of iterations</span>
+<span class="n">cycles</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.001068</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1">#Variables</span>
+<span class="n">cost_h</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">theta_0</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">theta_1</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">theta_2</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1">#Gradient descent</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cycles</span><span class="p">):</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">costfunc</span><span class="p">(</span><span class="n">vector_x</span><span class="p">,</span> <span class="n">vector_y</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="n">cost_h</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">gx</span> <span class="o">=</span> <span class="n">cost</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">theta_0</span> <span class="o">=</span> <span class="n">theta_0</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">gx</span><span class="o">-</span><span class="n">vector_y</span><span class="p">)</span><span class="o">*</span><span class="n">vector_x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">theta_1</span> <span class="o">=</span> <span class="n">theta_1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">gx</span><span class="o">-</span><span class="n">vector_y</span><span class="p">)</span><span class="o">*</span><span class="n">vector_x</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">theta_2</span> <span class="o">=</span> <span class="n">theta_2</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="mi">1</span><span class="o">/</span><span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">gx</span><span class="o">-</span><span class="n">vector_y</span><span class="p">)</span><span class="o">*</span><span class="n">vector_x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">theta_0</span><span class="p">,</span> <span class="n">theta_1</span><span class="p">,</span> <span class="n">theta_2</span><span class="p">])</span>
+
+<span class="c1">#Otuput</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The final error is </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cost_h</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'THE FINAL THETA IS </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The minimum error found with 300k cycles and alpha = 0.001068 is J = 0.27582976320910635'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'And the final theta is: '</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">9.78506335</span><span class="p">,</span> <span class="mf">0.08377175</span><span class="p">,</span> <span class="mf">0.0775022</span><span class="p">])[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">The final error is [0.5451423473696985, 0.5451386883489806, 0.5451350293938765]</span>
+
+<span class="go">THE FINAL THETA IS [[-1.31988582  0.0196853   0.01075302]]</span>
+
+<span class="go">The minimum error found with 300k cycles and alpha = 0.001068 is J = 0.27582976320910635</span>
+<span class="go">And the final theta is:</span>
+<span class="go">[[-9.78506335  0.08377175  0.0775022 ]]</span>
+</code></pre></div>
+</li>
+<li>
+<p>Algorithm trial</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="c1">#Original hypothesis</span>
+<span class="n">eq</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1">#Select a point by index to know the y</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">eq</span><span class="p">(</span><span class="n">vector_x</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">vector_x</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="c1">#Outputs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'hypothesis theta = </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'With this hypothesis the point P(x1, x2) = (</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">) would have a y = </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vector_x</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">vector_x</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">y</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">hypothesis theta = [-9.78506335], [0.08377175], [0.0775022]</span>
+
+<span class="go">With this hypothesis the point P(x1, x2) = (79.0327360507101, 75.3443764369103) would have a y = [0.93553537]</span>
+</code></pre></div><p></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#Resolving equation for two points</span>
+<span class="n">theta</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">x_pts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_pts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">##If x2 = 0</span>
+<span class="n">y_pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="o">-</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">x_pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+<span class="c1">##If x1 = 0</span>
+<span class="n">x_pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="o">-</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">y_pts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
+
+<span class="c1">#Plot cost function</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Cost Function graph with Alpha = </span><span class="si">{}</span><span class="s1"> doing </span><span class="si">{}</span><span class="s1"> loops'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">cycles</span><span class="p">))</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">cycles</span><span class="p">)),</span> <span class="n">cost_h</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Number of Loops'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Error'</span><span class="p">)</span>
+
+<span class="c1">#Plot Line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">datay0</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">datay0</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">'x'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">'Not Admitted'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">datay1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">datay1</span><span class="o">.</span><span class="n">x1</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">'o'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Admitted'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_pts</span><span class="p">,</span> <span class="n">y_pts</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Decision boundary test'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'First test'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Second test'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="go">Cost Function graph with Alpha = 0.001068 doing 5000 loops</span>
+</code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../../assets/images/notebooks/machine-learning-logistic-cost-function.png" data-desc-position="bottom"><img alt="Logistic cost function" src="../../../../assets/images/notebooks/machine-learning-logistic-cost-function.png"></a></p>
+</li>
+</ol>
+<h2 id="03-neural-networks">03. Neural Networks</h2>
+<h3 id="equations_2">Equations</h3>
+<hr>
+<h4 id="forward-propagation">Forward propagation</h4>
+<p>Hidden layer:</p>
+<div class="arithmatex">\[
+a_1^{(2)} = g(z_1^{(2)}) = g(\theta_{10}^{(1)} \cdot x_0 + \theta_{11}^{(1)} \cdot x_1 + \theta_{12}^{(1)} \cdot x_2 + \theta_{13}^{(1)} \cdot x_3)
+\]</div>
+<div class="arithmatex">\[
+a_2^{(2)} = g(z_2^{(2)}) = g(\theta_{20}^{(1)} \cdot x_0 + \theta_{21}^{(1)} \cdot x_1 + \theta_{22}^{(1)} \cdot x_2 + \theta_{23}^{(1)} \cdot x_3)
+\]</div>
+<div class="arithmatex">\[
+a_3^{(2)} = g(z_3^{(2)}) = g(\theta_{30}^{(1)} \cdot x_0 + \theta_{31}^{(1)} \cdot x_1 + \theta_{32}^{(1)} \cdot x_2 + \theta_{33}^{(1)} \cdot x_3)
+\]</div>
+<p>Output layer:</p>
+<div class="arithmatex">\[
+h_\theta(x) = g(z_1^{(3)}) = g(\theta_{10}^{(2)} \cdot a_0^{(2)} + \theta_{11}^{(2)} \cdot a_1^{(2)} + \theta_{12}^{(2)} \cdot a_2^{(2)} + \theta_{13}^{(2)} \cdot a_3^{(2)})
+\]</div>
+<h4 id="cost-function">Cost function</h4>
+<p><strong>Logistic regression regularization</strong></p>
+<div class="arithmatex">\[
+J(\theta) = -\frac{1}{m} \left[ \sum_{i=1}^{m} y^{(i)} \log h_\theta(x^{(i)}) + (1 - y^{(i)}) \log(1 - h_\theta(x^{(i)})) \right] + \frac{\lambda}{2m} \sum_{j=1}^{n} \theta_j^2
+\]</div>
+<p><strong>Neural network regularization</strong></p>
+<div class="arithmatex">\[
+J(\theta) = -\frac{1}{m} \left[ \sum_{i=1}^{m} \sum_{k=1}^{K} y_k^{(i)} \log h_\theta(x^{(i)})_k + (1 - y_k^{(i)}) \log(1 - h_\theta(x^{(i)})_k) \right]
++ \frac{\lambda}{2m} \sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} (\theta_{ji}^{(l)})^2
+\]</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright © carlosgrande.me - 2025
+                </div>
+                
+            </div>
+            
+            
+<div class="md-social">
+  
+</div>
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.path", "navigation.tracking", "navigation.tabs", "navigation.tabs", "navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/extra.js"></script>
+      
+        <script src="../../../../assets/javascripts/image_caption.js"></script>
+      
+        <script src="../../../../assets/javascripts/output_code.js"></script>
+      
+        <script src="../../../../assets/javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../../assets/javascripts/reading_progress.js" type="module"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": true, "zoomable": false, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
