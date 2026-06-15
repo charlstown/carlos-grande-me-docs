@@ -1,5 +1,6 @@
-mkdocs
-mkdocs-material
+mkdocs==1.6.1
+mkdocs-material==9.7.1
+mkdocs-static-i18n==1.3.1
 pymdown-extensions
 mkdocs-markdownextradata-plugin
 mkdocs-awesome-pages-plugin
