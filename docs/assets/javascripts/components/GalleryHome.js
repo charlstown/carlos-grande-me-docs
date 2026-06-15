@@ -55,6 +55,10 @@ export class Gallery {
     if (!append) this.container.innerHTML = '';
     const fragment = document.createDocumentFragment();
     let baseDelay = 0;
+    // Site-root-relative prefix derived from the json location, so thumbnails
+    // resolve correctly from both / and the /es/ i18n tree (jsonPath is built
+    // with the page's base_url). On /: './', on /es/: '../'.
+    const base = this.jsonPath.replace(/assets\/publications\.json.*$/, '');
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
       const div = document.createElement('div');
@@ -65,7 +69,7 @@ export class Gallery {
       div.innerHTML = `
         <a href="${item.link || '#'}">
           <div class="gallery-home-image-wrapper">
-            <img src="${item.thumbnail || ''}" alt="${item.title || ''}">
+            <img src="${base}${item.thumbnail || ''}" alt="${item.title || ''}">
           </div>
         </a>
         <p class="gallery-home-title">${item.title || ''}</p>

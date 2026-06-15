@@ -82,7 +82,7 @@ plugins:
   - i18n:
       docs_structure: suffix
       fallback_to_default: true
-      reconfigure_material: false
+      reconfigure_material: true
       reconfigure_search: true
       languages:
         - locale: en
@@ -118,7 +118,6 @@ extra_css:
   - assets/stylesheets/my_katex.css
   - assets/stylesheets/reading_progress.css  # Reading progress bar
   - assets/stylesheets/post-date.css  # Post publication date
-  - assets/stylesheets/language-toggle.css  # Post language toggle
 
 # javascript
 extra_javascript:
