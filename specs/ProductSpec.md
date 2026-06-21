@@ -12,7 +12,7 @@ date: 2026-06-13
 > | **Status** | 🟡 Draft |
 > | **Owner** | Carlos Grande (@Charlstown) |
 > | **Created** | 2026-06-13 |
-> | **Updated** | 2026-06-14 |
+> | **Updated** | 2026-06-21 |
 > | **Version** | v0.1 |
 
 ---
@@ -72,7 +72,7 @@ flowchart TD
 - **MkDocs + plugins** — Orquesta el build del sitio estático. No define el contenido ni el estilo visual final; solo ensambla.
 - **Hook `generate_pages.py`** — En el evento `on_files`, recorre las páginas de contenido y emite `publications.json` con título, fecha, categoría, link y thumbnail. No renderiza HTML ni decide navegación; solo produce el índice de datos.
 - **`publications.json`** — Índice de datos consumido por la galería. No es editado a mano; es un artefacto regenerable.
-- **Theme Material + `overrides/`** — Aporta layout, paleta y plantillas personalizadas (home, about-me, hero). No genera datos de contenido.
+- **Theme Material + `overrides/`** — Aporta layout, paleta y plantillas personalizadas (home, about-me, hero). El partial `alternate.html` sobrescribe el selector de idioma nativo de Material con un toggle propio (icono SVG + etiqueta del idioma destino) visible en páginas con alternate ES disponible. No genera datos de contenido.
 - **Galería (`home.html` + `extra.js`)** — Renderiza visualmente las publicaciones leyendo `publications.json`. No conoce la jerarquía de carpetas; solo consume el índice.
 - **`awesome-pages`** — Resuelve la navegación a partir de la estructura de carpetas. No toca el contenido ni la galería.
 
@@ -114,6 +114,7 @@ Cada categoría es una carpeta bajo `docs/` y determina el agrupado en la galer�
 - **Navegación por pestañas** — Acceso por categoría vía `navigation.tabs` del theme.
 - **Búsqueda** — Buscador integrado del theme (`search.suggest`, `search.highlight`).
 - **About me** — Página personal del autor (`overrides/about-me.html`).
+- **Toggle de idioma ES/EN** — Botón visible en posts con versión castellana disponible; enlaza directamente a la versión alternativa. En posts sin traducción el toggle no se muestra (fallback al idioma existente). La selección de idioma es navegación estática pura, sin redirección automática ni persistencia en localStorage.
 
 ---
 
@@ -174,13 +175,13 @@ La configuración vive en `mkdocs.yml` (estructura, theme, plugins, extensiones)
 > │   ├── projects/                # Proyectos propios
 > │   ├── references/              # articles + case-studies
 > │   ├── resources/               # cheatsheets, templates, thesis, tools
-> │   └── assets/                  # images, stylesheets, javascripts, publications.json
+> │   └── assets/                  # images (incl. icons/), stylesheets (incl. language-toggle.css), javascripts, publications.json
 > ├── hooks/
 > │   ├── generate_pages.py        # Genera publications.json (evento on_files)
 > │   └── ignore_file_autoreload.py# Evita recargas infinitas en serve
 > ├── overrides/                   # Plantillas Material personalizadas
 > │   ├── home.html · about-me.html · main.html
-> │   └── partials/hero.html · toc-item.html
+> │   └── partials/hero.html · toc-item.html · alternate.html
 > ├── specs/                       # Specs del proyecto (este vault)
 > ├── .claude/                     # Skills, agentes y comandos del autor
 > ├── mkdocs.yml                   # Configuración del sitio
@@ -199,7 +200,7 @@ Estado actual del contenido: **12** notebooks · **4** projects · **13** refere
 - **Backend dinámico / base de datos** — El sitio es estático generado por MkDocs; no hay servidor de aplicación ni persistencia en runtime.
 - **Comentarios, cuentas o interacción de usuarios** — No se gestiona estado del visitante; la experiencia es de solo lectura.
 - **CMS / editor visual** — La autoría es por Markdown directo; no se construye una interfaz de edición.
-- **Multidioma** — Todo el contenido es en inglés (regla de `CLAUDE.md`); no hay i18n.
+- **i18n completo del sitio** — El sitio soporta ES/EN para el cuerpo de los posts mediante `mkdocs-static-i18n`. El contenido canónico se escribe en inglés; las traducciones al castellano son opcionales (sufijo `.es.md`). La navegación, home, galería y About permanecen en inglés. No se persigue soporte de más idiomas.
 - **Edición manual de `publications.json`** — Es un artefacto generado; modificarlo a mano está fuera del modelo.
 
 ---

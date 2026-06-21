@@ -10,7 +10,7 @@ date: 2026-06-13
 > | **Status** | 🟡 Draft |
 > | **Owner** | Carlos Grande (@Charlstown) |
 > | **Created** | 2026-06-13 |
-> | **Updated** | 2026-06-14 |
+> | **Updated** | 2026-06-21 |
 > | **Version** | v0.1 |
 > | **ProductSpec** | [[ProductSpec]] |
 
@@ -22,12 +22,13 @@ Este documento describe el cómo técnico del sitio de documentación estático 
 
 | Componente | Tecnología | Versión | Rationale |
 |------------|------------|---------|-----------|
-| Generador de sitio | MkDocs | sin pin (badge README: 1.4) | Generador estático Markdown, estándar para docs |
-| Theme | mkdocs-material | sin pin | Theme con galería, búsqueda, light/dark y navegación por tabs |
+| Generador de sitio | MkDocs | 1.6.1 (pineado) | Generador estático Markdown, estándar para docs |
+| Theme | mkdocs-material | 9.7.1 (pineado) | Theme con galería, búsqueda, light/dark y navegación por tabs |
 | Extensiones Markdown | pymdown-extensions | sin pin | Admonitions, tabs, superfences (Mermaid), arithmatex (KaTeX) |
 | Variables globales | mkdocs-markdownextradata-plugin | sin pin | Expone `extra:` de `mkdocs.yml` dentro del Markdown |
 | Navegación | mkdocs-awesome-pages-plugin | sin pin | Deriva la navegación desde la estructura de carpetas |
 | Lightbox galería | mkdocs-glightbox | sin pin | Zoom/lightbox de imágenes |
+| Internacionalización | mkdocs-static-i18n | 1.3.1 (pineado) | Genera URLs estáticas por idioma (suffix EN raíz / ES bajo `/es/`); expone `config.extra.alternate` consumido por `alternate.html` |
 | Parsing frontmatter | PyYAML | sin pin | Lectura de frontmatter en `generate_pages.py` |
 | Runtime build (CI) | Python | 3.9 (CI) | Versión fijada en `actions/setup-python` del workflow |
 | Math rendering | KaTeX | v0 (CDN unpkg) | Render de fórmulas vía `arithmatex` + KaTeX desde CDN |
@@ -35,7 +36,7 @@ Este documento describe el cómo técnico del sitio de documentación estático 
 | Testing E2E (dev) | Playwright | @playwright/test ^1.49.0 | Tests end-to-end de galería y reading-progress en navegador real |
 
 > [!tip] Dependencias de runtime directas
-> `mkdocs` · `mkdocs-material` · `pymdown-extensions` · `mkdocs-markdownextradata-plugin` · `mkdocs-awesome-pages-plugin` · `mkdocs-glightbox` · `pyyaml`. Ninguna está pinneada en `requirements.txt`: el build resuelve siempre la última versión compatible (ver [[#📐 ADRs (Architecture Decision Records)|ADR-002]]).
+> `mkdocs` · `mkdocs-material` · `mkdocs-static-i18n` · `pymdown-extensions` · `mkdocs-markdownextradata-plugin` · `mkdocs-awesome-pages-plugin` · `mkdocs-glightbox` · `pyyaml`. `mkdocs`, `mkdocs-material` y `mkdocs-static-i18n` están pineadas (excepción a ADR-002; ver ADR-005); el resto resuelve siempre la última versión compatible.
 
 ## 🏗️ Module Design
 
@@ -89,7 +90,7 @@ Recorre las páginas de contenido en el evento `on_files` y emite `docs/assets/p
 Añade un watch explícito de `overrides/` durante `mkdocs serve` sin mutar internals del servidor para no romper el live reload.
 
 #### `overrides/` — Theme Material personalizado
-Plantillas que sobrescriben el theme base: `home.html` (galería; su script inline también sincroniza el filtro de categorías con la URL —mapeo categoría↔slug, `pushState`/`replaceState`, restauración desde `?category=<slug>` y manejo de `popstate`—), `about-me.html`, `main.html` (que además sobreescribe el bloque `content` para inyectar la fecha de publicación sobre el H1) y `partials/hero.html`, `partials/toc-item.html`, `partials/post-date.html` (componente de fecha de publicación, condicionado a `page.meta.date`).
+Plantillas que sobrescriben el theme base: `home.html` (galería; su script inline también sincroniza el filtro de categorías con la URL —mapeo categoría↔slug, `pushState`/`replaceState`, restauración desde `?category=<slug>` y manejo de `popstate`—), `about-me.html`, `main.html` (que además sobreescribe el bloque `content` para inyectar la fecha de publicación sobre el H1) y `partials/hero.html`, `partials/toc-item.html`, `partials/post-date.html` (componente de fecha de publicación, condicionado a `page.meta.date`) y `partials/alternate.html` (sobrescribe el selector de idioma nativo de Material con un toggle propio —icono SVG personalizado + etiqueta del idioma destino— que enlaza directamente a la versión alternativa; visible cuando `config.extra.alternate` está disponible gracias a `mkdocs-static-i18n`).
 
 #### `docs/assets/javascripts/extra.js` — Render de la galería en cliente
 Anima y pinta las tarjetas de publicaciones en el home a partir de los datos de `publications.json`.
@@ -172,6 +173,7 @@ Suite end-to-end con Playwright que ejerce el sitio en un navegador real (Chromi
 | `tests/e2e/gallery.spec.js` | Render y comportamiento de la galería del home en navegador real |
 | `tests/e2e/home-category-url.spec.js` | Sincronización del filtro de categorías con la URL: deep linking `?category=<slug>`, URL limpia para `All`, caída segura ante slug inválido, `popstate` (atrás/adelante) y sincronía del botón activo |
 | `tests/e2e/reading-progress.spec.js` | Barra de progreso de lectura sobre una página de post real |
+| `tests/e2e/language-selector.spec.js` | Toggle de idioma: visibilidad en posts con alternate ES, click navega a la versión alternativa, ausencia del toggle en posts solo-EN |
 
 ### Integration Tests
 
@@ -238,11 +240,12 @@ python -m mkdocs serve -w overrides
 
 ## 📦 Dependencies
 
-Runtime (`requirements.txt`, sin pin de versión):
+Runtime (`requirements.txt`, con pin parcial):
 
 ```
-mkdocs
-mkdocs-material
+mkdocs==1.6.1
+mkdocs-material==9.7.1
+mkdocs-static-i18n==1.3.1
 pymdown-extensions
 mkdocs-markdownextradata-plugin
 mkdocs-awesome-pages-plugin
@@ -282,6 +285,7 @@ Las actualizaciones de las propias GitHub Actions están automatizadas por Depen
 - (+) Builds siempre actualizados sin tocar el repo.
 - (-) Riesgo de rotura por cambios incompatibles aguas arriba; builds no reproducibles.
 - Mitigación: `Static Validation` corre en cada push/PR a main antes del deploy.
+- Excepción: `mkdocs`, `mkdocs-material` y `mkdocs-static-i18n` están pineadas desde la integración del plugin i18n (ADR-005).
 
 ### ADR-003: Hosting estático en S3 con OIDC, sin claves estáticas
 
@@ -303,9 +307,17 @@ Las actualizaciones de las propias GitHub Actions están automatizadas por Depen
 - (+) Gate de calidad antes de publicar.
 - (-) Acoplamiento entre dos workflows; un fallo de orquestación puede impedir el deploy.
 
+### ADR-005: Pinning de `mkdocs`, `mkdocs-material` y `mkdocs-static-i18n`
+
+**Decision**: Pinear estas tres dependencias en `requirements.txt` como excepción a ADR-002.
+**Context**: `mkdocs-static-i18n` está congelado (frozen as-is) porque el core de MkDocs quedó congelado tras el cierre de la v2.0. Desplegar siempre la última versión de `mkdocs` o `mkdocs-material` podría romper el plugin sin aviso.
+**Consequences**:
+- (+) Build estable y reproducible para los tres componentes críticos del mecanismo i18n.
+- (-) Requiere actualizar manualmente los pins cuando se quiera actualizar estas dependencias.
+
 ## ⚠️ Known Limitations
 
-- Sin pin de versiones: builds no totalmente reproducibles (tradeoff de ADR-002).
+- Pin parcial de versiones: `mkdocs`, `mkdocs-material` y `mkdocs-static-i18n` están pineadas (ADR-005); el resto sin pin — builds no totalmente reproducibles para esas dependencias (tradeoff de ADR-002).
 - Cobertura de tests parcial: existe suite unitaria JS (Vitest) para componentes del cliente, pero los hooks Python (`generate_pages.py`) siguen sin tests; la validación de contenido se limita a build + comprobación de enlaces.
 - La validación de enlaces no bloquea (`fail: false`): se pueden publicar enlaces rotos como warnings.
 - Inconsistencia documentada entre el flujo de ramas (`contributing.md`/`CLAUDE.md` indican trabajar desde `develop`) y el CI. Matiz: ya no es estrictamente cierto que el CI solo despliegue desde `main` — existe un deploy de preview a GitHub Pages desde `dev` (`deploy-dev-ghpages.yml`), aunque el deploy de producción a S3 sigue saliendo de `main`.
