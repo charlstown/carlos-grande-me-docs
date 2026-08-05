@@ -1,400 +1,410 @@
 ---
-description: Abre un bug o una feature request en GitHub. Detecta automáticamente el tipo; si no está claro, pregunta. Bug → investiga, reproduce y documenta. Feature → clarifica en hasta 3 preguntas y abre el issue. Trigger con /new-issue.
+description: Opens a bug or a feature request on GitHub. Automatically detects the type; if it is not clear, it asks. Bug → investigate, reproduce and document. Feature → clarify in up to 3 questions and open the issue. Trigger with /new-issue.
 ---
 
-## Instrucciones generales
+> **GitHub-only write scope (mandatory):** this skill's only write permission is GitHub — creating issues via `gh issue create`. It must never create, edit, or delete files in the repository, and it must never run `git commit` or `git push`. Using `Write`, `Edit`, `git commit`, or `git push` on repository files is explicitly forbidden at any point during this skill's execution, in both the Bug Flow and the Feature Flow.
 
-No escribas código. No hagas refactors. No abras PRs. Tu único objetivo es **documentar y abrir un issue en GitHub**.
+## Language
+
+Detect the language of the user's initial (or most recent) message and conduct the ENTIRE interaction in that language — every `AskUserQuestion` prompt, header, option label and description, and every message, summary, and generated file or output. Mirror the user's language exactly and never switch to another language. These instructions are written in English, but that must NOT force the interaction into English: if the user wrote in Spanish, ask and write in Spanish; if they wrote in another language, use that one. The language of the inputs determines the language of the outputs.
 
 ---
 
-## Paso 0 — Clasificar: bug o feature
+## General instructions
 
-Lee el input del usuario (argumento del comando o mensaje previo) e identifica el tipo.
+Do not write code. Do not do refactors. Do not open PRs. Your only goal is to **document and open an issue on GitHub**.
 
-**Señales de bug:**
-- Stack trace, mensajes de error, `TypeError`, `Cannot read`, `500`, `404`
-- Frases como "no funciona", "da error", "falla", "dejó de", "se rompe", "no carga"
+> **Title convention (mandatory):** every issue carries a prefix according to its type — `[BUG] {bug name}` or `[FEAT] {feature name}`. The prefix goes in uppercase and between brackets at the start of the title.
 
-**Señales de feature:**
-- Frases como "quiero que", "añadir", "nueva funcionalidad", "poder hacer", "sería útil", "feature", "mejora"
+---
 
-**Decisión:**
+## Step 0 — Classify: bug or feature
 
-| Caso | Acción |
+Read the user's input (command argument or previous message) and identify the type.
+
+**Bug signals:**
+- Stack trace, error messages, `TypeError`, `Cannot read`, `500`, `404`
+- Phrases like "doesn't work", "throws an error", "fails", "stopped", "breaks", "won't load"
+
+**Feature signals:**
+- Phrases like "I want to", "add", "new functionality", "be able to do", "it would be useful", "feature", "improvement"
+
+**Decision:**
+
+| Case | Action |
 |------|--------|
-| Señales claras de **bug** | Ir directamente al **Flujo Bug** |
-| Señales claras de **feature** | Ir directamente al **Flujo Feature** |
-| Ambiguo o sin descripción | Usar `AskUserQuestion` con la pregunta siguiente |
+| Clear **bug** signals | Go directly to the **Bug Flow** |
+| Clear **feature** signals | Go directly to the **Feature Flow** |
+| Ambiguous or no description | Use `AskUserQuestion` with the following question |
 
-Si es ambiguo, usa `AskUserQuestion`:
-- Pregunta: "¿Qué tipo de issue quieres abrir?"
-- Opciones:
-  - `Bug` — algo que funciona mal o da error
-  - `Feature` — nueva funcionalidad o mejora
+If it is ambiguous, use `AskUserQuestion`:
+- Question: "What type of issue do you want to open?"
+- Options:
+  - `Bug` — something that works incorrectly or throws an error
+  - `Feature` — new functionality or improvement
 
-Con la respuesta, ve al flujo correspondiente.
-
----
+With the answer, go to the corresponding flow.
 
 ---
 
-# FLUJO BUG
+---
+
+# BUG FLOW
 
 ---
 
-### B0 — Obtener la descripción del problema
+### B0 — Get the description of the problem
 
-El input puede llegar de tres formas:
+The input can arrive in three ways:
 
-1. **Argumento del comando** (texto tras `/new-issue`) → úsalo directamente.
-2. **Mención en el mensaje** del usuario → úsalo tal cual.
-3. **Sin descripción** → usa `AskUserQuestion`:
-   - Pregunta: "¿Cuál es el bug que quieres reportar?"
-   - Opciones: `Pego el log de error ahora`, `Describo el comportamiento`, `Indico los pasos para reproducirlo`
+1. **Command argument** (text after `/new-issue`) → use it directly.
+2. **Mention in the user's message** → use it as-is.
+3. **No description** → use `AskUserQuestion`:
+   - Question: "What is the bug you want to report?"
+   - Options: `I paste the error log now`, `I describe the behavior`, `I indicate the steps to reproduce it`
 
-Guarda el input como **DESCRIPCION_INICIAL**.
+Save the input as **INITIAL_DESCRIPTION**.
 
-Clasifica mentalmente el tipo de input:
+Mentally classify the type of input:
 
-| Tipo | Señales |
+| Type | Signals |
 |------|---------|
-| **Log de error** | Stack trace, `Error:` / `TypeError:` / `at ...` |
-| **Descripción funcional** | "el botón no funciona", "no carga", "aparece en blanco" |
-| **Pasos de reproducción** | Lista numerada de acciones que provocan el fallo |
+| **Error log** | Stack trace, `Error:` / `TypeError:` / `at ...` |
+| **Functional description** | "the button doesn't work", "won't load", "shows up blank" |
+| **Reproduction steps** | Numbered list of actions that cause the failure |
 
 ---
 
-### B1 — Investigar el código
+### B1 — Investigate the code
 
-Usa `Grep`, `Glob`, `Read` para entender qué parte del código está implicada.
+Use `Grep`, `Glob`, `Read` to understand which part of the code is involved.
 
-#### B1a. Extraer palabras clave
+#### B1a. Extract keywords
 
-Del **DESCRIPCION_INICIAL** extrae:
-- Nombres de componentes, funciones, rutas o mensajes de error.
-- Si es un log: nombre del error y primeras líneas del stack trace.
-- Si es una descripción: términos funcionales clave.
+From **INITIAL_DESCRIPTION** extract:
+- Names of components, functions, routes or error messages.
+- If it is a log: the error name and first lines of the stack trace.
+- If it is a description: key functional terms.
 
-#### B1b. Localizar archivos relevantes
+#### B1b. Locate relevant files
 
-1. Si hay ruta en el stack trace → lée ese archivo directamente.
-2. Si hay nombre de función o componente → `Grep` por ese nombre.
-3. Si es descripción funcional → `Glob` en las rutas relacionadas.
+1. If there is a path in the stack trace → read that file directly.
+2. If there is a function or component name → `Grep` for that name.
+3. If it is a functional description → `Glob` in the related paths.
 
-Lee los archivos relevantes. Presta atención a:
-- Manejadores de eventos, llamadas a API, lógica condicional.
-- Props o estados que podrían estar undefined/null.
+Read the relevant files. Pay attention to:
+- Event handlers, API calls, conditional logic.
+- Props or states that could be undefined/null.
 
-#### B1c. Revisar cambios recientes
+#### B1c. Review recent changes
 
 ```bash
 git log --oneline -15
 ```
 
-Si algún commit reciente toca los archivos relevantes:
+If any recent commit touches the relevant files:
 
 ```bash
 git show {hash} --stat
-git diff {hash}^ {hash} -- {archivo}
+git diff {hash}^ {hash} -- {file}
 ```
 
-Guarda como **HALLAZGOS_CODIGO**: archivos implicados, causa probable, commits relacionados.
+Save as **CODE_FINDINGS**: files involved, probable cause, related commits.
 
 ---
 
-### B2 — Reproducir el error en el navegador
+### B2 — Reproduce the error in the browser
 
-> Si el error es claramente de servidor/build (no UI), salta al B3.
+> If the error is clearly server/build related (not UI), skip to B3.
 
-#### B2a. Verificar el servidor de desarrollo
+#### B2a. Verify the development server
 
 ```powershell
 $conn = Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue
-if ($conn) { Write-Host "Puerto 3000 activo" } else { Write-Host "Puerto 3000 libre" }
+if ($conn) { Write-Host "Port 3000 active" } else { Write-Host "Port 3000 free" }
 ```
 
-Si no está activo, lanza el servidor en background: `npm run dev`. Espera ~10 s.
+If it is not active, launch the server in background: `npm run dev`. Wait ~10 s.
 
-#### B2b. Abrir el navegador
+#### B2b. Open the browser
 
-1. `mcp__chrome-devtools__list_pages` — obtén páginas abiertas.
-2. Si ninguna apunta a localhost: `mcp__chrome-devtools__new_page`.
-3. `mcp__chrome-devtools__navigate_page` → `http://localhost:3000{ruta}`.
+1. `mcp__chrome-devtools__list_pages` — get the open pages.
+2. If none points to localhost: `mcp__chrome-devtools__new_page`.
+3. `mcp__chrome-devtools__navigate_page` → `http://localhost:3000{route}`.
 
-#### B2c. Reproducir e intentar el fallo
+#### B2c. Reproduce and attempt the failure
 
-| Tipo | Qué hacer |
+| Type | What to do |
 |------|-----------|
-| Log con ruta | Navega al path, ejecuta la acción |
-| Descripción funcional | Navega a la sección, interactúa |
-| Pasos de reproducción | Síguelos: `fill`, `click`, `navigate_page` |
+| Log with a path | Navigate to the path, run the action |
+| Functional description | Navigate to the section, interact |
+| Reproduction steps | Follow them: `fill`, `click`, `navigate_page` |
 
-#### B2d. Capturar evidencias
+#### B2d. Capture evidence
 
 1. Screenshot: `mcp__chrome-devtools__take_screenshot`
-2. Consola: `mcp__chrome-devtools__list_console_messages` (filtra `error` y `warning`)
-3. Red: `mcp__chrome-devtools__list_network_requests` (busca 4xx / 5xx)
-4. DOM (opcional): `mcp__chrome-devtools__take_snapshot`
+2. Console: `mcp__chrome-devtools__list_console_messages` (filter `error` and `warning`)
+3. Network: `mcp__chrome-devtools__list_network_requests` (look for 4xx / 5xx)
+4. DOM (optional): `mcp__chrome-devtools__take_snapshot`
 
-Guarda como **EVIDENCIAS**: pasos ejecutados, reproducido (Sí/No/Parcialmente), mensajes de consola, peticiones fallidas, screenshot.
+Save as **EVIDENCE**: steps executed, reproduced (Yes/No/Partially), console messages, failed requests, screenshot.
 
 ---
 
-### B3 — Sintetizar el informe
+### B3 — Synthesize the report
 
-| Campo | Contenido |
+| Field | Content |
 |-------|-----------|
-| **Título** | Frase clara en imperativo: "El botón X falla cuando Y" |
-| **Descripción** | Qué ocurre vs. qué debería ocurrir |
-| **Pasos para reproducir** | Lista numerada exacta |
-| **Comportamiento esperado** | Lo que el usuario debería ver |
-| **Comportamiento actual** | Lo que realmente ocurre |
-| **Evidencias** | Consola, red, screenshot |
-| **Archivos implicados** | Rutas y líneas del B1 |
-| **Posible causa** | Hipótesis sin solución |
-| **Entorno** | Rama git, OS, URL |
+| **Title** | Prefix `[BUG] ` + clear phrase in the imperative: "[BUG] Button X fails when Y" |
+| **Description** | What happens vs. what should happen |
+| **Steps to reproduce** | Exact numbered list |
+| **Expected behavior** | What the user should see |
+| **Actual behavior** | What actually happens |
+| **Evidence** | Console, network, screenshot |
+| **Files involved** | Paths and lines from B1 |
+| **Possible cause** | Hypothesis without a solution |
+| **Environment** | Git branch, OS, URL |
 
 ---
 
-### B4 — Confirmar con el usuario
+### B4 — Confirm with the user
 
-Muestra:
+Show:
 
 ```
-Voy a abrir el siguiente issue:
+I am going to open the following issue:
 
-Título: {título}
+Title: [BUG] {title}
 Label: bug
-Reproducido: Sí / No / Parcialmente
+Reproduced: Yes / No / Partially
 
-Resumen:
-{2-3 líneas del comportamiento actual vs. esperado}
+Summary:
+{2-3 lines of actual vs. expected behavior}
 
-Archivos implicados:
-- {archivo:línea}
+Files involved:
+- {file:line}
 
-¿Procedo?
+Proceed?
 ```
 
 `AskUserQuestion`:
-- Pregunta: "¿Abro el issue con este contenido?"
-- Opciones: `Sí, abre el issue`, `Ajusta el título`, `Añade más contexto antes`
+- Question: "Do I open the issue with this content?"
+- Options: `Yes, open the issue`, `Adjust the title`, `Add more context first`
 
-Si el usuario ajusta, actualiza antes de continuar.
+If the user adjusts it, update before continuing.
 
 ---
 
-### B5 — Crear el issue en GitHub
+### B5 — Create the issue on GitHub
 
 ```bash
 gh issue create \
-  --title "{título}" \
+  --title "[BUG] {title}" \
   --label "bug" \
   --body "$(cat <<'EOF'
-## Descripción
+## Description
 
-{qué ocurre vs. qué debería ocurrir}
+{what happens vs. what should happen}
 
-## Pasos para reproducir
+## Steps to reproduce
 
-{lista numerada}
+{numbered list}
 
-## Comportamiento esperado
+## Expected behavior
 
-{lo que debería ocurrir}
+{what should happen}
 
-## Comportamiento actual
+## Actual behavior
 
-{lo que ocurre realmente}
+{what actually happens}
 
-## Evidencias
+## Evidence
 
-### Consola
+### Console
 \`\`\`
-{mensajes de consola, o "Sin errores en consola"}
+{console messages, or "No errors in console"}
 \`\`\`
 
-### Peticiones de red
-{peticiones fallidas, o "Sin peticiones fallidas"}
+### Network requests
+{failed requests, or "No failed requests"}
 
-### Captura de pantalla
-{ruta del screenshot, o "No disponible"}
+### Screenshot
+{screenshot path, or "Not available"}
 
-## Archivos implicados
+## Files involved
 
-{lista de archivos con rutas y líneas}
+{list of files with paths and lines}
 
-## Hipótesis de causa
+## Cause hypothesis
 
-{análisis técnico — sin proponer solución}
+{technical analysis — without proposing a solution}
 
-## Entorno
+## Environment
 
-- Rama: \`{git branch --show-current}\`
+- Branch: \`{git branch --show-current}\`
 - OS: Windows 11
-- URL reproducción: \`{url}\`
-- Reproducido: {Sí / No / Parcialmente}
+- Reproduction URL: \`{url}\`
+- Reproduced: {Yes / No / Partially}
 EOF
 )"
 ```
 
-> Si el label `bug` no existe, omite `--label "bug"` y avisa al usuario.
+> If the `bug` label does not exist, omit `--label "bug"` and warn the user.
 
 ---
 
-### B6 — Confirmar y cerrar
+### B6 — Confirm and close
 
 ```
-Issue creado: #{número} — {título}
+Issue created: #{number} — {title}
 URL: {url}
 
-Evidencias recopiladas:
-- Archivos analizados: {n}
-- Reproducido: Sí / No / Parcialmente
-- Errores en consola: {n}
-- Peticiones fallidas: {n}
+Evidence collected:
+- Files analyzed: {n}
+- Reproduced: Yes / No / Partially
+- Console errors: {n}
+- Failed requests: {n}
 
-Para trabajar en el fix: /get-issues → selecciona #{número}
+To work on the fix: /specify-feature → select #{number}
 ```
 
 ---
 
 ---
 
-# FLUJO FEATURE
+# FEATURE FLOW
 
 ---
 
-### F0 — Obtener la descripción de la feature
+### F0 — Get the description of the feature
 
-El input puede llegar de tres formas:
+The input can arrive in three ways:
 
-1. **Argumento del comando** → úsalo directamente.
-2. **Mención en el mensaje** → úsalo tal cual.
-3. **Sin descripción** → usa `AskUserQuestion`:
-   - Pregunta: "¿Qué funcionalidad quieres añadir o mejorar?"
-   - Opciones: `Describo la funcionalidad`, `Tengo un caso de uso concreto`, `Es una mejora de algo existente`
+1. **Command argument** → use it directly.
+2. **Mention in the message** → use it as-is.
+3. **No description** → use `AskUserQuestion`:
+   - Question: "What functionality do you want to add or improve?"
+   - Options: `I describe the functionality`, `I have a specific use case`, `It is an improvement to something existing`
 
-Guarda como **DESCRIPCION_FEATURE**.
+Save as **FEATURE_DESCRIPTION**.
 
 ---
 
-### F1 — Evaluar si la feature está bien definida
+### F1 — Evaluate whether the feature is well defined
 
-Analiza **DESCRIPCION_FEATURE** e identifica qué dimensiones están presentes:
+Analyze **FEATURE_DESCRIPTION** and identify which dimensions are present:
 
-| Dimensión | ¿Está claro? | Pregunta de clarificación si falta |
+| Dimension | Is it clear? | Clarifying question if missing |
 |-----------|-------------|-------------------------------------|
-| **Qué** — comportamiento concreto | ¿Se sabe exactamente qué hace? | "¿Qué debería ocurrir exactamente cuando se usa esta función?" |
-| **Por qué** — objetivo del usuario | ¿Se sabe para qué sirve? | "¿Qué problema resuelve o qué flujo mejora para el usuario?" |
-| **Alcance** — límites y casos borde | ¿Está claro qué NO incluye? | "¿Hay casos especiales o restricciones que debamos tener en cuenta?" |
+| **What** — concrete behavior | Is it known exactly what it does? | "What exactly should happen when this function is used?" |
+| **Why** — the user's goal | Is it known what it is for? | "What problem does it solve or what flow does it improve for the user?" |
+| **Scope** — limits and edge cases | Is it clear what it does NOT include? | "Are there special cases or constraints we should take into account?" |
 
-**Si las 3 dimensiones están claras** → salta directamente a F3.
+**If all 3 dimensions are clear** → skip directly to F3.
 
-**Si falta alguna** → ve a F2 con las preguntas necesarias (máximo 3).
-
----
-
-### F2 — Ronda de clarificación (máximo 3 preguntas)
-
-Usa **una sola llamada a `AskUserQuestion`** con todas las preguntas que falten (máximo 3).
-
-Construye solo las preguntas para las dimensiones que estén incompletas. Ejemplos:
-
-- Si falta el **Qué**: "¿Qué debería ocurrir exactamente cuando el usuario usa esta función? Describe el comportamiento paso a paso."
-- Si falta el **Por qué**: "¿Qué problema resuelve esto para el usuario? ¿En qué flujo o situación lo usaría?"
-- Si falta el **Alcance**: "¿Hay restricciones, casos especiales o cosas que explícitamente queden fuera de esta feature?"
-
-Tras recibir las respuestas, incorpora el nuevo contexto a **DESCRIPCION_FEATURE** y continúa a F3.
+**If any is missing** → go to F2 with the necessary questions (maximum 3).
 
 ---
 
-### F3 — Sintetizar la feature request
+### F2 — Clarification round (maximum 3 questions)
 
-Con toda la información recogida, construye:
+Use **a single `AskUserQuestion` call** with all the questions that are missing (maximum 3).
 
-| Campo | Contenido |
+Build only the questions for the dimensions that are incomplete. Examples:
+
+- If the **What** is missing: "What exactly should happen when the user uses this function? Describe the behavior step by step."
+- If the **Why** is missing: "What problem does this solve for the user? In what flow or situation would they use it?"
+- If the **Scope** is missing: "Are there constraints, special cases, or things that are explicitly out of scope for this feature?"
+
+After receiving the answers, incorporate the new context into **FEATURE_DESCRIPTION** and continue to F3.
+
+---
+
+### F3 — Synthesize the feature request
+
+With all the information gathered, build:
+
+| Field | Content |
 |-------|-----------|
-| **Título** | Frase en imperativo: "Añadir X", "Permitir que el usuario Y", "Mostrar Z en la pantalla W" |
-| **Descripción** | Qué hace la feature y para qué sirve |
-| **Comportamiento deseado** | Pasos o estados que el usuario experimenta |
-| **Criterios de aceptación** | Lista de condiciones verificables que indican que la feature está completa |
-| **Contexto adicional** | Pantallas afectadas, restricciones, relación con otras features |
+| **Title** | Prefix `[FEAT] ` + phrase in the imperative: "[FEAT] Add X", "[FEAT] Allow the user to Y" |
+| **Description** | What the feature does and what it is for |
+| **Desired behavior** | Steps or states the user experiences |
+| **Acceptance criteria** | List of verifiable conditions indicating the feature is complete |
+| **Additional context** | Affected screens, constraints, relationship with other features |
 
 ---
 
-### F4 — Confirmar con el usuario
+### F4 — Confirm with the user
 
-Muestra:
+Show:
 
 ```
-Voy a abrir el siguiente issue:
+I am going to open the following issue:
 
-Título: {título}
+Title: [FEAT] {title}
 Label: enhancement
 
-Descripción:
-{2-3 líneas de qué hace y por qué}
+Description:
+{2-3 lines of what it does and why}
 
-Criterios de aceptación:
-- {criterio 1}
-- {criterio 2}
-- {criterio 3}
+Acceptance criteria:
+- {criterion 1}
+- {criterion 2}
+- {criterion 3}
 
-¿Procedo?
+Proceed?
 ```
 
 `AskUserQuestion`:
-- Pregunta: "¿Abro el issue con este contenido?"
-- Opciones: `Sí, abre el issue`, `Ajusta el título o descripción`, `Añade o cambia algún criterio`
+- Question: "Do I open the issue with this content?"
+- Options: `Yes, open the issue`, `Adjust the title or description`, `Add or change a criterion`
 
-Si el usuario ajusta, actualiza antes de continuar.
+If the user adjusts it, update before continuing.
 
 ---
 
-### F5 — Crear el issue en GitHub
+### F5 — Create the issue on GitHub
 
 ```bash
 gh issue create \
-  --title "{título}" \
+  --title "[FEAT] {title}" \
   --label "enhancement" \
   --body "$(cat <<'EOF'
-## Descripción
+## Description
 
-{qué hace la feature y para qué sirve}
+{what the feature does and what it is for}
 
-## Comportamiento deseado
+## Desired behavior
 
-{pasos o estados que el usuario experimenta con la feature activa}
+{steps or states the user experiences with the feature active}
 
-## Criterios de aceptación
+## Acceptance criteria
 
-- [ ] {criterio verificable 1}
-- [ ] {criterio verificable 2}
-- [ ] {criterio verificable 3}
+- [ ] {verifiable criterion 1}
+- [ ] {verifiable criterion 2}
+- [ ] {verifiable criterion 3}
 
-## Contexto adicional
+## Additional context
 
-{pantallas afectadas, restricciones, relación con otras features, o "Sin contexto adicional"}
+{affected screens, constraints, relationship with other features, or "No additional context"}
 
-## Rama de desarrollo
+## Development branch
 
 - Base: \`dev\`
-- Rama sugerida: \`feat/{nombre-corto-kebab-case}\`
+- Suggested branch: \`feat/{short-kebab-case-name}\`
 EOF
 )"
 ```
 
-> Si el label `enhancement` no existe en el repositorio, prueba con `feature`. Si ninguno existe, omite `--label` y avisa al usuario para que cree el label manualmente.
+> If the `enhancement` label does not exist in the repository, try `feature`. If neither exists, omit `--label` and warn the user so they create the label manually.
 
 ---
 
-### F6 — Confirmar y cerrar
+### F6 — Confirm and close
 
 ```
-Issue creado: #{número} — {título}
+Issue created: #{number} — {title}
 URL: {url}
 
-Para planificar la implementación: /get-issues → selecciona #{número}
+To plan the implementation: /specify-feature → select #{number}
 ```

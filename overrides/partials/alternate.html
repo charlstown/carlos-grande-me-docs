@@ -1,0 +1,35 @@
+{#-
+  Custom override of Material's language selector.
+
+  Instead of the native dropdown, render a single toggle button: the custom
+  icon with a small label underneath showing the TARGET language code (the
+  language you switch to on click). The button links straight to the other
+  language's version of the current page — no dropdown.
+
+  `config.extra.alternate` is generated per-page by mkdocs-static-i18n
+  (reconfigure_material) as a list of {name, link, lang}. `config.theme.language`
+  is the locale currently being built, so the target is simply the alternate
+  whose `lang` differs from it. A namespace is used because variables assigned
+  inside a Jinja for-loop do not leak into the outer scope otherwise.
+-#}
+{% if config.extra.alternate %}
+  {% set ns = namespace(target=none) %}
+  {% for alt in config.extra.alternate %}
+    {% if alt.lang != config.theme.language %}
+      {% set ns.target = alt %}
+    {% endif %}
+  {% endfor %}
+  {% if ns.target %}
+    {% set icon = config.theme.icon.alternate or "material/translate" %}
+    <a
+      class="md-lang-toggle md-header__button"
+      href="{{ ns.target.link | url }}"
+      hreflang="{{ ns.target.lang }}"
+      title="{{ ns.target.name }}"
+      aria-label="{{ lang.t('select.language') }}: {{ ns.target.name }}"
+    >
+      {% include ".icons/" ~ icon ~ ".svg" %}
+      <span class="md-lang-toggle__label">{{ ns.target.lang | upper }}</span>
+    </a>
+  {% endif %}
+{% endif %}

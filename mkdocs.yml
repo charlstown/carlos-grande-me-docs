@@ -12,6 +12,8 @@ theme:
     - 404.html
   logo: assets/images/logo.svg
   favicon: assets/images/favicon.svg
+  icon:
+    alternate: custom/language-toggle  # Custom icon for the i18n language selector
   font:
     text: Roboto
     code: Roboto Mono
@@ -65,6 +67,9 @@ markdown_extensions:
   - pymdownx.mark         # Hihlighting text
   - attr_list             # To add buttons
   - md_in_html            # To add html in markdown (centred images)
+  - pymdownx.snippets:    # To include self-contained HTML objects by reference
+      base_path: ['docs']
+      check_paths: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -79,6 +84,19 @@ hooks:
 # Plugins
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: es
+          name: Español
+          build: true
   - markdownextradata
   - awesome-pages
   - glightbox:
@@ -105,6 +123,7 @@ extra_css:
   - assets/stylesheets/my_katex.css
   - assets/stylesheets/reading_progress.css  # Reading progress bar
   - assets/stylesheets/post-date.css  # Post publication date
+  - assets/stylesheets/language-toggle.css  # Language toggle button in header
 
 # javascript
 extra_javascript:

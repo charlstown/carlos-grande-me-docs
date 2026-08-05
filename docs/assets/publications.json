@@ -1,6 +1,15 @@
 {
-    "version": "2026-06-13",
+    "version": "2026-08-05",
     "items": [
+        {
+            "id": "my-aisy-toolkit",
+            "src": "resources/tools/my-aisy-toolkit.md",
+            "category": "resources",
+            "link": "./resources/tools/my-aisy-toolkit",
+            "title": "My AIsy Toolkit",
+            "date": "2026-08-04",
+            "thumbnail": "assets/images/thumbnails/my-aisy-toolkit-portrait.png"
+        },
         {
             "id": "my-8-levels-of-ai-development",
             "src": "resources/cheatsheets/my-8-levels-of-ai-development.md",

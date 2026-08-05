@@ -25,10 +25,12 @@ Agents may perform the following without asking:
 
 Always ask for explicit confirmation before:
 
-- Pushing to `main` or `develop` branches.
+- Pushing to `main` or `dev` branches.
 - Deleting any existing `.md` file.
 - Modifying `mkdocs.yml` or any other configuration file.
 - Installing or removing Python packages or dependencies.
+
+> Some of these rules are enforced automatically by hooks (see `.claude/README.md` §10): editing config files or deleting a content `.md` triggers a confirmation prompt, and a strict build runs before a session ends when `docs/` changed.
 
 ---
 
@@ -92,7 +94,11 @@ Follow the conventions defined in [`contributing.md`](contributing.md).
 ### 6.1 Branches
 
 - Always work in a feature branch: `feature/<short-description>`.
-- Branch from `develop`, not from `main`.
+- Branch from `dev`, not from `main`.
+- Branching model: `feature/* → dev → main`.
+  - `dev` is the integration branch; pushing to it deploys a **preview** to GitHub Pages.
+  - `main` is production; pushing to it deploys to **S3** (`carlosgrande.me`).
+  - PRs into `main` are accepted **only** from `dev` or `hotfix/*` (enforced by the `enforce-pr-source` workflow). Never open a PR from a `feature/*` branch directly into `main`.
 
 ### 6.2 Commits
 
