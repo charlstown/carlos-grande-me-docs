@@ -3297,7 +3297,7 @@
 }
 
 /* ---------- shell ---------- */
-.smap-frame{ z-index:20; position:relative; }
+.smap-frame{ z-index:0; position:relative; }
 .smap-panel{
   transform-origin:center top;
   background:var(--smap-surface);
@@ -4371,6 +4371,7 @@
   var expandBtn = root.querySelector('.smap-expand');
   var panel = root.querySelector('.smap-panel');
   var container = root.querySelector('.smap-container');
+  var frame = root.querySelector('.smap-frame');
   if (expandBtn && panel && container) {
     function fitContainer(){
       if (panel.getAttribute('data-full') !== '1') return;
@@ -4387,6 +4388,7 @@
       expandBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
       expandBtn.setAttribute('aria-label', on ? 'Close full screen' : 'Expand diagram');
       document.body.style.overflow = on ? 'hidden' : '';
+      if (frame) frame.style.zIndex = on ? '2147483000' : '';
       if (on) {
         requestAnimationFrame(fitContainer);
       } else {
