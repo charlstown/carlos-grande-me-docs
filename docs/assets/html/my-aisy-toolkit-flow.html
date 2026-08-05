@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The workflow</title>
+<style>
+  html,body{margin:0;padding:0}
+  body{background:#07080c;min-height:100vh}
+</style>
+</head>
+<body>
+<!--8<-- [start:diagram]-->
+<section class="smap-outer" id="my-aisy-toolkit-flow" data-smap-theme="dark">
+<style>
+/* =============================================================
+   design-flow · system map section
+   Static stylesheet. Themes: [data-smap-theme="dark"|"light"].
+   Animation-state rules (warm/hot/halo/spin/dot/trace) are kept
+   on purpose: a decoupled animation layer can flip those data-*
+   attributes and inline styles. The chip/caption toggle is the
+   one exception — it's wired inline at the bottom of this file.
+   ============================================================= */
+
+/* ---------- shared ---------- */
+.smap-outer{
+  --smap-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --smap-radius: 12px;
+  --smap-max: 1160px;
+  margin-top: clamp(16px, 3vw, 32px);
+  padding: 0 1rem;
+  position: relative;
+  font-family: var(--smap-font);
+}
+
+/* ---------- dark theme ---------- */
+.smap-outer[data-smap-theme="dark"]{
+  --smap-surface:#0c0d12;
+  --smap-surface-shadow:rgba(0,0,0,.18);
+  --smap-bloom:rgba(139,92,246,.043);
+  --smap-edge-glow:rgba(255,255,255,.08);
+  --smap-eyebrow:rgba(255,255,255,.45);
+  --smap-title:rgba(255,255,255,.96);
+  --smap-sub:rgba(255,255,255,.55);
+  --smap-caption:rgba(255,255,255,.58);
+  --smap-trace-1:#818cf8; --smap-trace-2:#a78bfa; --smap-trace-3:#c084fc;
+  --smap-trace-shadow:rgba(167,139,250,.45);
+  --smap-line:rgba(255,255,255,.075);
+  --smap-node-fill:#12141c;
+  --smap-node-stroke:rgba(255,255,255,.10);
+  --smap-node-fill-warm:#161a26;
+  --smap-node-stroke-warm:rgba(167,139,250,.28);
+  --smap-node-fill-hot:#1b1b2e;
+  --smap-node-stroke-hot:rgba(196,181,253,.72);
+  --smap-label:rgba(255,255,255,.66);
+  --smap-label-warm:rgba(255,255,255,.82);
+  --smap-label-hot:#ffffff;
+  --smap-sublabel:rgba(255,255,255,.34);
+  --smap-sublabel-warm:rgba(255,255,255,.44);
+  --smap-sublabel-hot:rgba(233,224,255,.70);
+  --smap-halo:rgba(167,139,250,.5);
+  --smap-spin:rgba(167,139,250,.55);
+  --smap-rail-fill:rgba(255,255,255,.02);
+  --smap-rail-stroke:rgba(255,255,255,.07);
+  --smap-rail-fill-on:rgba(255,255,255,.03);
+  --smap-rail-stroke-on:rgba(167,139,250,.30);
+  --smap-chip-fill:rgba(255,255,255,.04);
+  --smap-chip-stroke:rgba(255,255,255,.10);
+  --smap-chip-text:rgba(255,255,255,.40);
+  --smap-chip-fill-warm:rgba(255,255,255,.055);
+  --smap-chip-stroke-warm:rgba(255,255,255,.14);
+  --smap-chip-text-warm:rgba(255,255,255,.60);
+  --smap-chip-fill-hot:rgba(167,139,250,.16);
+  --smap-chip-stroke-hot:rgba(196,181,253,.70);
+  --smap-chip-text-hot:#ffffff;
+  --smap-net-fill:rgba(255,255,255,.01);
+  --smap-net-stroke:rgba(255,255,255,.6);
+  --smap-net-label:rgba(255,255,255,.6);
+  --smap-badge-fill:#0f1118;
+  --smap-badge-stroke:var(--smap-trace-2);
+  --smap-badge-text:var(--smap-trace-2);
+  --smap-packet-0:#ede9fe; --smap-packet-1:#a78bfa; --smap-packet-2:#7c3aed;
+  --smap-dot-core:#f5f3ff;
+  --smap-dot-shadow:rgba(196,181,253,.9);
+  --smap-tab-text:rgba(255,255,255,.5);
+  --smap-tab-text-hover:rgba(255,255,255,.8);
+  --smap-tab-bg:rgba(255,255,255,.02);
+  --smap-tab-border:rgba(255,255,255,.09);
+  --smap-tab-border-hover:rgba(255,255,255,.18);
+  --smap-tab-n:rgba(255,255,255,.3);
+  --smap-tab-dot:rgba(255,255,255,.2);
+  --smap-tab-bg-on:rgba(167,139,250,.10);
+  --smap-tab-border-on:rgba(196,181,253,.45);
+  --smap-tab-n-on:rgba(226,220,255,.6);
+  --smap-tab-dot-on:#c4b5fd;
+}
+
+/* ---------- light theme ---------- */
+.smap-outer[data-smap-theme="light"]{
+  --smap-surface:#f6f6fb;
+  --smap-surface-shadow:rgba(23,20,48,.08);
+  --smap-bloom:rgba(124,58,237,.055);
+  --smap-edge-glow:rgba(23,20,48,.07);
+  --smap-eyebrow:rgba(23,20,48,.48);
+  --smap-title:rgba(17,15,36,.94);
+  --smap-sub:rgba(23,20,48,.58);
+  --smap-caption:rgba(23,20,48,.60);
+  --smap-trace-1:#6366f1; --smap-trace-2:#8b5cf6; --smap-trace-3:#a855f7;
+  --smap-trace-shadow:rgba(139,92,246,.35);
+  --smap-line:rgba(23,20,48,.10);
+  --smap-node-fill:#ffffff;
+  --smap-node-stroke:rgba(23,20,48,.10);
+  --smap-node-fill-warm:#fbfaff;
+  --smap-node-stroke-warm:rgba(124,58,237,.30);
+  --smap-node-fill-hot:#f2edff;
+  --smap-node-stroke-hot:rgba(109,40,217,.55);
+  --smap-label:rgba(23,20,48,.62);
+  --smap-label-warm:rgba(23,20,48,.80);
+  --smap-label-hot:#1b1338;
+  --smap-sublabel:rgba(23,20,48,.38);
+  --smap-sublabel-warm:rgba(23,20,48,.48);
+  --smap-sublabel-hot:rgba(76,29,149,.72);
+  --smap-halo:rgba(124,58,237,.42);
+  --smap-spin:rgba(124,58,237,.45);
+  --smap-rail-fill:rgba(23,20,48,.015);
+  --smap-rail-stroke:rgba(23,20,48,.10);
+  --smap-rail-fill-on:rgba(124,58,237,.04);
+  --smap-rail-stroke-on:rgba(124,58,237,.30);
+  --smap-chip-fill:rgba(23,20,48,.035);
+  --smap-chip-stroke:rgba(23,20,48,.12);
+  --smap-chip-text:rgba(23,20,48,.45);
+  --smap-chip-fill-warm:rgba(23,20,48,.05);
+  --smap-chip-stroke-warm:rgba(23,20,48,.16);
+  --smap-chip-text-warm:rgba(23,20,48,.62);
+  --smap-chip-fill-hot:rgba(124,58,237,.14);
+  --smap-chip-stroke-hot:rgba(109,40,217,.55);
+  --smap-chip-text-hot:#3b1d8f;
+  --smap-net-fill:rgba(23,20,48,.012);
+  --smap-net-stroke:rgba(23,20,48,.6);
+  --smap-net-label:rgba(23,20,48,.6);
+  --smap-badge-fill:#ffffff;
+  --smap-badge-stroke:var(--smap-trace-2);
+  --smap-badge-text:var(--smap-trace-2);
+  --smap-packet-0:#7c3aed; --smap-packet-1:#a78bfa; --smap-packet-2:#c4b5fd;
+  --smap-dot-core:#5b21b6;
+  --smap-dot-shadow:rgba(139,92,246,.75);
+  --smap-tab-text:rgba(23,20,48,.55);
+  --smap-tab-text-hover:rgba(23,20,48,.85);
+  --smap-tab-bg:rgba(23,20,48,.025);
+  --smap-tab-border:rgba(23,20,48,.11);
+  --smap-tab-border-hover:rgba(23,20,48,.20);
+  --smap-tab-n:rgba(23,20,48,.35);
+  --smap-tab-dot:rgba(23,20,48,.22);
+  --smap-tab-bg-on:rgba(124,58,237,.09);
+  --smap-tab-border-on:rgba(109,40,217,.40);
+  --smap-tab-n-on:rgba(60,26,140,.65);
+  --smap-tab-dot-on:#7c3aed;
+}
+
+/* ---------- shell ---------- */
+.smap-frame{ z-index:20; position:relative; }
+.smap-panel{
+  transform-origin:center top;
+  background:var(--smap-surface);
+  border-radius:var(--smap-radius);
+  position:relative; overflow:hidden;
+  box-shadow:0 -20px 80px var(--smap-surface-shadow);
+}
+.smap-panel::before{
+  content:""; border-radius:inherit; z-index:0; pointer-events:none;
+  background:radial-gradient(70% 50% at 50% 100%, var(--smap-bloom) 0%, rgba(0,0,0,0) 65%);
+  position:absolute; inset:0;
+}
+.smap-panel > *{ z-index:2; position:relative; }
+.smap-panel-glow{
+  z-index:3; height:1px; position:absolute; top:0; left:10%; right:10%;
+  background:linear-gradient(90deg, rgba(0,0,0,0), var(--smap-edge-glow), rgba(0,0,0,0));
+}
+.smap-expand{
+  z-index:12; position:absolute; top:16px; right:16px; padding:0;
+  width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center;
+  background:var(--smap-tab-bg); border:1px solid var(--smap-tab-border); border-radius:8px;
+  color:var(--smap-tab-text); cursor:pointer; transition:color .3s, border-color .3s, background .3s;
+}
+.smap-expand:hover{ color:var(--smap-tab-text-hover); border-color:var(--smap-tab-border-hover); }
+.smap-expand-icon{ width:16px; height:16px; display:block; }
+.smap-expand-icon--close{ display:none; }
+.smap-expand[data-full="1"] .smap-expand-icon--open{ display:none; }
+.smap-expand[data-full="1"] .smap-expand-icon--close{ display:block; }
+.smap-panel[data-full="1"]{
+  position:fixed; inset:0; z-index:2147483000; border-radius:0; box-shadow:none;
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+}
+.smap-container{ width:100%; max-width:var(--smap-max); margin:0 auto; padding:clamp(16px,2vw,24px) 4px 20px; position:relative; transition:transform .25s ease; }
+
+/* ---------- head ---------- */
+.smap-head{ text-align:center; max-width:40rem; margin:0 auto; padding-bottom:clamp(10px,1.5vw,16px); }
+.smap-eyebrow{ margin:0 0 12px; font-size:12px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--smap-eyebrow); }
+.smap-outer .smap-title{ margin:0; font-family:Verdana,"Trebuchet MS",var(--smap-font); font-size:clamp(24px,2.4vw,28px); font-weight:600; line-height:1.1; letter-spacing:-.035em; color:var(--smap-title); }
+.smap-sub{ color:var(--smap-sub); max-width:32rem; margin:12px auto 0; font-size:16px; line-height:1.6; }
+
+/* ---------- stage ---------- */
+.smap-stage{ border-radius:24px; position:relative; }
+.smap-svg{ width:100%; height:auto; font-family:inherit; display:block; overflow:visible; }
+.smap-svg text{ text-anchor:middle; dominant-baseline:central; pointer-events:none; }
+
+/* responsive layout swap: two hand-authored layouts, no JS */
+.smap-svg--narrow{ display:none; }
+
+/* ---------- edges ---------- */
+.smap-edge-base{ fill:none; stroke:var(--smap-line); stroke-width:1.2px; }
+.smap-edge-trace{ fill:none; stroke-width:1.8px; stroke-linecap:round; filter:drop-shadow(0 0 4px var(--smap-trace-shadow)); }
+
+/* ---------- nodes ---------- */
+.smap-node-shape{ fill:var(--smap-node-fill); stroke:var(--smap-node-stroke); stroke-width:1.2px; stroke-linejoin:round; transition:fill .5s, stroke .5s; }
+.smap-node-halo{ fill:none; stroke:var(--smap-halo); stroke-width:1px; stroke-linejoin:round; opacity:0; transform-box:fill-box; transform-origin:50% center; transition:opacity .45s; }
+.smap-node-spin{ fill:none; stroke:var(--smap-spin); stroke-width:1px; stroke-dasharray:3 9; opacity:0; transform-box:fill-box; transform-origin:50% center; transition:opacity .4s; }
+.smap-node-label{ fill:var(--smap-label); font-size:13.5px; font-weight:500; letter-spacing:-.008em; transition:fill .45s; }
+.smap-node-sub{ fill:var(--smap-sublabel); font-size:9.5px; font-weight:500; letter-spacing:.05em; transition:fill .45s; }
+.smap-node--system .smap-node-label{ font-size:17px; font-weight:600; letter-spacing:-.02em; }
+.smap-node-icon{ pointer-events:none; }
+.smap-node-icon path{ fill:var(--smap-label); transition:fill .45s; }
+
+.smap-node[data-state="warm"] .smap-node-shape{ fill:var(--smap-node-fill-warm); stroke:var(--smap-node-stroke-warm); }
+.smap-node[data-state="warm"] .smap-node-label{ fill:var(--smap-label-warm); }
+.smap-node[data-state="warm"] .smap-node-sub{ fill:var(--smap-sublabel-warm); }
+.smap-node[data-state="warm"] .smap-node-icon path{ fill:var(--smap-label-warm); }
+.smap-node[data-state="hot"] .smap-node-shape{ fill:var(--smap-node-fill-hot); stroke:var(--smap-node-stroke-hot); }
+.smap-node[data-state="hot"] .smap-node-label{ fill:var(--smap-label-hot); }
+.smap-node[data-state="hot"] .smap-node-sub{ fill:var(--smap-sublabel-hot); }
+.smap-node[data-state="hot"] .smap-node-icon path{ fill:var(--smap-label-hot); }
+.smap-node[data-state="hot"] .smap-node-halo{ opacity:1; animation:smap-halo 2.2s ease-out infinite; }
+.smap-node[data-state="hot"] .smap-node-spin{ opacity:.6; animation:smap-spin 4s linear infinite; }
+@keyframes smap-halo{ 0%{opacity:.85;transform:scale(.94)} 70%,100%{opacity:0;transform:scale(1.1)} }
+@keyframes smap-spin{ 100%{transform:rotate(360deg)} }
+
+/* ---------- rail ---------- */
+.smap-node--rail .smap-node-shape{ fill:var(--smap-rail-fill); stroke:var(--smap-rail-stroke); stroke-dasharray:4 5; }
+.smap-node--rail[data-state="warm"] .smap-node-shape,
+.smap-node--rail[data-state="hot"] .smap-node-shape{ fill:var(--smap-rail-fill-on); stroke:var(--smap-rail-stroke-on); }
+.smap-node--rail .smap-node-sub{ font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; }
+.smap-vchip-bg{ fill:var(--smap-chip-fill); stroke:var(--smap-chip-stroke); stroke-width:1px; transition:fill .4s, stroke .4s; }
+.smap-vchip-text{ fill:var(--smap-chip-text); font-size:10.5px; font-weight:500; transition:fill .4s; }
+.smap-vchip[data-state="warm"] .smap-vchip-bg{ fill:var(--smap-chip-fill-warm); stroke:var(--smap-chip-stroke-warm); }
+.smap-vchip[data-state="warm"] .smap-vchip-text{ fill:var(--smap-chip-text-warm); }
+.smap-vchip[data-state="hot"] .smap-vchip-bg{ fill:var(--smap-chip-fill-hot); stroke:var(--smap-chip-stroke-hot); }
+.smap-vchip[data-state="hot"] .smap-vchip-text{ fill:var(--smap-chip-text-hot); }
+.smap-vchip--stamp{ transform:scale(var(--smap-stamp,1)); }
+
+/* ---------- group box ---------- */
+.smap-net-box{ fill:var(--smap-net-fill); stroke:var(--smap-net-stroke); stroke-width:1px; stroke-dasharray:3 6; }
+.smap-net-label{ fill:var(--smap-net-label); font-size:12px; font-weight:500; letter-spacing:.14em; text-anchor:middle; }
+
+/* ---------- badges + packets ---------- */
+.smap-badge-bg{ fill:var(--smap-badge-fill); stroke:var(--smap-badge-stroke); stroke-width:1.8px; filter:drop-shadow(0 0 4px var(--smap-trace-shadow)); }
+.smap-badge-text{ fill:var(--smap-badge-text); font-size:11px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
+.smap-dot{ opacity:0; }
+.smap-dot-core{ fill:var(--smap-dot-core); filter:drop-shadow(0 0 3px var(--smap-dot-shadow)); }
+
+/* ---------- tabs + captions ---------- */
+.smap-chips{ flex-wrap:wrap; justify-content:center; gap:8px; margin-top:clamp(12px,2vw,20px); display:flex; }
+.smap-chip{
+  font-family:inherit; color:var(--smap-tab-text); cursor:pointer;
+  background:var(--smap-tab-bg); border:1px solid var(--smap-tab-border); border-radius:999px;
+  align-items:center; gap:8px; padding:8px 16px 8px 12px;
+  font-size:13px; font-weight:500; letter-spacing:-.005em;
+  transition:color .3s, border-color .3s, background .3s; display:inline-flex;
+}
+.smap-chip:hover{ color:var(--smap-tab-text-hover); border-color:var(--smap-tab-border-hover); }
+.smap-chip-n{ color:var(--smap-tab-n); font-size:10px; font-weight:500; letter-spacing:.08em; transition:color .3s; }
+.smap-chip-dot{ background:var(--smap-tab-dot); border-radius:50%; width:6px; height:6px; transition:background .3s, box-shadow .3s; }
+.smap-chip[data-active="1"]{ color:var(--smap-label-hot); background:var(--smap-tab-bg-on); border-color:var(--smap-tab-border-on); }
+.smap-chip[data-active="1"] .smap-chip-n{ color:var(--smap-tab-n-on); }
+.smap-chip[data-active="1"] .smap-chip-dot{ background:var(--smap-tab-dot-on); box-shadow:0 0 10px var(--smap-tab-dot-on); }
+.smap-captions{ max-width:40rem; min-height:3.3em; margin:12px auto 0; position:relative; }
+.smap-caption{
+  margin:0; text-align:center; color:var(--smap-caption);
+  opacity:0; pointer-events:none; font-size:15.5px; line-height:1.65;
+  transition:opacity .45s, transform .45s; position:absolute; inset:0; transform:translateY(6px);
+}
+.smap-caption[data-active="1"]{ opacity:1; transform:none; }
+.smap-caption-skill{ color:var(--smap-trace-2); text-shadow:0 0 6px var(--smap-trace-shadow); }
+.smap-sr{ clip-path:inset(50%); white-space:nowrap; width:1px; height:1px; position:absolute; overflow:hidden; }
+
+/* ---------- breakpoints ---------- */
+@media (max-width:900px){
+  .smap-svg--wide{ display:none; }
+  .smap-svg--narrow{ display:block; }
+  .smap-container{ padding-left:2px; padding-right:2px; }
+  .smap-caption{ font-size:14.5px; }
+  .smap-captions{ min-height:4.5em; }
+  .smap-chip{ padding:7px 13px 7px 10px; font-size:12px; }
+}
+@media (max-width:768px){
+  .smap-outer{ margin-top:16px; padding:0; }
+  .smap-panel{ box-shadow:none; border-radius:0; }
+}
+@media (prefers-reduced-motion: reduce){
+  .smap-node[data-state="hot"] .smap-node-halo,
+  .smap-node[data-state="hot"] .smap-node-spin{ opacity:0; animation:none; }
+  .smap-caption{ transition:none; }
+}
+</style>
+<div class="smap-frame">
+  <div class="smap-panel">
+    <div class="smap-panel-glow" aria-hidden="true"></div>
+    <button type="button" class="smap-expand" data-full="0" aria-label="Expand diagram" aria-pressed="false">
+      <svg class="smap-expand-icon smap-expand-icon--open" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2H2v4M10 2h4v4M6 14H2v-4M10 14h4v-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="smap-expand-icon smap-expand-icon--close" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </button>
+    <div class="smap-container">
+      <header class="smap-head">
+        <p class="smap-eyebrow">The workflow</p>
+        <h2 class="smap-title">My AIsy Toolkit</h2>
+        <p class="smap-sub">SDD + agentic loops, in one tool.</p>
+      </header>
+      <div class="smap-stage">
+        <svg class="smap-svg smap-svg--wide" viewBox="-60 0 1360 620" fill="none" aria-hidden="true">
+          <defs><radialGradient id="my-aisy-toolkit-flow-wide-packet"><stop offset="0%" stop-color="var(--smap-packet-0)" stop-opacity="1"/><stop offset="45%" stop-color="var(--smap-packet-1)" stop-opacity="0.85"/><stop offset="100%" stop-color="var(--smap-packet-2)" stop-opacity="0"/></radialGradient><linearGradient id="my-aisy-toolkit-flow-wide-trace" gradientUnits="userSpaceOnUse" x1="-60" y1="0" x2="1300" y2="0"><stop offset="0%" stop-color="var(--smap-trace-1)"/><stop offset="55%" stop-color="var(--smap-trace-2)"/><stop offset="100%" stop-color="var(--smap-trace-3)"/></linearGradient></defs>
+          <g class="smap-net"><rect class="smap-net-box" x="531" y="302" width="158" height="116" rx="16"/><text class="smap-net-label" x="610" y="316">plan.md</text></g>
+          <g class="smap-net"><rect class="smap-net-box" x="531" y="430" width="158" height="116" rx="16"/><text class="smap-net-label" x="610" y="444">plan.md</text></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M700 147 C791 147 791 147 882 147"/><path class="smap-edge-trace" data-trace="constitution>specify" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M700 147 C791 147 791 147 882 147"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M1072 147 C1182 147 1182 367 1072 367"/><path class="smap-edge-trace" data-trace="specify>plan" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M1072 147 C1182 147 1182 367 1072 367"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M1072 147 C1262 147 1262 496 1072 496"/><path class="smap-edge-trace" data-trace="specify>plan2" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M1072 147 C1262 147 1262 496 1072 496"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M882 367 C778.5 367 778.5 335 675 335"/><path class="smap-edge-trace" data-trace="plan>taskA1" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M882 367 C778.5 367 778.5 335 675 335"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M882 367 C778.5 367 778.5 357 675 357"/><path class="smap-edge-trace" data-trace="plan>taskA2" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M882 367 C778.5 367 778.5 357 675 357"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M882 367 C778.5 367 778.5 379 675 379"/><path class="smap-edge-trace" data-trace="plan>taskA3" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M882 367 C778.5 367 778.5 379 675 379"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M882 367 C778.5 367 778.5 401 675 401"/><path class="smap-edge-trace" data-trace="plan>taskA4" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M882 367 C778.5 367 778.5 401 675 401"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M882 496 C778.5 496 778.5 463 675 463"/><path class="smap-edge-trace" data-trace="plan2>taskB1" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M882 496 C778.5 496 778.5 463 675 463"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M882 496 C778.5 496 778.5 485 675 485"/><path class="smap-edge-trace" data-trace="plan2>taskB2" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M882 496 C778.5 496 778.5 485 675 485"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M882 496 C778.5 496 778.5 507 675 507"/><path class="smap-edge-trace" data-trace="plan2>taskB3" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M882 496 C778.5 496 778.5 507 675 507"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M882 496 C778.5 496 778.5 529 675 529"/><path class="smap-edge-trace" data-trace="plan2>taskB4" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M882 496 C778.5 496 778.5 529 675 529"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M545 335 C441.5 335 441.5 367 338 367"/><path class="smap-edge-trace" data-trace="taskA1>implement" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M545 335 C441.5 335 441.5 367 338 367"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M545 357 C441.5 357 441.5 367 338 367"/><path class="smap-edge-trace" data-trace="taskA2>implement" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M545 357 C441.5 357 441.5 367 338 367"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M545 379 C441.5 379 441.5 367 338 367"/><path class="smap-edge-trace" data-trace="taskA3>implement" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M545 379 C441.5 379 441.5 367 338 367"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M545 401 C441.5 401 441.5 367 338 367"/><path class="smap-edge-trace" data-trace="taskA4>implement" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M545 401 C441.5 401 441.5 367 338 367"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M545 463 C441.5 463 441.5 496 338 496"/><path class="smap-edge-trace" data-trace="taskB1>implement2" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M545 463 C441.5 463 441.5 496 338 496"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M545 485 C441.5 485 441.5 496 338 496"/><path class="smap-edge-trace" data-trace="taskB2>implement2" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M545 485 C441.5 485 441.5 496 338 496"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M545 507 C441.5 507 441.5 496 338 496"/><path class="smap-edge-trace" data-trace="taskB3>implement2" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M545 507 C441.5 507 441.5 496 338 496"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M545 529 C441.5 529 441.5 496 338 496"/><path class="smap-edge-trace" data-trace="taskB4>implement2" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M545 529 C441.5 529 441.5 496 338 496"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M148 367 C38 367 38 147 148 147"/><path class="smap-edge-trace" data-trace="implement>clean" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M148 367 C38 367 38 147 148 147"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M148 496 C-42 496 -42 147 148 147"/><path class="smap-edge-trace" data-trace="implement2>clean" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M148 496 C-42 496 -42 147 148 147"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M338 147 C429 147 429 147 520 147"/><path class="smap-edge-trace" data-trace="clean>constitution" stroke="url(#my-aisy-toolkit-flow-wide-trace)" d="M338 147 C429 147 429 147 520 147"/></g>
+          <g class="smap-badge" data-badge="specify>plan" transform="translate(1154.5 257)"><rect class="smap-badge-bg" x="-35" y="-11" width="70" height="22" rx="11"/><text class="smap-badge-text" x="0" y="1">Feat-A</text></g>
+          <g class="smap-badge" data-badge="specify>plan2" transform="translate(1214.5 321.5)"><rect class="smap-badge-bg" x="-35" y="-11" width="70" height="22" rx="11"/><text class="smap-badge-text" x="0" y="1">Feat-B</text></g>
+          <g class="smap-node smap-node--system" data-node="constitution" data-state="warm"><path class="smap-node-halo" d="M713 147 L661.5 236.2 L558.5 236.2 L507 147 L558.5 57.8 L661.5 57.8 Z"/><path class="smap-node-shape" d="M700 147 L655 224.9 L565 224.9 L520 147 L565 69.1 L655 69.1 Z"/><circle class="smap-node-spin" cx="610" cy="147" r="74"/><g class="smap-node-icon" transform="translate(601 103) scale(1.125)"><path d="M8 7C11.3137 7 14 5.65685 14 4C14 2.34315 11.3137 1 8 1C4.68629 1 2 2.34315 2 4C2 5.65685 4.68629 7 8 7Z"/><path d="M8 8.5002C9.83923 8.5002 11.5785 8.13064 12.9135 7.46316C13.2795 7.28013 13.6539 7.0526 14 6.7793V8.0002C14 9.65705 11.3137 11.0002 8 11.0002C4.68629 11.0002 2 9.65705 2 8.0002V6.7793C2.34614 7.0526 2.72049 7.28013 3.08654 7.46316C4.4215 8.13064 6.16077 8.5002 8 8.5002Z"/><path d="M8 12.5002C9.83923 12.5002 11.5785 12.1306 12.9135 11.4632C13.2795 11.2801 13.6539 11.0526 14 10.7793V12.0002C14 13.6571 11.3137 15.0002 8 15.0002C4.68629 15.0002 2 13.6571 2 12.0002V10.7793C2.34614 11.0526 2.72049 11.2801 3.08654 11.4632C4.4215 12.1306 6.16077 12.5002 8 12.5002Z"/></g><text class="smap-node-label" x="610" y="136">/constitution</text><text class="smap-node-sub" x="610" y="156">product-spec.md</text><text class="smap-node-sub" x="610" y="169">tech-spec.md</text><text class="smap-node-sub" x="610" y="182">roadmap.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="specify" data-state="warm"><rect class="smap-node-halo" x="875" y="118" width="204" height="58" rx="29"/><rect class="smap-node-shape" x="882" y="125" width="190" height="44" rx="22"/><text class="smap-node-label" x="977" y="142">/specify-feature</text><text class="smap-node-sub" x="977" y="157">requirements.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="plan" data-state="warm"><rect class="smap-node-halo" x="875" y="338" width="204" height="58" rx="29"/><rect class="smap-node-shape" x="882" y="345" width="190" height="44" rx="22"/><text class="smap-node-label" x="977" y="362">/plan-feature</text><text class="smap-node-sub" x="977" y="377">plan.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="plan2" data-state="warm"><rect class="smap-node-halo" x="875" y="467" width="204" height="58" rx="29"/><rect class="smap-node-shape" x="882" y="474" width="190" height="44" rx="22"/><text class="smap-node-label" x="977" y="491">/plan-feature</text><text class="smap-node-sub" x="977" y="506">plan.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskA1" data-state="warm"><rect class="smap-node-halo" x="538" y="319" width="144" height="32" rx="16"/><rect class="smap-node-shape" x="545" y="326" width="130" height="18" rx="9"/><text class="smap-node-label" x="610" y="335">@dev · task 1</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskA2" data-state="warm"><rect class="smap-node-halo" x="538" y="341" width="144" height="32" rx="16"/><rect class="smap-node-shape" x="545" y="348" width="130" height="18" rx="9"/><text class="smap-node-label" x="610" y="357">@dev · task 2</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskA3" data-state="warm"><rect class="smap-node-halo" x="538" y="363" width="144" height="32" rx="16"/><rect class="smap-node-shape" x="545" y="370" width="130" height="18" rx="9"/><text class="smap-node-label" x="610" y="379">@test · task 3</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskA4" data-state="warm"><rect class="smap-node-halo" x="538" y="385" width="144" height="32" rx="16"/><rect class="smap-node-shape" x="545" y="392" width="130" height="18" rx="9"/><text class="smap-node-label" x="610" y="401">@judge · task 4</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskB1" data-state="warm"><rect class="smap-node-halo" x="538" y="447" width="144" height="32" rx="16"/><rect class="smap-node-shape" x="545" y="454" width="130" height="18" rx="9"/><text class="smap-node-label" x="610" y="463">@ui · task 1</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskB2" data-state="warm"><rect class="smap-node-halo" x="538" y="469" width="144" height="32" rx="16"/><rect class="smap-node-shape" x="545" y="476" width="130" height="18" rx="9"/><text class="smap-node-label" x="610" y="485">@dev · task 2</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskB3" data-state="warm"><rect class="smap-node-halo" x="538" y="491" width="144" height="32" rx="16"/><rect class="smap-node-shape" x="545" y="498" width="130" height="18" rx="9"/><text class="smap-node-label" x="610" y="507">@test · task 3</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskB4" data-state="warm"><rect class="smap-node-halo" x="538" y="513" width="144" height="32" rx="16"/><rect class="smap-node-shape" x="545" y="520" width="130" height="18" rx="9"/><text class="smap-node-label" x="610" y="529">@judge · task 4</text></g>
+          <g class="smap-node smap-node--pill" data-node="implement" data-state="warm"><rect class="smap-node-halo" x="141" y="338" width="204" height="58" rx="29"/><rect class="smap-node-shape" x="148" y="345" width="190" height="44" rx="22"/><text class="smap-node-label" x="243" y="362">/implement-feature</text><text class="smap-node-sub" x="243" y="377">runs plan.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="implement2" data-state="warm"><rect class="smap-node-halo" x="141" y="467" width="204" height="58" rx="29"/><rect class="smap-node-shape" x="148" y="474" width="190" height="44" rx="22"/><text class="smap-node-label" x="243" y="491">/implement-feature</text><text class="smap-node-sub" x="243" y="506">runs plan.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="clean" data-state="warm"><rect class="smap-node-halo" x="141" y="118" width="204" height="58" rx="29"/><rect class="smap-node-shape" x="148" y="125" width="190" height="44" rx="22"/><text class="smap-node-label" x="243" y="142">/clean-feature</text><text class="smap-node-sub" x="243" y="157">reconciles specs</text></g>
+          <g class="smap-dot" data-dot="constitution>specify" transform="translate(700 147)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="specify>plan" transform="translate(1072 147)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="specify>plan2" transform="translate(1072 147)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan>taskA1" transform="translate(882 367)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan>taskA2" transform="translate(882 367)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan>taskA3" transform="translate(882 367)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan>taskA4" transform="translate(882 367)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan2>taskB1" transform="translate(882 496)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan2>taskB2" transform="translate(882 496)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan2>taskB3" transform="translate(882 496)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan2>taskB4" transform="translate(882 496)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskA1>implement" transform="translate(545 335)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskA2>implement" transform="translate(545 357)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskA3>implement" transform="translate(545 379)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskA4>implement" transform="translate(545 401)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskB1>implement2" transform="translate(545 463)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskB2>implement2" transform="translate(545 485)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskB3>implement2" transform="translate(545 507)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskB4>implement2" transform="translate(545 529)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="implement>clean" transform="translate(148 367)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="implement2>clean" transform="translate(148 496)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="clean>constitution" transform="translate(338 147)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-wide-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+        </svg>
+        <svg class="smap-svg smap-svg--narrow" viewBox="0 0 480 840" fill="none" aria-hidden="true">
+          <defs><radialGradient id="my-aisy-toolkit-flow-narrow-packet"><stop offset="0%" stop-color="var(--smap-packet-0)" stop-opacity="1"/><stop offset="45%" stop-color="var(--smap-packet-1)" stop-opacity="0.85"/><stop offset="100%" stop-color="var(--smap-packet-2)" stop-opacity="0"/></radialGradient><linearGradient id="my-aisy-toolkit-flow-narrow-trace" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="480" y2="0"><stop offset="0%" stop-color="var(--smap-trace-1)"/><stop offset="55%" stop-color="var(--smap-trace-2)"/><stop offset="100%" stop-color="var(--smap-trace-3)"/></linearGradient></defs>
+          <g class="smap-net"><rect class="smap-net-box" x="141" y="364" width="208" height="116" rx="16"/><text class="smap-net-label" x="245" y="378">plan.md</text></g>
+          <g class="smap-net"><rect class="smap-net-box" x="141" y="492" width="208" height="116" rx="16"/><text class="smap-net-label" x="245" y="506">plan.md</text></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M185 78 C220 78 80 184 115 184"/><path class="smap-edge-trace" data-trace="constitution>specify" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M185 78 C220 78 80 184 115 184"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 206 C245 216 245 216 245 226"/><path class="smap-edge-trace" data-trace="specify>plan" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 206 C245 216 245 216 245 226"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M375 184 C439 184 439 312 375 312"/><path class="smap-edge-trace" data-trace="specify>plan2" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M375 184 C439 184 439 312 375 312"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 270 C245 329 245 329 245 388"/><path class="smap-edge-trace" data-trace="plan>taskA1" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 270 C245 329 245 329 245 388"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 270 C245 340 245 340 245 410"/><path class="smap-edge-trace" data-trace="plan>taskA2" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 270 C245 340 245 340 245 410"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 270 C245 351 245 351 245 432"/><path class="smap-edge-trace" data-trace="plan>taskA3" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 270 C245 351 245 351 245 432"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 270 C245 362 245 362 245 454"/><path class="smap-edge-trace" data-trace="plan>taskA4" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 270 C245 362 245 362 245 454"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M375 312 C461.5 312 421.5 525 335 525"/><path class="smap-edge-trace" data-trace="plan2>taskB1" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M375 312 C461.5 312 421.5 525 335 525"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M375 312 C472.5 312 432.5 547 335 547"/><path class="smap-edge-trace" data-trace="plan2>taskB2" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M375 312 C472.5 312 432.5 547 335 547"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M375 312 C483.5 312 443.5 569 335 569"/><path class="smap-edge-trace" data-trace="plan2>taskB3" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M375 312 C483.5 312 443.5 569 335 569"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M375 312 C494.5 312 454.5 591 335 591"/><path class="smap-edge-trace" data-trace="plan2>taskB4" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M375 312 C494.5 312 454.5 591 335 591"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 406 C245 520 245 520 245 634"/><path class="smap-edge-trace" data-trace="taskA1>implement" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 406 C245 520 245 520 245 634"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 428 C245 531 245 531 245 634"/><path class="smap-edge-trace" data-trace="taskA2>implement" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 428 C245 531 245 531 245 634"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 450 C245 542 245 542 245 634"/><path class="smap-edge-trace" data-trace="taskA3>implement" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 450 C245 542 245 542 245 634"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 472 C245 553 245 553 245 634"/><path class="smap-edge-trace" data-trace="taskA4>implement" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 472 C245 553 245 553 245 634"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M335 525 C432.5 525 472.5 720 375 720"/><path class="smap-edge-trace" data-trace="taskB1>implement2" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M335 525 C432.5 525 472.5 720 375 720"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M335 547 C421.5 547 461.5 720 375 720"/><path class="smap-edge-trace" data-trace="taskB2>implement2" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M335 547 C421.5 547 461.5 720 375 720"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M335 569 C410.5 569 450.5 720 375 720"/><path class="smap-edge-trace" data-trace="taskB3>implement2" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M335 569 C410.5 569 450.5 720 375 720"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M335 591 C399.5 591 439.5 720 375 720"/><path class="smap-edge-trace" data-trace="taskB4>implement2" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M335 591 C399.5 591 439.5 720 375 720"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M245 678 C245 720 245 720 245 762"/><path class="smap-edge-trace" data-trace="implement>clean" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M245 678 C245 720 245 720 245 762"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M115 720 C83 720 83 784 115 784"/><path class="smap-edge-trace" data-trace="implement2>clean" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M115 720 C83 720 83 784 115 784"/></g>
+          <g class="smap-edge"><path class="smap-edge-base" d="M115 784 C53 784 6 168 68 142"/><path class="smap-edge-trace" data-trace="clean>constitution" stroke="url(#my-aisy-toolkit-flow-narrow-trace)" d="M115 784 C53 784 6 168 68 142"/></g>
+          <g class="smap-badge" data-badge="specify>plan" transform="translate(245 216)"><rect class="smap-badge-bg" x="-35" y="-11" width="70" height="22" rx="11"/><text class="smap-badge-text" x="0" y="1">Feat-A</text></g>
+          <g class="smap-badge" data-badge="specify>plan2" transform="translate(423 248)"><rect class="smap-badge-bg" x="-35" y="-11" width="70" height="22" rx="11"/><text class="smap-badge-text" x="0" y="1">Feat-B</text></g>
+          <g class="smap-node smap-node--system" data-node="constitution" data-state="warm"><path class="smap-node-halo" d="M198 78 L154 154.2 L66 154.2 L22 78 L66 1.8 L154 1.8 Z"/><path class="smap-node-shape" d="M185 78 L147.5 143 L72.5 143 L35 78 L72.5 13 L147.5 13 Z"/><circle class="smap-node-spin" cx="110" cy="78" r="59"/><g class="smap-node-icon" transform="translate(101 34) scale(1.125)"><path d="M8 7C11.3137 7 14 5.65685 14 4C14 2.34315 11.3137 1 8 1C4.68629 1 2 2.34315 2 4C2 5.65685 4.68629 7 8 7Z"/><path d="M8 8.5002C9.83923 8.5002 11.5785 8.13064 12.9135 7.46316C13.2795 7.28013 13.6539 7.0526 14 6.7793V8.0002C14 9.65705 11.3137 11.0002 8 11.0002C4.68629 11.0002 2 9.65705 2 8.0002V6.7793C2.34614 7.0526 2.72049 7.28013 3.08654 7.46316C4.4215 8.13064 6.16077 8.5002 8 8.5002Z"/><path d="M8 12.5002C9.83923 12.5002 11.5785 12.1306 12.9135 11.4632C13.2795 11.2801 13.6539 11.0526 14 10.7793V12.0002C14 13.6571 11.3137 15.0002 8 15.0002C4.68629 15.0002 2 13.6571 2 12.0002V10.7793C2.34614 11.0526 2.72049 11.2801 3.08654 11.4632C4.4215 12.1306 6.16077 12.5002 8 12.5002Z"/></g><text class="smap-node-label" x="110" y="67">/constitution</text><text class="smap-node-sub" x="110" y="87">product-spec.md</text><text class="smap-node-sub" x="110" y="100">tech-spec.md</text><text class="smap-node-sub" x="110" y="113">roadmap.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="specify" data-state="warm"><rect class="smap-node-halo" x="108" y="155" width="274" height="58" rx="29"/><rect class="smap-node-shape" x="115" y="162" width="260" height="44" rx="22"/><text class="smap-node-label" x="245" y="179">/specify-feature</text><text class="smap-node-sub" x="245" y="194">requirements.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="plan" data-state="warm"><rect class="smap-node-halo" x="108" y="219" width="274" height="58" rx="29"/><rect class="smap-node-shape" x="115" y="226" width="260" height="44" rx="22"/><text class="smap-node-label" x="245" y="243">/plan-feature</text><text class="smap-node-sub" x="245" y="258">plan.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="plan2" data-state="warm"><rect class="smap-node-halo" x="108" y="283" width="274" height="58" rx="29"/><rect class="smap-node-shape" x="115" y="290" width="260" height="44" rx="22"/><text class="smap-node-label" x="245" y="307">/plan-feature</text><text class="smap-node-sub" x="245" y="322">plan.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskA1" data-state="warm"><rect class="smap-node-halo" x="148" y="381" width="194" height="32" rx="16"/><rect class="smap-node-shape" x="155" y="388" width="180" height="18" rx="9"/><text class="smap-node-label" x="245" y="397">@dev · task 1</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskA2" data-state="warm"><rect class="smap-node-halo" x="148" y="403" width="194" height="32" rx="16"/><rect class="smap-node-shape" x="155" y="410" width="180" height="18" rx="9"/><text class="smap-node-label" x="245" y="419">@dev · task 2</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskA3" data-state="warm"><rect class="smap-node-halo" x="148" y="425" width="194" height="32" rx="16"/><rect class="smap-node-shape" x="155" y="432" width="180" height="18" rx="9"/><text class="smap-node-label" x="245" y="441">@test · task 3</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskA4" data-state="warm"><rect class="smap-node-halo" x="148" y="447" width="194" height="32" rx="16"/><rect class="smap-node-shape" x="155" y="454" width="180" height="18" rx="9"/><text class="smap-node-label" x="245" y="463">@judge · task 4</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskB1" data-state="warm"><rect class="smap-node-halo" x="148" y="509" width="194" height="32" rx="16"/><rect class="smap-node-shape" x="155" y="516" width="180" height="18" rx="9"/><text class="smap-node-label" x="245" y="525">@ui · task 1</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskB2" data-state="warm"><rect class="smap-node-halo" x="148" y="531" width="194" height="32" rx="16"/><rect class="smap-node-shape" x="155" y="538" width="180" height="18" rx="9"/><text class="smap-node-label" x="245" y="547">@dev · task 2</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskB3" data-state="warm"><rect class="smap-node-halo" x="148" y="553" width="194" height="32" rx="16"/><rect class="smap-node-shape" x="155" y="560" width="180" height="18" rx="9"/><text class="smap-node-label" x="245" y="569">@test · task 3</text></g>
+          <g class="smap-node smap-node--pill" data-node="taskB4" data-state="warm"><rect class="smap-node-halo" x="148" y="575" width="194" height="32" rx="16"/><rect class="smap-node-shape" x="155" y="582" width="180" height="18" rx="9"/><text class="smap-node-label" x="245" y="591">@judge · task 4</text></g>
+          <g class="smap-node smap-node--pill" data-node="implement" data-state="warm"><rect class="smap-node-halo" x="108" y="627" width="274" height="58" rx="29"/><rect class="smap-node-shape" x="115" y="634" width="260" height="44" rx="22"/><text class="smap-node-label" x="245" y="651">/implement-feature</text><text class="smap-node-sub" x="245" y="666">runs plan.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="implement2" data-state="warm"><rect class="smap-node-halo" x="108" y="691" width="274" height="58" rx="29"/><rect class="smap-node-shape" x="115" y="698" width="260" height="44" rx="22"/><text class="smap-node-label" x="245" y="715">/implement-feature</text><text class="smap-node-sub" x="245" y="730">runs plan.md</text></g>
+          <g class="smap-node smap-node--pill" data-node="clean" data-state="warm"><rect class="smap-node-halo" x="108" y="755" width="274" height="58" rx="29"/><rect class="smap-node-shape" x="115" y="762" width="260" height="44" rx="22"/><text class="smap-node-label" x="245" y="779">/clean-feature</text><text class="smap-node-sub" x="245" y="794">reconciles specs</text></g>
+          <g class="smap-dot" data-dot="constitution>specify" transform="translate(185 78)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="specify>plan" transform="translate(245 206)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="specify>plan2" transform="translate(375 184)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan>taskA1" transform="translate(245 270)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan>taskA2" transform="translate(245 270)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan>taskA3" transform="translate(245 270)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan>taskA4" transform="translate(245 270)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan2>taskB1" transform="translate(375 312)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan2>taskB2" transform="translate(375 312)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan2>taskB3" transform="translate(375 312)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="plan2>taskB4" transform="translate(375 312)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskA1>implement" transform="translate(245 406)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskA2>implement" transform="translate(245 428)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskA3>implement" transform="translate(245 450)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskA4>implement" transform="translate(245 472)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskB1>implement2" transform="translate(335 525)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskB2>implement2" transform="translate(335 547)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskB3>implement2" transform="translate(335 569)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="taskB4>implement2" transform="translate(335 591)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="implement>clean" transform="translate(245 678)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="implement2>clean" transform="translate(115 720)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+          <g class="smap-dot" data-dot="clean>constitution" transform="translate(115 784)"><circle class="smap-dot-glow" r="9" fill="url(#my-aisy-toolkit-flow-narrow-packet)"/><circle class="smap-dot-core" r="2.4"/></g>
+        </svg>
+        <p class="smap-sr">Diagram of the My AIsy Toolkit feature loop, arranged like an athletics track around the constitution. /specify-feature scopes the work against the project's constitution — a living set of product-spec, tech-spec and roadmap documents. /specify-feature hands off to /plan-feature, which breaks the work into eight tasks across two features, each in the @agent · task format and assigned to a subagent from the catalog. All eight tasks converge on /implement-feature, which runs the plan in its own isolated git worktree and feeds directly into /clean-feature, which reconciles the specs and closes the loop back to the constitution, ready for the next feature.</p>
+      </div>
+      <div class="smap-chips">
+      <button type="button" class="smap-chip" data-beat="0" data-active="1"><span class="smap-chip-dot" aria-hidden="true"></span><span class="smap-chip-n">01</span>Constitution</button>
+      <button type="button" class="smap-chip" data-beat="1" data-active="0"><span class="smap-chip-dot" aria-hidden="true"></span><span class="smap-chip-n">02</span>Specify</button>
+      <button type="button" class="smap-chip" data-beat="2" data-active="0"><span class="smap-chip-dot" aria-hidden="true"></span><span class="smap-chip-n">03</span>Plan</button>
+      <button type="button" class="smap-chip" data-beat="3" data-active="0"><span class="smap-chip-dot" aria-hidden="true"></span><span class="smap-chip-n">04</span>Implement</button>
+      <button type="button" class="smap-chip" data-beat="4" data-active="0"><span class="smap-chip-dot" aria-hidden="true"></span><span class="smap-chip-n">05</span>Clean</button>
+      </div>
+      <div class="smap-captions">
+      <p class="smap-caption" data-beat="0" data-active="1"><span class="smap-caption-skill">/constitution</span> scaffolds the specs every skill in the loop reads from and writes back to.</p>
+      <p class="smap-caption" data-beat="1" data-active="0"><span class="smap-caption-skill">/specify-feature</span> scopes what you're building and why into a requirements file.</p>
+      <p class="smap-caption" data-beat="2" data-active="0"><span class="smap-caption-skill">/plan-feature</span> breaks the requirements into tasks, assigned to the right subagent.</p>
+      <p class="smap-caption" data-beat="3" data-active="0"><span class="smap-caption-skill">/implement-feature</span> builds the plan inside its own isolated git worktree.</p>
+      <p class="smap-caption" data-beat="4" data-active="0"><span class="smap-caption-skill">/clean-feature</span> updates the specs to match what shipped, and closes the loop.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/json" class="smap-meta">
+{
+  "id": "my-aisy-toolkit-flow",
+  "theme": "dark",
+  "lang": "en",
+  "staticState": "warm",
+  "activeBeat": 0,
+  "breakpoint": 900,
+  "beat": 2.2,
+  "repeatDelay": 0.6,
+  "head": {
+    "eyebrow": "The workflow",
+    "title": "My AIsy Toolkit",
+    "sub": "SDD + agentic loops, in one tool."
+  },
+  "a11y": "Diagram of the My AIsy Toolkit feature loop, arranged like an athletics track around the constitution. /specify-feature scopes the work against the project's constitution — a living set of product-spec, tech-spec and roadmap documents. /specify-feature hands off to /plan-feature, which breaks the work into eight tasks across two features, each in the @agent · task format and assigned to a subagent from the catalog. All eight tasks converge on /implement-feature, which runs the plan in its own isolated git worktree and feeds directly into /clean-feature, which reconciles the specs and closes the loop back to the constitution, ready for the next feature.",
+  "nodes": {
+    "constitution": {
+      "label": "/constitution",
+      "sub": [
+        "product-spec.md",
+        "tech-spec.md",
+        "roadmap.md"
+      ],
+      "icon": "circle-stack",
+      "kind": "system",
+      "beat": 0
+    },
+    "specify": {
+      "label": "/specify-feature",
+      "sub": "requirements.md",
+      "kind": "pill",
+      "beat": 1
+    },
+    "plan": {
+      "label": "/plan-feature",
+      "sub": "plan.md",
+      "kind": "pill",
+      "beat": 2
+    },
+    "plan2": {
+      "label": "/plan-feature",
+      "sub": "plan.md",
+      "kind": "pill",
+      "beat": 2
+    },
+    "taskA1": {
+      "label": "@dev · task 1",
+      "kind": "pill",
+      "beat": 2
+    },
+    "taskA2": {
+      "label": "@dev · task 2",
+      "kind": "pill",
+      "beat": 2
+    },
+    "taskA3": {
+      "label": "@test · task 3",
+      "kind": "pill",
+      "beat": 2
+    },
+    "taskA4": {
+      "label": "@judge · task 4",
+      "kind": "pill",
+      "beat": 2
+    },
+    "taskB1": {
+      "label": "@ui · task 1",
+      "kind": "pill",
+      "beat": 2
+    },
+    "taskB2": {
+      "label": "@dev · task 2",
+      "kind": "pill",
+      "beat": 2
+    },
+    "taskB3": {
+      "label": "@test · task 3",
+      "kind": "pill",
+      "beat": 2
+    },
+    "taskB4": {
+      "label": "@judge · task 4",
+      "kind": "pill",
+      "beat": 2
+    },
+    "implement": {
+      "label": "/implement-feature",
+      "sub": "runs plan.md",
+      "kind": "pill",
+      "beat": 3
+    },
+    "implement2": {
+      "label": "/implement-feature",
+      "sub": "runs plan.md",
+      "kind": "pill",
+      "beat": 3
+    },
+    "clean": {
+      "label": "/clean-feature",
+      "sub": "reconciles specs",
+      "kind": "pill",
+      "beat": 4
+    }
+  },
+  "beatExtra": {
+    "4": [
+      "clean",
+      "constitution"
+    ]
+  },
+  "edges": [
+    {
+      "from": "constitution",
+      "to": "specify",
+      "beat": 1
+    },
+    {
+      "from": "specify",
+      "to": "plan",
+      "beat": 2,
+      "label": "Feat-A"
+    },
+    {
+      "from": "specify",
+      "to": "plan2",
+      "beat": 2,
+      "label": "Feat-B"
+    },
+    {
+      "from": "plan",
+      "to": "taskA1",
+      "beat": 2
+    },
+    {
+      "from": "plan",
+      "to": "taskA2",
+      "beat": 2
+    },
+    {
+      "from": "plan",
+      "to": "taskA3",
+      "beat": 2
+    },
+    {
+      "from": "plan",
+      "to": "taskA4",
+      "beat": 2
+    },
+    {
+      "from": "plan2",
+      "to": "taskB1",
+      "beat": 2
+    },
+    {
+      "from": "plan2",
+      "to": "taskB2",
+      "beat": 2
+    },
+    {
+      "from": "plan2",
+      "to": "taskB3",
+      "beat": 2
+    },
+    {
+      "from": "plan2",
+      "to": "taskB4",
+      "beat": 2
+    },
+    {
+      "from": "taskA1",
+      "to": "implement",
+      "beat": 3
+    },
+    {
+      "from": "taskA2",
+      "to": "implement",
+      "beat": 3
+    },
+    {
+      "from": "taskA3",
+      "to": "implement",
+      "beat": 3
+    },
+    {
+      "from": "taskA4",
+      "to": "implement",
+      "beat": 3
+    },
+    {
+      "from": "taskB1",
+      "to": "implement2",
+      "beat": 3
+    },
+    {
+      "from": "taskB2",
+      "to": "implement2",
+      "beat": 3
+    },
+    {
+      "from": "taskB3",
+      "to": "implement2",
+      "beat": 3
+    },
+    {
+      "from": "taskB4",
+      "to": "implement2",
+      "beat": 3
+    },
+    {
+      "from": "implement",
+      "to": "clean",
+      "beat": 4
+    },
+    {
+      "from": "implement2",
+      "to": "clean",
+      "beat": 4
+    },
+    {
+      "from": "clean",
+      "to": "constitution",
+      "beat": 4
+    }
+  ],
+  "groups": [
+    {
+      "label": "plan.md",
+      "members": [
+        "taskA1",
+        "taskA2",
+        "taskA3",
+        "taskA4"
+      ],
+      "pad": {
+        "left": 14,
+        "top": 24,
+        "right": 14,
+        "bottom": 8
+      }
+    },
+    {
+      "label": "plan.md",
+      "members": [
+        "taskB1",
+        "taskB2",
+        "taskB3",
+        "taskB4"
+      ],
+      "pad": {
+        "left": 14,
+        "top": 24,
+        "right": 14,
+        "bottom": 8
+      }
+    }
+  ],
+  "beats": [
+    {
+      "id": "constitution",
+      "chip": "Constitution",
+      "caption": "Run once per project, /constitution scaffolds product-spec.md, tech-spec.md and roadmap.md — the shared source of truth every skill in the loop reads from and writes back to."
+    },
+    {
+      "id": "specify",
+      "chip": "Specify",
+      "caption": "/specify-feature scopes what's being built and why, against the current constitution, and writes it to a numbered requirements.md."
+    },
+    {
+      "id": "plan",
+      "chip": "Plan",
+      "caption": "/plan-feature breaks the requirements into a plan.md — one task per line in the @agent · task format, numbered per feature and assigned to the best-fitting subagent in the catalog."
+    },
+    {
+      "id": "implement",
+      "chip": "Implement",
+      "caption": "/implement-feature runs the plan, building in its own isolated git worktree — a full checkout on its own branch, never touching your working directory until it's done."
+    },
+    {
+      "id": "clean",
+      "chip": "Clean",
+      "caption": "/clean-feature reconciles the specs with what actually shipped and closes the loop — the updated constitution is what the next /specify-feature reads from."
+    }
+  ],
+  "layouts": {
+    "wide": {
+      "viewBox": "-60 0 1360 620",
+      "pos": {
+        "constitution": {
+          "x": 520,
+          "y": 72,
+          "w": 180,
+          "h": 150
+        },
+        "specify": {
+          "x": 882,
+          "y": 125,
+          "w": 190,
+          "h": 44
+        },
+        "plan": {
+          "x": 882,
+          "y": 345,
+          "w": 190,
+          "h": 44
+        },
+        "plan2": {
+          "x": 882,
+          "y": 474,
+          "w": 190,
+          "h": 44
+        },
+        "clean": {
+          "x": 148,
+          "y": 125,
+          "w": 190,
+          "h": 44
+        },
+        "implement": {
+          "x": 148,
+          "y": 345,
+          "w": 190,
+          "h": 44
+        },
+        "implement2": {
+          "x": 148,
+          "y": 474,
+          "w": 190,
+          "h": 44
+        },
+        "taskA1": {
+          "x": 545,
+          "y": 326,
+          "w": 130,
+          "h": 18
+        },
+        "taskA2": {
+          "x": 545,
+          "y": 348,
+          "w": 130,
+          "h": 18
+        },
+        "taskA3": {
+          "x": 545,
+          "y": 370,
+          "w": 130,
+          "h": 18
+        },
+        "taskA4": {
+          "x": 545,
+          "y": 392,
+          "w": 130,
+          "h": 18
+        },
+        "taskB1": {
+          "x": 545,
+          "y": 454,
+          "w": 130,
+          "h": 18
+        },
+        "taskB2": {
+          "x": 545,
+          "y": 476,
+          "w": 130,
+          "h": 18
+        },
+        "taskB3": {
+          "x": 545,
+          "y": 498,
+          "w": 130,
+          "h": 18
+        },
+        "taskB4": {
+          "x": 545,
+          "y": 520,
+          "w": 130,
+          "h": 18
+        }
+      },
+      "axis": {
+        "constitution>specify": "h",
+        "specify>plan": "loop-right",
+        "specify>plan2": "loop-right",
+        "plan>taskA1": "h-rev",
+        "plan>taskA2": "h-rev",
+        "plan>taskA3": "h-rev",
+        "plan>taskA4": "h-rev",
+        "plan2>taskB1": "h-rev",
+        "plan2>taskB2": "h-rev",
+        "plan2>taskB3": "h-rev",
+        "plan2>taskB4": "h-rev",
+        "taskA1>implement": "h-rev",
+        "taskA2>implement": "h-rev",
+        "taskA3>implement": "h-rev",
+        "taskA4>implement": "h-rev",
+        "taskB1>implement2": "h-rev",
+        "taskB2>implement2": "h-rev",
+        "taskB3>implement2": "h-rev",
+        "taskB4>implement2": "h-rev",
+        "implement>clean": "loop-left",
+        "implement2>clean": "loop-left",
+        "clean>constitution": "h"
+      },
+      "bow": {
+        "specify>plan2": 190,
+        "implement2>clean": 190
+      }
+    },
+    "narrow": {
+      "viewBox": "0 0 480 840",
+      "pos": {
+        "constitution": {
+          "x": 35,
+          "y": 14,
+          "w": 150,
+          "h": 128
+        },
+        "specify": {
+          "x": 115,
+          "y": 162,
+          "w": 260,
+          "h": 44
+        },
+        "plan": {
+          "x": 115,
+          "y": 226,
+          "w": 260,
+          "h": 44
+        },
+        "plan2": {
+          "x": 115,
+          "y": 290,
+          "w": 260,
+          "h": 44
+        },
+        "taskA1": {
+          "x": 155,
+          "y": 388,
+          "w": 180,
+          "h": 18
+        },
+        "taskA2": {
+          "x": 155,
+          "y": 410,
+          "w": 180,
+          "h": 18
+        },
+        "taskA3": {
+          "x": 155,
+          "y": 432,
+          "w": 180,
+          "h": 18
+        },
+        "taskA4": {
+          "x": 155,
+          "y": 454,
+          "w": 180,
+          "h": 18
+        },
+        "taskB1": {
+          "x": 155,
+          "y": 516,
+          "w": 180,
+          "h": 18
+        },
+        "taskB2": {
+          "x": 155,
+          "y": 538,
+          "w": 180,
+          "h": 18
+        },
+        "taskB3": {
+          "x": 155,
+          "y": 560,
+          "w": 180,
+          "h": 18
+        },
+        "taskB4": {
+          "x": 155,
+          "y": 582,
+          "w": 180,
+          "h": 18
+        },
+        "implement": {
+          "x": 115,
+          "y": 634,
+          "w": 260,
+          "h": 44
+        },
+        "implement2": {
+          "x": 115,
+          "y": 698,
+          "w": 260,
+          "h": 44
+        },
+        "clean": {
+          "x": 115,
+          "y": 762,
+          "w": 260,
+          "h": 44
+        }
+      },
+      "axis": {
+        "constitution>specify": "h",
+        "specify>plan": "v",
+        "specify>plan2": "loop-right",
+        "plan>taskA1": "v",
+        "plan>taskA2": "v",
+        "plan>taskA3": "v",
+        "plan>taskA4": "v",
+        "plan2>taskB1": "loop-right",
+        "plan2>taskB2": "loop-right",
+        "plan2>taskB3": "loop-right",
+        "plan2>taskB4": "loop-right",
+        "taskA1>implement": "v",
+        "taskA2>implement": "v",
+        "taskA3>implement": "v",
+        "taskA4>implement": "v",
+        "taskB1>implement2": "loop-right",
+        "taskB2>implement2": "loop-right",
+        "taskB3>implement2": "loop-right",
+        "taskB4>implement2": "loop-right",
+        "implement>clean": "v",
+        "implement2>clean": "loop-left",
+        "clean>constitution": "return"
+      }
+    }
+  }
+}
+</script>
+<script>
+(function(){
+  var root = document.getElementById('my-aisy-toolkit-flow');
+  if (!root) return;
+  var chips = root.querySelectorAll('.smap-chip');
+  var captions = root.querySelectorAll('.smap-caption');
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var svgs = root.querySelectorAll('.smap-svg');
+  // each beat is a list of STAGES, run in sequence; each stage is a list of
+  // edges animated simultaneously (same technique/timeline as a single edge)
+  var beatFlourishes = {
+    "0": [
+      [ { from: "constitution", to: "specify", trace: "constitution>specify" } ]
+    ],
+    "1": [
+      [
+        { from: "specify", to: "plan",  trace: "specify>plan" },
+        { from: "specify", to: "plan2", trace: "specify>plan2" }
+      ]
+    ],
+    "2": [
+      [
+        { from: "plan",  to: "taskA1", trace: "plan>taskA1" },
+        { from: "plan",  to: "taskA2", trace: "plan>taskA2" },
+        { from: "plan",  to: "taskA3", trace: "plan>taskA3" },
+        { from: "plan",  to: "taskA4", trace: "plan>taskA4" },
+        { from: "plan2", to: "taskB1", trace: "plan2>taskB1" },
+        { from: "plan2", to: "taskB2", trace: "plan2>taskB2" },
+        { from: "plan2", to: "taskB3", trace: "plan2>taskB3" },
+        { from: "plan2", to: "taskB4", trace: "plan2>taskB4" }
+      ],
+      [
+        { from: "taskA1", to: "implement",  trace: "taskA1>implement" },
+        { from: "taskA2", to: "implement",  trace: "taskA2>implement" },
+        { from: "taskA3", to: "implement",  trace: "taskA3>implement" },
+        { from: "taskA4", to: "implement",  trace: "taskA4>implement" },
+        { from: "taskB1", to: "implement2", trace: "taskB1>implement2" },
+        { from: "taskB2", to: "implement2", trace: "taskB2>implement2" },
+        { from: "taskB3", to: "implement2", trace: "taskB3>implement2" },
+        { from: "taskB4", to: "implement2", trace: "taskB4>implement2" }
+      ]
+    ],
+    "3": [
+      [
+        { from: "implement",  to: "clean", trace: "implement>clean" },
+        { from: "implement2", to: "clean", trace: "implement2>clean" }
+      ]
+    ],
+    "4": [
+      [ { from: "clean", to: "constitution", trace: "clean>constitution" } ]
+    ]
+  };
+  // one independent run per beat: re-clicking the SAME beat cancels its own
+  // previous run (they'd fight over the same elements), but different beats
+  // never cancel each other — each plays to completion independently
+  var activeRunsByBeat = {};
+
+  // accelerates smoothly for the first RAMP fraction of the duration, then
+  // travels at that capped speed for the rest — no runaway acceleration
+  var EASE_RAMP = 0.35;
+  var EASE_V = 2 / (2 - EASE_RAMP);
+  function easeInCapped(t){
+    if (t < EASE_RAMP) return (EASE_V / (2 * EASE_RAMP)) * t * t;
+    return (EASE_V * EASE_RAMP) / 2 + EASE_V * (t - EASE_RAMP);
+  }
+
+  function cancelActiveRun(beat){
+    var run = activeRunsByBeat[beat];
+    if (!run) return;
+    if (run.rafId) cancelAnimationFrame(run.rafId);
+    run.timeouts.forEach(function(id){ clearTimeout(id); });
+    delete activeRunsByBeat[beat];
+  }
+
+  function getTreeRefs(svg, cfg){
+    return {
+      fromNode: svg.querySelector('.smap-node[data-node="' + cfg.from + '"]'),
+      toNode:   svg.querySelector('.smap-node[data-node="' + cfg.to + '"]'),
+      trace:    svg.querySelector('.smap-edge-trace[data-trace="' + cfg.trace + '"]'),
+      dot:      svg.querySelector('.smap-dot[data-dot="' + cfg.trace + '"]')
+    };
+  }
+
+  function buildStageRefs(edgeCfgs){
+    var refs = [];
+    Array.prototype.forEach.call(svgs, function(svg){
+      edgeCfgs.forEach(function(cfg){
+        var r = getTreeRefs(svg, cfg);
+        if (r.fromNode && r.toNode && r.trace && r.dot) refs.push(r);
+      });
+    });
+    return refs;
+  }
+
+  function playFlourish(beat, onDone){
+    cancelActiveRun(beat);
+    if (reduceMotion) { if (onDone) onDone(); return; }
+
+    var stages = beatFlourishes[beat];
+    if (!stages || !stages.length) { if (onDone) onDone(); return; }
+
+    var stageRefsList = stages.map(buildStageRefs).filter(function(r){ return r.length; });
+    if (!stageRefsList.length) { if (onDone) onDone(); return; }
+
+    var run = { rafId: null, timeouts: [] };
+    activeRunsByBeat[beat] = run;
+
+    var allTouched = [];
+    stageRefsList.forEach(function(refs){ allTouched = allTouched.concat(refs); });
+
+    // reset every edge across every stage at once, so the whole path goes
+    // dark together — each stage only lights up when its dot reaches it
+    allTouched.forEach(function(refs){
+      refs.dotOrigTransform = refs.dot.getAttribute('transform');
+      refs.len = refs.trace.getTotalLength();
+      refs.trace.style.strokeDasharray = refs.len + 'px';
+      refs.trace.style.strokeDashoffset = refs.len + 'px';
+      refs.dot.style.opacity = '0';
+    });
+
+    var FLOW_MS = 850;
+    var STAGGER_MS = 100; // lag between successive dots leaving the same stage
+
+    function runStage(i){
+      if (activeRunsByBeat[beat] !== run) return;
+      var refsByTree = stageRefsList[i];
+
+      refsByTree.forEach(function(refs, idx){
+        refs.delay = idx * STAGGER_MS;
+        refs.arrived = false;
+        refs.fromNode.setAttribute('data-state', 'hot');
+      });
+
+      var flowStart = null;
+      function flowFrame(ts){
+        if (activeRunsByBeat[beat] !== run) return;
+        if (flowStart === null) flowStart = ts;
+        var elapsed = ts - flowStart;
+        var allDone = true;
+        refsByTree.forEach(function(refs){
+          var local = elapsed - refs.delay;
+          var t = Math.max(0, Math.min(1, local / FLOW_MS));
+          var eased = easeInCapped(t);
+          // same progress drives both: the dot always sits exactly at the
+          // tip of the currently-drawn line, as if it were drawing it
+          refs.trace.style.strokeDashoffset = (refs.len * (1 - eased)) + 'px';
+          if (local >= 0){
+            var pt = refs.trace.getPointAtLength(eased * refs.len);
+            refs.dot.setAttribute('transform', 'translate(' + pt.x + ' ' + pt.y + ')');
+            var op = t < 0.12 ? t / 0.12 : (t > 0.88 ? (1 - t) / 0.12 : 1);
+            refs.dot.style.opacity = String(op);
+          }
+          if (t >= 1 && !refs.arrived){
+            refs.arrived = true;
+            refs.dot.style.opacity = '0';
+            refs.dot.setAttribute('transform', refs.dotOrigTransform);
+            refs.toNode.setAttribute('data-state', 'hot');
+          }
+          if (t < 1) allDone = false;
+        });
+        if (!allDone){
+          run.rafId = requestAnimationFrame(flowFrame);
+        } else {
+          onStageArrive();
+        }
+      }
+      run.rafId = requestAnimationFrame(flowFrame);
+
+      function onStageArrive(){
+        var isLast = i === stageRefsList.length - 1;
+        var id = setTimeout(function(){
+          if (isLast) settle(); else runStage(i + 1);
+        }, isLast ? 550 : 100);
+        run.timeouts.push(id);
+      }
+    }
+
+    function settle(){
+      if (activeRunsByBeat[beat] !== run) return;
+      allTouched.forEach(function(refs){
+        refs.fromNode.setAttribute('data-state', 'warm');
+        refs.toNode.setAttribute('data-state', 'warm');
+      });
+      delete activeRunsByBeat[beat];
+      if (onDone) onDone();
+    }
+
+    runStage(0);
+  }
+
+  function setActive(beat){
+    chips.forEach(function(c){ c.setAttribute('data-active', c.getAttribute('data-beat') === beat ? '1' : '0'); });
+    captions.forEach(function(p){ p.setAttribute('data-active', p.getAttribute('data-beat') === beat ? '1' : '0'); });
+  }
+
+  // idle autoplay: cycles beat 0 -> 1 -> 2 -> 3 -> 4 -> 0 -> ..., each step
+  // waiting for its flourish to fully finish before moving to the next.
+  // Any manual click on a chip stops it for good.
+  var userInteracted = false;
+  var autoplayTimer = null;
+  var beatOrder = ['0', '1', '2', '3', '4'];
+  var autoplayIndex = 0;
+
+  function stopAutoplay(){
+    if (autoplayTimer){ clearTimeout(autoplayTimer); autoplayTimer = null; }
+  }
+
+  function runAutoplayStep(){
+    if (userInteracted || reduceMotion) return;
+    var beat = beatOrder[autoplayIndex];
+    autoplayIndex = (autoplayIndex + 1) % beatOrder.length;
+    setActive(beat);
+    playFlourish(beat, function(){
+      if (userInteracted || reduceMotion) return;
+      autoplayTimer = setTimeout(runAutoplayStep, 500);
+    });
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      userInteracted = true;
+      stopAutoplay();
+      var beat = chip.getAttribute('data-beat');
+      setActive(beat);
+      if (beatFlourishes[beat]) playFlourish(beat);
+    });
+  });
+
+  if (!reduceMotion){
+    autoplayTimer = setTimeout(runAutoplayStep, 1200);
+  }
+
+  var expandBtn = root.querySelector('.smap-expand');
+  var panel = root.querySelector('.smap-panel');
+  var container = root.querySelector('.smap-container');
+  if (expandBtn && panel && container) {
+    function fitContainer(){
+      if (panel.getAttribute('data-full') !== '1') return;
+      container.style.transform = 'none';
+      var rect = container.getBoundingClientRect();
+      var scale = Math.min(1, window.innerWidth / rect.width, window.innerHeight / rect.height);
+      container.style.transformOrigin = 'center center';
+      container.style.transform = scale < 1 ? 'scale(' + scale + ')' : 'none';
+    }
+
+    function setFull(on){
+      panel.setAttribute('data-full', on ? '1' : '0');
+      expandBtn.setAttribute('data-full', on ? '1' : '0');
+      expandBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      expandBtn.setAttribute('aria-label', on ? 'Close full screen' : 'Expand diagram');
+      document.body.style.overflow = on ? 'hidden' : '';
+      if (on) {
+        requestAnimationFrame(fitContainer);
+      } else {
+        container.style.transform = '';
+      }
+    }
+    expandBtn.addEventListener('click', function(){
+      setFull(panel.getAttribute('data-full') !== '1');
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && panel.getAttribute('data-full') === '1') setFull(false);
+    });
+    window.addEventListener('resize', fitContainer);
+  }
+})();
+</script>
+</section>
+<!--8<-- [end:diagram]-->
+</body>
+</html>
