@@ -54,6 +54,7 @@ When producing or judging prose:
 - **Proper nouns, product names, identifiers, brand names** → never translated.
 - **Spanish orthography is mandatory.** Full diacritics and special characters (á, é, í, ó, ú, ñ, ¿, ¡). Never substitute ASCII equivalents.
 - **English is the repo's canonical content language** (CLAUDE.md §4). When translating ES → EN, the English file is the "real" post; make it read as a native English original, not a translation.
+- **Never use the em dash (—) or en dash (–) as punctuation**, in either language — not in prose you write, and not in a fix you suggest. Only standard punctuation is allowed: comma (`,`), period (`.`), colon (`:`), semicolon (`;`). A hyphen (`-`) is only for compound words; an apostrophe (`'`) only for English contractions/possessives. If the source uses an em dash to join two clauses, rewrite it as two sentences, or join with a comma, colon, or semicolon — whichever reads most naturally. E.g. "El repo no deja de crecer — se añaden nuevas skills" → "El repo no deja de crecer: se añaden nuevas skills" or "El repo no deja de crecer, se van añadiendo nuevas skills."
 
 ---
 

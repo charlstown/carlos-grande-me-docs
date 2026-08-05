@@ -10,6 +10,8 @@ The heavy lifting — translating or auditing parity — is always delegated to 
 
 > **Content language**: English is the canonical language of the repo (CLAUDE.md §4). When a missing English file is generated from Spanish, it must read as a native English original.
 
+> **Punctuation**: never use the em dash (—) or en dash (–), in either language. Only standard punctuation (`,` `.` `:` `;`), a hyphen (`-`) for compound words, or an apostrophe for English contractions. The `translator` subagent enforces this in both translated prose and suggested fixes.
+
 ---
 
 ## Workflow
