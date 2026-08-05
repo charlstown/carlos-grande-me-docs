@@ -67,6 +67,9 @@ markdown_extensions:
   - pymdownx.mark         # Hihlighting text
   - attr_list             # To add buttons
   - md_in_html            # To add html in markdown (centred images)
+  - pymdownx.snippets:    # To include self-contained HTML objects by reference
+      base_path: ['docs']
+      check_paths: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
