@@ -1,135 +1,139 @@
 ---
-description: Interrogatorio crítico sobre un documento para reducir gaps, clarificar decisiones y detectar incoherencias. Al terminar, reescribe el documento con todo lo aprendido. Requiere un documento de entrada. Trigger cuando el usuario diga "grill me", "interrógate", "interrogatorio", "analiza gaps", o invoque /grill-me.
+description: Critical interrogation of a document to reduce gaps, clarify decisions, and detect inconsistencies. When finished, it rewrites the document with everything learned. Requires an input document. Trigger when the user says "grill me", "interrógate", "interrogatorio", "analiza gaps", "interrogate me", "analyze gaps", or invokes /grill-me.
 ---
 
-## Instrucciones
+## Language
 
-Sigue estos pasos en orden estricto. Esta skill es genérica: funciona con cualquier tipo de documento (spec, apunte, frase, idea, roadmap, diseño, etc.).
+Detect the language of the user's initial (or most recent) message and conduct the ENTIRE interaction in that language — every `AskUserQuestion` prompt, header, option label and description, and every message, summary, and generated file or output. Mirror the user's language exactly and never switch to another language. These instructions are written in English, but that must NOT force the interaction into English: if the user wrote in Spanish, ask and write in Spanish; if they wrote in another language, use that one. The language of the inputs determines the language of the outputs.
 
----
+## Instructions
 
-### Paso 0 — Obtener el documento de entrada
-
-El documento puede llegar de tres formas:
-
-1. **Ruta de archivo** pasada como argumento o mencionada en el mensaje → léela con `Read`.
-2. **Contenido pegado directamente** en el mensaje del usuario → úsalo tal cual.
-3. **Sin documento** → usa `AskUserQuestion` con una pregunta de texto libre:
-   - Pregunta: "¿Cuál es el documento o texto que quieres que analice? Pega el contenido o indica la ruta del archivo."
-   - Opciones sugeridas: `Pego el contenido ahora`, `Indico la ruta del archivo`
-   - Si el usuario indica una ruta, léela con `Read`. Si pega contenido, úsalo.
-
-Una vez que tengas el documento, guárdalo mentalmente como **DOCUMENTO_ORIGINAL** (también su ruta si la hay).
+Follow these steps in strict order. This skill is generic: it works with any type of document (spec, note, sentence, idea, roadmap, design, etc.).
 
 ---
 
-### Paso 1 — Determinar la profundidad del interrogatorio
+### Step 0 — Obtain the input document
 
-Usa `AskUserQuestion` con una sola pregunta:
+The document can arrive in three ways:
 
-**Pregunta:** "¿Qué profundidad quieres en el interrogatorio?"
+1. **File path** passed as an argument or mentioned in the message → read it with `Read`.
+2. **Content pasted directly** into the user's message → use it as-is.
+3. **No document** → use `AskUserQuestion` with a free-text question:
+   - Question: "What is the document or text you want me to analyze? Paste the content or provide the file path."
+   - Suggested options: `I'll paste the content now`, `I'll provide the file path`
+   - If the user provides a path, read it with `Read`. If they paste content, use it.
 
-| Opción | Descripción |
+Once you have the document, keep it in mind as **ORIGINAL_DOCUMENT** (along with its path if there is one).
+
+---
+
+### Step 1 — Determine the depth of the interrogation
+
+Use `AskUserQuestion` with a single question:
+
+**Question:** "How deep do you want the interrogation to be?"
+
+| Option | Description |
 |--------|-------------|
-| **4 preguntas** | Solo lo más crítico. Decisiones bloqueantes y gaps fatales. Sesión rápida (5 min). |
-| **6 preguntas** | Crítico + decisiones importantes. Balance entre velocidad y cobertura. |
-| **12 preguntas** | Exhaustivo. Crítico, importante y edge cases. Interrogatorio completo. |
+| **4 questions** | Only the most critical. Blocking decisions and fatal gaps. Quick session (5 min). |
+| **6 questions** | Critical + important decisions. Balance between speed and coverage. |
+| **12 questions** | Exhaustive. Critical, important, and edge cases. Full interrogation. |
 
-Guarda el número elegido como **N_PREGUNTAS**.
-
----
-
-### Paso 2 — Analizar el documento internamente
-
-**No muestres este análisis al usuario.** Es trabajo interno para preparar las preguntas.
-
-Lee el documento con atención y detecta:
-
-1. **Gaps fatales** — información que falta y sin la que el documento no puede ejecutarse. Ejemplos: objetivo no definido, usuario destinatario ausente, alcance indefinido, decisión técnica sin tomar.
-
-2. **Incoherencias internas** — puntos que se contradicen entre sí dentro del mismo documento. Ejemplos: un requisito que choca con una restricción, un flujo que describe dos comportamientos distintos para el mismo caso.
-
-3. **Decisiones no tomadas** — lugares donde el documento asume algo pero no lo explicita, o donde hay dos opciones igualmente válidas y no se eligió ninguna. Ejemplos: "se usará X o Y según convenga" sin criterio de selección.
-
-4. **Asunciones implícitas** — cosas que el autor da por sentadas pero que un lector externo no podría inferir sin información adicional.
-
-5. **Ambigüedades de alcance** — secciones donde no está claro qué está dentro y qué fuera del scope.
-
-Crea una lista interna de **todos los hallazgos**, ordenados por criticidad:
-
-```
-CRITICIDAD ALTA → gaps fatales + incoherencias
-CRITICIDAD MEDIA → decisiones no tomadas + asunciones implícitas
-CRITICIDAD BAJA → ambigüedades de alcance + detalles menores
-```
-
-De esa lista, selecciona las **N_PREGUNTAS** más críticas. Si N=4, toma solo las 4 más altas. Si N=12, abarca también las medias y bajas.
-
-Para cada pregunta seleccionada, prepara:
-- La pregunta en sí (clara, directa, sin jerga del autor)
-- 2-4 opciones plausibles basadas en el contexto del documento (el usuario siempre puede elegir "Other" para respuesta libre)
+Save the chosen number as **N_QUESTIONS**.
 
 ---
 
-### Paso 3 — Lanzar el interrogatorio en rondas
+### Step 2 — Analyze the document internally
 
-Divide las N_PREGUNTAS en rondas de **máximo 4 preguntas por llamada** a `AskUserQuestion`.
+**Do not show this analysis to the user.** It is internal work to prepare the questions.
 
-| N_PREGUNTAS | Rondas |
+Read the document carefully and detect:
+
+1. **Fatal gaps** — missing information without which the document cannot be executed. Examples: undefined objective, missing target user, undefined scope, technical decision not made.
+
+2. **Internal inconsistencies** — points that contradict each other within the same document. Examples: a requirement that clashes with a constraint, a flow that describes two different behaviors for the same case.
+
+3. **Decisions not made** — places where the document assumes something but does not make it explicit, or where there are two equally valid options and neither was chosen. Examples: "X or Y will be used as appropriate" with no selection criteria.
+
+4. **Implicit assumptions** — things the author takes for granted but that an external reader could not infer without additional information.
+
+5. **Scope ambiguities** — sections where it is not clear what is inside and what is outside the scope.
+
+Create an internal list of **all findings**, ordered by criticality:
+
+```
+HIGH CRITICALITY → fatal gaps + inconsistencies
+MEDIUM CRITICALITY → decisions not made + implicit assumptions
+LOW CRITICALITY → scope ambiguities + minor details
+```
+
+From that list, select the **N_QUESTIONS** most critical ones. If N=4, take only the 4 highest. If N=12, also cover the medium and low ones.
+
+For each selected question, prepare:
+- The question itself (clear, direct, without the author's jargon)
+- 2-4 plausible options based on the document's context (the user can always choose "Other" for a free-form answer)
+
+---
+
+### Step 3 — Launch the interrogation in rounds
+
+Split the N_QUESTIONS into rounds of **at most 4 questions per call** to `AskUserQuestion`.
+
+| N_QUESTIONS | Rounds |
 |-------------|--------|
-| 4 | 1 ronda de 4 |
-| 6 | 1 ronda de 4 + 1 ronda de 2 |
-| 12 | 3 rondas de 4 |
+| 4 | 1 round of 4 |
+| 6 | 1 round of 4 + 1 round of 2 |
+| 12 | 3 rounds of 4 |
 
-**Antes de la primera ronda**, escribe al usuario un mensaje breve con:
-- Cuántas preguntas vienen en total
-- El criterio de ordenación: "De lo más crítico a lo más granular"
-- Una línea indicando qué tipo de gaps has detectado (sin revelar las preguntas todavía)
+**Before the first round**, write the user a brief message with:
+- How many questions are coming in total
+- The ordering criterion: "From the most critical to the most granular"
+- One line indicating what type of gaps you have detected (without revealing the questions yet)
 
-Ejemplo:
-> He detectado 2 incoherencias, 3 decisiones sin tomar y 1 gap de alcance. Empezamos con las 6 preguntas más críticas.
+Example:
+> I've detected 2 inconsistencies, 3 decisions not made, and 1 scope gap. Let's start with the 6 most critical questions.
 
-**Reglas para formular las preguntas:**
-- Directas y sin rodeos. Este es un interrogatorio, no una entrevista de cortesía.
-- Cada pregunta apunta a un único hallazgo concreto.
-- Las opciones deben ser mutuamente excluyentes cuando sea posible.
-- Si la pregunta es sobre una incoherencia, nómbrala explícitamente: "El documento dice X en la sección A, pero Y en la sección B. ¿Cuál es la versión correcta?"
+**Rules for phrasing the questions:**
+- Direct and to the point. This is an interrogation, not a courtesy interview.
+- Each question targets a single concrete finding.
+- The options should be mutually exclusive whenever possible.
+- If the question is about an inconsistency, name it explicitly: "The document says X in section A, but Y in section B. Which is the correct version?"
 
-Espera las respuestas de cada ronda antes de lanzar la siguiente. Acumula todas las respuestas como **RESPUESTAS_ACUMULADAS**.
-
----
-
-### Paso 4 — Reescribir el documento
-
-Una vez completadas todas las rondas, reescribe el **DOCUMENTO_ORIGINAL** integrando:
-
-1. Todas las **RESPUESTAS_ACUMULADAS** del interrogatorio.
-2. Resolución de las incoherencias detectadas (usa la respuesta del usuario; si no la hay, marca la incoherencia como `[PENDIENTE DE RESOLUCIÓN]`).
-3. Las asunciones implícitas, ahora explicitadas como afirmaciones directas.
-4. Gaps que siguen abiertos marcados con `> ⚠ Gap sin resolver: {descripción breve}`.
-
-**Principios de reescritura:**
-- Mantén la estructura y el tono del documento original.
-- No añadas secciones vacías ni boilerplate que no existía antes.
-- Si el documento original era una frase o apunte breve, reescríbelo como documento igualmente breve pero sin gaps.
-- Si era un spec extenso, mantén el mismo nivel de detalle y extensión, solo enriqueciéndolo.
-- No inventes información que el usuario no haya dado. Si un gap sigue abierto tras el interrogatorio, márcalo con `⚠`.
-
-**Destino del documento reescrito:**
-- Si había una **ruta de archivo**: escribe el resultado en esa misma ruta con `Write` (sobreescritura). Informa al usuario antes de hacerlo.
-- Si el documento llegó como texto pegado: muestra el resultado directamente en el chat, formateado en un bloque de código markdown.
+Wait for the answers of each round before launching the next. Accumulate all the answers as **ACCUMULATED_ANSWERS**.
 
 ---
 
-### Paso 5 — Resumen final
+### Step 4 — Rewrite the document
 
-Al terminar, escribe al usuario un resumen conciso:
+Once all rounds are complete, rewrite the **ORIGINAL_DOCUMENT** integrating:
+
+1. All the **ACCUMULATED_ANSWERS** from the interrogation.
+2. Resolution of the detected inconsistencies (use the user's answer; if there is none, mark the inconsistency as `[UNRESOLVED]`).
+3. The implicit assumptions, now made explicit as direct statements.
+4. Gaps that remain open marked with `> ⚠ Unresolved gap: {brief description}`.
+
+**Rewriting principles:**
+- Keep the structure and tone of the original document.
+- Do not add empty sections or boilerplate that did not exist before.
+- If the original document was a sentence or brief note, rewrite it as an equally brief document but without gaps.
+- If it was an extensive spec, keep the same level of detail and length, only enriching it.
+- Do not invent information the user did not provide. If a gap remains open after the interrogation, mark it with `⚠`.
+
+**Destination of the rewritten document:**
+- If there was a **file path**: write the result to that same path with `Write` (overwrite). Inform the user before doing so.
+- If the document arrived as pasted text: show the result directly in the chat, formatted in a markdown code block.
+
+---
+
+### Step 5 — Final summary
+
+When finished, write the user a concise summary:
 
 ```
-✓ Documento reescrito: {ruta o "mostrado en chat"}
-Gaps resueltos: {n}
-Gaps abiertos: {n} (marcados con ⚠)
-Incoherencias resueltas: {n}
+✓ Document rewritten: {path or "shown in chat"}
+Gaps resolved: {n}
+Gaps open: {n} (marked with ⚠)
+Inconsistencies resolved: {n}
 ```
 
-Si quedan gaps abiertos con `⚠`, lista brevemente cuáles son para que el usuario sepa qué le falta completar.
+If open gaps with `⚠` remain, briefly list which ones they are so the user knows what is left to complete.
