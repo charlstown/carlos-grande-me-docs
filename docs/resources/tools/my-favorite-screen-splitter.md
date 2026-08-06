@@ -3,6 +3,10 @@ short_title: Screen Splitter
 description: A lightweight Windows utility for dividing your screen into configurable work areas and keeping multitasking organized.
 date: 2021-08-07
 thumbnail: assets/images/resources/screen-splitter-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/resources/screen-splitter-portrait.png
+    background_color: transparent
 ---
 
 # Screen splitter

@@ -3,6 +3,10 @@ short_title: The Business model design
 description: A practical introduction to lean startup principles, business model design, and market sizing with TAM, SAM, and SOM.
 date: 2020-11-16
 thumbnail: assets/images/thumbnails/business-model-portrait.jpg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/business-model-portrait.jpg
+    background_color: transparent
 ---
 
 # The Business model design

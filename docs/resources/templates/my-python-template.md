@@ -3,6 +3,10 @@ short_title: My Python template
 description: A ready-to-use Python project template with a clean structure for starting maintainable applications and libraries.
 date: 2022-12-22
 thumbnail: assets/images/thumbnails/template-python-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/template-python-portrait.png
+    background_color: transparent
 ---
 
 # My Python template

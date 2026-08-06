@@ -3,6 +3,10 @@ short_title: Python 3 cheatsheet
 description: A compact Python 3 cheat sheet covering core syntax, built-in data types, functions, and common programming patterns.
 date: 2020-01-06
 thumbnail: assets/images/resources/cheatsheet-python-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/resources/cheatsheet-python-portrait.png
+    background_color: transparent
 toc_depth: 3
 ---
 

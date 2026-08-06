@@ -3,6 +3,10 @@ short_title: Airbnb growth analysis
 description: A data-design project mapping Airbnb growth, rental pressure, and tourist accommodation patterns across central Madrid from 2015 to 2018.
 date: 2020-01-06
 thumbnail: assets/images/thumbnails/airbnb-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/airbnb-portrait.png
+    background_color: transparent
 ---
 
 # Madrid Airbnb analysis

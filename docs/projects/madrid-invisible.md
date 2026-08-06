@@ -3,6 +3,10 @@ short_title: Madrid 010 calls
 description: A visual analysis of 230,000 calls to Madrid's 010 municipal service, revealing complaint categories and their daily time patterns in 2018.
 date: 2020-01-06
 thumbnail: assets/images/thumbnails/madrid-invisible-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/madrid-invisible-portrait.png
+    background_color: transparent
 ---
 
 # Madrid invisible

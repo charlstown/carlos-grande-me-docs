@@ -3,6 +3,10 @@ short_title: My data fabric thesis
 description: An overview of data fabric architecture and the capabilities needed to connect, govern, and use enterprise data effectively.
 date: 2022-07-08
 thumbnail: assets/images/resources/data-fabric-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/resources/data-fabric-portrait.png
+    background_color: transparent
 toc_depth: 2
 ---
 

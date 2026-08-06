@@ -3,6 +3,10 @@ short_title: Eric Fischer
 description: A case study of Eric Fischer's geospatial visualisations, which use social and census data to reveal how people experience cities.
 date: 2020-01-13
 thumbnail: assets/images/thumbnails/eric-fischer-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/eric-fischer-portrait.png
+    background_color: transparent
 ---
 
 # Eric Fischer
