@@ -47,17 +47,13 @@ jobs:
 
       - name: Invalidate CloudFront cache
         env:
-          SITE_DOMAIN: carlosgrande.me
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
-          distribution_id="$(aws cloudfront list-distributions \
-            --query "DistributionList.Items[?Aliases.Items && contains(Aliases.Items, '$SITE_DOMAIN')].Id | [0]" \
-            --output text)"
-
-          if [ -z "$distribution_id" ] || [ "$distribution_id" = "None" ]; then
-            echo "CloudFront distribution for $SITE_DOMAIN was not found."
-            exit 1
+          if [ -z "$CLOUDFRONT_DISTRIBUTION_ID" ]; then
+            echo "::warning::CloudFront cache was not invalidated: configure the CLOUDFRONT_DISTRIBUTION_ID repository secret."
+            exit 0
           fi
 
           aws cloudfront create-invalidation \
-            --distribution-id "$distribution_id" \
+            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
             --paths '/*'
