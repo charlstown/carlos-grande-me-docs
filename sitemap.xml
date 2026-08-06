@@ -1,689 +1,689 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>None./</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="None"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/"/>
     </url>
     <url>
-        <loc>Noneabout-me/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/about-me/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneabout-me/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/about-me/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/about-me/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/about-me/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/business/business-model-design/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/business/business-model-design/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/business/business-model-design/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/business/business-model-design/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/business/business-model-design/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/business/business-model-design/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/business/team-topologies/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/business/team-topologies/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/business/team-topologies/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/business/team-topologies/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/business/team-topologies/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/business/team-topologies/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/coding/google-challenge-part-1/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/coding/google-challenge-part-1/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/coding/google-challenge-part-1/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/coding/google-challenge-part-1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/coding/google-challenge-part-1/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/coding/google-challenge-part-1/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/coding/python-design-patterns/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/coding/python-design-patterns/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/coding/python-design-patterns/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/coding/python-design-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/coding/python-design-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/coding/python-design-patterns/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/coding/python-generators/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/coding/python-generators/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/coding/python-generators/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/coding/python-generators/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/coding/python-generators/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/coding/python-generators/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/data-architecture/azure-big-picture/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/data-architecture/azure-big-picture/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-architecture/azure-big-picture/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-architecture/azure-big-picture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-architecture/azure-big-picture/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-architecture/azure-big-picture/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/data-architecture/cloud-migration-planning/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/data-architecture/cloud-migration-planning/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-architecture/cloud-migration-planning/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-architecture/cloud-migration-planning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-architecture/cloud-migration-planning/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-architecture/cloud-migration-planning/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/data-science/dimensionality-reduction-using-pca/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/data-science/dimensionality-reduction-using-pca/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/dimensionality-reduction-using-pca/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/dimensionality-reduction-using-pca/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/dimensionality-reduction-using-pca/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/dimensionality-reduction-using-pca/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/data-science/machine-learning-basics/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/data-science/machine-learning-basics/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/machine-learning-basics/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/machine-learning-basics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/machine-learning-basics/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/machine-learning-basics/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/data-science/reinforcement-learning-basics/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/data-science/reinforcement-learning-basics/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/reinforcement-learning-basics/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/reinforcement-learning-basics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/reinforcement-learning-basics/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/reinforcement-learning-basics/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/data-science/sample-size-determination/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/data-science/sample-size-determination/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/sample-size-determination/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/sample-size-determination/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/sample-size-determination/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/sample-size-determination/"/>
     </url>
     <url>
-        <loc>Nonenotebooks/data-science/text-mining-sentiment-analysis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/notebooks/data-science/text-mining-sentiment-analysis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/text-mining-sentiment-analysis/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/text-mining-sentiment-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/text-mining-sentiment-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/text-mining-sentiment-analysis/"/>
     </url>
     <url>
-        <loc>Noneprojects/app-pickasa/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/projects/app-pickasa/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneprojects/app-pickasa/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/projects/app-pickasa/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/projects/app-pickasa/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/projects/app-pickasa/"/>
     </url>
     <url>
-        <loc>Noneprojects/madrid-airbnb-analysis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/projects/madrid-airbnb-analysis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneprojects/madrid-airbnb-analysis/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/projects/madrid-airbnb-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/projects/madrid-airbnb-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/projects/madrid-airbnb-analysis/"/>
     </url>
     <url>
-        <loc>Noneprojects/madrid-invisible/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/projects/madrid-invisible/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneprojects/madrid-invisible/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/projects/madrid-invisible/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/projects/madrid-invisible/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/projects/madrid-invisible/"/>
     </url>
     <url>
-        <loc>Noneprojects/my-rubiks-cube-model/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/projects/my-rubiks-cube-model/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneprojects/my-rubiks-cube-model/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/projects/my-rubiks-cube-model/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/projects/my-rubiks-cube-model/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/projects/my-rubiks-cube-model/"/>
     </url>
     <url>
-        <loc>Nonereferences/articles/death-of-distance/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/articles/death-of-distance/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/death-of-distance/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/death-of-distance/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/death-of-distance/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/death-of-distance/"/>
     </url>
     <url>
-        <loc>Nonereferences/articles/space-of-flows/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/articles/space-of-flows/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/space-of-flows/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/space-of-flows/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/space-of-flows/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/space-of-flows/"/>
     </url>
     <url>
-        <loc>Nonereferences/articles/the-chinese-room/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/articles/the-chinese-room/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/the-chinese-room/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/the-chinese-room/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/the-chinese-room/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/the-chinese-room/"/>
     </url>
     <url>
-        <loc>Nonereferences/articles/ubiquitous-computing/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/articles/ubiquitous-computing/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/ubiquitous-computing/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/ubiquitous-computing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/ubiquitous-computing/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/ubiquitous-computing/"/>
     </url>
     <url>
-        <loc>Nonereferences/articles/whole-brain-emulation/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/articles/whole-brain-emulation/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/whole-brain-emulation/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/whole-brain-emulation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/whole-brain-emulation/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/whole-brain-emulation/"/>
     </url>
     <url>
-        <loc>Nonereferences/case-studies/3000000-kms/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/case-studies/3000000-kms/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/3000000-kms/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/3000000-kms/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/3000000-kms/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/3000000-kms/"/>
     </url>
     <url>
-        <loc>Nonereferences/case-studies/ben-willers/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/case-studies/ben-willers/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/ben-willers/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/ben-willers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/ben-willers/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/ben-willers/"/>
     </url>
     <url>
-        <loc>Nonereferences/case-studies/eric-fischer/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/case-studies/eric-fischer/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/eric-fischer/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/eric-fischer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/eric-fischer/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/eric-fischer/"/>
     </url>
     <url>
-        <loc>Nonereferences/case-studies/giorgia-lupi/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/case-studies/giorgia-lupi/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/giorgia-lupi/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/giorgia-lupi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/giorgia-lupi/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/giorgia-lupi/"/>
     </url>
     <url>
-        <loc>Nonereferences/case-studies/moritz-stefaner/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/case-studies/moritz-stefaner/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/moritz-stefaner/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/moritz-stefaner/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/moritz-stefaner/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/moritz-stefaner/"/>
     </url>
     <url>
-        <loc>Nonereferences/case-studies/nicholas-felton/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/case-studies/nicholas-felton/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/nicholas-felton/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/nicholas-felton/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/nicholas-felton/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/nicholas-felton/"/>
     </url>
     <url>
-        <loc>Nonereferences/case-studies/refik-anadol/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/case-studies/refik-anadol/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/refik-anadol/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/refik-anadol/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/refik-anadol/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/refik-anadol/"/>
     </url>
     <url>
-        <loc>Nonereferences/case-studies/wesley-grubbs/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/references/case-studies/wesley-grubbs/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/wesley-grubbs/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/wesley-grubbs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/wesley-grubbs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/wesley-grubbs/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-8-levels-of-ai-development/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-8-levels-of-ai-development/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-8-levels-of-ai-development/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-8-levels-of-ai-development/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-8-levels-of-ai-development/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-8-levels-of-ai-development/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-branch-model-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-branch-model-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-branch-model-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-branch-model-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-branch-model-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-branch-model-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-business-model-canvas/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-business-model-canvas/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-business-model-canvas/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-business-model-canvas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-business-model-canvas/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-business-model-canvas/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-docker-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-docker-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-docker-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-docker-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-docker-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-docker-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-git-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-git-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-git-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-git-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-git-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-git-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-letter-cases-reminder/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-letter-cases-reminder/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-letter-cases-reminder/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-letter-cases-reminder/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-letter-cases-reminder/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-letter-cases-reminder/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-linux-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-linux-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-linux-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-linux-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-linux-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-linux-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-python-3-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-python-3-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-python-3-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-python-3-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-python-3-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-python-3-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-python-project-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-python-project-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-python-project-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-python-project-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-python-project-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-python-project-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-r-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-r-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-r-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-r-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-r-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-r-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-semantic-versioning-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-semantic-versioning-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-semantic-versioning-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-semantic-versioning-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-semantic-versioning-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-semantic-versioning-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/cheatsheets/my-sql-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/cheatsheets/my-sql-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-sql-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-sql-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-sql-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-sql-cheatsheet/"/>
     </url>
     <url>
-        <loc>Noneresources/templates/my-python-template/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/templates/my-python-template/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/templates/my-python-template/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/templates/my-python-template/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/templates/my-python-template/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/templates/my-python-template/"/>
     </url>
     <url>
-        <loc>Noneresources/thesis/my-data-fabric-thesis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/thesis/my-data-fabric-thesis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/thesis/my-data-fabric-thesis/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/thesis/my-data-fabric-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/thesis/my-data-fabric-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/thesis/my-data-fabric-thesis/"/>
     </url>
     <url>
-        <loc>Noneresources/thesis/my-data-mesh-thesis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/thesis/my-data-mesh-thesis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/thesis/my-data-mesh-thesis/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/thesis/my-data-mesh-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/thesis/my-data-mesh-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/thesis/my-data-mesh-thesis/"/>
     </url>
     <url>
-        <loc>Noneresources/thesis/my-data-product-thesis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/thesis/my-data-product-thesis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/thesis/my-data-product-thesis/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/thesis/my-data-product-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/thesis/my-data-product-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/thesis/my-data-product-thesis/"/>
     </url>
     <url>
-        <loc>Noneresources/tools/my-aisy-toolkit/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/tools/my-aisy-toolkit/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/tools/my-aisy-toolkit/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/tools/my-aisy-toolkit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/tools/my-aisy-toolkit/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/tools/my-aisy-toolkit/"/>
     </url>
     <url>
-        <loc>Noneresources/tools/my-favorite-screen-splitter/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/resources/tools/my-favorite-screen-splitter/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/tools/my-favorite-screen-splitter/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/tools/my-favorite-screen-splitter/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/tools/my-favorite-screen-splitter/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/tools/my-favorite-screen-splitter/"/>
     </url>
     <url>
-        <loc>Nonees/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/"/>
     </url>
     <url>
-        <loc>Nonees/about-me/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/about-me/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/about-me/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneabout-me/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/about-me/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/about-me/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/business/business-model-design/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/business/business-model-design/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/business/business-model-design/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/business/business-model-design/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/business/business-model-design/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/business/business-model-design/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/business/team-topologies/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/business/team-topologies/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/business/team-topologies/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/business/team-topologies/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/business/team-topologies/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/business/team-topologies/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/coding/google-challenge-part-1/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/coding/google-challenge-part-1/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/coding/google-challenge-part-1/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/coding/google-challenge-part-1/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/coding/google-challenge-part-1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/coding/google-challenge-part-1/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/coding/python-design-patterns/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/coding/python-design-patterns/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/coding/python-design-patterns/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/coding/python-design-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/coding/python-design-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/coding/python-design-patterns/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/coding/python-generators/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/coding/python-generators/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/coding/python-generators/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/coding/python-generators/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/coding/python-generators/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/coding/python-generators/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/data-architecture/azure-big-picture/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/data-architecture/azure-big-picture/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-architecture/azure-big-picture/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-architecture/azure-big-picture/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-architecture/azure-big-picture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-architecture/azure-big-picture/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/data-architecture/cloud-migration-planning/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/data-architecture/cloud-migration-planning/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-architecture/cloud-migration-planning/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-architecture/cloud-migration-planning/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-architecture/cloud-migration-planning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-architecture/cloud-migration-planning/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/data-science/dimensionality-reduction-using-pca/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/data-science/dimensionality-reduction-using-pca/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/dimensionality-reduction-using-pca/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/dimensionality-reduction-using-pca/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/dimensionality-reduction-using-pca/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/dimensionality-reduction-using-pca/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/data-science/machine-learning-basics/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/data-science/machine-learning-basics/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/machine-learning-basics/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/machine-learning-basics/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/machine-learning-basics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/machine-learning-basics/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/data-science/reinforcement-learning-basics/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/data-science/reinforcement-learning-basics/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/reinforcement-learning-basics/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/reinforcement-learning-basics/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/reinforcement-learning-basics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/reinforcement-learning-basics/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/data-science/sample-size-determination/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/data-science/sample-size-determination/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/sample-size-determination/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/sample-size-determination/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/sample-size-determination/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/sample-size-determination/"/>
     </url>
     <url>
-        <loc>Nonees/notebooks/data-science/text-mining-sentiment-analysis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/notebooks/data-science/text-mining-sentiment-analysis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/notebooks/data-science/text-mining-sentiment-analysis/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonenotebooks/data-science/text-mining-sentiment-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/notebooks/data-science/text-mining-sentiment-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/notebooks/data-science/text-mining-sentiment-analysis/"/>
     </url>
     <url>
-        <loc>Nonees/projects/app-pickasa/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/projects/app-pickasa/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/projects/app-pickasa/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneprojects/app-pickasa/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/projects/app-pickasa/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/projects/app-pickasa/"/>
     </url>
     <url>
-        <loc>Nonees/projects/madrid-airbnb-analysis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/projects/madrid-airbnb-analysis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/projects/madrid-airbnb-analysis/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneprojects/madrid-airbnb-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/projects/madrid-airbnb-analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/projects/madrid-airbnb-analysis/"/>
     </url>
     <url>
-        <loc>Nonees/projects/madrid-invisible/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/projects/madrid-invisible/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/projects/madrid-invisible/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneprojects/madrid-invisible/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/projects/madrid-invisible/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/projects/madrid-invisible/"/>
     </url>
     <url>
-        <loc>Nonees/projects/my-rubiks-cube-model/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/projects/my-rubiks-cube-model/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/projects/my-rubiks-cube-model/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneprojects/my-rubiks-cube-model/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/projects/my-rubiks-cube-model/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/projects/my-rubiks-cube-model/"/>
     </url>
     <url>
-        <loc>Nonees/references/articles/death-of-distance/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/articles/death-of-distance/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/death-of-distance/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/death-of-distance/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/death-of-distance/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/death-of-distance/"/>
     </url>
     <url>
-        <loc>Nonees/references/articles/space-of-flows/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/articles/space-of-flows/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/space-of-flows/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/space-of-flows/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/space-of-flows/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/space-of-flows/"/>
     </url>
     <url>
-        <loc>Nonees/references/articles/the-chinese-room/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/articles/the-chinese-room/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/the-chinese-room/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/the-chinese-room/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/the-chinese-room/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/the-chinese-room/"/>
     </url>
     <url>
-        <loc>Nonees/references/articles/ubiquitous-computing/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/articles/ubiquitous-computing/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/ubiquitous-computing/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/ubiquitous-computing/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/ubiquitous-computing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/ubiquitous-computing/"/>
     </url>
     <url>
-        <loc>Nonees/references/articles/whole-brain-emulation/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/articles/whole-brain-emulation/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/articles/whole-brain-emulation/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/articles/whole-brain-emulation/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/articles/whole-brain-emulation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/articles/whole-brain-emulation/"/>
     </url>
     <url>
-        <loc>Nonees/references/case-studies/3000000-kms/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/case-studies/3000000-kms/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/3000000-kms/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/3000000-kms/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/3000000-kms/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/3000000-kms/"/>
     </url>
     <url>
-        <loc>Nonees/references/case-studies/ben-willers/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/case-studies/ben-willers/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/ben-willers/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/ben-willers/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/ben-willers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/ben-willers/"/>
     </url>
     <url>
-        <loc>Nonees/references/case-studies/eric-fischer/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/case-studies/eric-fischer/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/eric-fischer/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/eric-fischer/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/eric-fischer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/eric-fischer/"/>
     </url>
     <url>
-        <loc>Nonees/references/case-studies/giorgia-lupi/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/case-studies/giorgia-lupi/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/giorgia-lupi/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/giorgia-lupi/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/giorgia-lupi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/giorgia-lupi/"/>
     </url>
     <url>
-        <loc>Nonees/references/case-studies/moritz-stefaner/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/case-studies/moritz-stefaner/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/moritz-stefaner/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/moritz-stefaner/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/moritz-stefaner/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/moritz-stefaner/"/>
     </url>
     <url>
-        <loc>Nonees/references/case-studies/nicholas-felton/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/case-studies/nicholas-felton/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/nicholas-felton/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/nicholas-felton/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/nicholas-felton/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/nicholas-felton/"/>
     </url>
     <url>
-        <loc>Nonees/references/case-studies/refik-anadol/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/case-studies/refik-anadol/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/refik-anadol/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/refik-anadol/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/refik-anadol/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/refik-anadol/"/>
     </url>
     <url>
-        <loc>Nonees/references/case-studies/wesley-grubbs/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/references/case-studies/wesley-grubbs/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/references/case-studies/wesley-grubbs/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Nonereferences/case-studies/wesley-grubbs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/references/case-studies/wesley-grubbs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/references/case-studies/wesley-grubbs/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-8-levels-of-ai-development/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-8-levels-of-ai-development/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-8-levels-of-ai-development/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-8-levels-of-ai-development/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-8-levels-of-ai-development/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-8-levels-of-ai-development/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-branch-model-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-branch-model-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-branch-model-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-branch-model-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-branch-model-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-branch-model-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-business-model-canvas/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-business-model-canvas/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-business-model-canvas/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-business-model-canvas/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-business-model-canvas/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-business-model-canvas/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-docker-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-docker-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-docker-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-docker-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-docker-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-docker-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-git-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-git-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-git-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-git-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-git-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-git-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-letter-cases-reminder/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-letter-cases-reminder/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-letter-cases-reminder/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-letter-cases-reminder/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-letter-cases-reminder/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-letter-cases-reminder/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-linux-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-linux-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-linux-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-linux-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-linux-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-linux-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-python-3-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-python-3-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-python-3-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-python-3-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-python-3-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-python-3-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-python-project-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-python-project-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-python-project-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-python-project-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-python-project-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-python-project-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-r-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-r-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-r-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-r-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-r-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-r-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-semantic-versioning-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-semantic-versioning-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-semantic-versioning-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-semantic-versioning-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-semantic-versioning-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-semantic-versioning-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/cheatsheets/my-sql-cheatsheet/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/cheatsheets/my-sql-cheatsheet/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/cheatsheets/my-sql-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/cheatsheets/my-sql-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/cheatsheets/my-sql-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/cheatsheets/my-sql-cheatsheet/"/>
     </url>
     <url>
-        <loc>Nonees/resources/templates/my-python-template/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/templates/my-python-template/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/templates/my-python-template/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/templates/my-python-template/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/templates/my-python-template/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/templates/my-python-template/"/>
     </url>
     <url>
-        <loc>Nonees/resources/thesis/my-data-fabric-thesis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/thesis/my-data-fabric-thesis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/thesis/my-data-fabric-thesis/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/thesis/my-data-fabric-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/thesis/my-data-fabric-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/thesis/my-data-fabric-thesis/"/>
     </url>
     <url>
-        <loc>Nonees/resources/thesis/my-data-mesh-thesis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/thesis/my-data-mesh-thesis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/thesis/my-data-mesh-thesis/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/thesis/my-data-mesh-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/thesis/my-data-mesh-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/thesis/my-data-mesh-thesis/"/>
     </url>
     <url>
-        <loc>Nonees/resources/thesis/my-data-product-thesis/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/thesis/my-data-product-thesis/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/thesis/my-data-product-thesis/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/thesis/my-data-product-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/thesis/my-data-product-thesis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/thesis/my-data-product-thesis/"/>
     </url>
     <url>
-        <loc>Nonees/resources/tools/my-aisy-toolkit/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/tools/my-aisy-toolkit/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/tools/my-aisy-toolkit/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/tools/my-aisy-toolkit/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/tools/my-aisy-toolkit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/tools/my-aisy-toolkit/"/>
     </url>
     <url>
-        <loc>Nonees/resources/tools/my-favorite-screen-splitter/</loc>
-        <lastmod>2026-08-05</lastmod>
+        <loc>https://carlosgrande.me/docs/es/resources/tools/my-favorite-screen-splitter/</loc>
+        <lastmod>2026-08-06</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="Nonees/resources/tools/my-favorite-screen-splitter/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="Noneresources/tools/my-favorite-screen-splitter/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/docs/es/resources/tools/my-favorite-screen-splitter/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/docs/resources/tools/my-favorite-screen-splitter/"/>
     </url>
 </urlset>
