@@ -1,6 +1,6 @@
 ---
 short_title: Python project cheatsheet
-description: none
+description: A reference for structuring Python projects with clear modules, dependencies, tests, packaging, and development tooling.
 date: 2020-10-04
 thumbnail: assets/images/resources/cheatsheet-python-project-portrait.jpeg
 ---

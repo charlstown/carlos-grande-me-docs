@@ -1,6 +1,6 @@
 ﻿---
 short_title: Death of distance
-description: none
+description: An article examining Carlo Ratti and Matthew Claudel's argument that digital connectivity transforms cities without making physical distance irrelevant.
 date: 2020-01-06
 thumbnail: assets/images/thumbnails/death-of-distance-portrait.jpeg
 ---

@@ -1,6 +1,6 @@
 ---
 short_title: Linux cheatsheet
-description: none
+description: A practical Linux command-line cheat sheet for navigating files, managing permissions, processes, and system tasks.
 date: 2021-08-15
 thumbnail: assets/images/resources/cheatsheet-linux-portrait.png
 ---

@@ -1,6 +1,6 @@
 ﻿---
 short_title: Refik Anadol
-description: none
+description: A case study of Refik Anadol's AI-driven media art, which turns datasets and digitised memories into immersive architectural experiences.
 date: 2020-11-18
 thumbnail: assets/images/thumbnails/refik-anadol-portrait.jpeg
 ---

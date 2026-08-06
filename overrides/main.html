@@ -1,6 +1,22 @@
 <!-- Elements added to main will be displayed on all pages -->
 {% extends "base.html" %}
 
+{% block extrahead %}
+{{ super() }}
+{% if seo is defined %}
+  {% set page_description = page.meta.description if page and page.meta and page.meta.description else '' %}
+  {% if seo.description and (not page_description|trim or page_description|trim|lower in ['none', 'null']) %}
+    <meta name="description" content="{{ seo.description | e }}">
+  {% endif %}
+  {% if seo.site_schema %}
+    <script type="application/ld+json">{{ seo.site_schema | tojson }}</script>
+  {% endif %}
+  {% if seo.page_schema %}
+    <script type="application/ld+json">{{ seo.page_schema | tojson }}</script>
+  {% endif %}
+{% endif %}
+{% endblock %}
+
 
 <!-- More minimal footer -->
 {% block footer %}

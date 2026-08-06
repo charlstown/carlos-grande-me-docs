@@ -1,5 +1,6 @@
 site_name: carlosgrande.me
 site_description: Here you'll find my personal life cheat sheet about coding, data architecture, data science, visualization, and business.
+site_url: https://carlosgrande.me/docs/
 repo_url: https://github.com/charlstown/carlos-grande-me
 site_author: Charlstown
 
@@ -79,6 +80,7 @@ markdown_extensions:
 # Hooks
 hooks:
   - hooks/generate_pages.py
+  - hooks/seo_metadata.py
   - hooks/ignore_file_autoreload.py
 
 # Plugins
@@ -113,6 +115,7 @@ plugins:
       background: white
       shadow: true
       manual: false
+  - social
 
 # css
 extra_css:
@@ -141,6 +144,9 @@ copyright: Copyright &copy; carlosgrande.me - 2025
 
 # Global variables
 extra:
+  analytics:
+    provider: google
+    property: G-T0L50BG8T6
   links:
     self-host: 'url'
     learning-host: 'url'

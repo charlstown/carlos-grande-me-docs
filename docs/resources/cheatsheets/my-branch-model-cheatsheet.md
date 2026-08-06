@@ -1,6 +1,6 @@
 ---
 short_title: Branching model cheatsheet
-description: none
+description: A clear Git branching model reference for organizing feature, release, hotfix, and main development workflows.
 date: 2025-12-21
 thumbnail: assets/images/thumbnails/branching-model-portrait.png
 ---

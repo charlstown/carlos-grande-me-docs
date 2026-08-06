@@ -1,6 +1,6 @@
 ﻿---
 short_title: Nicholas Felton
-description: none
+description: A case study of Nicholas Felton's Annual Reports, which transform personal activity data into detailed visual accounts of everyday life.
 date: 2020-10-09
 thumbnail: assets/images/thumbnails/nicholas-felton-portrait.jpeg
 ---

@@ -1,6 +1,6 @@
 ﻿---
 short_title: My Rubiks cube model
-description: none
+description: A Python object-oriented project that models, manipulates, and visualises a Rubik's Cube through 2D and 3D renderings.
 date: 2022-04-05
 thumbnail: assets/images/thumbnails/my-rubiks-cube-portrait.png
 ---

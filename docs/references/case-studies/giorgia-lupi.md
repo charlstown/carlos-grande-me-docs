@@ -1,6 +1,6 @@
 ﻿---
 short_title: Giorgia Lupi
-description: none
+description: A case study of Giorgia Lupi's information design, showing how rich visual narratives make complex data relatable without oversimplifying it.
 date: 2020-10-11
 thumbnail: assets/images/thumbnails/giorgia-lupi-portrait.png
 ---

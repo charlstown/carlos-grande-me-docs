@@ -1,6 +1,6 @@
 ﻿---
 short_title: Text mining sentiment analysis
-description: none
+description: A text-mining example that applies natural language processing to Twitter sentiment analysis with Naive Bayes and SVM models.
 date: 2020-04-08
 thumbnail: assets/images/thumbnails/text-mining-sentiment-analysis-portrait.jpg
 ---
