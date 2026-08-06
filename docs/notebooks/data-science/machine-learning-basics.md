@@ -1,6 +1,6 @@
 ﻿---
 short_title: Machine learning basics
-description: none
+description: A foundational machine learning notebook covering linear regression with multiple variables and feature matrices.
 date: 2020-01-06
 thumbnail: assets/images/thumbnails/machine-learning-basics-portrait.jpg
 ---

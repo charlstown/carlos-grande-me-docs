@@ -1,6 +1,6 @@
 ---
 short_title: Letter cases reminder
-description: none
+description: A quick reminder of common letter-case styles and when to use camelCase, snake_case, kebab-case, or PascalCase.
 date: 2021-02-12
 thumbnail: assets/images/thumbnails/letter-cases-reminder.png
 ---

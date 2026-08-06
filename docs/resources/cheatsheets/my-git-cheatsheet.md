@@ -1,6 +1,6 @@
 ﻿---
 short_title: Git cheatsheet
-description: none
+description: A practical Git command reference for tracking changes, working with branches, resolving conflicts, and collaborating safely.
 date: 2021-12-08
 thumbnail: assets/images/resources/cheatsheet-git-mockup.jpg
 ---

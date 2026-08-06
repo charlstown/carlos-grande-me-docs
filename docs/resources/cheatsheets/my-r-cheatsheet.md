@@ -1,6 +1,6 @@
 ﻿---
 short_title: R cheatsheet
-description: none
+description: A handy R programming reference for data structures, transformations, visualization, and commonly used syntax.
 date: 2020-03-30
 thumbnail: assets/images/resources/cheatsheet-r-portrait.jpeg
 ---

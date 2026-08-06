@@ -1,6 +1,6 @@
 ﻿---
 short_title: Ben Willers
-description: none
+description: A case study of Ben Willers's data visualisation practice, focusing on evidence-led graphics that let audiences explore complex data independently.
 date: 2020-01-07
 thumbnail: assets/images/thumbnails/ben-willers-portrait.png
 ---

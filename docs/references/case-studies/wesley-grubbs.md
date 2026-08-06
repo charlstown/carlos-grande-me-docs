@@ -1,6 +1,6 @@
 ﻿---
 short_title: Wesley Grubbs
-description: none
+description: A case study of Wesley Grubbs's data visualisation practice, using visual storytelling to uncover patterns in human behaviour and public systems.
 date: 2020-01-19
 thumbnail: assets/images/thumbnails/wesley-grubbs-portrait.jpeg
 ---

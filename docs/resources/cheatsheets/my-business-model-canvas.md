@@ -1,6 +1,6 @@
 ﻿---
 short_title: Business model canvas
-description: none
+description: A practical Business Model Canvas guide for mapping customer segments, value propositions, revenue streams, and operations.
 date: 2020-11-21
 thumbnail: assets/images/thumbnails/business-model-canvas-portrait.png
 ---

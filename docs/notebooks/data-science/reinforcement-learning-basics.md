@@ -1,6 +1,6 @@
 ﻿---
 short_title: Reinforcement learning basics
-description: none
+description: An introduction to reinforcement learning through the explore-exploit dilemma and a Python multi-armed bandit model.
 date: 2023-01-27
 thumbnail: assets/images/thumbnails/reinforcement-learning-basics-portrait.png
 ---

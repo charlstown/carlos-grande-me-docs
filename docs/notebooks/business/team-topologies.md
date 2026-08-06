@@ -1,6 +1,6 @@
 ﻿---
 short_title: Team topologies
-description: none
+description: Notes on Team Topologies and how team design, communication, and Conway's Law shape software architecture and delivery flow.
 date: 2022-09-26
 thumbnail: assets/images/notebooks/team-topologies-portrait.png
 ---

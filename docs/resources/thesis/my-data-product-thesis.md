@@ -2,7 +2,7 @@
 short_title: My data product thesis
 date: 2022-10-10
 thumbnail: assets/images/resources/data-product-portrait.png
-description: none
+description: An in-depth guide to designing, governing, and delivering data products as discoverable, reusable assets in a data mesh.
 toc_depth: 2
 ---
 
