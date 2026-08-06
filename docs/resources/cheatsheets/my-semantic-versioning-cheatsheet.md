@@ -3,6 +3,10 @@ short_title: Semantic versioning cheatsheet
 description: A simple guide to semantic versioning that explains when to increment major, minor, and patch release numbers.
 date: 2025-11-03
 thumbnail: assets/images/thumbnails/semantic-versioning-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/semantic-versioning-portrait.png
+    background_color: transparent
 ---
 
 # Semantic Versioning cheatsheet

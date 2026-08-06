@@ -3,6 +3,10 @@ short_title: Sample size determination
 description: A guide to determining A/B test sample sizes using baseline conversion, minimum detectable effect, and confidence levels.
 date: 2020-02-25
 thumbnail: assets/images/thumbnails/sample-size-determination-portrait.jpg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/sample-size-determination-portrait.jpg
+    background_color: transparent
 ---
 
 # Sample size determination

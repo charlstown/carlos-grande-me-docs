@@ -3,6 +3,10 @@ short_title: The chinese room
 description: An article on the Chinese Room thought experiment and its challenge to the idea that symbol processing alone produces machine understanding.
 date: 2020-02-03
 thumbnail: assets/images/thumbnails/chinese-room-portrait.jpeg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/chinese-room-portrait.jpeg
+    background_color: transparent
 ---
 
 # The chinese room

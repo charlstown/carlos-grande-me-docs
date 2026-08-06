@@ -3,6 +3,10 @@ short_title: My data mesh thesis
 description: A practical thesis on data mesh principles, domain ownership, and building decentralized data platforms that scale.
 date: 2022-01-18
 thumbnail: assets/images/resources/data-mesh-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/resources/data-mesh-portrait.png
+    background_color: transparent
 toc_depth: 2
 ---
 

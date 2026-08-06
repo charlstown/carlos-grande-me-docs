@@ -3,6 +3,10 @@ short_title: Space of flows
 description: An article introducing Manuel Castells's space of flows, where networked communication reshapes social practice beyond physical proximity.
 date: 2020-01-06
 thumbnail: assets/images/thumbnails/space-of-flows-portrait.jpeg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/space-of-flows-portrait.jpeg
+    background_color: transparent
 ---
 
 # Space of flows

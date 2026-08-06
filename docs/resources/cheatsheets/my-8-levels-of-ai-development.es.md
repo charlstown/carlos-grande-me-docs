@@ -3,6 +3,10 @@ short_title: Los 8 niveles de IA
 description: Una hoja de ruta práctica de los 8 niveles del desarrollo asistido por IA — identifica dónde estás y qué habilidad desbloquea el siguiente nivel.
 date: 2026-06-12
 thumbnail: assets/images/thumbnails/the-8-levels-of-ai-development.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/the-8-levels-of-ai-development.png
+    background_color: transparent
 ---
 
 # Los 8 niveles de IA

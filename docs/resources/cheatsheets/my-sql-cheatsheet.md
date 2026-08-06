@@ -3,6 +3,10 @@ short_title: SQL cheatsheet
 description: A quick SQL reference covering queries, joins, aggregations, filtering, and other everyday database operations.
 date: 2020-01-19
 thumbnail: assets/images/resources/cheatsheet-sql-portrait.jpeg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/resources/cheatsheet-sql-portrait.jpeg
+    background_color: transparent
 ---
 
 # SQL cheatsheet
