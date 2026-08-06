@@ -1,8 +1,12 @@
 ﻿---
 short_title: Cloud migration planning
-description: none
+description: Notes on planning cloud migrations by assessing operational impact, costs, return on investment, and key metrics.
 date: 2021-08-25
 thumbnail: assets/images/thumbnails/cloud-migration-planning-portrait.jpg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/cloud-migration-planning-portrait.jpg
+    background_color: transparent
 ---
 
 # Cloud migration planning

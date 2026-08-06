@@ -1,8 +1,12 @@
 ---
 short_title: PicKasa APP
-description: none
+description: A web app for comparing favourite home listings and ranking them by the buying criteria that matter most to each user.
 date: 2025-07-23
 thumbnail: assets/images/thumbnails/project-app-pikasa.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/project-app-pikasa.png
+    background_color: transparent
 ---
 
 # PicKasa App

@@ -1,5 +1,6 @@
 ---
 template: about-me.html
+description: Learn about Carlos Grande, a data engineer, architect, and coding enthusiast sharing projects, articles, and resources.
 hide:
     - navigation
     - toc

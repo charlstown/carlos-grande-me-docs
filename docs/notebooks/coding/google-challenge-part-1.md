@@ -1,8 +1,12 @@
 ﻿---
 short_title: Google challenge part 1
-description: none
+description: A walkthrough of the first part of Google's Foobar coding challenge, including its introductory algorithm problems.
 date: 2022-03-27
 thumbnail: assets/images/thumbnails/google-challenge-part-1-portrait.jpg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/google-challenge-part-1-portrait.jpg
+    background_color: transparent
 ---
 
 # Google challenge part 1

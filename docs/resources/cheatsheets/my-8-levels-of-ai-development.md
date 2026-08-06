@@ -3,6 +3,10 @@ short_title: The 8 levels of AI note
 description: A practical roadmap of the 8 levels of AI-assisted development — identify where you are and what skill unlocks the next level.
 date: 2026-06-12
 thumbnail: assets/images/thumbnails/the-8-levels-of-ai-development.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/the-8-levels-of-ai-development.png
+    background_color: transparent
 ---
 
 # The 8 levels of AI note

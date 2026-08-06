@@ -1,8 +1,12 @@
 ﻿---
 short_title: Moritz Stefaner
-description: none
+description: A case study of Moritz Stefaner's data visualisation work and his approach to balancing analytical truth with visual beauty.
 date: 2020-04-10
 thumbnail: assets/images/thumbnails/moritz-stefaner-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/moritz-stefaner-portrait.png
+    background_color: transparent
 ---
 
 # Moritz Stefaner

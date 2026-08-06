@@ -1,8 +1,12 @@
 ﻿---
 short_title: Docker cheatsheet
-description: none
+description: A concise Docker reference for building images, running containers, managing volumes, and working with common commands.
 date: 2020-10-10
 thumbnail: assets/images/resources/cheatsheet-docker-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/resources/cheatsheet-docker-portrait.png
+    background_color: transparent
 ---
 
 # Docker cheatsheet

@@ -3,6 +3,10 @@ short_title: My AIsy Toolkit
 description: A copy-paste catalog of skills and subagents that turns Spec-Driven Development and agentic loops into a single closed-loop workflow, no install required.
 date: 2026-08-04
 thumbnail: assets/images/thumbnails/my-aisy-toolkit-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/my-aisy-toolkit-portrait.png
+    background_color: transparent
 ---
 
 # My AIsy Toolkit

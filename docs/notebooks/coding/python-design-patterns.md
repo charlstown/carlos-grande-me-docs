@@ -1,8 +1,12 @@
 ﻿---
 short_title: Python design patterns
-description: none
+description: Course notes on Python design patterns, covering creational patterns and their role in building reliable software.
 date: 2021-12-16
 thumbnail: assets/images/thumbnails/python-design-patterns-portrait.jpg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/python-design-patterns-portrait.jpg
+    background_color: transparent
 ---
 
 # Python design patterns

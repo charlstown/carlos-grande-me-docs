@@ -1,8 +1,12 @@
 ﻿---
 short_title: Python generators
-description: none
+description: An overview of Python generators, iterators, lazy evaluation, and coroutines with practical examples.
 date: 2021-12-07
 thumbnail: assets/images/thumbnails/python-generators-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/python-generators-portrait.png
+    background_color: transparent
 ---
 
 # Python generators

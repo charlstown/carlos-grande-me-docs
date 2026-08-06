@@ -49,7 +49,7 @@ Every new `.md` file must include this YAML frontmatter block at the top:
 ```yaml
 ---
 short_title: <short display title>
-description: none
+description: <one-sentence summary>
 date: YYYY-MM-DD
 thumbnail: assets/images/thumbnails/<filename>.png
 ---

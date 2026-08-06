@@ -1,8 +1,12 @@
 ﻿---
 short_title: Ubiquitous computing
-description: none
+description: An article exploring Mark Weiser's vision of ubiquitous computing, in which technology becomes embedded and unobtrusive in everyday environments.
 date: 2020-01-06
 thumbnail: assets/images/thumbnails/ubiquitous-computing-portrait.jpeg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/ubiquitous-computing-portrait.jpeg
+    background_color: transparent
 ---
 
 # Ubiquitous computing

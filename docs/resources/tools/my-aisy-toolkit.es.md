@@ -3,6 +3,10 @@ short_title: My AIsy Toolkit
 description: Un catálogo de skills y subagentes para copiar y pegar que convierte el Spec-Driven Development y los bucles agénticos en un único flujo de trabajo cerrado, sin necesidad de instalación.
 date: 2026-08-04
 thumbnail: assets/images/thumbnails/my-aisy-toolkit-portrait.png
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/my-aisy-toolkit-portrait.png
+    background_color: transparent
 ---
 
 # My AIsy Toolkit

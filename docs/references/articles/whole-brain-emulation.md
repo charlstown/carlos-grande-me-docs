@@ -1,8 +1,12 @@
 ﻿---
 short_title: Whole brain emulation
-description: none
+description: An article outlining whole brain emulation as a path to simulated minds through brain mapping, computational simulation, and embodiment.
 date: 2021-01-24
 thumbnail: assets/images/thumbnails/whole-brain-emulation-portrait.jpeg
+social:
+  cards_layout_options:
+    background_image: docs/assets/images/thumbnails/whole-brain-emulation-portrait.jpeg
+    background_color: transparent
 ---
 
 # Whole brain emulation
