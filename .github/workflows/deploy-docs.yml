@@ -44,3 +44,20 @@ jobs:
           S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
         run: |
           aws s3 sync site/ s3://$S3_BUCKET/ --delete
+
+      - name: Invalidate CloudFront cache
+        env:
+          SITE_DOMAIN: carlosgrande.me
+        run: |
+          distribution_id="$(aws cloudfront list-distributions \
+            --query "DistributionList.Items[?Aliases.Items && contains(Aliases.Items, '$SITE_DOMAIN')].Id | [0]" \
+            --output text)"
+
+          if [ -z "$distribution_id" ] || [ "$distribution_id" = "None" ]; then
+            echo "CloudFront distribution for $SITE_DOMAIN was not found."
+            exit 1
+          fi
+
+          aws cloudfront create-invalidation \
+            --distribution-id "$distribution_id" \
+            --paths '/*'
