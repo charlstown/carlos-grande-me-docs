@@ -10,7 +10,7 @@ date: 2026-06-13
 > | **Status** | 🟡 Draft |
 > | **Owner** | Carlos Grande (@Charlstown) |
 > | **Created** | 2026-06-13 |
-> | **Updated** | 2026-06-21 |
+> | **Updated** | 2026-08-07 |
 > | **Version** | v0.1 |
 > | **ProductSpec** | [[ProductSpec]] |
 
@@ -113,7 +113,7 @@ Define theme, paleta, extensiones Markdown, plugins, hooks, assets y variables g
 | Iconos/emojis | build-time | twemoji (Material) | Generados a SVG en build, sin llamada en runtime |
 
 > [!warning] Comportamientos no obvios
-> El sync a S3 usa `--delete`: cualquier objeto en el bucket que no esté en `site/` se elimina. La validación de enlaces (lychee) está configurada con `fail: false` y solo anota warnings, nunca bloquea el deploy. La CDN frente a S3 (CloudFront) no está versionada en el repo: *TBD*.
+> El sync a S3 usa `--delete`: cualquier objeto en el bucket que no esté en `site/` se elimina. La validación de enlaces (lychee) está configurada con `fail: false` y solo anota warnings, nunca bloquea el deploy. CloudFront sirve la CDN frente a S3; el workflow de producción invalida `/*` tras el sync mediante OIDC. Si la purga falla, el deploy registra una advertencia sin revertir la publicación en S3.
 
 ## ⚠️ Error Handling
 
@@ -229,7 +229,7 @@ Independiente del deploy de producción a S3 (`main`), el workflow `deploy-dev-g
 | `AWS_ACCOUNT_ID` | Construye el ARN del rol a asumir vía OIDC |
 | `AWS_ROLE_NAME` | Nombre del rol IAM asumido en el deploy |
 | `AWS_REGION` | Región de AWS para las credenciales |
-| `S3_BUCKET_NAME` | Bucket destino del `s3 sync` |
+| `S3_BUCKET_NAME` | Bucket destino del `s3 sync` |`n| `CLOUDFRONT_DISTRIBUTION_ID` | Distribución invalidada tras el deploy |
 
 ### Local development
 
@@ -327,6 +327,6 @@ Las actualizaciones de las propias GitHub Actions están automatizadas por Depen
 
 - [ ] ¿Conviene pinnear versiones (o usar un lockfile) para builds reproducibles, o se mantiene el modelo siempre-última?
 - [ ] ¿El deploy de producción debe seguir saliendo de `main` o alinearse con el flujo `develop → main` de las guías? (Ya existe un preview en GitHub Pages desde `dev`.)
-- [ ] ¿Hay CloudFront u otra CDN frente a S3 que deba documentarse aquí o en un infra-spec aparte?
+- [x] CloudFront sirve el contenido frente a S3 y se invalida mediante el workflow de producción con OIDC.
 - [ ] ¿Se adopta pytest para testear los hooks (`generate_pages.py`), dado que `Static Validation` ya lo ejecutaría?
 - [ ] ¿La validación de enlaces debería pasar a bloqueante (`fail: true`) en algún momento?
