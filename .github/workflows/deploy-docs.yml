@@ -4,14 +4,16 @@ on:
   workflow_run:
     workflows: ["Static Validation"]
     types: [completed]
+  workflow_dispatch:
 jobs:
   main:
     name: Build + Deploy
     # Only deploy when Static Validation succeeded on push to main
     if: >-
-      ${{ github.event.workflow_run.conclusion == 'success' &&
-          github.event.workflow_run.event == 'push' &&
-          github.event.workflow_run.head_branch == 'main' }}
+      ${{ (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+          (github.event.workflow_run.conclusion == 'success' &&
+           github.event.workflow_run.event == 'push' &&
+           github.event.workflow_run.head_branch == 'main') }}
     permissions:
       contents: read
       id-token: write
@@ -47,17 +49,15 @@ jobs:
 
       - name: Invalidate CloudFront cache
         env:
-          SITE_DOMAIN: carlosgrande.me
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
-          distribution_id="$(aws cloudfront list-distributions \
-            --query "DistributionList.Items[?Aliases.Items && contains(Aliases.Items, '$SITE_DOMAIN')].Id | [0]" \
-            --output text)"
-
-          if [ -z "$distribution_id" ] || [ "$distribution_id" = "None" ]; then
-            echo "CloudFront distribution for $SITE_DOMAIN was not found."
-            exit 1
+          if [ -z "$CLOUDFRONT_DISTRIBUTION_ID" ]; then
+            echo "::warning::CloudFront cache was not invalidated: configure the CLOUDFRONT_DISTRIBUTION_ID repository secret."
+            exit 0
           fi
 
-          aws cloudfront create-invalidation \
-            --distribution-id "$distribution_id" \
-            --paths '/*'
+          if ! aws cloudfront create-invalidation \
+            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --paths '/*'; then
+            echo "::warning::CloudFront cache was not invalidated. S3 deployment completed; retry the workflow after resolving the AWS error."
+          fi
