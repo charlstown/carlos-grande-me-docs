@@ -4,14 +4,16 @@ on:
   workflow_run:
     workflows: ["Static Validation"]
     types: [completed]
+  workflow_dispatch:
 jobs:
   main:
     name: Build + Deploy
     # Only deploy when Static Validation succeeded on push to main
     if: >-
-      ${{ github.event.workflow_run.conclusion == 'success' &&
-          github.event.workflow_run.event == 'push' &&
-          github.event.workflow_run.head_branch == 'main' }}
+      ${{ github.event_name == 'workflow_dispatch' ||
+          (github.event.workflow_run.conclusion == 'success' &&
+           github.event.workflow_run.event == 'push' &&
+           github.event.workflow_run.head_branch == 'main') }}
     permissions:
       contents: read
       id-token: write
@@ -54,6 +56,8 @@ jobs:
             exit 0
           fi
 
-          aws cloudfront create-invalidation \
+          if ! aws cloudfront create-invalidation \
             --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
-            --paths '/*'
+            --paths '/*'; then
+            echo "::warning::CloudFront cache was not invalidated. S3 deployment completed; retry the workflow after resolving the AWS error."
+          fi
