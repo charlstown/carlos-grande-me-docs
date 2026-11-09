@@ -18,7 +18,11 @@ La consulta directa a la PR, issues y discusiones quedó limitada por errores de
 
 ## Rastreo e indexabilidad
 
-Pendiente de comprobar respuestas, redirecciones, robots, sitemap, HTML y enlaces de una muestra documentada. La indexabilidad no demuestra indexación.
+**H-004 — Referencia de sitemap y pruebas pendientes de contraste público.** El archivo local `docs/robots.txt` apunta a `/docs/sitemap.xml`, aunque `site_url` declara la raíz; las pruebas SEO usan también `/docs/` (E-013). Esa divergencia justifica comprobar qué robots se sirve, si el sitemap declarado responde y qué URLs contiene. No permite concluir que exista un problema de producción ni de indexación.
+
+**H-005 — Navegación observada en copia de caché.** Una copia extraída de la portada muestra enlaces de navegación a las cuatro categorías y una copia de Data Mesh muestra el contenido (E-014); esto no confirma que la galería funcione sin JavaScript ni que todas las páginas sean rastreables. El acceso directo falló por proxy y el extractor no pudo recuperar varias páginas de la muestra (E-015, E-016). La indexabilidad no demuestra indexación.
+
+**Pendiente de comprobación reproducible en producción:** registrar status y cada `Location` de HTTP/HTTPS con y sin www; comparar `/`, `/docs/`, robots y ambos sitemaps; muestrear About, referencia, proyecto, recurso, notebook, par EN/ES y URL inexistente. Guardar canonical, hreflang, noindex, título, descripción y JSON-LD del HTML de cada respuesta, además de comprobar navegación y galería con y sin JavaScript. Las pruebas locales existentes no cubren la mayoría de estos puntos (E-013); la ausencia de MkDocs en el intérprete actual impidió construir localmente (E-015). La herramienta de lectura no proporciona HTML completo ni códigos HTTP, por lo que sería incorrecto marcar esa parte como superada.
 
 ## Consultas y oportunidades
 
