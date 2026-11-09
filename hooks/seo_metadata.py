@@ -1,14 +1,14 @@
 """Normalize page metadata used by the site's SEO template.
 
-The hook intentionally only prepares data.  Rendering meta tags and JSON-LD is
-kept in the Material override so that MkDocs' normal metadata pipeline remains
-the single source of truth.
+Metadata and JSON-LD are rendered by the Material override. After rendering,
+hreflang URLs from Material are made absolute while preserving their targets.
 """
 
 from __future__ import annotations
 
 import re
 from datetime import date, datetime
+from html import escape, unescape
 from typing import Any, Mapping
 from urllib.parse import urljoin
 
@@ -23,6 +23,12 @@ CONTENT_SCHEMA_TYPES = {
 
 _WHITESPACE_RE = re.compile(r"\s+")
 _FRONTMATTER_RE = re.compile(r"\A---\s*\n.*?\n---\s*\n", re.DOTALL)
+_HREFLANG_LINK_RE = re.compile(
+    r'<link\b(?=[^>]*\brel\s*=\s*["\']alternate["\'])'
+    r'(?=[^>]*\bhreflang\s*=)[^>]*>',
+    re.IGNORECASE,
+)
+_HREF_RE = re.compile(r'(\bhref\s*=\s*)(["\'])(.*?)\2', re.IGNORECASE)
 
 
 def _config_value(config: Any, name: str, default: Any = "") -> Any:
@@ -171,3 +177,25 @@ def on_page_context(context: dict[str, Any], page: Any, config: Any, nav: Any) -
     seo["page_schema"] = build_page_schema(page, config, seo)
     context["seo"] = seo
     return context
+
+
+def on_post_page(output: str, page: Any, config: Any) -> str:
+    """Make Material's hreflang links absolute without changing navigation.
+
+    Material renders these URLs relative to the current page. Google requires
+    fully qualified hreflang URLs, so resolve only head link annotations
+    against the canonical URL; RSS links and the language toggle stay intact.
+    """
+    canonical = _clean_text(getattr(page, "canonical_url", None))
+    if not canonical:
+        return output
+
+    def absolutize_link(match: re.Match[str]) -> str:
+        def absolutize_href(href_match: re.Match[str]) -> str:
+            prefix, quote, href = href_match.groups()
+            absolute = urljoin(canonical, unescape(href))
+            return f"{prefix}{quote}{escape(absolute, quote=True)}{quote}"
+
+        return _HREF_RE.sub(absolutize_href, match.group(), count=1)
+
+    return _HREFLANG_LINK_RE.sub(absolutize_link, output)
