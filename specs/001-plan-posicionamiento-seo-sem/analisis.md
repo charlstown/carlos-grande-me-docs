@@ -1,6 +1,6 @@
 # Análisis de posicionamiento y observabilidad
 
-Estado inicial: esquema preparado el 2026-11-09. Los apartados pendientes se completarán con observaciones enlazadas a [evidencias.md](evidencias.md), distinguiendo hechos, hipótesis y datos ausentes.
+Análisis fechado el 2026-11-09. Los hallazgos se apoyan en [evidencias.md](evidencias.md) y distinguen observaciones, hipótesis y datos ausentes.
 
 ## Contexto y discrepancias documentales
 
@@ -75,4 +75,4 @@ La muestra se consultó el 2026-11-09 con el buscador de la herramienta web, cuy
 
 ## Hallazgos y limitaciones
 
-Pendiente de asignar identificadores H-XXX y relacionarlos con evidencias y acciones propuestas. Los datos históricos y de cuentas no están disponibles en esta revisión inicial.
+Los hallazgos H-001–H-012 se relacionan con sus evidencias en cada apartado y con las propuestas de [acciones.md](acciones.md). Los datos históricos y de cuentas siguen sin estar disponibles; las comprobaciones pendientes de producción y las limitaciones de la muestra constan en los apartados anteriores.
