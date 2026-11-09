@@ -46,7 +46,7 @@
     ['Initial checks', 'After deployment, we quickly check that the service starts and has its essential configuration.', 'Service startup', 'Essential configuration'],
     ['Main journeys', 'We exercise the main functions to check that the system works end to end in the development environment.', 'Important functions', 'End-to-end checks'],
     ['Service communication', 'We test that deployed services communicate correctly through requests and events.', 'Service requests', 'Event exchange'],
-    ['Diagnostic signals', 'We check that logs, metrics, and traces arrive, can be queried and correlated, and do not expose sensitive data. Sampling can limit traces.', 'Emission and access', 'Logs, metrics and traces'],
+    ['Diagnostic signals', 'We check that logs, metrics, and traces arrive, can be queried and correlated, and do not expose sensitive data. Sampling can limit traces.', 'Collection and access', 'Logs, metrics and traces'],
     ['Access permissions', 'We test who can enter and what they can do, including both permitted and rejected access.', 'Sign-in', 'Authorised actions'],
     ['Basic compatibility', 'We test main journeys in commonly used browsers or environments to catch obvious incompatibilities.', 'Common browsers', 'Main flows'],
     ['Initial response', 'We measure a few response times to catch obvious regressions before more complete load testing.', 'Request times', 'Early detection'],
