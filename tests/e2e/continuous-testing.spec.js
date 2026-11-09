@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const path = '/resources/cheatsheets/my-continuous-testing-cheatsheet/';
+const path = '/resources/cheatsheets/my-continuous-testing-map/';
 
 for (const locale of ['', '/es']) {
   test(`the ${locale || 'English'} article loads the diagram and follows the site theme`, async ({ page }) => {

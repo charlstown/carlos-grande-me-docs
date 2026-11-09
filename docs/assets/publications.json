@@ -2,10 +2,10 @@
     "version": "2026-11-09",
     "items": [
         {
-            "id": "my-continuous-testing-cheatsheet",
-            "src": "resources/cheatsheets/my-continuous-testing-cheatsheet.md",
+            "id": "my-continuous-testing-map",
+            "src": "resources/cheatsheets/my-continuous-testing-map.md",
             "category": "resources",
-            "link": "./resources/cheatsheets/my-continuous-testing-cheatsheet",
+            "link": "./resources/cheatsheets/my-continuous-testing-map",
             "title": "Continuous Testing Map",
             "date": "2026-11-09",
             "thumbnail": "assets/images/thumbnails/continuous-testing-portrait.png"
