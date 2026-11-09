@@ -1,6 +1,15 @@
 {
-    "version": "2026-08-06",
+    "version": "2026-11-09",
     "items": [
+        {
+            "id": "my-continuous-testing-cheatsheet",
+            "src": "resources/cheatsheets/my-continuous-testing-cheatsheet.md",
+            "category": "resources",
+            "link": "./resources/cheatsheets/my-continuous-testing-cheatsheet",
+            "title": "Continuous Testing Cheatsheet",
+            "date": "2026-11-09",
+            "thumbnail": "assets/images/thumbnails/continuous-testing-portrait.png"
+        },
         {
             "id": "my-aisy-toolkit",
             "src": "resources/tools/my-aisy-toolkit.md",
