@@ -239,11 +239,11 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/es/resources/cheatsheets/my-business-model-canvas/"/>
     </url>
     <url>
-        <loc>https://carlosgrande.me/resources/cheatsheets/my-continuous-testing-cheatsheet/</loc>
+        <loc>https://carlosgrande.me/resources/cheatsheets/my-continuous-testing-map/</loc>
         <lastmod>2026-11-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/resources/cheatsheets/my-continuous-testing-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/es/resources/cheatsheets/my-continuous-testing-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/resources/cheatsheets/my-continuous-testing-map/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/es/resources/cheatsheets/my-continuous-testing-map/"/>
     </url>
     <url>
         <loc>https://carlosgrande.me/resources/cheatsheets/my-docker-cheatsheet/</loc>
@@ -589,11 +589,11 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/resources/cheatsheets/my-business-model-canvas/"/>
     </url>
     <url>
-        <loc>https://carlosgrande.me/es/resources/cheatsheets/my-continuous-testing-cheatsheet/</loc>
+        <loc>https://carlosgrande.me/es/resources/cheatsheets/my-continuous-testing-map/</loc>
         <lastmod>2026-11-09</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/es/resources/cheatsheets/my-continuous-testing-cheatsheet/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/resources/cheatsheets/my-continuous-testing-cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://carlosgrande.me/es/resources/cheatsheets/my-continuous-testing-map/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://carlosgrande.me/resources/cheatsheets/my-continuous-testing-map/"/>
     </url>
     <url>
         <loc>https://carlosgrande.me/es/resources/cheatsheets/my-docker-cheatsheet/</loc>
