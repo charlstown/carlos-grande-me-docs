@@ -1,5 +1,5 @@
 ---
-short_title: Continuous Testing Cheatsheet
+short_title: Continuous Testing Map
 description: An interactive map of the checks, tests, and operational feedback that support continuous delivery.
 date: 2026-11-09
 thumbnail: assets/images/thumbnails/continuous-testing-portrait.png
@@ -9,11 +9,11 @@ social:
     background_color: transparent
 ---
 
-# Continuous Testing Cheatsheet
+# Continuous Testing Map
 
 When we talk about Continuous Testing, we're not just talking about running tests in CI. We're also talking about the checks we make while developing, how we validate a deployment, and what we observe once a change is in production.
 
-I've wanted to put this interactive cheatsheet together since I studied for my master's in DevOps. I wanted to bring together the checks we can make at each phase, what we're looking for, and how often it makes sense to run them.
+I've wanted to put this interactive map together since I studied for my master's in DevOps. I wanted to bring together the checks we can make at each phase, what we're looking for, and how often it makes sense to run them.
 
 I don't intend it to be a mandatory pipeline. I prefer to think of it as a starting point each team can adapt to its product, risks, and way of working.
 

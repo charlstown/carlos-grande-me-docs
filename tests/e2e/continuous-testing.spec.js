@@ -5,6 +5,7 @@ const path = '/resources/cheatsheets/my-continuous-testing-cheatsheet/';
 for (const locale of ['', '/es']) {
   test(`the ${locale || 'English'} article loads the diagram and follows the site theme`, async ({ page }) => {
     await page.goto(locale + path);
+    await expect(page.locator('h1').first()).toHaveText('Continuous Testing Map');
     const iframe = page.locator('.continuous-testing-embed iframe');
     await iframe.scrollIntoViewIfNeeded();
     const diagram = iframe.contentFrame();

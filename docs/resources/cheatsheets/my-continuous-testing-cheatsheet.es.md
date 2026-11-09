@@ -1,5 +1,5 @@
 ---
-short_title: Continuous Testing Cheatsheet
+short_title: Continuous Testing Map
 description: Un mapa interactivo de las comprobaciones, pruebas y señales operativas que acompañan a la entrega continua.
 date: 2026-11-09
 thumbnail: assets/images/thumbnails/continuous-testing-portrait.png
@@ -9,11 +9,11 @@ social:
     background_color: transparent
 ---
 
-# Continuous Testing Cheatsheet
+# Continuous Testing Map
 
 Cuando hablamos de Continuous Testing, no hablamos solo de ejecutar pruebas en CI. También hablamos de las comprobaciones que hacemos mientras desarrollamos, de cómo validamos un despliegue y de lo que observamos cuando el cambio ya está en producción.
 
-Desde que estudié el máster en DevOps tenía pendiente preparar esta chuleta interactiva. Quería reunir las comprobaciones que podemos hacer en cada fase, qué buscamos con ellas y con qué frecuencia tiene sentido ejecutarlas.
+Desde que estudié el máster en DevOps tenía pendiente preparar este mapa interactivo. Quería reunir las comprobaciones que podemos hacer en cada fase, qué buscamos con ellas y con qué frecuencia tiene sentido ejecutarlas.
 
 No pretendo que sea un pipeline obligatorio. Prefiero verlo como un punto de partida que cada equipo puede adaptar a su producto, sus riesgos y su forma de trabajar.
 
