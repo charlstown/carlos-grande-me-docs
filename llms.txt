@@ -1,34 +1,34 @@
 Carlos Grande — personal knowledge site
 
-Canonical site URL: https://carlosgrande.me/docs/
-Primary language: English. Spanish translations are also available for selected pages under https://carlosgrande.me/docs/es/.
+Canonical site URL: https://carlosgrande.me/
+Primary language: English. Spanish translations are also available for selected pages under https://carlosgrande.me/es/.
 
 This site is Carlos Grande's personal life cheat sheet: a collection of projects, articles, notebooks, and practical resources about coding, data architecture, data science, visualization, business, and AI. Carlos Grande describes himself as a Data Engineer, Architect, and coding enthusiast.
 
-Main sections
+Representative pages
 
 Home
-https://carlosgrande.me/docs/
+https://carlosgrande.me/
 The homepage introduces the site and presents its published content.
 
-Notebooks
-https://carlosgrande.me/docs/notebooks/
-Technical notes organized by Coding, Data science, Data Architecture, and Business.
+Notebook: Python generators
+https://carlosgrande.me/notebooks/coding/python-generators/
+A technical note about generators in Python.
 
-Projects
-https://carlosgrande.me/docs/projects/
-Personal projects, including PicKasa, Madrid Airbnb Analysis, Madrid Invisible, and a Rubik's Cube model.
+Project: PicKasa
+https://carlosgrande.me/projects/app-pickasa/
+A personal application project.
 
-References
-https://carlosgrande.me/docs/references/
-Curated Articles and Case studies related to technology, data, design, and visualization.
+Reference: Whole brain emulation
+https://carlosgrande.me/references/articles/whole-brain-emulation/
+A reference article about whole brain emulation.
 
-Resources
-https://carlosgrande.me/docs/resources/
-Practical materials grouped as thesis articles, cheat sheets, coding templates, and favorite tools.
+Resource: Data Mesh thesis
+https://carlosgrande.me/resources/thesis/my-data-mesh-thesis/
+A thesis resource about Data Mesh.
 
 About me
-https://carlosgrande.me/docs/about-me/
+https://carlosgrande.me/about-me/
 Background about Carlos Grande and links to his public profiles.
 
 Source repository
