@@ -41,4 +41,4 @@ I first created the idea of ubiquitous computing from contemplation of the place
 - Weiser, M. (1993). Ubiquitous computing. IEEE Computer*.* Retrieved from [http://www.ubiq.com/weiser/UbiHome.html](http://www.ubiq.com/weiser/UbiHome.html)
 - Weiser, M. (1994). Building Invisible Interfaces, *User Interface, Systems, and Technologies (UIST)**.* Retrieved from [http://www.ubiq.com/weiser/UbiHome.html](http://www.ubiq.com/weiser/UbiHome.html)
 - Warner Brothers. (1965) Don Adams holding shoe phone in publicity portrait for the television series 'Get Smart'. Retrieved from [https://www.gettyimages.es/](https://www.gettyimages.es/)
-- More post like this here: [https://carlosgrande.me/category/articles/](https://carlosgrande.me/category/articles/)
+- More articles: [Explore articles](https://carlosgrande.me/?category=articles)

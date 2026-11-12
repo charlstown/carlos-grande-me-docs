@@ -1,5 +1,59 @@
 # Rutas históricas y redirecciones
 
+## Redirecciones publicadas
+
+El 2026-11-09 se publicó la función `carlosgrande-wordpress-redirects` en CloudFront, asociada a `viewer-request` de la distribución del sitio. Su código y sus pruebas están en `cloudfront/wordpress-redirects.js` y `cloudfront/wordpress-redirects.test.cjs`. La distribución usa un origen web S3 y no tenía funciones ni Lambda@Edge asociadas en el comportamiento principal antes del cambio.
+
+Se implantaron 17 correspondencias de la tabla de la función, seleccionadas tras comparar los textos archivados con los destinos actuales. Las rutas de contacto, About, Letter Cases y otras sin equivalencia suficientemente contrastada no se incluyeron. Antes del cambio las 17 rutas antiguas devolvían 404 y los destinos candidatos 200. Después, una comprobación pública verificó 34 solicitudes (cada ruta con y sin barra final): todas devolvieron 301 con el destino previsto. Una prueba con parámetros repetidos los conservó; portada, robots y sitemap devolvieron 200, y contacto y categoría antigua siguieron devolviendo 404. `node --test cloudfront/wordpress-redirects.test.cjs` pasó 3/3 y el test DEVELOPMENT de AWS confirmó una redirección y el paso sin cambios de una ruta excluida.
+
+La asociación se efectuó en AWS y su código se guarda en el repositorio; no hay despliegue automático ni infraestructura como código para la distribución. Consultar `cloudfront/README.md` antes de actualizarla. Los resultados no acreditan cambios de tráfico o posicionamiento, y quedan rutas antiguas por investigar.
+
+## Snapshot de WordPress aportado por el propietario
+
+El 2026-11-09 el propietario facilitó la [captura de la portada del 12 de diciembre de 2024](https://web.archive.org/web/20241212084814/https://carlosgrande.me/). La lectura directa del HTML archivado identificó las rutas siguientes. Los destinos son candidatos obtenidos de los archivos actuales del repositorio; hay que comparar los contenidos antes de aplicar redirecciones. No representan un inventario completo de WordPress ni prueban tráfico o enlaces entrantes.
+
+| Ruta enlazada en la portada de 2024 | Página actual candidata |
+| --- | --- |
+| `/about-me-carlos-grande/` | `/about-me/` |
+| `/azure-big-picture/` | `/notebooks/data-architecture/azure-big-picture/` |
+| `/cloud-migration-planning/` | `/notebooks/data-architecture/cloud-migration-planning/` |
+| `/contact-me-carlos-grande/` | Sin equivalencia de contacto confirmada |
+| `/google-challenge-01/` | `/notebooks/coding/google-challenge-part-1/` |
+| `/my-business-model-canvas/` | `/resources/cheatsheets/my-business-model-canvas/` |
+| `/my-data-fabric-thesis/` | `/resources/thesis/my-data-fabric-thesis/` |
+| `/my-data-mesh-thesis/` | `/resources/thesis/my-data-mesh-thesis/` |
+| `/my-data-product-thesis/` | `/resources/thesis/my-data-product-thesis/` |
+| `/my-data-tech-directory/` | Sin destino confirmado |
+| `/my-git-cheatsheet/` | `/resources/cheatsheets/my-git-cheatsheet/` |
+| `/my-letter-cases-reminder/` | `/resources/cheatsheets/my-letter-cases-reminder/` |
+| `/my-linux-cheatsheet/` | `/resources/cheatsheets/my-linux-cheatsheet/` |
+| `/my-python-template/` | `/resources/templates/my-python-template/` |
+| `/my-screen-splitter/` | `/resources/tools/my-favorite-screen-splitter/` |
+| `/python-design-patterns/` | `/notebooks/coding/python-design-patterns/` |
+| `/python-generators/` | `/notebooks/coding/python-generators/` |
+| `/reinforcement-learning-basics/` | `/notebooks/data-science/reinforcement-learning-basics/` |
+| `/rubiks-cube-model/` | `/projects/my-rubiks-cube-model/` |
+| `/santamaria-varas-pablo-martinez/` | Sin destino confirmado |
+| `/team-topologies/` | `/notebooks/business/team-topologies/` |
+| `/whole-brain-emulation/` | `/references/articles/whole-brain-emulation/` |
+
+Comprobación HTTP directa en producción el 2026-11-09: las rutas antiguas `/python-generators/`, `/my-data-mesh-thesis/`, `/azure-big-picture/`, `/whole-brain-emulation/` y `/about-me-carlos-grande/` devolvieron 404; los candidatos actuales de Python generators y Data Mesh devolvieron 200. No se comprobó en esta muestra el estado de todas las demás rutas ni la equivalencia del contenido.
+
+### Candidatas prioritarias contrastadas con el archivo
+
+El 2026-11-09 se consultaron las páginas archivadas enlazadas desde el snapshot de la portada. Los títulos históricos de Python Generators, My Data Mesh Thesis, Whole Brain Emulation y Azure Big Picture coinciden con los temas de los destinos candidatos, lo que refuerza su correspondencia; aún falta contrastar el contenido completo antes de establecer redirecciones permanentes. Las cuatro rutas antiguas respondían 404 en la comprobación indicada arriba.
+
+| URL histórica archivada | Destino propuesto |
+| --- | --- |
+| [Python Generators](https://web.archive.org/web/20241212084814/https://carlosgrande.me/python-generators/) | `/notebooks/coding/python-generators/` |
+| [My Data Mesh Thesis](https://web.archive.org/web/20241212084814/https://carlosgrande.me/my-data-mesh-thesis/) | `/resources/thesis/my-data-mesh-thesis/` |
+| [Whole Brain Emulation](https://web.archive.org/web/20241212084814/https://carlosgrande.me/whole-brain-emulation/) | `/references/articles/whole-brain-emulation/` |
+| [Azure Big Picture](https://web.archive.org/web/20241212084814/https://carlosgrande.me/azure-big-picture/) | `/notebooks/data-architecture/azure-big-picture/` |
+
+Inspección de AWS pendiente: el 2026-11-09 la CLI local no disponía de credenciales. Antes de elegir una implementación, identificar la distribución efectiva, su origen y las funciones ya asociadas; no reemplazar una asociación sin revisar su código. AWS documenta que una función de CloudFront debe publicarse y asociarse al comportamiento correspondiente ([guía oficial](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/associate-function.html)).
+
+La [consulta al índice CDX de Internet Archive](https://web.archive.org/cdx/search/cdx?url=carlosgrande.me%2F%2A&output=json&filter=statuscode%3A200&collapse=urlkey&fl=original&filter=mimetype%3Atext%2Fhtml) devolvió también rutas de otras fechas y páginas actuales. Ese índice se usa como fuente adicional, no como una lista exclusiva del snapshot de 2024; faltan contrastar fechas y contenido de cada entrada.
+
 Consulta del 9 de noviembre de 2026 para las tareas T02 y T05 de [plan-implementacion.md](plan-implementacion.md). La muestra es parcial y no mide el tráfico anterior ni demuestra las causas de ningún cambio de posicionamiento.
 
 ## Resultados de la muestra

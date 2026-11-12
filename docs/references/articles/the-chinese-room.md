@@ -45,4 +45,4 @@ A human doesn't need to *do* anything to understand a story. I can read a story 
 - TED talks: [TED Talk](https://www.ted.com/talks/jeff_hawkins_how_brain_science_will_change_computing "TED Talk")
 - Numenta article: [Hierarchical Temporal Memory](https://web.archive.org/web/20110626223548/http://www.numenta.com/htm-overview/education/Numenta_HTM_Concepts.pdf "Hierarchical Temporal Memory")
 - Buy the book: [On Intelligence](https://www.amazon.es/Intelligence-Understanding-Creation-Intelligent-Machines/dp/0805078533 "On Intelligence")
-- More post like this here: https://carlosgrande.me/category/articles/
+- More articles: [Explore articles](https://carlosgrande.me/?category=articles)
