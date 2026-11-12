@@ -67,4 +67,4 @@ After the analysis, you are able to understand the 180 thousand rows from the da
 
 ### Other links
 
-- More post like this here: [https://carlosgrande.me/projects/](https://carlosgrande.me/projects/)
+- More projects: [Explore projects](https://carlosgrande.me/?category=projects)

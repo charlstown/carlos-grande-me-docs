@@ -32,4 +32,4 @@ On the other hand, social practices as communication practices also took place a
 ##### REFERENCES & OTHE LINKS:
 
 - Castells, M. (2010). The Rise of the Network Society. Second edition*.* Retrieved from [https://pdfs.semanticscholar.org/3746/ef34fd58d047d973008a0a723f832a83797e.pdf](http://PDF)
-- More articles like this here: [https://carlosgrande.me/category/articles/](https://carlosgrande.me/category/articles/)
+- More articles: [Explore articles](https://carlosgrande.me/?category=articles)
