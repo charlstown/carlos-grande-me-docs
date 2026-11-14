@@ -1,0 +1,1137 @@
+{
+  "seconds": 1.691,
+  "results": [
+    {
+      "name": "initial state",
+      "pass": true
+    },
+    {
+      "name": "focused right key",
+      "pass": true
+    },
+    {
+      "name": "step 1",
+      "pass": true
+    },
+    {
+      "name": "step 2",
+      "pass": true
+    },
+    {
+      "name": "step 3",
+      "pass": true
+    },
+    {
+      "name": "step 4",
+      "pass": true
+    },
+    {
+      "name": "step 5",
+      "pass": true
+    },
+    {
+      "name": "step 6",
+      "pass": true
+    },
+    {
+      "name": "step 7",
+      "pass": true
+    },
+    {
+      "name": "finite end",
+      "pass": true
+    },
+    {
+      "name": "Entrada goes to step 1",
+      "pass": true
+    },
+    {
+      "name": "softmax",
+      "pass": true,
+      "detail": [
+        "1.4 %",
+        "3.1 %",
+        "9.4 %",
+        "51.5 %",
+        "28.3 %",
+        "6.3 %"
+      ]
+    },
+    {
+      "name": "dynamic reduced motion resolves selection",
+      "pass": true
+    },
+    {
+      "name": "network node counts",
+      "pass": true
+    },
+    {
+      "name": "four transposed rows",
+      "pass": true
+    },
+    {
+      "name": "network centered equal gaps",
+      "pass": true,
+      "detail": [
+        {
+          "n": 4,
+          "center": 150,
+          "gaps": [
+            29,
+            29,
+            29
+          ]
+        },
+        {
+          "n": 8,
+          "center": 150,
+          "gaps": [
+            29,
+            29,
+            29,
+            29,
+            29,
+            29,
+            29
+          ]
+        },
+        {
+          "n": 8,
+          "center": 150,
+          "gaps": [
+            29,
+            29,
+            29,
+            29,
+            29,
+            29,
+            29
+          ]
+        },
+        {
+          "n": 6,
+          "center": 150,
+          "gaps": [
+            29,
+            29,
+            29,
+            29,
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "name": "rapid keys count",
+      "pass": true
+    },
+    {
+      "name": "bounds 320 phase 0",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 270,
+          "right": 304,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 34.0859375,
+          "right": 81.1015625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 123.8828125,
+          "right": 196.1171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 227.265625,
+          "right": 297.515625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 221.4765625,
+          "right": 303.3046875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 119.03125,
+          "right": 200.96875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 29.8359375,
+          "right": 85.3515625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 38.390625,
+          "right": 281.609375,
+          "y": 152,
+          "bottom": 194
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 283,
+          "right": 316,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 320,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 320 phase 1",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 270,
+          "right": 304,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 34.0859375,
+          "right": 81.1015625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 123.8828125,
+          "right": 196.1171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 227.265625,
+          "right": 297.515625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 221.4765625,
+          "right": 303.3046875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 119.03125,
+          "right": 200.96875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 29.8359375,
+          "right": 85.3515625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 38.390625,
+          "right": 281.609375,
+          "y": 152,
+          "bottom": 215
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 283,
+          "right": 316,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 320,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 320 phase 2",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 270,
+          "right": 304,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 34.0859375,
+          "right": 81.1015625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 123.8828125,
+          "right": 196.1171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 227.265625,
+          "right": 297.515625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 221.4765625,
+          "right": 303.3046875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 119.03125,
+          "right": 200.96875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 29.8359375,
+          "right": 85.3515625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 38.390625,
+          "right": 281.609375,
+          "y": 152,
+          "bottom": 215
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 283,
+          "right": 316,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 320,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 320 phase 3",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 270,
+          "right": 304,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 34.0859375,
+          "right": 81.1015625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 123.8828125,
+          "right": 196.1171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 227.265625,
+          "right": 297.515625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 221.4765625,
+          "right": 303.3046875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 119.03125,
+          "right": 200.96875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 29.8359375,
+          "right": 85.3515625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 38.390625,
+          "right": 281.609375,
+          "y": 152,
+          "bottom": 215
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 283,
+          "right": 316,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 320,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 320 phase 4",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 270,
+          "right": 304,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 34.0859375,
+          "right": 81.1015625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 123.8828125,
+          "right": 196.1171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 227.265625,
+          "right": 297.515625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 221.4765625,
+          "right": 303.3046875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 119.03125,
+          "right": 200.96875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 29.8359375,
+          "right": 85.3515625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 38.390625,
+          "right": 281.609375,
+          "y": 152,
+          "bottom": 194
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 283,
+          "right": 316,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 320,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 320 phase 5",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 270,
+          "right": 304,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 34.0859375,
+          "right": 81.1015625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 123.8828125,
+          "right": 196.1171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 227.265625,
+          "right": 297.515625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 221.4765625,
+          "right": 303.3046875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 119.03125,
+          "right": 200.96875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 29.8359375,
+          "right": 85.3515625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 38.390625,
+          "right": 281.609375,
+          "y": 152,
+          "bottom": 215
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 283,
+          "right": 316,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 320,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 375 phase 0",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 325,
+          "right": 359,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 43.9921875,
+          "right": 91.0078125,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 151.3828125,
+          "right": 223.6171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 272.375,
+          "right": 342.625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 266.5859375,
+          "right": 348.4140625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 146.53125,
+          "right": 228.46875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 39.7421875,
+          "right": 95.2578125,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 45,
+          "right": 330,
+          "y": 152,
+          "bottom": 194
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 338,
+          "right": 371,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 375,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 375 phase 1",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 325,
+          "right": 359,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 43.9921875,
+          "right": 91.0078125,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 151.3828125,
+          "right": 223.6171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 272.375,
+          "right": 342.625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 266.5859375,
+          "right": 348.4140625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 146.53125,
+          "right": 228.46875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 39.7421875,
+          "right": 95.2578125,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 45,
+          "right": 330,
+          "y": 152,
+          "bottom": 194
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 338,
+          "right": 371,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 375,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 375 phase 2",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 325,
+          "right": 359,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 43.9921875,
+          "right": 91.0078125,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 151.3828125,
+          "right": 223.6171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 272.375,
+          "right": 342.625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 266.5859375,
+          "right": 348.4140625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 146.53125,
+          "right": 228.46875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 39.7421875,
+          "right": 95.2578125,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 45,
+          "right": 330,
+          "y": 152,
+          "bottom": 194
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 338,
+          "right": 371,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 375,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 375 phase 3",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 325,
+          "right": 359,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 43.9921875,
+          "right": 91.0078125,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 151.3828125,
+          "right": 223.6171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 272.375,
+          "right": 342.625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 266.5859375,
+          "right": 348.4140625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 146.53125,
+          "right": 228.46875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 39.7421875,
+          "right": 95.2578125,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 45,
+          "right": 330,
+          "y": 152,
+          "bottom": 215
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 338,
+          "right": 371,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 375,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 375 phase 4",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 325,
+          "right": 359,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 43.9921875,
+          "right": 91.0078125,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 151.3828125,
+          "right": 223.6171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 272.375,
+          "right": 342.625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 266.5859375,
+          "right": 348.4140625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 146.53125,
+          "right": 228.46875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 39.7421875,
+          "right": 95.2578125,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 45,
+          "right": 330,
+          "y": 152,
+          "bottom": 194
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 338,
+          "right": 371,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 375,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "bounds 375 phase 5",
+      "pass": true,
+      "detail": [
+        {
+          "cls": "nt-expand",
+          "x": 325,
+          "right": 359,
+          "y": 16,
+          "bottom": 50
+        },
+        {
+          "cls": "nt-phase",
+          "x": 43.9921875,
+          "right": 91.0078125,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 151.3828125,
+          "right": 223.6171875,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 272.375,
+          "right": 342.625,
+          "y": 75,
+          "bottom": 130
+        },
+        {
+          "cls": "nt-phase",
+          "x": 266.5859375,
+          "right": 348.4140625,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 146.53125,
+          "right": 228.46875,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-phase",
+          "x": 39.7421875,
+          "right": 95.2578125,
+          "y": 593,
+          "bottom": 648
+        },
+        {
+          "cls": "nt-explanation",
+          "x": 45,
+          "right": 330,
+          "y": 152,
+          "bottom": 194
+        },
+        {
+          "cls": "nt-nav nt-prev",
+          "x": 4,
+          "right": 37,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-nav nt-next",
+          "x": 338,
+          "right": 371,
+          "y": 323,
+          "bottom": 387
+        },
+        {
+          "cls": "nt-progress",
+          "x": 0,
+          "right": 375,
+          "y": 674,
+          "bottom": 690
+        }
+      ]
+    },
+    {
+      "name": "expand locks body",
+      "pass": true
+    },
+    {
+      "name": "short full close reachable",
+      "pass": true
+    },
+    {
+      "name": "Escape restores",
+      "pass": true
+    },
+    {
+      "name": "button closes",
+      "pass": true
+    },
+    {
+      "name": "removal restores prior overflow",
+      "pass": true
+    },
+    {
+      "name": "no browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
