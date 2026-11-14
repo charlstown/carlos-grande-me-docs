@@ -10,7 +10,7 @@ date: 2026-06-13
 > | **Status** | 🟡 Draft |
 > | **Owner** | Carlos Grande (@Charlstown) |
 > | **Created** | 2026-06-13 |
-> | **Updated** | 2026-08-07 |
+> | **Updated** | 2026-11-12 |
 > | **Version** | v0.1 |
 > | **ProductSpec** | [[ProductSpec]] |
 
@@ -88,6 +88,11 @@ Recorre las páginas de contenido en el evento `on_files` y emite `docs/assets/p
 
 #### `hooks/ignore_file_autoreload.py` — Watcher de overrides en serve
 Añade un watch explícito de `overrides/` durante `mkdocs serve` sin mutar internals del servidor para no romper el live reload.
+
+#### Descubrimiento, analítica y URLs históricas
+`hooks/seo_metadata.py` prepara metadatos y datos estructurados para `overrides/main.html` y normaliza los enlaces `hreflang` a URLs absolutas en el HTML generado. `docs/robots.txt` anuncia el sitemap de la raíz, `https://carlosgrande.me/sitemap.xml`; `docs/llms.txt` recoge la URL canónica y páginas representativas. `mkdocs.yml` configura Google Analytics: el acceso a la propiedad y la recepción de una visita de prueba se comprobaron en noviembre de 2026, sin que ello garantice la medición de visitantes con bloqueadores.
+
+`cloudfront/wordpress-redirects.js` contiene la función CloudFront que redirige 26 rutas históricas de WordPress y `/docs/`; las rutas no incluidas pasan sin cambios. El código se valida con `node --test cloudfront/wordpress-redirects.test.cjs`. La asociación y publicación de la función se hicieron fuera de Git y no forman parte del despliegue automático; los pasos de mantenimiento están en `cloudfront/README.md`. Los archivos de la función se integraron mediante las PR #75 y #76.
 
 #### `overrides/` — Theme Material personalizado
 Plantillas que sobrescriben el theme base: `home.html` (galería; su script inline también sincroniza el filtro de categorías con la URL —mapeo categoría↔slug, `pushState`/`replaceState`, restauración desde `?category=<slug>` y manejo de `popstate`—), `about-me.html`, `main.html` (que además sobreescribe el bloque `content` para inyectar la fecha de publicación sobre el H1) y `partials/hero.html`, `partials/toc-item.html`, `partials/post-date.html` (componente de fecha de publicación, condicionado a `page.meta.date`) y `partials/alternate.html` (sobrescribe el selector de idioma nativo de Material con un toggle propio —icono SVG personalizado + etiqueta del idioma destino— que enlaza directamente a la versión alternativa; visible cuando `config.extra.alternate` está disponible gracias a `mkdocs-static-i18n`).
