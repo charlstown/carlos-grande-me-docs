@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Familias Transformer</title>
+</head>
+<body>
+<!--8<-- [start:diagram]-->
+<section class="tad-root" aria-label="Comparación de arquitecturas Transformer">
+<style>
+.tad-root {
+  --tad-surface: var(--md-default-bg-color, #fffdf8);
+  --tad-ink: var(--md-default-fg-color, #292d30);
+  --tad-muted: color-mix(in srgb, var(--tad-ink) 76%, var(--tad-surface));
+  --tad-edge: color-mix(in srgb, var(--tad-ink) 18%, var(--tad-surface));
+  --tad-result: #00695e;
+  --tad-cycle: 9.6s;
+  margin: 1.5rem 0;
+  font-family: system-ui, sans-serif;
+}
+
+[data-md-color-scheme="slate"] .tad-root {
+  --tad-result: #75d9c6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(:has([data-md-color-scheme])) .tad-root {
+    --tad-surface: #151a20;
+    --tad-ink: #ece9e1;
+    --tad-result: #75d9c6;
+  }
+}
+
+.tad-root *, .tad-root *::before, .tad-root *::after { box-sizing: border-box; }
+
+.tad-root .tad-panel {
+  position: relative;
+  inset: auto;
+  isolation: isolate;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--tad-edge);
+  border-radius: 16px;
+  background: var(--tad-surface);
+  color: var(--tad-ink);
+}
+
+.tad-root .tad-panel:modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 0;
+  border-radius: 0;
+}
+
+.tad-root .tad-panel::backdrop { background: var(--tad-surface); }
+
+.tad-root .tad-inner {
+  width: min(100%, 820px);
+  margin: 0 auto;
+  padding: 8px clamp(12px, 3%, 26px) 6px;
+}
+
+.tad-root .tad-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+  background: var(--tad-surface);
+}
+
+.tad-root .tad-panel:modal .tad-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid var(--tad-edge);
+}
+
+.tad-root .tad-heading {
+  margin: 0;
+  font-size: clamp(19px, 2.8vw, 26px);
+  font-weight: 740;
+  line-height: 1.2;
+}
+
+.tad-root .tad-sub {
+  margin: 2px 0 12px;
+  color: var(--tad-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.tad-root .tad-panel:modal .tad-sub { margin-top: 8px; }
+
+.tad-root .tad-expand {
+  flex: 0 0 44px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--tad-edge);
+  border-radius: 9px;
+  background: var(--tad-surface);
+  color: var(--tad-ink);
+  cursor: pointer;
+}
+
+.tad-root .tad-expand:hover { border-color: var(--tad-result); }
+.tad-root .tad-expand:focus-visible { outline: 2px solid var(--tad-result); outline-offset: 2px; }
+
+.tad-root .tad-expand svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.tad-root .tad-expand .tad-close-icon,
+.tad-root .tad-expand[aria-pressed="true"] .tad-open-icon { display: none; }
+.tad-root .tad-expand[aria-pressed="true"] .tad-close-icon { display: block; }
+
+.tad-root .tad-row { padding: 12px 0; border-top: 1px solid var(--tad-edge); }
+.tad-root .tad-row-title { margin: 0 0 2px; font-size: 15px; font-weight: 720; line-height: 1.25; }
+
+.tad-root .tad-description {
+  margin: 0 0 10px;
+  color: var(--tad-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.tad-root .tad-flow {
+  --tad-label-height: 18px;
+  --tad-travel-height: 40px;
+  --tad-belt-height: 7px;
+  --tad-lane-height: calc(var(--tad-label-height) + var(--tad-travel-height) + var(--tad-belt-height));
+  --tad-machine-height: 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(min(90px, 36%), 34%) minmax(0, 1fr);
+  grid-template-rows: var(--tad-lane-height);
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.tad-root .tad-flow--pair { grid-template-rows: var(--tad-lane-height) 18px var(--tad-lane-height); }
+
+.tad-root .tad-lane {
+  display: grid;
+  grid-template-rows: var(--tad-label-height) var(--tad-travel-height) var(--tad-belt-height);
+  grid-row: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.tad-root .tad-in { grid-column: 1; }
+.tad-root .tad-out { grid-column: 3; }
+.tad-root .tad-flow--pair .tad-in { grid-row: 3; }
+
+.tad-root .tad-tag {
+  color: var(--tad-muted);
+  font-size: 12px;
+  font-weight: 660;
+  line-height: 15px;
+}
+
+.tad-root .tad-port {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.tad-root .tad-token {
+  max-width: 100%;
+  padding: 2px clamp(3px, 1vw, 9px);
+  border: 1px solid var(--tad-edge);
+  border-radius: 6px 6px 4px 4px;
+  background: color-mix(in srgb, var(--tad-ink) 5%, var(--tad-surface));
+  color: var(--tad-ink);
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 650;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.tad-root .tad-token-group { white-space: nowrap; }
+
+.tad-root .tad-out .tad-token {
+  background: color-mix(in srgb, var(--tad-result) 7%, var(--tad-surface));
+  color: var(--tad-result);
+}
+
+.tad-root .tad-belt {
+  border: 1px solid var(--tad-edge);
+  border-radius: 8px;
+  background: repeating-linear-gradient(90deg, var(--tad-surface) 0 9px, var(--tad-edge) 9px 10px);
+}
+
+.tad-root .tad-in .tad-belt { border-radius: 8px 0 0 8px; }
+.tad-root .tad-out .tad-belt { border-radius: 0 8px 8px 0; }
+
+.tad-root .tad-machine {
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  align-self: end;
+  grid-column: 2;
+  grid-row: 1;
+  gap: 4px;
+  height: var(--tad-machine-height);
+  border: 1px solid #987c58;
+  border-radius: 12px;
+  background: #e9d4ae;
+  box-shadow: inset 0 -4px #dac099;
+  color: #4b4032;
+  font-size: 13px;
+  font-weight: 740;
+  line-height: 1.15;
+}
+
+.tad-root .tad-machine--encoder { grid-row: 3; justify-self: start; width: 78%; }
+.tad-root .tad-machine--decoder { justify-self: end; width: 87%; }
+
+.tad-root .tad-eyes {
+  display: flex;
+  gap: 6px;
+}
+
+.tad-root .tad-eyes::before, .tad-root .tad-eyes::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #53625b;
+}
+
+.tad-root .tad-slot {
+  position: absolute;
+  bottom: calc(var(--tad-belt-height) - 1px);
+  width: 5px;
+  height: var(--tad-travel-height);
+  border-radius: 3px;
+  background: #685844;
+}
+
+.tad-root .tad-slot--in { left: -1px; }
+.tad-root .tad-slot--out { right: -1px; }
+
+.tad-root .tad-link {
+  position: relative;
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  height: calc(100% + var(--tad-lane-height) - var(--tad-machine-height) - 4px);
+  width: 2px;
+  margin-top: 2px;
+  background: currentColor;
+  color: var(--tad-muted);
+}
+
+.tad-root .tad-link::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border: solid currentColor;
+  border-width: 2px 0 0 2px;
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tad-root .tad-in .tad-token { animation: tad-enter var(--tad-cycle) ease-in-out infinite; }
+  .tad-root .tad-out .tad-token { animation: tad-exit var(--tad-cycle) ease-in-out infinite; }
+  .tad-root .tad-slot { animation: tad-slot-signal var(--tad-cycle) linear infinite; }
+  .tad-root .tad-link { animation: tad-link-signal var(--tad-cycle) linear infinite; }
+}
+
+@keyframes tad-enter {
+  0%, 12% { transform: translateX(0); }
+  32%, 38% { transform: translateX(100cqw); }
+  38.01% { transform: translateX(-100cqw); }
+  57%, 100% { transform: translateX(0); }
+}
+
+@keyframes tad-exit {
+  0%, 38% { transform: translateX(-100cqw); }
+  57%, 89% { transform: translateX(0); }
+  100% { transform: translateX(100cqw); }
+}
+
+@keyframes tad-slot-signal {
+  0%, 32%, 36%, 100% { background-color: #685844; }
+  34% { background-color: #c68a30; }
+}
+
+@keyframes tad-link-signal {
+  0%, 32%, 36%, 100% { color: var(--tad-muted); }
+  34% { color: var(--tad-result); }
+}
+</style>
+<dialog class="tad-panel" aria-label="Las familias Transformer" open>
+  <div class="tad-inner">
+    <header class="tad-toolbar">
+      <p class="tad-heading">Las familias Transformer</p>
+      <button class="tad-expand" type="button" aria-label="Ampliar diagrama" aria-pressed="false">
+        <svg class="tad-open-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 2H2v4M10 2h4v4M6 14H2v-4M10 14h4v-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="tad-close-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </button>
+    </header>
+    <p class="tad-sub">La misma entrada puede servir para clasificar, traducir o continuar un texto.</p>
+
+    <div class="tad-row">
+      <p class="tad-row-title">Encoder-only</p>
+      <p class="tad-description">Representa el texto para una tarea como la clasificación.</p>
+      <div class="tad-flow">
+        <div class="tad-lane tad-in">
+          <span class="tad-tag">Entrada</span>
+          <div class="tad-port"><span class="tad-token">Hasta el <span class="tad-token-group">infinito y</span></span></div>
+          <span class="tad-belt" aria-hidden="true"></span>
+        </div>
+        <div class="tad-machine" aria-hidden="true">
+          <span class="tad-eyes"></span>Encoder
+          <span class="tad-slot tad-slot--in"></span><span class="tad-slot tad-slot--out"></span>
+        </div>
+        <div class="tad-lane tad-out">
+          <span class="tad-tag">Clasificar</span>
+          <div class="tad-port"><span class="tad-token">Toy Story</span></div>
+          <span class="tad-belt" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tad-row">
+      <p class="tad-row-title">Encoder-decoder</p>
+      <p class="tad-description">El encoder representa la entrada y el decoder genera otra secuencia.</p>
+      <div class="tad-flow tad-flow--pair">
+        <div class="tad-lane tad-in">
+          <span class="tad-tag">Entrada</span>
+          <div class="tad-port"><span class="tad-token">Hasta el <span class="tad-token-group">infinito y</span></span></div>
+          <span class="tad-belt" aria-hidden="true"></span>
+        </div>
+        <div class="tad-machine tad-machine--encoder" aria-hidden="true">
+          <span class="tad-eyes"></span>Encoder
+          <span class="tad-slot tad-slot--in"></span>
+        </div>
+        <span class="tad-link" aria-hidden="true"></span>
+        <div class="tad-machine tad-machine--decoder" aria-hidden="true">
+          <span class="tad-eyes"></span>Decoder
+          <span class="tad-slot tad-slot--out"></span>
+        </div>
+        <div class="tad-lane tad-out">
+          <span class="tad-tag">Traducir</span>
+          <div class="tad-port"><span class="tad-token" lang="en">To infinity and...</span></div>
+          <span class="tad-belt" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tad-row">
+      <p class="tad-row-title">Decoder-only</p>
+      <p class="tad-description">Continúa la secuencia prediciendo el siguiente token.</p>
+      <div class="tad-flow">
+        <div class="tad-lane tad-in">
+          <span class="tad-tag">Entrada</span>
+          <div class="tad-port"><span class="tad-token">Hasta el <span class="tad-token-group">infinito y</span></span></div>
+          <span class="tad-belt" aria-hidden="true"></span>
+        </div>
+        <div class="tad-machine" aria-hidden="true">
+          <span class="tad-eyes"></span>Decoder
+          <span class="tad-slot tad-slot--in"></span><span class="tad-slot tad-slot--out"></span>
+        </div>
+        <div class="tad-lane tad-out">
+          <span class="tad-tag">Continuar</span>
+          <div class="tad-port"><span class="tad-token">más allá</span></div>
+          <span class="tad-belt" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script>
+(() => {
+  const root = document.currentScript.closest('.tad-root');
+  const panel = root.querySelector('.tad-panel');
+  const expand = root.querySelector('.tad-expand');
+  const scrollRoot = document.documentElement;
+  let previousPage = null;
+  let removalObserver;
+
+  function restorePage() {
+    const { overflow, x, y, focus } = previousPage;
+    previousPage = null;
+    removalObserver.disconnect();
+    scrollRoot.style.overflow = overflow;
+    window.scrollTo({ left: x, top: y, behavior: 'instant' });
+    if (focus?.isConnected) focus.focus({ preventScroll: true });
+  }
+
+  function closeExpanded() {
+    panel.close();
+    panel.show();
+    panel.scrollTop = 0;
+    expand.setAttribute('aria-pressed', 'false');
+    expand.setAttribute('aria-label', 'Ampliar diagrama');
+    restorePage();
+  }
+
+  function openExpanded() {
+    if (document.querySelector('.tad-panel:modal')) return;
+    previousPage = {
+      overflow: scrollRoot.style.overflow,
+      x: window.scrollX,
+      y: window.scrollY,
+      focus: document.activeElement
+    };
+
+    scrollRoot.style.overflow = 'hidden';
+    panel.close();
+    panel.showModal();
+    expand.setAttribute('aria-pressed', 'true');
+    expand.setAttribute('aria-label', 'Cerrar vista ampliada');
+    expand.focus({ preventScroll: true });
+
+    removalObserver = new MutationObserver(() => {
+      if (!panel.isConnected) restorePage();
+    });
+    removalObserver.observe(document.documentElement, { childList: true, subtree: true });
+  }
+
+  expand.addEventListener('click', () => {
+    if (previousPage) closeExpanded();
+    else openExpanded();
+  });
+
+  panel.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    closeExpanded();
+  });
+
+  panel.addEventListener('keydown', (event) => {
+    if (previousPage && event.key === 'Tab') {
+      event.preventDefault();
+      expand.focus({ preventScroll: true });
+    }
+  });
+})();
+</script>
+</section>
+<!--8<-- [end:diagram]-->
+</body>
+</html>
